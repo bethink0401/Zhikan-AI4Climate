@@ -1,0 +1,943 @@
+{
+  "provenance": {
+    "A_v95_committed": "git 0a3e681:config/pollution_rules.json（V9.5 留出结论所用）",
+    "B_v96_current": "当前 config/pollution_rules.json（V9.6 合成开发集标定）",
+    "C_sweep_base": "V9.6 governance_sweep.py 的 base_config + R1_sync（逐键取自扫描 JSON）",
+    "D_contrast_only": "C 的阈值 + R2_abs_contrast（V9.6 启用后回退）",
+    "E_synth_calib": "V9.6 governance_sweep.py 的 frozen_config（dev 网格最优，逐键取自扫描 JSON）",
+    "F_calib_R1": "E 的阈值/局地项 + R1_sync（E 的 CI 基线）"
+  },
+  "configs": {
+    "A_v95_committed": {
+      "gate_anomaly_min": 0.45,
+      "traffic_gate_uses_no2_signal": false,
+      "local_station_term": "none",
+      "min_strength": 0.35,
+      "margin": 0.12,
+      "traffic_nox_pct_min": 0.55,
+      "regional_variant": "R1_sync"
+    },
+    "B_v96_current": {
+      "gate_anomaly_min": 0.45,
+      "traffic_gate_uses_no2_signal": false,
+      "local_station_term": "none",
+      "min_strength": 0.35,
+      "margin": 0.05,
+      "traffic_nox_pct_min": 0.65,
+      "regional_variant": "R1_sync"
+    },
+    "C_sweep_base": {
+      "traffic_nox_pct_min": 0.55,
+      "min_strength": 0.4,
+      "margin": 0.12,
+      "local_station_term": "none",
+      "traffic_gate_uses_no2_signal": false,
+      "gate_anomaly_min": 0.45,
+      "regional_variant": "R1_sync"
+    },
+    "D_contrast_only": {
+      "traffic_nox_pct_min": 0.55,
+      "min_strength": 0.4,
+      "margin": 0.12,
+      "local_station_term": "none",
+      "traffic_gate_uses_no2_signal": false,
+      "gate_anomaly_min": 0.45,
+      "regional_variant": "R2_abs_contrast"
+    },
+    "E_synth_calib": {
+      "traffic_nox_pct_min": 0.55,
+      "min_strength": 0.3,
+      "margin": 0.12,
+      "local_station_term": "net_relative",
+      "traffic_gate_uses_no2_signal": false,
+      "gate_anomaly_min": 0.45,
+      "regional_variant": "R2_abs_contrast"
+    },
+    "F_calib_R1": {
+      "traffic_nox_pct_min": 0.55,
+      "min_strength": 0.3,
+      "margin": 0.12,
+      "local_station_term": "net_relative",
+      "traffic_gate_uses_no2_signal": false,
+      "gate_anomaly_min": 0.45,
+      "regional_variant": "R1_sync"
+    }
+  },
+  "modes": {
+    "full": {
+      "metrics": {
+        "A_v95_committed": {
+          "macro_f1": 0.5361,
+          "abstention_rate": 0.5551,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.4836,
+            "Central Roadside": 0.5326,
+            "Causeway Bay Roadside": 0.4596
+          },
+          "regional_predicted": 49,
+          "regional_recall": 0.4167,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 3,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 21
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 17,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 7
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 10,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 14
+            }
+          },
+          "config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.12,
+            "traffic_nox_pct_min": 0.55,
+            "regional_variant": "R1_sync"
+          }
+        },
+        "B_v96_current": {
+          "macro_f1": 0.5182,
+          "abstention_rate": 0.3346,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.4382,
+            "Central Roadside": 0.5072,
+            "Causeway Bay Roadside": 0.4702
+          },
+          "regional_predicted": 92,
+          "regional_recall": 0.6806,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 7,
+              "predicted_traffic": 3,
+              "predicted_local": 0,
+              "abstained": 14
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 24,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 0
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 18,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 6
+            }
+          },
+          "config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.05,
+            "traffic_nox_pct_min": 0.65,
+            "regional_variant": "R1_sync"
+          }
+        },
+        "C_sweep_base": {
+          "macro_f1": 0.5386,
+          "abstention_rate": 0.5591,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.4836,
+            "Central Roadside": 0.5392,
+            "Causeway Bay Roadside": 0.4596
+          },
+          "regional_predicted": 48,
+          "regional_recall": 0.4167,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 3,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 21
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 17,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 7
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 10,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 14
+            }
+          },
+          "config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          }
+        },
+        "D_contrast_only": {
+          "macro_f1": 0.3017,
+          "abstention_rate": 0.311,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.3553,
+            "Central Roadside": 0.3547,
+            "Causeway Bay Roadside": 0.0871
+          },
+          "regional_predicted": 0,
+          "regional_recall": 0.0,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 19,
+              "predicted_local": 0,
+              "abstained": 5
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 12,
+              "predicted_local": 4,
+              "abstained": 8
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 13,
+              "predicted_local": 2,
+              "abstained": 9
+            }
+          },
+          "config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          }
+        },
+        "E_synth_calib": {
+          "macro_f1": 0.1848,
+          "abstention_rate": 0.2323,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.2569,
+            "Central Roadside": 0.1319,
+            "Causeway Bay Roadside": 0.1171
+          },
+          "regional_predicted": 0,
+          "regional_recall": 0.0,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 19,
+              "predicted_local": 0,
+              "abstained": 5
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 9,
+              "predicted_local": 7,
+              "abstained": 8
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 13,
+              "predicted_local": 3,
+              "abstained": 8
+            }
+          },
+          "config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          }
+        },
+        "F_calib_R1": {
+          "macro_f1": 0.3548,
+          "abstention_rate": 0.4646,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.3293,
+            "Central Roadside": 0.3335,
+            "Causeway Bay Roadside": 0.3087
+          },
+          "regional_predicted": 46,
+          "regional_recall": 0.4167,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 3,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 21
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 17,
+              "predicted_traffic": 0,
+              "predicted_local": 0,
+              "abstained": 7
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 10,
+              "predicted_traffic": 0,
+              "predicted_local": 1,
+              "abstained": 13
+            }
+          },
+          "config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          }
+        }
+      },
+      "comparisons": {
+        "E_synth_calib_minus_A_v95_committed": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.3513,
+          "ci95": [
+            -0.4359,
+            -0.2478
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "E_synth_calib",
+          "baseline": "A_v95_committed",
+          "arm_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          },
+          "baseline_config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.12,
+            "traffic_nox_pct_min": 0.55,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.1848,
+          "baseline_point_f1": 0.5361,
+          "paired_unit": "date"
+        },
+        "E_synth_calib_minus_F_calib_R1": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.17,
+          "ci95": [
+            -0.219,
+            -0.1181
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "E_synth_calib",
+          "baseline": "F_calib_R1",
+          "arm_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          },
+          "baseline_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.1848,
+          "baseline_point_f1": 0.3548,
+          "paired_unit": "date"
+        },
+        "D_contrast_only_minus_C_sweep_base": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.2369,
+          "ci95": [
+            -0.3125,
+            -0.1529
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "D_contrast_only",
+          "baseline": "C_sweep_base",
+          "arm_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          },
+          "baseline_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.3017,
+          "baseline_point_f1": 0.5386,
+          "paired_unit": "date"
+        },
+        "A_v95_committed_minus_C_sweep_base": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.0025,
+          "ci95": [
+            -0.0083,
+            0.0
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "A_v95_committed",
+          "baseline": "C_sweep_base",
+          "arm_config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.12,
+            "traffic_nox_pct_min": 0.55,
+            "regional_variant": "R1_sync"
+          },
+          "baseline_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.5361,
+          "baseline_point_f1": 0.5386,
+          "paired_unit": "date"
+        },
+        "B_v96_current_minus_A_v95_committed": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.0179,
+          "ci95": [
+            -0.0908,
+            0.0436
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "B_v96_current",
+          "baseline": "A_v95_committed",
+          "arm_config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.05,
+            "traffic_nox_pct_min": 0.65,
+            "regional_variant": "R1_sync"
+          },
+          "baseline_config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.12,
+            "traffic_nox_pct_min": 0.55,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.5182,
+          "baseline_point_f1": 0.5361,
+          "paired_unit": "date"
+        }
+      }
+    },
+    "pit": {
+      "metrics": {
+        "A_v95_committed": {
+          "macro_f1": 0.4416,
+          "abstention_rate": 0.5472,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.3872,
+            "Central Roadside": 0.4626,
+            "Causeway Bay Roadside": 0.3802
+          },
+          "regional_predicted": 36,
+          "regional_recall": 0.2778,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 2,
+              "predicted_traffic": 0,
+              "predicted_local": 4,
+              "abstained": 18
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 11,
+              "predicted_traffic": 0,
+              "predicted_local": 6,
+              "abstained": 7
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 7,
+              "predicted_traffic": 0,
+              "predicted_local": 4,
+              "abstained": 13
+            }
+          },
+          "config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.12,
+            "traffic_nox_pct_min": 0.55,
+            "regional_variant": "R1_sync"
+          }
+        },
+        "B_v96_current": {
+          "macro_f1": 0.4501,
+          "abstention_rate": 0.3465,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.41,
+            "Central Roadside": 0.4131,
+            "Causeway Bay Roadside": 0.4071
+          },
+          "regional_predicted": 75,
+          "regional_recall": 0.4861,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 5,
+              "predicted_traffic": 4,
+              "predicted_local": 6,
+              "abstained": 9
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 16,
+              "predicted_traffic": 0,
+              "predicted_local": 7,
+              "abstained": 1
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 14,
+              "predicted_traffic": 0,
+              "predicted_local": 4,
+              "abstained": 6
+            }
+          },
+          "config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.05,
+            "traffic_nox_pct_min": 0.65,
+            "regional_variant": "R1_sync"
+          }
+        },
+        "C_sweep_base": {
+          "macro_f1": 0.4463,
+          "abstention_rate": 0.5551,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.3929,
+            "Central Roadside": 0.4691,
+            "Causeway Bay Roadside": 0.3802
+          },
+          "regional_predicted": 34,
+          "regional_recall": 0.2778,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 2,
+              "predicted_traffic": 0,
+              "predicted_local": 4,
+              "abstained": 18
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 11,
+              "predicted_traffic": 0,
+              "predicted_local": 6,
+              "abstained": 7
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 7,
+              "predicted_traffic": 0,
+              "predicted_local": 4,
+              "abstained": 13
+            }
+          },
+          "config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          }
+        },
+        "D_contrast_only": {
+          "macro_f1": 0.3042,
+          "abstention_rate": 0.2795,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.3265,
+            "Central Roadside": 0.3917,
+            "Causeway Bay Roadside": 0.0801
+          },
+          "regional_predicted": 0,
+          "regional_recall": 0.0,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 14,
+              "predicted_local": 6,
+              "abstained": 4
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 10,
+              "predicted_local": 8,
+              "abstained": 6
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 13,
+              "predicted_local": 4,
+              "abstained": 7
+            }
+          },
+          "config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          }
+        },
+        "E_synth_calib": {
+          "macro_f1": 0.1939,
+          "abstention_rate": 0.2244,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.2483,
+            "Central Roadside": 0.1632,
+            "Causeway Bay Roadside": 0.1138
+          },
+          "regional_predicted": 0,
+          "regional_recall": 0.0,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 14,
+              "predicted_local": 6,
+              "abstained": 4
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 6,
+              "predicted_local": 11,
+              "abstained": 7
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 0,
+              "predicted_traffic": 13,
+              "predicted_local": 6,
+              "abstained": 5
+            }
+          },
+          "config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          }
+        },
+        "F_calib_R1": {
+          "macro_f1": 0.2901,
+          "abstention_rate": 0.4685,
+          "per_station_f1": {
+            "Mong Kok Roadside": 0.2872,
+            "Central Roadside": 0.2493,
+            "Causeway Bay Roadside": 0.2848
+          },
+          "regional_predicted": 32,
+          "regional_recall": 0.25,
+          "regional_detail": {
+            "Mong Kok Roadside": {
+              "n": 24,
+              "predicted_regional": 2,
+              "predicted_traffic": 0,
+              "predicted_local": 4,
+              "abstained": 18
+            },
+            "Central Roadside": {
+              "n": 24,
+              "predicted_regional": 9,
+              "predicted_traffic": 0,
+              "predicted_local": 7,
+              "abstained": 8
+            },
+            "Causeway Bay Roadside": {
+              "n": 24,
+              "predicted_regional": 7,
+              "predicted_traffic": 0,
+              "predicted_local": 5,
+              "abstained": 12
+            }
+          },
+          "config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          }
+        }
+      },
+      "comparisons": {
+        "E_synth_calib_minus_A_v95_committed": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.2477,
+          "ci95": [
+            -0.3229,
+            -0.1634
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "E_synth_calib",
+          "baseline": "A_v95_committed",
+          "arm_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          },
+          "baseline_config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.12,
+            "traffic_nox_pct_min": 0.55,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.1939,
+          "baseline_point_f1": 0.4416,
+          "paired_unit": "date"
+        },
+        "E_synth_calib_minus_F_calib_R1": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.0962,
+          "ci95": [
+            -0.1461,
+            -0.0441
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "E_synth_calib",
+          "baseline": "F_calib_R1",
+          "arm_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          },
+          "baseline_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.3,
+            "margin": 0.12,
+            "local_station_term": "net_relative",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.1939,
+          "baseline_point_f1": 0.2901,
+          "paired_unit": "date"
+        },
+        "D_contrast_only_minus_C_sweep_base": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.142,
+          "ci95": [
+            -0.2024,
+            -0.0768
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "D_contrast_only",
+          "baseline": "C_sweep_base",
+          "arm_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R2_abs_contrast"
+          },
+          "baseline_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.3042,
+          "baseline_point_f1": 0.4463,
+          "paired_unit": "date"
+        },
+        "A_v95_committed_minus_C_sweep_base": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.0047,
+          "ci95": [
+            -0.0121,
+            0.0
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "A_v95_committed",
+          "baseline": "C_sweep_base",
+          "arm_config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.12,
+            "traffic_nox_pct_min": 0.55,
+            "regional_variant": "R1_sync"
+          },
+          "baseline_config": {
+            "traffic_nox_pct_min": 0.55,
+            "min_strength": 0.4,
+            "margin": 0.12,
+            "local_station_term": "none",
+            "traffic_gate_uses_no2_signal": false,
+            "gate_anomaly_min": 0.45,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.4416,
+          "baseline_point_f1": 0.4463,
+          "paired_unit": "date"
+        },
+        "B_v96_current_minus_A_v95_committed": {
+          "metric": "macro_f1_diff",
+          "mean_diff": 0.0085,
+          "ci95": [
+            -0.0444,
+            0.0623
+          ],
+          "n": 254,
+          "n_clusters": 147,
+          "arm": "B_v96_current",
+          "baseline": "A_v95_committed",
+          "arm_config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.05,
+            "traffic_nox_pct_min": 0.65,
+            "regional_variant": "R1_sync"
+          },
+          "baseline_config": {
+            "gate_anomaly_min": 0.45,
+            "traffic_gate_uses_no2_signal": false,
+            "local_station_term": "none",
+            "min_strength": 0.35,
+            "margin": 0.12,
+            "traffic_nox_pct_min": 0.55,
+            "regional_variant": "R1_sync"
+          },
+          "arm_point_f1": 0.4501,
+          "baseline_point_f1": 0.4416,
+          "paired_unit": "date"
+        }
+      }
+    }
+  },
+  "online_offline_check": {
+    "online_file": "/Users/chenweiyang/Documents/Github/WeatherSysAgent/tests/benchmarks/results/v9_governance.json",
+    "config": {
+      "gate_anomaly_min": 0.45,
+      "traffic_gate_uses_no2_signal": false,
+      "local_station_term": "none",
+      "min_strength": 0.35,
+      "margin": 0.05,
+      "traffic_nox_pct_min": 0.65,
+      "regional_variant": "R1_sync"
+    },
+    "offline_config": "B_v96_current",
+    "compared": 254,
+    "matched": 254,
+    "verdict": "PASS",
+    "note": "在线文件必须是用同一配置跑出的（config 记录见 v9_governance.json）"
+  }
+}

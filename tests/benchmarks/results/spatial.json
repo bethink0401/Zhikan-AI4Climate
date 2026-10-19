@@ -1,0 +1,220 @@
+{
+  "agent": "SpatialAgent",
+  "runs": [
+    {
+      "station": "Mong Kok Roadside",
+      "wind_from_deg": 0.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 229,
+      "has_affected_area": true
+    },
+    {
+      "station": "Mong Kok Roadside",
+      "wind_from_deg": 45.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 139,
+      "has_affected_area": true
+    },
+    {
+      "station": "Mong Kok Roadside",
+      "wind_from_deg": 90.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 139,
+      "has_affected_area": true
+    },
+    {
+      "station": "Mong Kok Roadside",
+      "wind_from_deg": 135.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 365,
+      "has_affected_area": true
+    },
+    {
+      "station": "Mong Kok Roadside",
+      "wind_from_deg": 180.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 442,
+      "has_affected_area": true
+    },
+    {
+      "station": "Mong Kok Roadside",
+      "wind_from_deg": 225.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 338,
+      "has_affected_area": true
+    },
+    {
+      "station": "Mong Kok Roadside",
+      "wind_from_deg": 270.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 352,
+      "has_affected_area": true
+    },
+    {
+      "station": "Mong Kok Roadside",
+      "wind_from_deg": 315.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 320,
+      "has_affected_area": true
+    },
+    {
+      "station": "Causeway Bay Roadside",
+      "wind_from_deg": 0.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 46,
+      "has_affected_area": true
+    },
+    {
+      "station": "Causeway Bay Roadside",
+      "wind_from_deg": 45.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 136,
+      "has_affected_area": true
+    },
+    {
+      "station": "Causeway Bay Roadside",
+      "wind_from_deg": 90.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 155,
+      "has_affected_area": true
+    },
+    {
+      "station": "Causeway Bay Roadside",
+      "wind_from_deg": 135.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 112,
+      "has_affected_area": true
+    },
+    {
+      "station": "Causeway Bay Roadside",
+      "wind_from_deg": 180.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 133,
+      "has_affected_area": true
+    },
+    {
+      "station": "Causeway Bay Roadside",
+      "wind_from_deg": 225.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 194,
+      "has_affected_area": true
+    },
+    {
+      "station": "Causeway Bay Roadside",
+      "wind_from_deg": 270.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 163,
+      "has_affected_area": true
+    },
+    {
+      "station": "Causeway Bay Roadside",
+      "wind_from_deg": 315.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 55,
+      "has_affected_area": true
+    },
+    {
+      "station": "Central Roadside",
+      "wind_from_deg": 0.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 63,
+      "has_affected_area": true
+    },
+    {
+      "station": "Central Roadside",
+      "wind_from_deg": 45.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 137,
+      "has_affected_area": true
+    },
+    {
+      "station": "Central Roadside",
+      "wind_from_deg": 90.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 176,
+      "has_affected_area": true
+    },
+    {
+      "station": "Central Roadside",
+      "wind_from_deg": 135.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 69,
+      "has_affected_area": true
+    },
+    {
+      "station": "Central Roadside",
+      "wind_from_deg": 180.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 109,
+      "has_affected_area": true
+    },
+    {
+      "station": "Central Roadside",
+      "wind_from_deg": 225.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 150,
+      "has_affected_area": true
+    },
+    {
+      "station": "Central Roadside",
+      "wind_from_deg": 270.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 162,
+      "has_affected_area": true
+    },
+    {
+      "station": "Central Roadside",
+      "wind_from_deg": 315.0,
+      "status": "success",
+      "upwind_roads": 15,
+      "sensitive_pois": 154,
+      "has_affected_area": true
+    }
+  ],
+  "upwind_hit_rate": "24/24",
+  "upwind_roads_stats": {
+    "n": 24,
+    "mean": 15.0,
+    "median": 15.0,
+    "min": 15.0,
+    "max": 15.0
+  },
+  "poi_stats": {
+    "n": 24,
+    "mean": 180.75,
+    "median": 152.0,
+    "min": 46.0,
+    "max": 442.0
+  },
+  "affected_area_rate": "24/24",
+  "latency_ms": {
+    "n": 24,
+    "mean": 38.2967,
+    "median": 34.8917,
+    "min": 33.0647,
+    "max": 107.0161
+  }
+}

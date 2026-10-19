@@ -1,0 +1,4 @@
+﻿method,macro_f1,median_ms,traceability,completion,weak_evidence_pred_traffic,weak_evidence_flagged
+A 传统方法,0.3042,0.4,0.5,0.806,1/8,0/8
+B 基线,0.4674,0.3,0.5,1.0,1/8,8/8
+C 智瞰,0.6272,2147.4,1.0,1.0,0/8,8/8

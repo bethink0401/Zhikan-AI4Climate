@@ -1,0 +1,167 @@
+{
+  "agent": "AirQualityAgent",
+  "completeness_mk_2023": {
+    "year": 2023,
+    "station": "MONG KOK",
+    "distinct_hours": 8760,
+    "expected_hours": 8760,
+    "duplicate_rows": 0,
+    "completeness_pct": 100.0
+  },
+  "slot_separation": {
+    "morning_peak": {
+      "n": 5,
+      "mean": 1.0,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "late_night": {
+      "n": 5,
+      "mean": 0.46,
+      "median": 0.46,
+      "min": 0.46,
+      "max": 0.46
+    },
+    "gap_pct": 117.4,
+    "traffic_signal_detected": "peak 0/5 vs night 0/5",
+    "windows": {
+      "peak": [
+        {
+          "status": "success",
+          "anomaly_score": 1.0,
+          "traffic_signal": "weak",
+          "primary": null
+        },
+        {
+          "status": "success",
+          "anomaly_score": 1.0,
+          "traffic_signal": "weak",
+          "primary": null
+        },
+        {
+          "status": "success",
+          "anomaly_score": 1.0,
+          "traffic_signal": "weak",
+          "primary": null
+        },
+        {
+          "status": "success",
+          "anomaly_score": 1.0,
+          "traffic_signal": "weak",
+          "primary": null
+        },
+        {
+          "status": "success",
+          "anomaly_score": 1.0,
+          "traffic_signal": "moderate",
+          "primary": null
+        }
+      ],
+      "night": [
+        {
+          "status": "success",
+          "anomaly_score": 0.46,
+          "traffic_signal": "weak",
+          "primary": null
+        },
+        {
+          "status": "success",
+          "anomaly_score": 0.46,
+          "traffic_signal": "weak",
+          "primary": null
+        },
+        {
+          "status": "success",
+          "anomaly_score": 0.46,
+          "traffic_signal": "weak",
+          "primary": null
+        },
+        {
+          "status": "success",
+          "anomaly_score": 0.46,
+          "traffic_signal": "weak",
+          "primary": null
+        },
+        {
+          "status": "success",
+          "anomaly_score": 0.46,
+          "traffic_signal": "weak",
+          "primary": null
+        }
+      ]
+    }
+  },
+  "station_type_separation": {
+    "roadside": {
+      "n": 5,
+      "mean": 1.0,
+      "median": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "background": {
+      "n": 5,
+      "mean": 0.3,
+      "median": 0.3,
+      "min": 0.3,
+      "max": 0.3
+    },
+    "background_station": "TAP MUN",
+    "background_runs": [
+      {
+        "day": "2023-08-07",
+        "status": "success",
+        "anomaly_score": 0.3,
+        "traffic_signal": "weak",
+        "primary": null
+      },
+      {
+        "day": "2023-08-08",
+        "status": "success",
+        "anomaly_score": 0.3,
+        "traffic_signal": "weak",
+        "primary": null
+      },
+      {
+        "day": "2023-08-09",
+        "status": "success",
+        "anomaly_score": 0.3,
+        "traffic_signal": "weak",
+        "primary": null
+      },
+      {
+        "day": "2023-08-10",
+        "status": "success",
+        "anomaly_score": 0.3,
+        "traffic_signal": "weak",
+        "primary": null
+      },
+      {
+        "day": "2023-08-11",
+        "status": "success",
+        "anomaly_score": 0.3,
+        "traffic_signal": "weak",
+        "primary": null
+      }
+    ],
+    "ratio": 3.33
+  },
+  "event": {
+    "window": [
+      "2023-08-15 08:00:00",
+      "2023-08-15 11:00:00"
+    ],
+    "status": "success",
+    "anomaly_score": 0.94,
+    "traffic_signal": "weak",
+    "primary": null
+  },
+  "latency_ms": {
+    "n": 16,
+    "mean": 0.553,
+    "median": 0.2191,
+    "min": 0.1584,
+    "max": 2.6986
+  }
+}

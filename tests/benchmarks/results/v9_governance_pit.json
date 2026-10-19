@@ -1,0 +1,159 @@
+{
+  "design": {
+    "note": "V9.2 前向回测：系统 task.point_in_time=true（多站 p90 基线与 NOx 分位门控只用事件月之前数据）；A/B/B+ 特征同 PIT 总体；标注仍为全年代理标签（proxy，如实声明）；阈值 = V8 冻结值零调参",
+    "pit_definition": "基线数据窗口 = 当年年初至事件月月初（严格早于事件日）",
+    "sample_seed": 2024
+  },
+  "point_f1_main_labels": {
+    "A": 0.3091,
+    "B": 0.4598,
+    "Bplus": 0.4619,
+    "C": 0.3581
+  },
+  "clustered_ci_vs_B": {
+    "C": {
+      "metric": "macro_f1_diff",
+      "mean_diff": -0.1017,
+      "ci95": [
+        -0.2061,
+        -0.0242
+      ],
+      "n": 254,
+      "n_clusters": 147
+    },
+    "Bplus": {
+      "metric": "macro_f1_diff",
+      "mean_diff": 0.0021,
+      "ci95": [
+        -0.0344,
+        0.0359
+      ],
+      "n": 254,
+      "n_clusters": 147
+    }
+  },
+  "abstention_rate": {
+    "A": 0.3071,
+    "B": 0.2087,
+    "Bplus": 0.2638,
+    "C": 0.4606
+  },
+  "weak_evidence_traffic_misfire": {
+    "A": 8,
+    "B": 16,
+    "Bplus": 9,
+    "C": 0
+  },
+  "confusion": {
+    "A": {
+      "local_accumulation": {
+        "local_accumulation": 0,
+        "regional_transport": 0,
+        "traffic_dominant": 12,
+        "uncertain": 0
+      },
+      "regional_transport": {
+        "local_accumulation": 15,
+        "regional_transport": 0,
+        "traffic_dominant": 50,
+        "uncertain": 7
+      },
+      "traffic_dominant": {
+        "local_accumulation": 9,
+        "regional_transport": 0,
+        "traffic_dominant": 50,
+        "uncertain": 3
+      },
+      "uncertain": {
+        "local_accumulation": 16,
+        "regional_transport": 0,
+        "traffic_dominant": 24,
+        "uncertain": 68
+      }
+    },
+    "B": {
+      "local_accumulation": {
+        "local_accumulation": 0,
+        "regional_transport": 9,
+        "traffic_dominant": 3,
+        "uncertain": 0
+      },
+      "regional_transport": {
+        "local_accumulation": 0,
+        "regional_transport": 72,
+        "traffic_dominant": 0,
+        "uncertain": 0
+      },
+      "traffic_dominant": {
+        "local_accumulation": 0,
+        "regional_transport": 31,
+        "traffic_dominant": 31,
+        "uncertain": 0
+      },
+      "uncertain": {
+        "local_accumulation": 0,
+        "regional_transport": 12,
+        "traffic_dominant": 43,
+        "uncertain": 53
+      }
+    },
+    "Bplus": {
+      "local_accumulation": {
+        "local_accumulation": 0,
+        "regional_transport": 9,
+        "traffic_dominant": 3,
+        "uncertain": 0
+      },
+      "regional_transport": {
+        "local_accumulation": 0,
+        "regional_transport": 72,
+        "traffic_dominant": 0,
+        "uncertain": 0
+      },
+      "traffic_dominant": {
+        "local_accumulation": 0,
+        "regional_transport": 40,
+        "traffic_dominant": 22,
+        "uncertain": 0
+      },
+      "uncertain": {
+        "local_accumulation": 0,
+        "regional_transport": 15,
+        "traffic_dominant": 26,
+        "uncertain": 67
+      }
+    },
+    "C": {
+      "local_accumulation": {
+        "local_accumulation": 2,
+        "regional_transport": 0,
+        "traffic_dominant": 10,
+        "uncertain": 0
+      },
+      "regional_transport": {
+        "local_accumulation": 3,
+        "regional_transport": 0,
+        "traffic_dominant": 45,
+        "uncertain": 24
+      },
+      "traffic_dominant": {
+        "local_accumulation": 0,
+        "regional_transport": 0,
+        "traffic_dominant": 48,
+        "uncertain": 14
+      },
+      "uncertain": {
+        "local_accumulation": 0,
+        "regional_transport": 0,
+        "traffic_dominant": 29,
+        "uncertain": 79
+      }
+    }
+  },
+  "label_distribution": {
+    "traffic_dominant": 62,
+    "local_accumulation": 12,
+    "regional_transport": 72,
+    "uncertain": 108
+  }
+}

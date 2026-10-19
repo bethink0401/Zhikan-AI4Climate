@@ -1,0 +1,831 @@
+{
+  "summary": {
+    "utility_wins_vs_both_baselines": "16/16",
+    "mean_regret_vs_time_baseline_min": 0.125,
+    "mean_regret_vs_exposure_baseline_min": 0.742,
+    "max_regret_vs_time_baseline_min": 1.09,
+    "max_regret_vs_exposure_baseline_min": 2.71,
+    "rec_on_pareto_front": "14/16",
+    "mean_candidate_count": 6,
+    "time_flip_runs": 0,
+    "departure_reduction_pct_values": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "design": {
+    "cases": [
+      "mongkok_to_prince_edward",
+      "cwb_to_wanchai"
+    ],
+    "profiles": [
+      "commuter",
+      "runner",
+      "elderly",
+      "parent_with_child"
+    ],
+    "weather_regimes": [
+      "mild",
+      "heavy_rain"
+    ],
+    "note": "合成气象按构造提供，无网络调用；污染源固定在旺角路边站 3km"
+  },
+  "runs": 16,
+  "runs_with_any_term_flip": 5,
+  "mode_distribution": {
+    "walk": 1,
+    "transit": 1,
+    "drive": 14
+  },
+  "rows": [
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "weather": "mild",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 3.9,
+        "intake_index": 0.1513,
+        "utility_minutes": 0.7,
+        "pollution_added_minutes": 0.3,
+        "weather_added_minutes": 0.0
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 3.9,
+        "intake_index": 0.1513,
+        "utility_minutes": 0.7,
+        "pollution_added_minutes": 0.3,
+        "weather_added_minutes": 0.0
+      },
+      "lowest_exposure": {
+        "route_id": "drive_2",
+        "mode": "drive",
+        "duration_minutes": 4.5,
+        "intake_index": 0.1219,
+        "utility_minutes": 1.01,
+        "pollution_added_minutes": 0.24,
+        "weather_added_minutes": 0.0
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.31,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 7,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": false,
+      "removing_pollution_flips": true,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "weather": "heavy_rain",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 5.2,
+        "intake_index": 0.4736,
+        "utility_minutes": 3.15,
+        "pollution_added_minutes": 0.95,
+        "weather_added_minutes": 0.98
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 5.2,
+        "intake_index": 0.4736,
+        "utility_minutes": 3.15,
+        "pollution_added_minutes": 0.95,
+        "weather_added_minutes": 0.98
+      },
+      "lowest_exposure": {
+        "route_id": "drive_2",
+        "mode": "drive",
+        "duration_minutes": 7.8,
+        "intake_index": 0.4502,
+        "utility_minutes": 5.09,
+        "pollution_added_minutes": 0.9,
+        "weather_added_minutes": 1.45
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 1.94,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 7,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": false,
+      "removing_pollution_flips": true,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "weather": "mild",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 3.9,
+        "intake_index": 0.1517,
+        "utility_minutes": 6.31,
+        "pollution_added_minutes": 0.91,
+        "weather_added_minutes": 0.0
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 3.9,
+        "intake_index": 0.1517,
+        "utility_minutes": 6.31,
+        "pollution_added_minutes": 0.91,
+        "weather_added_minutes": 0.0
+      },
+      "lowest_exposure": {
+        "route_id": "drive_2",
+        "mode": "drive",
+        "duration_minutes": 4.6,
+        "intake_index": 0.1224,
+        "utility_minutes": 6.51,
+        "pollution_added_minutes": 0.73,
+        "weather_added_minutes": 0.0
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.2,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 7,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": false,
+      "removing_pollution_flips": true,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "weather": "heavy_rain",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 5.2,
+        "intake_index": 0.4659,
+        "utility_minutes": 9.5,
+        "pollution_added_minutes": 2.8,
+        "weather_added_minutes": 0.53
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 5.2,
+        "intake_index": 0.4659,
+        "utility_minutes": 9.5,
+        "pollution_added_minutes": 2.8,
+        "weather_added_minutes": 0.53
+      },
+      "lowest_exposure": {
+        "route_id": "drive_2",
+        "mode": "drive",
+        "duration_minutes": 7.7,
+        "intake_index": 0.4424,
+        "utility_minutes": 11.1,
+        "pollution_added_minutes": 2.65,
+        "weather_added_minutes": 0.78
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 1.6,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 7,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": false,
+      "removing_pollution_flips": true,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "weather": "mild",
+      "recommended": {
+        "route_id": "transit_0",
+        "mode": "transit",
+        "duration_minutes": 16.7,
+        "intake_index": 0.6795,
+        "utility_minutes": 1.92,
+        "pollution_added_minutes": 2.72,
+        "weather_added_minutes": 0.0
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 3.9,
+        "intake_index": 0.1513,
+        "utility_minutes": 3.01,
+        "pollution_added_minutes": 0.61,
+        "weather_added_minutes": 0.0
+      },
+      "lowest_exposure": {
+        "route_id": "drive_2",
+        "mode": "drive",
+        "duration_minutes": 4.5,
+        "intake_index": 0.1219,
+        "utility_minutes": 3.26,
+        "pollution_added_minutes": 0.49,
+        "weather_added_minutes": 0.0
+      },
+      "utility_regret_vs_time_baseline": 1.09,
+      "utility_regret_vs_exposure_baseline": 1.34,
+      "pareto_dominated_by": [
+        "drive_0",
+        "drive_2",
+        "drive_1"
+      ],
+      "rec_on_pareto_front": false,
+      "n_options": 7,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": false,
+      "rec_equals_lowest_exposure": false,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "公共交通"
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "weather": "heavy_rain",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 5.8,
+        "intake_index": 0.5264,
+        "utility_minutes": 7.93,
+        "pollution_added_minutes": 2.11,
+        "weather_added_minutes": 2.25
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 5.8,
+        "intake_index": 0.5264,
+        "utility_minutes": 7.93,
+        "pollution_added_minutes": 2.11,
+        "weather_added_minutes": 2.25
+      },
+      "lowest_exposure": {
+        "route_id": "drive_2",
+        "mode": "drive",
+        "duration_minutes": 8.7,
+        "intake_index": 0.5029,
+        "utility_minutes": 10.64,
+        "pollution_added_minutes": 2.01,
+        "weather_added_minutes": 3.34
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 2.71,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 7,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": false,
+      "removing_pollution_flips": true,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "weather": "mild",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 3.9,
+        "intake_index": 0.1517,
+        "utility_minutes": 0.16,
+        "pollution_added_minutes": 0.76,
+        "weather_added_minutes": 0.0
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 3.9,
+        "intake_index": 0.1517,
+        "utility_minutes": 0.16,
+        "pollution_added_minutes": 0.76,
+        "weather_added_minutes": 0.0
+      },
+      "lowest_exposure": {
+        "route_id": "drive_2",
+        "mode": "drive",
+        "duration_minutes": 4.6,
+        "intake_index": 0.1224,
+        "utility_minutes": 0.39,
+        "pollution_added_minutes": 0.61,
+        "weather_added_minutes": 0.0
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.23,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 7,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": false,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "weather": "heavy_rain",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 5.8,
+        "intake_index": 0.5264,
+        "utility_minutes": 5.35,
+        "pollution_added_minutes": 2.63,
+        "weather_added_minutes": 2.14
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 5.8,
+        "intake_index": 0.5264,
+        "utility_minutes": 5.35,
+        "pollution_added_minutes": 2.63,
+        "weather_added_minutes": 2.14
+      },
+      "lowest_exposure": {
+        "route_id": "drive_2",
+        "mode": "drive",
+        "duration_minutes": 8.7,
+        "intake_index": 0.5029,
+        "utility_minutes": 7.98,
+        "pollution_added_minutes": 2.51,
+        "weather_added_minutes": 3.18
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 2.63,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 7,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": false,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "weather": "mild",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 2.98,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 2.98,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "lowest_exposure": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 2.98,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.0,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 5,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": true,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "weather": "heavy_rain",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 11.5,
+        "intake_index": 0.0002,
+        "utility_minutes": 7.18,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 2.15
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 11.5,
+        "intake_index": 0.0002,
+        "utility_minutes": 7.18,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 2.15
+      },
+      "lowest_exposure": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 11.5,
+        "intake_index": 0.0002,
+        "utility_minutes": 7.18,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 2.15
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.0,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 5,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": true,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "weather": "mild",
+      "recommended": {
+        "route_id": "walk_0",
+        "mode": "walk",
+        "duration_minutes": 15.1,
+        "intake_index": 0.006,
+        "utility_minutes": 7.09,
+        "pollution_added_minutes": 0.04,
+        "weather_added_minutes": 0.0
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 8.0,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "lowest_exposure": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 8.0,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "utility_regret_vs_time_baseline": 0.91,
+      "utility_regret_vs_exposure_baseline": 0.91,
+      "pareto_dominated_by": [
+        "drive_0",
+        "drive_1"
+      ],
+      "rec_on_pareto_front": false,
+      "n_options": 5,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": false,
+      "rec_equals_lowest_exposure": false,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "步行"
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "weather": "heavy_rain",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 11.3,
+        "intake_index": 0.0002,
+        "utility_minutes": 11.07,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 1.16
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 11.3,
+        "intake_index": 0.0002,
+        "utility_minutes": 11.07,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 1.16
+      },
+      "lowest_exposure": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 11.3,
+        "intake_index": 0.0002,
+        "utility_minutes": 11.07,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 1.16
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.0,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 5,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": true,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "weather": "mild",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 4.98,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 4.98,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "lowest_exposure": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 4.98,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.0,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 5,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": true,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "weather": "heavy_rain",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 12.9,
+        "intake_index": 0.0003,
+        "utility_minutes": 12.9,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 4.99
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 12.9,
+        "intake_index": 0.0003,
+        "utility_minutes": 12.9,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 4.99
+      },
+      "lowest_exposure": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 12.9,
+        "intake_index": 0.0003,
+        "utility_minutes": 12.9,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 4.99
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.0,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 5,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": true,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "weather": "mild",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 2.0,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 2.0,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "lowest_exposure": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 8.2,
+        "intake_index": 0.0006,
+        "utility_minutes": 2.0,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 0.0
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.0,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 5,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": true,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "weather": "heavy_rain",
+      "recommended": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 12.9,
+        "intake_index": 0.0003,
+        "utility_minutes": 9.66,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 4.75
+      },
+      "shortest_time": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 12.9,
+        "intake_index": 0.0003,
+        "utility_minutes": 9.66,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 4.75
+      },
+      "lowest_exposure": {
+        "route_id": "drive_0",
+        "mode": "drive",
+        "duration_minutes": 12.9,
+        "intake_index": 0.0003,
+        "utility_minutes": 9.66,
+        "pollution_added_minutes": 0.0,
+        "weather_added_minutes": 4.75
+      },
+      "utility_regret_vs_time_baseline": 0.0,
+      "utility_regret_vs_exposure_baseline": 0.0,
+      "pareto_dominated_by": [],
+      "rec_on_pareto_front": true,
+      "n_options": 5,
+      "departure_curve": {
+        "intake_reduction_pct": 0.0,
+        "recommendation_changes_with_time": false,
+        "best_window": "2023-08-15 08:00:00",
+        "worst_window": "2023-08-15 08:00:00"
+      },
+      "rec_equals_shortest_time": true,
+      "rec_equals_lowest_exposure": true,
+      "removing_pollution_flips": false,
+      "removing_weather_flips": false,
+      "rec_mode_label": "驾车"
+    }
+  ]
+}

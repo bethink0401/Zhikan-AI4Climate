@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-10-14T17:10:07.109586+08:00",
+  "pytest_run": {
+    "summary_line": "265 passed in 16.67s",
+    "passed": 265,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit_code": 0,
+    "collected": 265
+  },
+  "per_file": {
+    "tests/test_meteorology_agent.py": 145,
+    "tests/test_v9_offline_online_consistency.py": 31,
+    "tests/test_wind_direction_contract.py": 17,
+    "tests/test_travel_scoring_contracts.py": 15,
+    "tests/test_pollution_field_contracts.py": 11,
+    "tests/test_v95_source_rule.py": 7,
+    "tests/test_v96_data_contracts.py": 6,
+    "tests/test_v96_decision_weights.py": 6,
+    "tests/test_v95_decision_rule.py": 5,
+    "tests/test_v99_report_consistency.py": 5,
+    "tests/test_v95_evaluator_consistency.py": 4,
+    "tests/test_traffic_agent.py": 3,
+    "tests/test_trajectory_tools.py": 3,
+    "tests/test_v96_meteo_cache_slicing.py": 3,
+    "tests/test_v97_report_consistency.py": 3,
+    "tests/test_v97_online_offline_parity.py": 1
+  },
+  "per_round": {
+    "legacy（V9 之前的既有测试）": 194,
+    "V9-P0 离线/在线一致性与回归": 31,
+    "V9.5 判定规则与口径": 16,
+    "V9.6 权重/数据契约/气象切片": 15,
+    "V9.9 报告断言与计数自洽": 5,
+    "V9.8 报告数值块一致性": 3,
+    "V9.7 在线/离线逐例等价": 1
+  },
+  "total_collected": 265,
+  "note": "由 audit_test_inventory.py 直接驱动 pytest 导出；报告计数块据此生成，禁止手写。"
+}

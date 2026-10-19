@@ -1,0 +1,4 @@
+﻿method,mean_iou,area_km2,poi_precision,poi_recall,budget_precision,budget_recall,field_auc,median_runtime_ms
+A 传统方法,0.1453,3.15,0.2123,0.4678,0.2271,0.4678,,0.0
+B 基线,0.3615,3.5427,0.5233,0.8145,0.5705,0.8145,,0.11
+C 智瞰,0.3664,2.5842,0.5713,0.7489,0.5802,0.7489,0.9485,51.87

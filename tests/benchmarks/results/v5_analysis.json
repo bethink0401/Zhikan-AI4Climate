@@ -1,0 +1,326 @@
+{
+  "travel_constrained": {
+    "eu_cap_comparison": {
+      "A_shortest_time": {
+        "EU ≤ 1.10×e_min": {
+          "feasible": 40,
+          "infeasible": 20,
+          "feasible_rate": 0.667,
+          "median_time_gap_vs_opt": 0.0,
+          "mean_time_gap_vs_opt": 0.0
+        },
+        "EU ≤ 1.25×e_min": {
+          "feasible": 50,
+          "infeasible": 10,
+          "feasible_rate": 0.833,
+          "median_time_gap_vs_opt": 0.0,
+          "mean_time_gap_vs_opt": 0.0
+        },
+        "EU ≤ 1.50×e_min": {
+          "feasible": 59,
+          "infeasible": 1,
+          "feasible_rate": 0.983,
+          "median_time_gap_vs_opt": 0.0,
+          "mean_time_gap_vs_opt": 0.0
+        }
+      },
+      "B_lowest_intake": {
+        "EU ≤ 1.10×e_min": {
+          "feasible": 60,
+          "infeasible": 0,
+          "feasible_rate": 1.0,
+          "median_time_gap_vs_opt": 0.0,
+          "mean_time_gap_vs_opt": 0.095
+        },
+        "EU ≤ 1.25×e_min": {
+          "feasible": 60,
+          "infeasible": 0,
+          "feasible_rate": 1.0,
+          "median_time_gap_vs_opt": 0.0,
+          "mean_time_gap_vs_opt": 0.1523
+        },
+        "EU ≤ 1.50×e_min": {
+          "feasible": 60,
+          "infeasible": 0,
+          "feasible_rate": 1.0,
+          "median_time_gap_vs_opt": 0.0,
+          "mean_time_gap_vs_opt": 0.214
+        }
+      },
+      "C_multigoal": {
+        "EU ≤ 1.10×e_min": {
+          "feasible": 49,
+          "infeasible": 11,
+          "feasible_rate": 0.817,
+          "median_time_gap_vs_opt": 0.0,
+          "mean_time_gap_vs_opt": 0.0628
+        },
+        "EU ≤ 1.25×e_min": {
+          "feasible": 55,
+          "infeasible": 5,
+          "feasible_rate": 0.917,
+          "median_time_gap_vs_opt": 0.0,
+          "mean_time_gap_vs_opt": 0.0862
+        },
+        "EU ≤ 1.50×e_min": {
+          "feasible": 60,
+          "infeasible": 0,
+          "feasible_rate": 1.0,
+          "median_time_gap_vs_opt": 0.0,
+          "mean_time_gap_vs_opt": 0.106
+        }
+      }
+    },
+    "time_budget_comparison": {
+      "A_shortest_time": {
+        "t ≤ 1.10×t_min": {
+          "feasible": 60,
+          "infeasible": 0,
+          "feasible_rate": 1.0,
+          "median_eu_gap_vs_opt": 0.0,
+          "pref_satisfaction_feasible": 0.783
+        },
+        "t ≤ 1.25×t_min": {
+          "feasible": 60,
+          "infeasible": 0,
+          "feasible_rate": 1.0,
+          "median_eu_gap_vs_opt": 0.0,
+          "pref_satisfaction_feasible": 0.783
+        },
+        "t ≤ 1.50×t_min": {
+          "feasible": 60,
+          "infeasible": 0,
+          "feasible_rate": 1.0,
+          "median_eu_gap_vs_opt": 0.0,
+          "pref_satisfaction_feasible": 0.783
+        }
+      },
+      "B_lowest_intake": {
+        "t ≤ 1.10×t_min": {
+          "feasible": 31,
+          "infeasible": 29,
+          "feasible_rate": 0.517,
+          "median_eu_gap_vs_opt": 0.0,
+          "pref_satisfaction_feasible": 1.0
+        },
+        "t ≤ 1.25×t_min": {
+          "feasible": 34,
+          "infeasible": 26,
+          "feasible_rate": 0.567,
+          "median_eu_gap_vs_opt": 0.0,
+          "pref_satisfaction_feasible": 0.971
+        },
+        "t ≤ 1.50×t_min": {
+          "feasible": 50,
+          "infeasible": 10,
+          "feasible_rate": 0.833,
+          "median_eu_gap_vs_opt": 0.0,
+          "pref_satisfaction_feasible": 0.88
+        }
+      },
+      "C_multigoal": {
+        "t ≤ 1.10×t_min": {
+          "feasible": 48,
+          "infeasible": 12,
+          "feasible_rate": 0.8,
+          "median_eu_gap_vs_opt": 0.0,
+          "pref_satisfaction_feasible": 0.854
+        },
+        "t ≤ 1.25×t_min": {
+          "feasible": 50,
+          "infeasible": 10,
+          "feasible_rate": 0.833,
+          "median_eu_gap_vs_opt": 0.0,
+          "pref_satisfaction_feasible": 0.86
+        },
+        "t ≤ 1.50×t_min": {
+          "feasible": 52,
+          "infeasible": 8,
+          "feasible_rate": 0.867,
+          "median_eu_gap_vs_opt": 0.0,
+          "pref_satisfaction_feasible": 0.865
+        }
+      }
+    }
+  },
+  "travel_fixed_stats": {
+    "B_lowest_intake": {
+      "n": 60,
+      "mean_time_vs_A_pct": 23.0,
+      "mean_eu_vs_A_pct": -9.12,
+      "median_time_ratio_vs_A": 1.0,
+      "median_eu_ratio_vs_A": 1.0,
+      "eu_ratio_vs_A_ci": {
+        "mean": -0.0811,
+        "ci95": [
+          -0.1103,
+          -0.0554
+        ],
+        "n": 60
+      },
+      "eu_diff_pairwise_ci": {
+        "mean": -0.0406,
+        "ci95": [
+          -0.056,
+          -0.0271
+        ],
+        "n": 60
+      }
+    },
+    "C_multigoal": {
+      "n": 60,
+      "mean_time_vs_A_pct": 11.06,
+      "mean_eu_vs_A_pct": -4.07,
+      "median_time_ratio_vs_A": 1.0,
+      "median_eu_ratio_vs_A": 1.0,
+      "eu_ratio_vs_A_ci": {
+        "mean": -0.0394,
+        "ci95": [
+          -0.0646,
+          -0.0182
+        ],
+        "n": 60
+      },
+      "eu_diff_pairwise_ci": {
+        "mean": -0.0181,
+        "ci95": [
+          -0.0297,
+          -0.0084
+        ],
+        "n": 60
+      }
+    }
+  },
+  "travel_feasibility_counts": {
+    "A_shortest_time": {
+      "total": 60,
+      "dominated_recommendations": 0,
+      "preference_violations": 13
+    },
+    "B_lowest_intake": {
+      "total": 60,
+      "dominated_recommendations": 0,
+      "preference_violations": 12
+    },
+    "C_multigoal": {
+      "total": 60,
+      "dominated_recommendations": 0,
+      "preference_violations": 11
+    }
+  },
+  "governance_bootstrap": {
+    "point_f1": {
+      "A": 0.3042,
+      "B": 0.4674,
+      "C": 0.5321
+    },
+    "f1_ci": {
+      "A": [
+        0.208,
+        0.3843
+      ],
+      "B": [
+        0.3251,
+        0.5841
+      ],
+      "C": [
+        0.383,
+        0.6495
+      ]
+    },
+    "diff_C_minus_B": {
+      "mean": 0.0635,
+      "ci95": [
+        -0.1301,
+        0.2636
+      ]
+    }
+  },
+  "propagation_category_ci": {
+    "stable": {
+      "n": 8,
+      "mean_iou": {
+        "A": 0.1292,
+        "B": 0.3683,
+        "C": 0.546
+      },
+      "diff_C_minus_B_ci": {
+        "mean": 0.1777,
+        "ci95": [
+          0.1235,
+          0.2355
+        ],
+        "n": 8
+      }
+    },
+    "veering": {
+      "n": 8,
+      "mean_iou": {
+        "A": 0.136,
+        "B": 0.299,
+        "C": 0.3171
+      },
+      "diff_C_minus_B_ci": {
+        "mean": 0.0182,
+        "ci95": [
+          -0.0246,
+          0.06
+        ],
+        "n": 8
+      }
+    },
+    "cross_zero": {
+      "n": 8,
+      "mean_iou": {
+        "A": 0.1365,
+        "B": 0.3428,
+        "C": 0.3606
+      },
+      "diff_C_minus_B_ci": {
+        "mean": 0.0178,
+        "ci95": [
+          -0.0052,
+          0.0397
+        ],
+        "n": 8
+      }
+    },
+    "calm": {
+      "n": 8,
+      "mean_iou": {
+        "A": 0.2081,
+        "B": 0.4767,
+        "C": 0.2531
+      },
+      "diff_C_minus_B_ci": {
+        "mean": -0.2236,
+        "ci95": [
+          -0.2881,
+          -0.1629
+        ],
+        "n": 8
+      }
+    },
+    "gust": {
+      "n": 8,
+      "mean_iou": {
+        "A": 0.1166,
+        "B": 0.321,
+        "C": 0.3554
+      },
+      "diff_C_minus_B_ci": {
+        "mean": 0.0344,
+        "ci95": [
+          -0.026,
+          0.1132
+        ],
+        "n": 8
+      }
+    },
+    "physical_plausibility": {
+      "decay_half_life_hours": 8.0,
+      "note": "NO2 大气寿命为数小时量级，8h 衰减半衰期处于合理区间（v2 的 2h 会把烟羽过度衰减，导致暴露场面积被系统性压缩）；横向扩散系数 0.09 与初始 sigma 0.15 km 沿用原标定；静风积聚半径经网格重标定回到 0.35 km，说明静风场景落后是结构差异而非参数失谐。"
+    }
+  },
+  "note": "V5 为评价层分析：算法自 V4 冻结后未再修改，V4 盲测样本继续用于评价合法；全部置信区间为 10000 次配对 bootstrap。"
+}

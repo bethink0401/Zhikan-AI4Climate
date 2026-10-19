@@ -1,0 +1,142 @@
+{
+  "design": {
+    "note": "V9.4 创新一诊断：同一上游多门控配置离线复用；逐阶段追踪定位标签损失环节；选择性分类以 anomaly 为拒判分数；多种子配对 CI",
+    "seeds": [
+      20260412,
+      20260413,
+      20260414
+    ],
+    "ablations": [
+      "full",
+      "no_nox_gate",
+      "no_sync_weight",
+      "no_abstention",
+      "no_abstention_no_nox_gate"
+    ]
+  },
+  "ablation_summary": {
+    "full": {
+      "macro_f1": 0.7268,
+      "per_class_recall": {
+        "local_accumulation": 0.2727,
+        "regional_transport": 0.8611,
+        "traffic_dominant": 1.0,
+        "uncertain": 0.8182
+      },
+      "abstention_rate": 0.4058,
+      "n": 138
+    },
+    "no_nox_gate": {
+      "macro_f1": 0.7326,
+      "per_class_recall": {
+        "local_accumulation": 0.2727,
+        "regional_transport": 0.8611,
+        "traffic_dominant": 1.0,
+        "uncertain": 0.8485
+      },
+      "abstention_rate": 0.413,
+      "n": 138
+    },
+    "no_sync_weight": {
+      "macro_f1": 0.7268,
+      "per_class_recall": {
+        "local_accumulation": 0.2727,
+        "regional_transport": 0.8611,
+        "traffic_dominant": 1.0,
+        "uncertain": 0.8182
+      },
+      "abstention_rate": 0.4058,
+      "n": 138
+    },
+    "no_abstention": {
+      "macro_f1": 0.7268,
+      "per_class_recall": {
+        "local_accumulation": 0.2727,
+        "regional_transport": 0.8611,
+        "traffic_dominant": 1.0,
+        "uncertain": 0.8182
+      },
+      "abstention_rate": 0.4058,
+      "n": 138
+    },
+    "no_abstention_no_nox_gate": {
+      "macro_f1": 0.7326,
+      "per_class_recall": {
+        "local_accumulation": 0.2727,
+        "regional_transport": 0.8611,
+        "traffic_dominant": 1.0,
+        "uncertain": 0.8485
+      },
+      "abstention_rate": 0.413,
+      "n": 138
+    }
+  },
+  "stage_distribution": {
+    "traffic_dominant": {
+      "judged": 36
+    },
+    "regional_transport": {
+      "judged": 31,
+      "threshold_lost": 5
+    },
+    "local_accumulation": {
+      "threshold_lost": 24,
+      "judged": 9
+    },
+    "uncertain": {
+      "threshold_lost": 27,
+      "judged": 6
+    }
+  },
+  "selective_classification": [
+    {
+      "reject_percent": 0,
+      "coverage": 0.5942,
+      "accuracy_on_covered": 0.9268,
+      "confident_wrong_rate": 0.0732
+    },
+    {
+      "reject_percent": 10,
+      "coverage": 0.0,
+      "accuracy_on_covered": 0.0,
+      "confident_wrong_rate": 1.0
+    },
+    {
+      "reject_percent": 20,
+      "coverage": 0.0,
+      "accuracy_on_covered": 0.0,
+      "confident_wrong_rate": 1.0
+    },
+    {
+      "reject_percent": 30,
+      "coverage": 0.0,
+      "accuracy_on_covered": 0.0,
+      "confident_wrong_rate": 1.0
+    },
+    {
+      "reject_percent": 40,
+      "coverage": 0.0,
+      "accuracy_on_covered": 0.0,
+      "confident_wrong_rate": 1.0
+    },
+    {
+      "reject_percent": 50,
+      "coverage": 0.0,
+      "accuracy_on_covered": 0.0,
+      "confident_wrong_rate": 1.0
+    }
+  ],
+  "C_minus_B_paired_ci": {
+    "metric": "macro_f1_diff",
+    "mean_diff": 0.175,
+    "ci95": [
+      0.0976,
+      0.249
+    ],
+    "n": 138,
+    "n_clusters": 138,
+    "source": "v9_governance_synthetic.json (fair B, no label leak)"
+  },
+  "C_minus_B_paired_ci_hit_rate_legacy": null,
+  "stage_rows_n": 138
+}

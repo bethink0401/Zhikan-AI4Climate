@@ -1,0 +1,192 @@
+{
+  "design": {
+    "cases": [
+      "A_mongkok_roadside_peak",
+      "B_mongkok_roadside_night",
+      "C_taipo_general_peak"
+    ],
+    "note": "同一链路在三类窗口上的评分分解与综合判定；分量与 source_agent 的 _extract_* 一致，traffic_source 由分量按 0.35/0.25/0.20/0.10/0.10 权重重算校验"
+  },
+  "rows": [
+    {
+      "case": "A_mongkok_roadside_peak",
+      "kind": "路边站 / 早高峰",
+      "window": "2023-08-15 08:00:00",
+      "station": "Mong Kok Roadside",
+      "agent_status": {
+        "air": "success",
+        "meteo": "success",
+        "traffic": "success",
+        "spatial": "success",
+        "source": "success"
+      },
+      "components": {
+        "no2_score": 0.75,
+        "anomaly_score": 0.94,
+        "traffic_pressure_score": 0.7363,
+        "upwind_score": 1.0,
+        "upwind_roads_count": 15,
+        "static_wind_score": 0.595,
+        "insufficient_rain_removal_score": 0.8,
+        "roadside_boost": 0.85
+      },
+      "source_attribution": {
+        "traffic_source": 0.7911,
+        "local_accumulation": 0.7529,
+        "regional_transport": 0.3659,
+        "dust_source": 0.8509,
+        "photochemical_source": 0.745
+      },
+      "ranking": [
+        [
+          "dust_source",
+          0.851
+        ],
+        [
+          "traffic_source",
+          0.791
+        ],
+        [
+          "local_accumulation",
+          0.753
+        ],
+        [
+          "photochemical_source",
+          0.745
+        ],
+        [
+          "regional_transport",
+          0.366
+        ]
+      ],
+      "traffic_source_rank": 2,
+      "recomputed_traffic_source": 0.7911,
+      "formula_check_ok": true,
+      "main_judgement": "Traffic source with local accumulation",
+      "decision_level": "high",
+      "evidence": [],
+      "mean_wind_speed": 1.1925,
+      "wind_direction": 201.5
+    },
+    {
+      "case": "B_mongkok_roadside_night",
+      "kind": "路边站 / 凌晨低异常",
+      "window": "2023-08-15 03:00:00",
+      "station": "Mong Kok Roadside",
+      "agent_status": {
+        "air": "success",
+        "meteo": "success",
+        "traffic": "warning",
+        "spatial": "success",
+        "source": "success"
+      },
+      "components": {
+        "no2_score": 0.75,
+        "anomaly_score": 0.46,
+        "traffic_pressure_score": 0.5,
+        "upwind_score": 1.0,
+        "upwind_roads_count": 15,
+        "static_wind_score": 0.15,
+        "insufficient_rain_removal_score": 0.9,
+        "roadside_boost": 0.85
+      },
+      "source_attribution": {
+        "traffic_source": 0.6875,
+        "local_accumulation": 0.456,
+        "regional_transport": 0.425,
+        "dust_source": 0.56,
+        "photochemical_source": 0.546
+      },
+      "ranking": [
+        [
+          "traffic_source",
+          0.688
+        ],
+        [
+          "dust_source",
+          0.56
+        ],
+        [
+          "photochemical_source",
+          0.546
+        ],
+        [
+          "local_accumulation",
+          0.456
+        ],
+        [
+          "regional_transport",
+          0.425
+        ]
+      ],
+      "traffic_source_rank": 1,
+      "recomputed_traffic_source": 0.6875,
+      "formula_check_ok": true,
+      "main_judgement": "Traffic source dominant",
+      "decision_level": "high",
+      "evidence": [],
+      "mean_wind_speed": 2.41,
+      "wind_direction": 237.5
+    },
+    {
+      "case": "C_taipo_general_peak",
+      "kind": "一般站 / 早高峰",
+      "window": "2023-08-15 08:00:00",
+      "station": "TAI PO",
+      "agent_status": {
+        "air": "success",
+        "meteo": "success",
+        "traffic": "success",
+        "spatial": "success",
+        "source": "success"
+      },
+      "components": {
+        "no2_score": 0.8,
+        "anomaly_score": 0.3,
+        "traffic_pressure_score": 0.6157,
+        "upwind_score": 0.5,
+        "upwind_roads_count": 0,
+        "static_wind_score": 0.5867,
+        "insufficient_rain_removal_score": 0.7,
+        "roadside_boost": 0.4
+      },
+      "source_attribution": {
+        "traffic_source": 0.6326,
+        "local_accumulation": 0.6494,
+        "regional_transport": 0.3961,
+        "dust_source": 0.4747,
+        "photochemical_source": 0.3627
+      },
+      "ranking": [
+        [
+          "local_accumulation",
+          0.649
+        ],
+        [
+          "traffic_source",
+          0.633
+        ],
+        [
+          "dust_source",
+          0.475
+        ],
+        [
+          "regional_transport",
+          0.396
+        ],
+        [
+          "photochemical_source",
+          0.363
+        ]
+      ],
+      "traffic_source_rank": 2,
+      "recomputed_traffic_source": 0.6326,
+      "formula_check_ok": true,
+      "main_judgement": "Traffic source dominant",
+      "decision_level": "high",
+      "evidence": [],
+      "mean_wind_speed": 1.265,
+      "wind_direction": 224.69
+    }
+  ]
+}

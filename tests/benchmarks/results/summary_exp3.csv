@@ -1,0 +1,4 @@
+﻿method,mean_duration_min,mean_intake_EU,pref_satisfaction,nondominated,median_d_time_vs_A_pct,median_d_intake_vs_A_pct
+A 传统方法,19.0,0.4458,0.7833,1.0,,
+B 基线,23.38,0.4052,0.8,1.0,36.84,-14.9
+C 智瞰,21.11,0.4277,0.8167,1.0,57.78,-16.75

@@ -1,0 +1,474 @@
+P0: 香港空气污染预警溯源多智能体系统
+15天完整分工表
+P1: 一、项目总目标
+P2: 15天内完成一个可演示的多智能体系统原型：用户选择香港空气质量站点与时间段后，系统自动调用7个专业Agent，输出空气污染异常识别、气象扩散风险、交通源可能性溯源、区域分流/限行建议和自动治理报告。
+P3: 系统定位：证据链式交通源可能性溯源 + 建议级区域治理方案。
+P4: 功能边界：不做自动执法级限行；不承诺精确分车型排放贡献率；重点输出“可能性评分 + 证据链 + 建议方案”。
+P5: 数据基础：香港EPD历史AQHI/多污染物数据、Open-Meteo气象数据、香港2018—2024交通统计数据，并补充道路网络与敏感POI。
+P6: 二、数据来源与处理方式
+P8: 三、1+7多智能体架构
+P10: 四、全组统一开发要求
+P11: 1. 统一输入格式
+P12: {
+  "task_id": "HK_MK_2023_0800",
+  "station_name": "Mong Kok Roadside",
+  "station_id": "xxx",
+  "start_time": "2023-08-15 08:00:00",
+  "end_time": "2023-08-15 11:00:00",
+  "lat": 22.3193,
+  "lon": 114.1694
+}
+P13: 2. 统一输出格式
+P14: {
+  "agent_name": "AirQualityAgent",
+  "status": "success",
+  "result": {},
+  "evidence": [],
+  "confidence": 0.85,
+  "data_quality": {
+    "missing_rate": 0.02,
+    "note": "数据基本完整"
+  },
+  "created_at": "2026-xx-xx xx:xx:xx"
+}
+P15: 3. 每名成员最终必须提交
+P17: 徐慧琳：Air Quality Agent 空气质量智能体负责人
+P19: 需要完成的功能
+P21: 需要建立或维护的数据表
+P23: 标准输出示例
+P24: {
+  "agent_name": "AirQualityAgent",
+  "result": {
+    "pollution_status": "abnormal",
+    "main_pollutants": ["NO2", "NOx"],
+    "aqhi_level": "high",
+    "traffic_pollutant_signal": "strong",
+    "anomaly_score": 0.82
+  },
+  "evidence": [
+    "NO2 and NOx increased significantly during the selected period.",
+    "Roadside station signal indicates possible traffic-related pollution."
+  ],
+  "confidence": 0.86
+}
+P25: 时间期限与阶段交付
+P27: 董欣言：Meteorology Agent 气象智能体负责人
+P29: 需要完成的功能
+P31: 需要建立或维护的数据表
+P33: 标准输出示例
+P34: {
+  "agent_name": "MeteorologyAgent",
+  "result": {
+    "weather_risk": "high",
+    "risk_type": ["static_wind_accumulation"],
+    "wind_speed": 1.2,
+    "wind_direction": 80,
+    "dispersion_condition": "poor",
+    "wind_shift_score": 0.25,
+    "static_wind_score": 0.78
+  },
+  "evidence": [
+    "Wind speed was low during the pollution period.",
+    "No significant rainfall occurred, reducing pollutant removal."
+  ],
+  "confidence": 0.83
+}
+P35: 时间期限与阶段交付
+P37: 曾雯丽：Traffic Agent 交通智能体负责人
+P39: 需要完成的功能
+P41: 需要建立或维护的数据表
+P43: 标准输出示例
+P44: {
+  "agent_name": "TrafficAgent",
+  "result": {
+    "traffic_pressure": "high",
+    "traffic_pressure_score": 0.76,
+    "dominant_vehicle_types": ["Private Car", "Taxi", "Bus"],
+    "heavy_vehicle_signal": "medium",
+    "bus_ratio": 0.12,
+    "goods_vehicle_ratio": 0.08
+  },
+  "evidence": [
+    "Morning peak period shows high private car and taxi proportion.",
+    "Bus and goods vehicle proportions increase traffic-related NOx risk."
+  ],
+  "confidence": 0.78
+}
+P45: 特别说明
+P46: 交通污染压力指数建议：私家车×1.0 + 出租车×1.2 + 小巴×1.5 + 轻型货车×2.0 + 中重型货车×4.0 + 巴士×3.0。该指数用于风险判断，不等同于精确排放贡献率。
+P47: 时间期限与阶段交付
+P49: 陈维阳：Spatial Agent 空间匹配智能体负责人
+P51: 需要完成的功能
+P53: 需要建立或维护的数据表
+P55: 标准输出示例
+P56: {
+  "agent_name": "SpatialAgent",
+  "result": {
+    "upwind_roads": [
+      {
+        "road_name": "Nathan Road",
+        "distance_to_station_km": 0.6,
+        "upwind_alignment": 0.82
+      }
+    ],
+    "affected_area": "downwind buffer within 1-3 km",
+    "sensitive_poi_count": 8,
+    "spatial_confidence": "medium"
+  },
+  "evidence": [
+    "Nathan Road is located within the upwind buffer of the target station.",
+    "Several sensitive POIs are located in the potential affected area."
+  ],
+  "confidence": 0.75
+}
+P57: 时间期限与阶段交付
+P59: 刘启凡：Source Agent 污染溯源智能体负责人
+P61: 需要完成的功能
+P63: 需要建立或维护的数据表
+P65: 标准输出示例
+P66: {
+  "agent_name": "SourceAgent",
+  "result": {
+    "source_attribution": {
+      "traffic_source": 0.78,
+      "local_accumulation": 0.66,
+      "regional_transport": 0.34,
+      "dust_source": 0.28,
+      "photochemical_source": 0.21
+    },
+    "main_judgement": "Traffic source with local accumulation",
+    "risk_level": "high"
+  },
+  "evidence": [
+    "NO2 and NOx increased during morning peak.",
+    "Wind speed was low, indicating poor dispersion.",
+    "Upwind major roads showed strong traffic-related vehicle composition.",
+    "Roadside station signal was stronger than general station."
+  ],
+  "confidence": 0.82
+}
+P67: 特别说明
+P68: 交通源可能性评分建议：0.35×NO2异常分数 + 0.25×交通污染压力指数 + 0.20×上风向道路匹配分数 + 0.10×低风速分数 + 0.10×路边站增强分数。
+P69: 第9—10天与成员7一起牵头Coordinator Agent最小流程联调。
+P70: 时间期限与阶段交付
+P72: 陈风博奕：Decision Agent 决策建议智能体负责人
+P74: 需要完成的功能
+P76: 需要建立或维护的数据表
+P78: 标准输出示例
+P79: {
+  "agent_name": "DecisionAgent",
+  "result": {
+    "decision_level": "high",
+    "suggested_area": "Mong Kok roadside influence area",
+    "suggested_time": "08:00-10:00",
+    "suggested_roads": ["Nathan Road", "Argyle Street"],
+    "vehicle_focus": ["Bus", "Goods Vehicle", "Taxi"],
+    "actions": [
+      "Recommend temporary traffic diversion on high-risk road corridors.",
+      "Recommend reducing heavy goods vehicle concentration during peak pollution period.",
+      "Issue health reminders for nearby schools and pedestrians."
+    ],
+    "review_indicators": [
+      "NO2 concentration change",
+      "AQHI level change",
+      "traffic pressure change",
+      "wind speed change"
+    ]
+  },
+  "confidence": 0.80
+}
+P80: 特别说明
+P81: 所有输出都使用“建议”“辅助决策”“供管理部门参考”等措辞，不能写成自动执法指令。
+P82: 时间期限与阶段交付
+P84: 王奥：Report Agent 报告智能体负责人
+P86: 需要完成的功能
+P88: 需要建立或维护的数据表
+P90: 标准输出示例
+P91: {
+  "agent_name": "ReportAgent",
+  "result": {
+    "report_title": "Mong Kok Roadside Pollution Event Analysis Report",
+    "report_text": "系统检测到旺角路边站在08:00—10:00出现NO2和NOx异常升高……",
+    "summary": "本次污染事件以交通源影响和局地积聚共同作用为主。",
+    "decision_summary": "建议早高峰期间对重点道路进行短时分流提示。"
+  },
+  "confidence": 0.88
+}
+P92: 特别说明
+P93: 报告固定结构：一、事件概况；二、空气质量异常情况；三、气象扩散条件分析；四、交通源可能性溯源；五、影响区域与重点道路；六、区域分流/限行建议；七、后续复盘指标。
+P94: 时间期限与阶段交付
+P96: 五、15天总排期
+P98: 六、按天执行清单
+P100: 七、Coordinator Agent 总控联调说明
+P101: Coordinator Agent 不单独分配成员，但必须在第9—10天实现最小版本。成员5和成员7牵头，全员配合统一输入输出格式。
+P102: def coordinator_analyze(station, start_time, end_time):
+    air_result = AirQualityAgent.run(station, start_time, end_time)
+    meteo_result = MeteorologyAgent.run(station, start_time, end_time)
+    traffic_result = TrafficAgent.run(station, start_time, end_time)
+    spatial_result = SpatialAgent.run(station, start_time, end_time, meteo_result)
+    source_result = SourceAgent.run(air_result, meteo_result, traffic_result, spatial_result)
+    decision_result = DecisionAgent.run(source_result, traffic_result, spatial_result)
+    report_result = ReportAgent.run(
+        air_result, meteo_result, traffic_result,
+        spatial_result, source_result, decision_result
+    )
+    return {
+        "air_quality": air_result,
+        "meteorology": meteo_result,
+        "traffic": traffic_result,
+        "spatial": spatial_result,
+        "source": source_result,
+        "decision": decision_result,
+        "report": report_result
+    }
+P103: 八、统一案例建议
+P105: 九、第14天测试清单
+P107: 十、第15天最终交付物
+
+===== TABLES =====
+---T0---
+数据源 | 接入方式 | 用途 | 负责人
+香港EPD AQHI/多污染物数据 | API或CSV下载后入库 | AQHI、NO2、NOx、PM2.5、PM10、O3、SO2、CO异常识别 | 徐慧琳
+Open-Meteo气象数据 | API自动接入 | 风速、风向、湿度、降雨、温度；判断静风、扩散与风向变化 | 董欣言
+香港2018—2024交通统计压缩包 | 离线批量ETL导入，不手动复制粘贴 | 车型比例Pro.、平均载客量Ocp.、交通污染压力指数 | 曾雯丽
+道路网络/Road Centreline/OSM | 离线导入或公开数据补充 | 站点周边1—3km道路、上风向道路、限行道路筛选 | 陈维阳
+敏感POI | 公开POI/OSM/香港开放数据补充 | 学校、医院、地铁站、社区等敏感点暴露分析 | 陈维阳
+---T1---
+层级 | Agent | 说明
+总控层 | Coordinator Agent | 不单独分人；第9—10天由刘启凡、王奥牵头联调。负责统一任务调度、调用顺序、结果汇总。
+专业层 | Air Quality Agent | 空气质量异常识别，负责人：徐慧琳。
+专业层 | Meteorology Agent | 气象扩散条件判断，负责人：董欣言。
+专业层 | Traffic Agent | 交通结构与交通污染压力分析，负责人：曾雯丽。
+专业层 | Spatial Agent | 站点—道路—风向—敏感点空间匹配，负责人：陈维阳。
+专业层 | Source Agent | 污染来源可能性判断，负责人：刘启凡。
+专业层 | Decision Agent | 区域分流/限行建议生成，负责人：陈风博奕。
+专业层 | Report Agent | 自动治理报告生成，负责人：王奥。
+---T2---
+提交项 | 要求
+Agent代码 | 对应 agents/xxx_agent.py，能独立运行并输出标准JSON。
+工具函数 | 对应 tools/xxx_tools.py，规则计算、数据查询、清洗函数必须可复用。
+数据表或处理脚本 | 对应 data_process/xxx.py 或数据库建表SQL。
+接口/函数调用说明 | 写清楚输入、输出、字段含义、示例JSON。
+测试样例 | 至少跑通 Mong Kok / Causeway Bay / Central 中一个案例。
+---T3---
+项目 | 内容
+负责模块 | 空气质量异常识别 Agent
+目标 | 接入和处理香港 EPD AQHI/多污染物数据，判断目标站点和时间段是否出现污染异常，并识别主要异常污染物。
+主要数据 | 香港 EPD AQHI、NO2、NOx、PM2.5、PM10、O3、SO2、CO、station、time。
+---T4---
+功能 | 说明
+空气质量数据接入 | 支持API或CSV导入，完成站点与小时级污染物数据读取。
+数据清洗 | 统一时间格式、站点名称、污染物字段；缺失值标记但不直接删除。
+异常识别 | 计算AQHI、NO2、NOx、PM2.5、PM10、O3等异常程度。
+交通源信号判断 | NO2/NOx在早晚高峰异常升高时，输出交通污染信号。
+路边站增强判断 | 如果是Mong Kok、Causeway Bay、Central等路边站，优先判断交通源影响。
+输出JSON | 结果提供给Source Agent、Decision Agent和Report Agent使用。
+---T5---
+表名 | 核心字段 / 说明
+air_quality_hourly | station_id, station_name, station_type, time, aqhi, no2, nox, pm25, pm10, o3, so2, co
+---T6---
+时间 | 必须完成
+第1—2天 | 跑通 EPD 数据下载/导入，确认字段和站点列表。
+第3—5天 | 完成 air_quality_hourly 入库。
+第6—8天 | 完成污染异常指数、NO2/NOx交通信号判断。
+第9—10天 | 输出标准JSON，接入Source Agent。
+第11—12天 | 配合前端展示AQHI、NO2、NOx、PM2.5曲线。
+第13天 | 支持Mong Kok / Causeway Bay / Central案例。
+第14—15天 | 修bug，整理接口说明和测试样例。
+---T7---
+项目 | 内容
+负责模块 | 恶劣天气与扩散条件判断 Agent
+目标 | 接入 Open-Meteo 气象数据，判断目标站点和时间段是否存在静风积聚、风向突变、降雨清除不足、高湿度积聚等风险。
+主要数据 | Open-Meteo：wind_speed、wind_direction、humidity、precipitation、temperature、time、lat、lon。
+---T8---
+功能 | 说明
+Open-Meteo API调用 | 根据空气站点坐标获取小时级历史/预报气象数据。
+静风积聚判断 | 风速低且污染升高时，提示扩散条件差。
+风向突变判断 | 相邻小时风向变化超过阈值时，提示传播路径变化。
+降雨清除判断 | 判断是否存在降雨清除污染物的条件。
+高湿度风险判断 | 湿度高时提示颗粒物积聚风险。
+传播方向输出 | 根据风向输出上风向和下风向判断结果。
+---T9---
+表名 | 核心字段 / 说明
+weather_hourly | location_id, station_id, time, lat, lon, wind_speed, wind_direction, humidity, precipitation, temperature
+---T10---
+时间 | 必须完成
+第1—2天 | 跑通 Open-Meteo API，确认香港站点坐标。
+第3—5天 | 完成 weather_hourly 入库。
+第6—8天 | 完成静风积聚、风向突变、降雨清除指标。
+第9—10天 | 输出标准JSON，接入Source Agent和Spatial Agent。
+第11—12天 | 配合前端展示风速、风向、气象风险卡片。
+第13天 | 支持案例站点气象分析。
+第14—15天 | 修bug，整理接口说明和测试样例。
+---T11---
+项目 | 内容
+负责模块 | 交通结构与交通污染压力分析 Agent
+目标 | 处理香港2018—2024年交通统计压缩包，把Excel/CSV中的车型比例Pro.、平均载客量Ocp.、时间段、道路或区域信息解析成标准数据库表，并计算交通污染压力指数。
+主要数据 | 香港交通统计压缩包：year、time_slot、vehicle_type、Pro.、Ocp.、road/station/region；若有交通量则包括total_volume、speed、road_occupancy。
+---T12---
+功能 | 说明
+压缩包自动导入 | 上传zip后自动解压，不人工复制粘贴。
+Excel/CSV解析 | 识别年份、sheet、车型字段、Pro./Ocp.字段。
+宽表转长表 | 转为year、time_slot、vehicle_type、proportion、occupancy。
+车型结构分析 | 识别私家车、出租车、货车、巴士等占比。
+交通污染压力指数 | 按车型风险权重计算交通污染压力。
+重点车型判断 | 输出重点关注车型，如Bus、Goods Vehicle、Taxi。
+---T13---
+表名 | 核心字段 / 说明
+traffic_vehicle_mix | year, region_or_station, day_type, time_slot, vehicle_type, proportion, occupancy, source_file
+traffic_volume（如有） | year, road_id, road_name, station_id, time_slot, total_volume, avg_speed, road_occupancy, source_file
+---T14---
+时间 | 必须完成
+第1—2天 | 查看压缩包结构，确定Excel/CSV字段。
+第3—5天 | 完成压缩包导入、解压、解析、入库。
+第6—8天 | 完成车型结构分析和交通污染压力指数。
+第9—10天 | 输出标准JSON，接入Source Agent。
+第11—12天 | 配合前端展示车型比例、交通压力卡片。
+第13天 | 支持案例站点早高峰交通分析。
+第14—15天 | 修bug，整理接口说明和测试样例。
+---T15---
+项目 | 内容
+负责模块 | 站点—道路—风向—敏感点空间匹配 Agent
+目标 | 把空气质量站点、道路网络、风向和敏感点位联系起来，判断站点周边1—3km内有哪些道路、哪些道路处于上风向、哪些区域可能受到下风向影响。
+主要数据 | 空气站点坐标、道路网络、POI敏感点、Meteorology Agent输出的wind_direction。
+---T16---
+功能 | 说明
+站点坐标整理 | 整理Mong Kok、Causeway Bay、Central等站点坐标。
+道路数据导入 | 可使用Road Centreline或OSM道路数据。
+站点缓冲区 | 筛选站点周边1—3km道路。
+上风向道路识别 | 根据风向判断可能影响站点的道路。
+下风向影响区 | 判断污染可能影响的方向和范围。
+敏感点暴露 | 统计附近学校、医院、地铁站、社区等敏感点。
+---T17---
+表名 | 核心字段 / 说明
+road_network | road_id, road_name, road_type, geometry, district
+poi_sensitive | poi_id, poi_type, name, lat, lon, district
+---T18---
+时间 | 必须完成
+第1—2天 | 整理空气站点坐标，确定道路/POI来源。
+第3—5天 | 完成道路、POI数据入库。
+第6—8天 | 完成1—3km缓冲区和上风向道路识别。
+第9—10天 | 输出标准JSON，接入Source Agent和Decision Agent。
+第11—12天 | 配合前端地图展示站点、道路、影响区、敏感点。
+第13天 | 完成案例站点空间匹配。
+第14—15天 | 修bug，整理接口说明和测试样例。
+---T19---
+项目 | 内容
+负责模块 | 污染来源可能性判断 Agent
+目标 | 融合空气质量、气象、交通和空间匹配结果，判断当前污染更可能来自交通源、局地积聚、区域传输、道路扬尘还是光化学污染，并输出证据链。
+主要数据 | 依赖Air Quality、Meteorology、Traffic、Spatial四个Agent的输出结果。
+---T20---
+功能 | 说明
+交通源可能性评分 | 判断交通源影响高/中/低/很高。
+局地积聚评分 | 低风速 + 多污染物上升时增强。
+区域传输评分 | 多站点同步升高 + 风向稳定时增强。
+扬尘可能性评分 | PM10升高 + 道路交通/无降雨时增强。
+光化学污染评分 | O3升高 + 高温日间时增强。
+证据链生成 | 不能只给分数，必须解释污染判断依据。
+---T21---
+表名 | 核心字段 / 说明
+agent_result / source_result | task_id, source_attribution, main_judgement, risk_level, evidence_chain, confidence
+---T22---
+时间 | 必须完成
+第1—2天 | 确定溯源评分公式和输入字段。
+第3—5天 | 等待成员1—4数据表，同时写评分函数框架。
+第6—8天 | 完成交通源、积聚、传输、扬尘、O3评分。
+第9—10天 | 接入成员1—4输出，完成完整溯源JSON；牵头总控链路联调。
+第11—12天 | 配合前端展示污染来源可能性和证据链。
+第13天 | 完成案例站点污染溯源。
+第14—15天 | 修bug，整理接口说明和测试样例。
+---T23---
+项目 | 内容
+负责模块 | 区域分流/限行建议 Agent
+目标 | 根据污染来源判断、上风向道路、交通车型结构、敏感点位和气象风险，生成建议级区域分流/限行方案。
+主要数据 | 依赖Source Agent、Spatial Agent、Traffic Agent、Meteorology Agent的输出。
+---T24---
+功能 | 说明
+风险等级转建议 | 低/中/高/很高对应不同处置建议。
+建议区域 | 给出站点周边、下风向影响区或道路走廊。
+建议时段 | 如08:00—10:00早高峰。
+建议道路 | 来自Spatial Agent的重点上风向道路。
+重点车型 | 如货车、巴士、出租车、私家车。
+公众提醒 | 学校、医院、行人密集区健康提醒。
+复盘指标 | NO2、AQHI、交通压力、风速变化等。
+---T25---
+表名 | 核心字段 / 说明
+decision_result | task_id, decision_level, suggested_area, suggested_time, suggested_roads, vehicle_focus, actions, review_indicators
+---T26---
+时间 | 必须完成
+第1—2天 | 设计风险等级到治理建议的规则表。
+第3—5天 | 准备建议模板、重点道路/车型输出格式。
+第6—8天 | 完成建议生成函数。
+第9—10天 | 接入Source、Spatial、Traffic输出。
+第11—12天 | 配合前端展示建议区域、时段、道路、车型。
+第13天 | 完成案例站点限行/分流建议。
+第14—15天 | 修bug，整理接口说明和测试样例。
+---T27---
+项目 | 内容
+负责模块 | 自动治理报告生成 Agent
+目标 | 把所有Agent的结构化JSON结果转成一份可读的污染事件分析报告，并负责前端报告区、Agent工作流展示文案和答辩演示口径。
+主要数据 | 依赖所有Agent输出：空气质量、气象、交通、空间、溯源、决策结果。
+---T28---
+功能 | 说明
+报告模板 | 固定结构，不让大模型随意发挥（可参考ESG报告格式）。
+JSON转自然语言 | 把各Agent输出转成可读报告。
+证据链整理 | 按“污染—气象—交通—空间—结论”组织。
+报告导出 | 前端可复制；可选导出txt/docx/pdf。
+Agent工作流展示 | 显示7个Agent执行状态。
+答辩讲解稿 | 整理1分钟功能讲解口径。
+---T29---
+表名 | 核心字段 / 说明
+analysis_report | report_id, task_id, station_id, time_range, risk_level, source_summary, decision_summary, report_text
+---T30---
+时间 | 必须完成
+第1—2天 | 设计报告模板和Agent工作流展示格式。
+第3—5天 | 准备报告生成prompt/模板函数。
+第6—8天 | 完成假数据JSON到报告文本的生成。
+第9—10天 | 接入真实Agent输出，生成完整报告；与成员5一起牵头总控链路联调。
+第11—12天 | 配合前端完成报告区和Agent工作流展示。
+第13天 | 完成案例报告。
+第14—15天 | 整理答辩口径、最终报告样例和演示文案。
+---T31---
+阶段 | 时间 | 全组目标 | 关键交付
+阶段1 | 第1—2天 | 数据确认与接口统一 | 确认EPD、Open-Meteo、交通压缩包、道路/POI来源；统一输入输出JSON。
+阶段2 | 第3—5天 | 数据入库 | 完成air_quality_hourly、weather_hourly、traffic_vehicle_mix、road_network、poi_sensitive基础表。
+阶段3 | 第6—8天 | 指标计算与Agent独立运行 | 每个Agent至少能独立运行并输出标准JSON。
+阶段4 | 第9—10天 | 多智能体联调 | 输入站点+时间段后，完整跑通7个Agent链路和Coordinator最小流程。
+阶段5 | 第11—12天 | 前端展示与接口联调 | 完成地图、风险卡片、Agent工作流、证据链、建议和报告区。
+阶段6 | 第13天 | 案例回放 | 完成Mong Kok / Causeway Bay / Central中一个路边站案例。
+阶段7 | 第14天 | 测试与修bug | 处理数据缺失、API失败、图表空白、JSON格式错误、报告措辞等问题。
+阶段8 | 第15天 | 最终交付 | 系统演示、代码、数据表、接口文档、案例说明、答辩讲解稿。
+---T32---
+日期 | 徐慧琳 | 董欣言 | 曾雯丽 | 陈维阳 | 刘启凡 | 陈风博奕 | 王奥
+第1—2天 | EPD字段/API测试 | Open-Meteo API测试 | 解压交通包并看字段 | 站点坐标和道路/POI来源 | 溯源公式 | 决策规则表 | 报告模板
+第3—5天 | 空气质量入库 | 气象入库 | 交通车型入库 | 道路/POI入库 | 评分函数框架 | 建议模板 | 假数据报告
+第6—8天 | 污染异常指数 | 气象风险指数 | 交通压力指数 | 上风向道路识别 | 来源评分 | 建议生成函数 | 报告Agent初版
+第9—10天 | 接入总流程 | 接入总流程 | 接入总流程 | 接入总流程 | 牵头Source联调 | 接入Decision | 牵头Report联调
+第11—12天 | 污染曲线/卡片 | 气象曲线/卡片 | 车型/交通卡片 | 地图展示 | 来源图/证据链 | 建议区展示 | 报告区/工作流
+第13天 | 案例污染解释 | 案例气象解释 | 案例交通解释 | 案例空间解释 | 案例溯源解释 | 案例决策解释 | 案例报告与讲稿
+第14天 | 修bug | 修bug | 修bug | 修bug | 修bug | 修bug | 修bug/措辞检查
+第15天 | 交付代码文档 | 交付代码文档 | 交付代码文档 | 交付代码文档 | 交付代码文档 | 交付代码文档 | 最终文案/演示
+---T33---
+项目 | 建议
+优先案例 | Mong Kok Roadside，某工作日08:00—11:00。
+备选案例 | Causeway Bay Roadside 或 Central Roadside。
+案例逻辑 | 早高峰NO2/NOx异常升高 + 低风速扩散差 + 交通车型结构高峰 + 上风向道路影响 → 交通源可能性高 + 局地积聚。
+输出内容 | 风险卡片、气象图、车型比例、上风向道路、污染来源可能性、区域分流/限行建议、自动报告。
+---T34---
+检查项 | 要求
+数据缺失 | 不能直接崩溃，必须返回warning和data_quality说明。
+API失败 | 必须有本地样例数据兜底。
+时间格式 | 统一到小时，统一香港时区。
+JSON输出 | 必须符合统一格式，字段名不能临时改。
+前端展示 | 不能出现空白图、错位图、无法解释的分数。
+报告措辞 | 不能写“自动执法”“精确贡献率”，统一写“可能性”“建议”“辅助决策”。
+---T35---
+交付物 | 负责人
+完整系统演示 | 全组
+7个Agent代码 | 各成员
+数据库表和样例数据 | 徐慧琳、董欣言、曾雯丽、陈风博奕
+溯源和决策规则说明 | 刘启凡、陈维阳
+自动报告样例 | 王奥
+接口文档 | 全组统一整理
+PPT提案 | 全员
+答辩讲解稿 | 王奥主写，全员辅助

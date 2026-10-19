@@ -1,0 +1,10 @@
+{
+  "design": {
+    "blind_date": "2023-11-29",
+    "cap_ratio": 1.25,
+    "note": "V9-P0 回放：与 V8 完全相同的输入重跑，比较系统推荐与离线 D 臂决策"
+  },
+  "match": "60/60",
+  "n_mismatch": 0,
+  "mismatches": []
+}

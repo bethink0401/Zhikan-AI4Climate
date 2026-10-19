@@ -1,0 +1,139 @@
+seed,date,label,pred,stage,judgement,anomaly,nox_pct,sync_above,sync_checked,traffic_score,local_score,regional_score,traffic_avail,local_avail,regional_avail,gate_min,traffic_th,local_th,regional_th
+20260412,2024-07-06,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,1,18,0.9023,0.4,0.3403,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-08,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9208,18,18,0.7642,0.4,0.7588,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-01,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.985,1,18,0.7831,0.8074,0.2471,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-26,local_accumulation,local_accumulation,judged,Local accumulation dominant,1.0,0.9781,1,18,0.47,0.871,0.3171,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-27,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,1.0,1,18,0.8182,0.7438,0.2395,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-18,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9775,18,18,0.7552,0.4,0.6975,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-19,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9488,18,18,0.8186,0.6538,0.6339,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-20,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.8514,9,18,0.7822,0.715,0.6172,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-30,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.775,0,18,0.8196,0.8482,0.193,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-01,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,16,18,0.9132,0.4,0.7204,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-09,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.7548,0.4,0.8093,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-17,local_accumulation,local_accumulation,judged,Local accumulation dominant,1.0,0.9972,1,18,0.7241,0.8278,0.2759,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-21,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,2,18,0.9051,0.4,0.4316,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-10,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9781,0,18,0.9294,0.4,0.2999,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-13,regional_transport,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9488,18,18,0.8483,0.4,0.7406,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-23,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9563,18,18,0.7944,0.4,0.802,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-15,uncertain,local_accumulation,judged,Local accumulation dominant,1.0,0.975,18,18,0.7795,0.8482,0.6022,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-31,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,16,18,0.8542,0.4,0.6575,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-10,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.7236,1,18,0.7975,0.7432,0.2388,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-25,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9625,18,18,0.8056,0.6808,0.623,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-07,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,1.0,1,18,0.8683,0.82,0.2172,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-12,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,1.0,1,18,0.8123,0.6862,0.2885,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-20,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9911,15,18,0.9199,0.4,0.7038,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-09,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9419,18,18,0.7916,0.7906,0.5994,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-04,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.8975,5,18,0.8034,0.8332,0.4536,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-24,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.8736,3,18,0.8168,0.8026,0.3352,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-06,local_accumulation,local_accumulation,judged,Local accumulation dominant,1.0,0.9863,1,18,0.4295,0.8686,0.2983,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-26,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,17,18,0.9051,0.4,0.7804,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-03,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9809,18,18,0.8038,0.4,0.7169,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-29,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9986,18,18,0.7502,0.4,0.7287,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-28,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9515,18,18,0.8479,0.4,0.7981,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-04,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.8096,0.4,0.6869,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-11,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9986,2,18,0.8825,0.4,0.4941,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-11,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9918,1,18,0.798,0.823,0.247,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-16,local_accumulation,local_accumulation,judged,Local accumulation dominant,1.0,0.9795,1,18,0.4746,0.853,0.2931,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-24,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9875,18,18,0.7881,0.4,0.7663,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-19,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.8389,0.4,0.8079,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-22,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9958,1,18,0.7552,0.7258,0.2558,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-15,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9863,2,18,0.8866,0.4,0.4678,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-05,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9966,18,18,0.9595,0.4,0.7832,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-29,uncertain,local_accumulation,judged,Local accumulation dominant,1.0,0.9638,17,18,0.5655,0.8524,0.6201,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-14,regional_transport,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9972,18,18,0.8488,0.4,0.684,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-14,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9754,18,18,0.8047,0.7714,0.6081,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-07-16,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,13,18,0.942,0.4,0.7834,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-25,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.985,1,18,0.9307,0.4,0.3405,True,True,True,0.45,0.45,0.45,0.65
+20260412,2024-08-21,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9857,1,18,0.7796,0.7462,0.2798,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-09,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.5649,0,18,0.8214,0.6802,0.2064,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-15,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.7639,1,18,0.8309,0.7684,0.2373,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-19,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.7493,0.4,0.7247,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-29,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9667,18,18,0.8296,0.4,0.6764,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-22,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,1.0,1,18,0.7629,0.7942,0.2557,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-19,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9255,17,18,0.762,0.766,0.6228,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-03,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9788,18,18,0.7831,0.4,0.7549,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-11,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9986,2,18,0.8528,0.4,0.3627,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-08,regional_transport,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9672,18,18,0.8705,0.4,0.6766,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-16,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,15,18,0.889,0.4,0.708,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-27,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,1.0,1,18,0.7241,0.6526,0.2872,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-12,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,1.0,1,18,0.7336,0.661,0.2664,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-15,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9952,17,18,0.9622,0.4,0.6559,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-29,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.6072,0,18,0.7511,0.7288,0.2351,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-14,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9986,18,18,0.8002,0.4,0.8357,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-24,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.8518,4,18,0.7624,0.6934,0.4242,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-20,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9884,2,18,0.9509,0.4,0.3818,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-07,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,1.0,1,18,0.793,0.7354,0.2406,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-25,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.8,0,18,0.8389,0.7588,0.1861,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-10,uncertain,local_accumulation,judged,Local accumulation dominant,1.0,0.9917,18,18,0.7601,0.8302,0.6004,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-31,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,16,18,0.8659,0.4,0.7969,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-25,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9754,1,18,0.8821,0.4,0.3362,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-20,uncertain,local_accumulation,judged,Local accumulation dominant,1.0,0.8083,7,18,0.4975,0.8542,0.6196,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-04,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.8907,5,18,0.8539,0.8068,0.4498,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-30,uncertain,local_accumulation,judged,Local accumulation dominant,1.0,0.9986,18,18,0.5322,0.8686,0.6388,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-11,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9925,1,18,0.7396,0.7216,0.2909,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-21,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,2,18,0.8911,0.4,0.4831,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-17,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9986,1,18,0.7696,0.7984,0.2782,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-01,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9877,1,18,0.8254,0.8398,0.2323,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-04,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.7534,0.4,0.7479,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-26,local_accumulation,local_accumulation,judged,Local accumulation dominant,1.0,0.9891,1,18,0.466,0.8638,0.2918,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-28,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9481,18,18,0.7945,0.4,0.7202,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-16,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9822,1,18,0.7421,0.7114,0.2984,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-06,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,1,18,0.9752,0.4,0.3666,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-09,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.7898,0.4,0.811,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-05,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9973,16,18,0.8497,0.4,0.7509,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-23,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9911,18,18,0.7561,0.4,0.8209,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-06,local_accumulation,local_accumulation,judged,Local accumulation dominant,1.0,0.9843,1,18,0.6856,0.7108,0.2828,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-24,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.7782,0.4,0.7637,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-13,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9495,18,18,0.806,0.4,0.8262,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-14,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9761,18,18,0.7372,0.7078,0.6313,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-26,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,16,18,0.888,0.4,0.7605,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-07-01,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,16,18,0.9397,0.4,0.7842,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-21,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.985,1,18,0.7381,0.6874,0.2804,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-10,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9809,1,18,0.8888,0.4,0.4301,True,True,True,0.45,0.45,0.45,0.65
+20260413,2024-08-18,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.972,18,18,0.752,0.4,0.8402,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-15,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9952,18,18,0.8533,0.4,0.6926,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-01,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,3,18,0.8308,0.4,0.5618,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-03,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9816,18,18,0.7885,0.4,0.7769,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-24,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.7331,0.4,0.6971,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-29,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.8416,0.4,0.8093,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-22,local_accumulation,local_accumulation,judged,Local accumulation dominant,1.0,0.9986,1,18,0.7637,0.8212,0.2656,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-15,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9931,18,18,0.8083,0.8044,0.5811,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-07,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,1.0,1,18,0.7138,0.6916,0.2956,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-08,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9645,18,18,0.829,0.4,0.744,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-20,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.987,1,18,0.9181,0.4,0.4009,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-12,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9986,1,18,0.8038,0.7342,0.2668,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-11,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9973,1,18,0.8218,0.811,0.2609,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-04,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.8716,6,18,0.7844,0.814,0.4869,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-09,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9419,18,18,0.7903,0.805,0.6185,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-05,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9952,14,18,0.869,0.4,0.8239,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-26,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9932,1,18,0.7777,0.7654,0.274,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-01,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9898,1,18,0.7458,0.7012,0.2883,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-09,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9764,18,18,0.8007,0.4,0.6757,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-31,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,3,18,0.8902,0.4,0.512,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-28,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9501,18,18,0.7966,0.4,0.6904,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-24,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.8764,4,18,0.7782,0.6568,0.419,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-10,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.5764,0,18,0.7993,0.6796,0.2309,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-25,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9843,0,18,0.8849,0.4,0.3162,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-20,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.8931,12,18,0.7944,0.6592,0.6047,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-14,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9652,18,18,0.7853,0.676,0.6174,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-19,regional_transport,regional_transport,judged,Regional transport dominant,1.0,1.0,18,18,0.7966,0.4,0.7399,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-21,local_accumulation,local_accumulation,judged,Local accumulation dominant,1.0,0.9891,1,18,0.4516,0.8602,0.2988,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-11,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9972,3,18,0.8807,0.4,0.3909,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-13,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9966,18,18,0.7801,0.4,0.7925,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-16,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9986,3,18,0.9155,0.4,0.3928,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-06,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9986,1,18,0.8744,0.4,0.3675,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-17,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9931,1,18,0.707,0.658,0.288,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-21,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.9944,1,18,0.9132,0.4,0.4356,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-16,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9884,1,18,0.743,0.706,0.2682,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-26,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,1.0,17,18,0.9577,0.4,0.6494,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-29,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.6496,1,18,0.8034,0.835,0.2225,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-10,traffic_dominant,traffic_dominant,judged,Traffic source dominant,1.0,0.985,0,18,0.8488,0.4,0.3592,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-23,regional_transport,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9426,18,18,0.8686,0.4,0.8044,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-19,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.6892,1,18,0.8785,0.82,0.2513,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-27,local_accumulation,local_accumulation,judged,Local accumulation dominant,1.0,1.0,1,18,0.4192,0.8782,0.3023,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-14,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.9917,18,18,0.7633,0.4,0.7393,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-30,uncertain,local_accumulation,judged,Local accumulation dominant,1.0,0.5222,0,18,0.0,0.787,0.2483,False,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-18,regional_transport,regional_transport,judged,Regional transport dominant,1.0,0.985,18,18,0.8101,0.4,0.8,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-08-06,local_accumulation,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9911,1,18,0.8173,0.667,0.2587,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-25,uncertain,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9833,18,18,0.7718,0.6958,0.628,True,True,True,0.45,0.45,0.45,0.65
+20260414,2024-07-04,regional_transport,uncertain,threshold_lost,Mixed / uncertain sources,1.0,0.9889,18,18,0.8924,0.4,0.8052,True,True,True,0.45,0.45,0.45,0.65

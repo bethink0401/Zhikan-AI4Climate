@@ -1,0 +1,513 @@
+{
+  "dev_date": "2023-08-15",
+  "grid": [
+    8.0,
+    20.0
+  ],
+  "time_ratio_limit": 1.25,
+  "ab_same_pick_rate": "75/90",
+  "per_profile": {
+    "commuter": {
+      "chosen": 19.0,
+      "trials": [
+        {
+          "exchange": 8.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 9.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 10.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 11.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 12.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 13.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 14.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 15.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 16.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 17.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0095,
+          "mean_intake_ratio_vs_A": 0.9914
+        },
+        {
+          "exchange": 18.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0095,
+          "mean_intake_ratio_vs_A": 0.9914
+        },
+        {
+          "exchange": 19.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0176,
+          "mean_intake_ratio_vs_A": 0.9843
+        },
+        {
+          "exchange": 20.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0176,
+          "mean_intake_ratio_vs_A": 0.9843
+        }
+      ]
+    },
+    "elderly": {
+      "chosen": 18.0,
+      "trials": [
+        {
+          "exchange": 8.0,
+          "pref": 0.0,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.2016,
+          "mean_intake_ratio_vs_A": 1.6593
+        },
+        {
+          "exchange": 9.0,
+          "pref": 0.0,
+          "dominated_rate": 0.1667,
+          "mean_time_ratio_vs_A": 1.1504,
+          "mean_intake_ratio_vs_A": 1.5507
+        },
+        {
+          "exchange": 10.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 11.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 12.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 13.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 14.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 15.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 16.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 17.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 18.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0093,
+          "mean_intake_ratio_vs_A": 0.9914
+        },
+        {
+          "exchange": 19.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0093,
+          "mean_intake_ratio_vs_A": 0.9914
+        },
+        {
+          "exchange": 20.0,
+          "pref": 0.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0093,
+          "mean_intake_ratio_vs_A": 0.9914
+        }
+      ]
+    },
+    "parent_with_child": {
+      "chosen": 17.0,
+      "trials": [
+        {
+          "exchange": 8.0,
+          "pref": 0.9444,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 9.0,
+          "pref": 0.9444,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 10.0,
+          "pref": 0.9444,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 11.0,
+          "pref": 0.9444,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 12.0,
+          "pref": 0.9444,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 13.0,
+          "pref": 0.9444,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 14.0,
+          "pref": 0.9444,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 15.0,
+          "pref": 0.9444,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 16.0,
+          "pref": 0.9444,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 17.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0079,
+          "mean_intake_ratio_vs_A": 0.9913
+        },
+        {
+          "exchange": 18.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0079,
+          "mean_intake_ratio_vs_A": 0.9913
+        },
+        {
+          "exchange": 19.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0079,
+          "mean_intake_ratio_vs_A": 0.9913
+        },
+        {
+          "exchange": 20.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0079,
+          "mean_intake_ratio_vs_A": 0.9913
+        }
+      ]
+    },
+    "runner": {
+      "chosen": 20.0,
+      "trials": [
+        {
+          "exchange": 8.0,
+          "pref": 0.5556,
+          "dominated_rate": 0.3333,
+          "mean_time_ratio_vs_A": 1.2199,
+          "mean_intake_ratio_vs_A": 1.975
+        },
+        {
+          "exchange": 9.0,
+          "pref": 0.6111,
+          "dominated_rate": 0.2778,
+          "mean_time_ratio_vs_A": 1.1781,
+          "mean_intake_ratio_vs_A": 1.8839
+        },
+        {
+          "exchange": 10.0,
+          "pref": 0.6667,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1363,
+          "mean_intake_ratio_vs_A": 1.7835
+        },
+        {
+          "exchange": 11.0,
+          "pref": 0.6667,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1363,
+          "mean_intake_ratio_vs_A": 1.7835
+        },
+        {
+          "exchange": 12.0,
+          "pref": 0.6667,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1363,
+          "mean_intake_ratio_vs_A": 1.7835
+        },
+        {
+          "exchange": 13.0,
+          "pref": 0.6667,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1363,
+          "mean_intake_ratio_vs_A": 1.7835
+        },
+        {
+          "exchange": 14.0,
+          "pref": 0.6667,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1363,
+          "mean_intake_ratio_vs_A": 1.7835
+        },
+        {
+          "exchange": 15.0,
+          "pref": 0.6667,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1363,
+          "mean_intake_ratio_vs_A": 1.7835
+        },
+        {
+          "exchange": 16.0,
+          "pref": 0.7222,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1456,
+          "mean_intake_ratio_vs_A": 1.775
+        },
+        {
+          "exchange": 17.0,
+          "pref": 0.7222,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1456,
+          "mean_intake_ratio_vs_A": 1.775
+        },
+        {
+          "exchange": 18.0,
+          "pref": 0.7222,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1456,
+          "mean_intake_ratio_vs_A": 1.775
+        },
+        {
+          "exchange": 19.0,
+          "pref": 0.7222,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1456,
+          "mean_intake_ratio_vs_A": 1.775
+        },
+        {
+          "exchange": 20.0,
+          "pref": 0.7778,
+          "dominated_rate": 0.2222,
+          "mean_time_ratio_vs_A": 1.1548,
+          "mean_intake_ratio_vs_A": 1.7681
+        }
+      ]
+    },
+    "tourist": {
+      "chosen": 19.0,
+      "trials": [
+        {
+          "exchange": 8.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 9.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 10.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 11.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 12.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 13.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 14.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 15.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 16.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0,
+          "mean_intake_ratio_vs_A": 1.0
+        },
+        {
+          "exchange": 17.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0097,
+          "mean_intake_ratio_vs_A": 0.9913
+        },
+        {
+          "exchange": 18.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0097,
+          "mean_intake_ratio_vs_A": 0.9913
+        },
+        {
+          "exchange": 19.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0179,
+          "mean_intake_ratio_vs_A": 0.9843
+        },
+        {
+          "exchange": 20.0,
+          "pref": 1.0,
+          "dominated_rate": 0.0,
+          "mean_time_ratio_vs_A": 1.0179,
+          "mean_intake_ratio_vs_A": 0.9843
+        }
+      ]
+    }
+  },
+  "config_changes": {
+    "commuter": {
+      "old": 2.0,
+      "new": 19.0
+    },
+    "parent_with_child": {
+      "old": 5.0,
+      "new": 17.0
+    },
+    "elderly": {
+      "old": 4.0,
+      "new": 18.0
+    },
+    "runner": {
+      "old": 6.0,
+      "new": 20.0
+    },
+    "tourist": {
+      "old": 1.5,
+      "new": 19.0
+    }
+  }
+}

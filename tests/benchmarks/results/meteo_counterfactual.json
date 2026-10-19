@@ -1,0 +1,141 @@
+{
+  "design": {
+    "window": [
+      "2023-08-15 08:00:00",
+      "2023-08-15 11:00:00"
+    ],
+    "od": "mongkok_to_prince_edward",
+    "profile": "commuter",
+    "note": "只替换风场（风向偏移 / 风速倍率），其余输入（起终点、画像、污染源、空气质量、降水与温度）保持完全一致；空间与出行两侧同时观察"
+  },
+  "variants": [
+    "real",
+    "dir_plus_90",
+    "dir_plus_180",
+    "calm",
+    "strong"
+  ],
+  "recommended_mode_changed": false,
+  "rows": [
+    {
+      "tag": "real",
+      "label": "真实风场",
+      "wind_speed": 1.192,
+      "wind_direction": 201.5,
+      "upwind_road_count": 15,
+      "upwind_best_alignment": 1.0,
+      "sensitive_poi_count": 296,
+      "spatial_confidence": "high",
+      "field_source_count": 294,
+      "transit_intake": 1.9571,
+      "transit_utility": 4.46,
+      "driving_intake": 0.3183,
+      "driving_utility": 2.66,
+      "recommended_mode": "驾车",
+      "recommended_intake": 0.3699,
+      "recommended_utility": 1.51,
+      "affected_area": "downwind sector within 3 km",
+      "warnings": [
+        "路线基于香港道路中心线数据集规划，未叠加实时交通流量与临时封路。",
+        "轨道交通网络由车站点位按邻近关系重建，站序为筛查级近似，非官方运营线路图。",
+        "步行与驾车速度按画像基准速度叠加天气折减、路口等待与时段拥堵，非个人实测速度。"
+      ]
+    },
+    {
+      "tag": "dir_plus_90",
+      "label": "风向 +90°",
+      "wind_speed": 1.192,
+      "wind_direction": 291.5,
+      "upwind_road_count": 15,
+      "upwind_best_alignment": 1.0,
+      "sensitive_poi_count": 345,
+      "spatial_confidence": "high",
+      "field_source_count": 294,
+      "transit_intake": 0.9531,
+      "transit_utility": 2.45,
+      "driving_intake": 0.1463,
+      "driving_utility": 1.5,
+      "recommended_mode": "驾车",
+      "recommended_intake": 0.15,
+      "recommended_utility": 1.07,
+      "affected_area": "downwind sector within 3 km",
+      "warnings": [
+        "路线基于香港道路中心线数据集规划，未叠加实时交通流量与临时封路。",
+        "轨道交通网络由车站点位按邻近关系重建，站序为筛查级近似，非官方运营线路图。",
+        "步行与驾车速度按画像基准速度叠加天气折减、路口等待与时段拥堵，非个人实测速度。"
+      ]
+    },
+    {
+      "tag": "dir_plus_180",
+      "label": "风向 +180°",
+      "wind_speed": 1.192,
+      "wind_direction": 21.5,
+      "upwind_road_count": 15,
+      "upwind_best_alignment": 1.0,
+      "sensitive_poi_count": 233,
+      "spatial_confidence": "high",
+      "field_source_count": 294,
+      "transit_intake": 0.8018,
+      "transit_utility": 2.15,
+      "driving_intake": 0.1158,
+      "driving_utility": 1.0,
+      "recommended_mode": "驾车",
+      "recommended_intake": 0.1158,
+      "recommended_utility": 1.0,
+      "affected_area": "downwind sector within 3 km",
+      "warnings": [
+        "路线基于香港道路中心线数据集规划，未叠加实时交通流量与临时封路。",
+        "轨道交通网络由车站点位按邻近关系重建，站序为筛查级近似，非官方运营线路图。",
+        "步行与驾车速度按画像基准速度叠加天气折减、路口等待与时段拥堵，非个人实测速度。"
+      ]
+    },
+    {
+      "tag": "calm",
+      "label": "风速 ×0.3（低风速分支）",
+      "wind_speed": 0.358,
+      "wind_direction": 201.5,
+      "upwind_road_count": 0,
+      "upwind_best_alignment": 0.0,
+      "sensitive_poi_count": 1143,
+      "spatial_confidence": "high",
+      "field_source_count": 294,
+      "transit_intake": 1.8591,
+      "transit_utility": 4.27,
+      "driving_intake": 0.4091,
+      "driving_utility": 1.59,
+      "recommended_mode": "驾车",
+      "recommended_intake": 0.4091,
+      "recommended_utility": 1.59,
+      "affected_area": "station buffer within 3 km (wind direction unavailable or unreliable)",
+      "warnings": [
+        "路线基于香港道路中心线数据集规划，未叠加实时交通流量与临时封路。",
+        "轨道交通网络由车站点位按邻近关系重建，站序为筛查级近似，非官方运营线路图。",
+        "步行与驾车速度按画像基准速度叠加天气折减、路口等待与时段拥堵，非个人实测速度。"
+      ]
+    },
+    {
+      "tag": "strong",
+      "label": "风速 ×2.0",
+      "wind_speed": 2.385,
+      "wind_direction": 201.5,
+      "upwind_road_count": 15,
+      "upwind_best_alignment": 1.0,
+      "sensitive_poi_count": 296,
+      "spatial_confidence": "high",
+      "field_source_count": 294,
+      "transit_intake": 1.4055,
+      "transit_utility": 3.36,
+      "driving_intake": 0.2339,
+      "driving_utility": 2.49,
+      "recommended_mode": "驾车",
+      "recommended_intake": 0.266,
+      "recommended_utility": 1.3,
+      "affected_area": "downwind sector within 3 km",
+      "warnings": [
+        "路线基于香港道路中心线数据集规划，未叠加实时交通流量与临时封路。",
+        "轨道交通网络由车站点位按邻近关系重建，站序为筛查级近似，非官方运营线路图。",
+        "步行与驾车速度按画像基准速度叠加天气折减、路口等待与时段拥堵，非个人实测速度。"
+      ]
+    }
+  ]
+}

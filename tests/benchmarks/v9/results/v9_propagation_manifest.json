@@ -1,0 +1,20 @@
+{
+  "experiment": "innovation-2 observational backtest",
+  "framing": "历史气象驱动回测（Open-Meteo Archive 再分析），非真实预报",
+  "leakage_control": "留出站观测仅作验证标签，未输入任何方法；所有方法用同一数据截止",
+  "source_station": "Mong Kok Roadside",
+  "held_out_stations": [
+    "Central Roadside",
+    "Causeway Bay Roadside"
+  ],
+  "frozen_params": {
+    "A_radius_km": 1.0,
+    "B_l0_km": 1.5,
+    "B_k_km_per_ms": 0.6,
+    "C_threshold": 0.06
+  },
+  "window": "3h 窗口，起始于 (0, 4, 8, 12, 16, 20) 时",
+  "n_pairs": 4072,
+  "key_null_finding": "三方法在 3.9-4.6 km 留出站上均无判别力（A/B 召回 0，C AUC 0.458）——EPD 路边站间距超过全部方法的冻结风险半径，点位级观测验证在当前站网几何下不可行",
+  "calm_windows": 2
+}

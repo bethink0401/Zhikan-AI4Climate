@@ -1,0 +1,149 @@
+{
+  "design": {
+    "note": "参考模型扩散系数敏感性：C 算法与 B 基线冻结，仅参考场 K 变化。",
+    "c_threshold": 0.1
+  },
+  "robustness": {
+    "K=30": {
+      "stable": {
+        "n": 8,
+        "mean_iou_C": 0.4365,
+        "mean_iou_B": 0.2667,
+        "diff_ci95": [
+          -0.0173,
+          0.3505
+        ]
+      },
+      "veering": {
+        "n": 8,
+        "mean_iou_C": 0.1924,
+        "mean_iou_B": 0.1752,
+        "diff_ci95": [
+          -0.0648,
+          0.0916
+        ]
+      },
+      "cross_zero": {
+        "n": 8,
+        "mean_iou_C": 0.3214,
+        "mean_iou_B": 0.2921,
+        "diff_ci95": [
+          -0.03,
+          0.0808
+        ]
+      },
+      "calm": {
+        "n": 8,
+        "mean_iou_C": 0.2372,
+        "mean_iou_B": 0.4455,
+        "diff_ci95": [
+          -0.3378,
+          -0.1073
+        ]
+      },
+      "gust": {
+        "n": 8,
+        "mean_iou_C": 0.2928,
+        "mean_iou_B": 0.2463,
+        "diff_ci95": [
+          -0.0383,
+          0.2808
+        ]
+      }
+    },
+    "K=50": {
+      "stable": {
+        "n": 8,
+        "mean_iou_C": 0.546,
+        "mean_iou_B": 0.3682,
+        "diff_ci95": [
+          0.0675,
+          0.3326
+        ]
+      },
+      "veering": {
+        "n": 8,
+        "mean_iou_C": 0.3172,
+        "mean_iou_B": 0.299,
+        "diff_ci95": [
+          -0.0889,
+          0.1008
+        ]
+      },
+      "cross_zero": {
+        "n": 8,
+        "mean_iou_C": 0.3606,
+        "mean_iou_B": 0.3428,
+        "diff_ci95": [
+          -0.0424,
+          0.0614
+        ]
+      },
+      "calm": {
+        "n": 8,
+        "mean_iou_C": 0.2531,
+        "mean_iou_B": 0.4766,
+        "diff_ci95": [
+          -0.3663,
+          -0.0966
+        ]
+      },
+      "gust": {
+        "n": 8,
+        "mean_iou_C": 0.3554,
+        "mean_iou_B": 0.321,
+        "diff_ci95": [
+          -0.0497,
+          0.2576
+        ]
+      }
+    },
+    "K=100": {
+      "stable": {
+        "n": 8,
+        "mean_iou_C": 0.5362,
+        "mean_iou_B": 0.4294,
+        "diff_ci95": [
+          0.0167,
+          0.2068
+        ]
+      },
+      "veering": {
+        "n": 8,
+        "mean_iou_C": 0.3227,
+        "mean_iou_B": 0.3221,
+        "diff_ci95": [
+          -0.1121,
+          0.0811
+        ]
+      },
+      "cross_zero": {
+        "n": 8,
+        "mean_iou_C": 0.3722,
+        "mean_iou_B": 0.3724,
+        "diff_ci95": [
+          -0.0639,
+          0.043
+        ]
+      },
+      "calm": {
+        "n": 8,
+        "mean_iou_C": 0.2678,
+        "mean_iou_B": 0.4943,
+        "diff_ci95": [
+          -0.3584,
+          -0.0656
+        ]
+      },
+      "gust": {
+        "n": 8,
+        "mean_iou_C": 0.4103,
+        "mean_iou_B": 0.4026,
+        "diff_ci95": [
+          -0.0832,
+          0.2089
+        ]
+      }
+    }
+  }
+}

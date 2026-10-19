@@ -1,0 +1,187 @@
+[
+  {
+    "name": "文件存在: agents/traffic_agent.py",
+    "pass": true,
+    "detail": "D:\\比赛\\WeatherSys\\WeatherSys\\空气污染预警溯源多智能体系统\\agents\\traffic_agent.py"
+  },
+  {
+    "name": "文件存在: tools/traffic_tools.py",
+    "pass": true,
+    "detail": "D:\\比赛\\WeatherSys\\WeatherSys\\空气污染预警溯源多智能体系统\\tools\\traffic_tools.py"
+  },
+  {
+    "name": "文件存在: data_process/traffic.py",
+    "pass": true,
+    "detail": "D:\\比赛\\WeatherSys\\WeatherSys\\空气污染预警溯源多智能体系统\\data_process\\traffic.py"
+  },
+  {
+    "name": "文件存在: data_process/schema_traffic.sql",
+    "pass": true,
+    "detail": "D:\\比赛\\WeatherSys\\WeatherSys\\空气污染预警溯源多智能体系统\\data_process\\schema_traffic.sql"
+  },
+  {
+    "name": "文件存在: docs/TrafficAgent_接口说明.md",
+    "pass": true,
+    "detail": "D:\\比赛\\WeatherSys\\WeatherSys\\空气污染预警溯源多智能体系统\\docs\\TrafficAgent_接口说明.md"
+  },
+  {
+    "name": "文件存在: data/station_mapping.json",
+    "pass": true,
+    "detail": "D:\\比赛\\WeatherSys\\WeatherSys\\空气污染预警溯源多智能体系统\\data\\station_mapping.json"
+  },
+  {
+    "name": "文件存在: data/traffic.db",
+    "pass": true,
+    "detail": "D:\\比赛\\WeatherSys\\WeatherSys\\空气污染预警溯源多智能体系统\\data\\traffic.db"
+  },
+  {
+    "name": "年份覆盖 2018-2024",
+    "pass": true,
+    "detail": "实际=[2018, 2019, 2020, 2021, 2022, 2023, 2024]"
+  },
+  {
+    "name": "2018 年 vehicle_mix 非空",
+    "pass": true,
+    "detail": "rows=17000, stations=100"
+  },
+  {
+    "name": "2019 年 vehicle_mix 非空",
+    "pass": true,
+    "detail": "rows=17510, stations=103"
+  },
+  {
+    "name": "2020 年 vehicle_mix 非空",
+    "pass": true,
+    "detail": "rows=17510, stations=103"
+  },
+  {
+    "name": "2021 年 vehicle_mix 非空",
+    "pass": true,
+    "detail": "rows=17680, stations=104"
+  },
+  {
+    "name": "2022 年 vehicle_mix 非空",
+    "pass": true,
+    "detail": "rows=17680, stations=104"
+  },
+  {
+    "name": "2023 年 vehicle_mix 非空",
+    "pass": true,
+    "detail": "rows=19040, stations=112"
+  },
+  {
+    "name": "2024 年 vehicle_mix 非空",
+    "pass": true,
+    "detail": "rows=19380, stations=114"
+  },
+  {
+    "name": "traffic_vehicle_mix 核心字段齐全",
+    "pass": true,
+    "detail": "缺=set()"
+  },
+  {
+    "name": "traffic_volume（如有）",
+    "pass": true,
+    "detail": "当前行数=0（分工表为可选）"
+  },
+  {
+    "name": "案例 ATC 3006 (MongKok/Nathan) 覆盖七年",
+    "pass": true,
+    "detail": "实际=[2018, 2019, 2020, 2021, 2022, 2023, 2024]"
+  },
+  {
+    "name": "案例 ATC 2214 (CausewayBay/CausewayRd) 覆盖七年",
+    "pass": true,
+    "detail": "实际=[2018, 2019, 2020, 2021, 2022, 2023, 2024]"
+  },
+  {
+    "name": "案例 ATC 2207 (Central/Connaught) 覆盖七年",
+    "pass": true,
+    "detail": "实际=[2018, 2019, 2020, 2021, 2022, 2023, 2024]"
+  },
+  {
+    "name": "说明: ATC 1029 无 OCC（meta=7, mix=0）",
+    "pass": true,
+    "detail": "已改用有 OCC 的周边主站 2214/2207"
+  },
+  {
+    "name": "说明: ATC 1030 无 OCC（meta=7, mix=0）",
+    "pass": true,
+    "detail": "已改用有 OCC 的周边主站 2214/2207"
+  },
+  {
+    "name": "Pro/Ocp 已解析入库",
+    "pass": true,
+    "detail": "(16.5, 1.8)"
+  },
+  {
+    "name": "Agent 可独立运行",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "统一输出含 status/result/evidence/confidence/data_quality/created_at",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "标准 result 字段齐全",
+    "pass": true,
+    "detail": "缺=set()"
+  },
+  {
+    "name": "压力指数已计算",
+    "pass": true,
+    "detail": "0.7363"
+  },
+  {
+    "name": "车型结构已输出",
+    "pass": true,
+    "detail": "['Franchised Bus DD', 'Private Car', 'Taxi']"
+  },
+  {
+    "name": "重点车型判断",
+    "pass": true,
+    "detail": "['Bus', 'Goods Vehicle', 'Taxi']"
+  },
+  {
+    "name": "含文档权重 私家车1/出租1.2/小巴1.5/轻货2/中重货4/巴士3",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "压缩包自动导入函数",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "宽表转长表函数",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "第9天：Coordinator 最小流程文件",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "第9天：Source 接入桩文件",
+    "pass": true,
+    "detail": ""
+  },
+  {
+    "name": "第9天：总流程可跑且 Traffic→Source 已接通",
+    "pass": true,
+    "detail": "{'traffic_ready': True, 'source_consumed_traffic': True, 'coordinator_min_ok': True}"
+  },
+  {
+    "name": "第9天：完整7个真实Agent（非占位）",
+    "pass": false,
+    "detail": "Air/Meteo/Spatial/Decision/Report 仍为占位，待组员合入"
+  },
+  {
+    "name": "接口说明含输入输出示例",
+    "pass": true,
+    "detail": ""
+  }
+]

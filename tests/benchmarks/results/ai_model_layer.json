@@ -1,0 +1,33 @@
+{
+  "model_layer": {
+    "A_degradation_behaviour": {
+      "explicit_failure_without_key": true,
+      "message": "未配置 COORDINATOR_API_KEY：LLM 调度链路不可用。请在环境变量中提供 OpenAI 兼容模型服务的密钥；确定性主链路与全部基准测试不依赖该"
+    },
+    "B_deterministic_chain_without_model": {
+      "elapsed_ms": 3276.8,
+      "statuses": {
+        "air_quality": "success",
+        "meteorology": "success",
+        "traffic": "success",
+        "spatial": "success",
+        "source": "success",
+        "decision": "success",
+        "report": "success"
+      },
+      "all_success": true
+    },
+    "C_model_metrics": {
+      "status": "pending_credentials",
+      "reason": "未配置 COORDINATOR_API_KEY，模型层指标无法在本环境产生",
+      "tasks_prepared": 25,
+      "metrics_to_report": [
+        "task_completion_rate",
+        "numeric_consistency_rate",
+        "evidence_citation_rate",
+        "multiturn_inheritance_rate",
+        "degradation_success_rate"
+      ]
+    }
+  }
+}

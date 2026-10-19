@@ -1,0 +1,1 @@
+participant_id,case_id,od_id,depart_time,profile,hard_constraints_json,pref_before_recommendation,anonymized_option_order,chosen_option,acceptability_1_to_5,reason,timestamp

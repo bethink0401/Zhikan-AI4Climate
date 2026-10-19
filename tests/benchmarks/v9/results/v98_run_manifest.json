@@ -1,0 +1,107 @@
+{
+  "manifest_version": "V9.9",
+  "generated_at": "2026-10-14T16:16:02.571637+08:00",
+  "git": {
+    "sha": "c9466bc76fef738a62150d18945fa847375939d1",
+    "branch": "main",
+    "dirty": false
+  },
+  "config_hashes": {
+    "config/pollution_rules.json": "a16c0d266b4f45932029bf6789fc85a52a528b92326ba0c065d13bfa3cf1ce4c",
+    "config/travel_profile.json": "e6efb9830b78c6029effc786d17106cfe61c84e3e1dbbe3e4fca3a2c0d4291f1",
+    "config/meteorology_rules.json": "cbec9b2431696634537c63761b3768ef3d476ddce19becd58a3ddd855429ae71"
+  },
+  "data_hashes": {
+    "data/air_quality.db": "97b9521e07d5e2541c8045a26af924fc0dce54b10551cb2cd2e26226569fcfeb",
+    "data/traffic.db": "6905bd86a0fa6ec4c078e15104148ac717442fa1442c816dafe382d1a81ff5f1"
+  },
+  "code_hashes": {
+    "tests/benchmarks/v9/protocol.json": "96a53923437bc85ac2cd859d0ba81e91c2b5b3a85d6415eb9d2ac056e2867907",
+    "tests/benchmarks/v9/metrics.py": "235bc66d914bd37a913e5aa14f0dfa7347d41b201870dc79ffbd1130cc3ea6e0",
+    "tests/benchmarks/v9/contracts.py": "d00531de5857f4f49b517030608201ec145ed7909f2e8e7934178aabdb477a37",
+    "tests/benchmarks/v9/governance_capture.py": "2e4a514f500254010eadcc0f348999326de8079bb6905a69a1b1a96ec45261f4",
+    "tests/benchmarks/v9/governance_sweep.py": "e680a2cd5c897a2a800dffa593f34730f8d3dba99b7e92831e704df3fd529772",
+    "tests/benchmarks/v9/governance_config_audit.py": "802243cc1534acf3a511e2d42c77a70d0de1055fd0027d1b7d85e405f2aa4e17",
+    "tests/benchmarks/v9/governance_holdout.py": "6a3ff685d3a570bcb45d4ca9c899725b3c5a190f10a7f19731140acffe09dfd7",
+    "tests/benchmarks/v9/governance_pit.py": "61e03b98634b79a5ea4a8cc2834a16ed82e647bbf4b69a5446f212e1a68b3c67",
+    "tests/benchmarks/v9/meteo_cache.py": "f01695baff06e2aae278e547abce2a0193345ad6210c6756cd0189050889863f",
+    "tests/benchmarks/v9/make_report_tables.py": "cf2b00556f154da48202024612a06cc941dbf8544ef2f997015ce6d68b3ea03d",
+    "tests/benchmarks/v9/audit_report_claims.py": "44d2427b8a178d180b0083bc899ea6e736ff1235334ee6d0276f0ea8b6431f77",
+    "tests/benchmarks/v9/audit_test_inventory.py": "f3d84d3540909a2823248b78014dd8934de431bb442078266aeb08217569e68d",
+    "tests/benchmarks/v9/audit_blind_year_lineage.py": "49bdfc55e66d8ac69238bf4de2e916debdd2de79eca11b0b31b32348cab8cd4d",
+    "agents/source_agent.py": "f66a25fce8543914b2b731302ea85632ea775982017b7a2b0bf97979fa3afe1d",
+    "agents/air_quality_agent.py": "db7d12a09eb964c0ae8a8f57c2b2a298b44ca8564eb4477492c5ba4182662feb",
+    "tools/air_quality_tools.py": "84ee692af92f85c181255d6bbdd774bbc020c3057fd7be43008f9eabaaafa4a2",
+    "tools/travel_advice_tools.py": "6a00986dc46918700bbf3b2d17d9e4401d611276074e77b4c6c2f0b3271006ad"
+  },
+  "meteo_cache": {
+    "file_count": 74,
+    "rollup_sha256": "7bf7628535062dc9fb790c553415bc9f1269c7c0d0eb1b74b9ccd9487e0059b3",
+    "sample": {
+      "meteo_2021_22.2801_114.1850_01.csv": "1ac832db5ee6bca2b35dc11df2e22afebeda0c7aac970dcbe3389707be8e64e6",
+      "meteo_2021_22.2801_114.1850_02.csv": "6a3cc89c04af7f42704b19c1fe371a8994105be22aaf9ab6cd1f89a3960ced14",
+      "meteo_2021_22.2801_114.1850_03.csv": "9558516a3cb9055665e48e42d69213621eb5773d37ed2788950ede0c37d07654"
+    }
+  },
+  "frozen_configs": {
+    "innovation_1_judgement": {
+      "judgement_rule": "score_argmax",
+      "min_strength": 0.35,
+      "dominance_margin": 0.05,
+      "traffic_nox_pct_min": 0.65,
+      "gate_anomaly_min": 0.45,
+      "signature_weights": {
+        "traffic": {
+          "pressure": 0.6,
+          "upwind": 0.4
+        },
+        "local": {
+          "static_wind": 0.6,
+          "anomaly": 0.4,
+          "station_elevation": 0.0
+        },
+        "regional": {
+          "sync": 0.6,
+          "high_wind": 0.25,
+          "wind_stability": 0.15,
+          "elevation": 0.0,
+          "uniformity": 0.0
+        }
+      },
+      "effective_config_sha256": "8040a0e596c41f9291930f0fc266932d18d2fa6015cd264c650467304925c4b7"
+    },
+    "innovation_3_decision": {
+      "rule": "tchebycheff",
+      "epsilon": 1e-09,
+      "weight_basis": "time_pressure",
+      "reference_minutes": 75.0,
+      "fixed_time_weight": 0.5
+    },
+    "innovation_2_note": "frozen since V9.4/V9.5; no model change in V9.6-V9.8"
+  },
+  "blind_data_status": {
+    "used_for_development": [
+      2022,
+      2023,
+      2024
+    ],
+    "never_used_by_modeling_threshold_scoring": [
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "caveat_on_v98_wording": "V9.8 曾写『从未被任何基准或分析脚本引用』——不准确：examples/audit_day1_9.py 会逐年份统计（含 2021）数据表行数；正确表述是『从未被任何建模/阈值/评分脚本使用』。谱系审计见 results/v99_blind_year_lineage.json。",
+    "preregistered_blind_year": 2021,
+    "reserve_years": [
+      2018,
+      2019,
+      2020
+    ],
+    "blind_year_status": "EXECUTED_ONCE（2026-10-14）——自此 regression_only，不得再称盲测、不得用于调参；结果见 tests/benchmarks/results/v9_governance_blind2021.json",
+    "caveat": "2020 为疫情年，污染物水平异常，列备选；2021 为主盲测年。盲测年一旦开跑即写入 regression_only，不得再称盲测。性质为跨年份留出（cross-year holdout），不是按时间顺序的未来预测测试。"
+  },
+  "lineage_audit": "tests/benchmarks/v9/audit_blind_year_lineage.py",
+  "claim_audit": "tests/benchmarks/v9/audit_report_claims.py",
+  "test_inventory": "tests/benchmarks/v9/audit_test_inventory.py"
+}

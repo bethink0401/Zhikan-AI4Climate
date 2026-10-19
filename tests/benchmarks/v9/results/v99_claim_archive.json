@@ -1,0 +1,45 @@
+{
+  "note": "已归档的『差值 + CI』声明：产生它的那次运行的 JSON 已被后续轮次覆盖，无法从现行文件复算。与本清单原文不同，这里不只做白名单——每条都记录两侧点估计，审计器会断言 diff == arm_point_f1 - baseline_point_f1，因此归档条目本身也是可校验的。",
+  "schema": {
+    "diff": "报告声明的 Macro-F1 差值",
+    "ci95": "[下界, 上界]",
+    "arm_point_f1": "被比较的一侧（智瞰）点估计",
+    "baseline_point_f1": "基线一侧点估计",
+    "round": "产出该结果的轮次",
+    "script": "产出它的脚本",
+    "claim": "报告里这句话讲的是什么",
+    "superseded_by": "现行替代结论所在位置"
+  },
+  "entries": [
+    {
+      "diff": 0.021,
+      "ci95": [-0.097, 0.111],
+      "arm_point_f1": 0.481,
+      "baseline_point_f1": 0.46,
+      "round": "V9.2",
+      "script": "tests/benchmarks/v9/governance_pit.py（V9.2 版本，结果已被 V9.4/V9.5 重跑覆盖）",
+      "claim": "创新一 PIT 前向回测 C−B（PIT 表在报告『V9.2 增补 → 创新一：前向回测』一节）",
+      "superseded_by": "已作废：该表基于 NOx 门控失效期间的代码，见 V9.4 更正段"
+    },
+    {
+      "diff": -0.0182,
+      "ci95": [-0.136, 0.066],
+      "arm_point_f1": 0.4416,
+      "baseline_point_f1": 0.4598,
+      "round": "V9.5",
+      "script": "tests/benchmarks/v9/governance_holdout.py（V9.5 版本，PIT 口径，结果已被 V9.6 重跑覆盖）",
+      "claim": "创新一 新规则 PIT 口径 C−B（报告『V9.5 增补 → 同一规则的真实数据』一节）",
+      "superseded_by": "现行同配置 PIT 值见 V9.7『配对比较』表（A_v95_committed 一行）"
+    },
+    {
+      "diff": -0.0044,
+      "ci95": [-0.114, 0.069],
+      "arm_point_f1": 0.4602,
+      "baseline_point_f1": 0.4646,
+      "round": "V9.5",
+      "script": "tests/benchmarks/v9/governance_holdout.py（V9.5 版本，全年代理标签口径，结果已被 V9.6 重跑覆盖）",
+      "claim": "创新一 新规则全年代理标签口径 C−B（报告『V9.5 增补 → 全年代理标签口径』一句）",
+      "superseded_by": "该 0.4602 与 V9.7 复算 0.5361 的差值已由 V9.7 输入溯源审计归因（气象来源未记录）"
+    }
+  ]
+}

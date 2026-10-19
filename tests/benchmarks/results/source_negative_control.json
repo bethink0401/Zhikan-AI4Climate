@@ -1,0 +1,116 @@
+{
+  "design": {
+    "criterion": "综合判定不含交通源 = 通过；含交通源 = 未通过",
+    "cases": [
+      "N1_photochemical_pm",
+      "N2_background_day",
+      "N3_general_station"
+    ],
+    "note": "负对照：一般站/背景站上交通特征弱（O₃ 高 NO₂ 低、极低 NO₂ 背景日）的窗口"
+  },
+  "passed": "3/3",
+  "rows": [
+    {
+      "case": "N1_photochemical_pm",
+      "kind": "光化学特征时段（O₃ 高、NO₂ 低）",
+      "station": "塔门",
+      "window": "2023-07-26 16:00:00",
+      "expected": "不含交通源",
+      "pollutants": {
+        "no2_avg": 11.5,
+        "nox_avg": 17.2,
+        "pm10_avg": 52.0,
+        "o3_max": 316.0,
+        "co_avg": 54.0
+      },
+      "anomaly_score": 0.9,
+      "traffic_pressure": null,
+      "upwind_road_count": 0,
+      "source_attribution": {
+        "traffic_source": 0.0,
+        "local_accumulation": 0.36,
+        "regional_transport": 0.5428,
+        "dust_source": 0.45,
+        "photochemical_source": 0.54,
+        "traffic_available": 0,
+        "traffic_signal_ok": 1,
+        "local_available": 1,
+        "regional_available": 1
+      },
+      "top_source": "traffic_signal_ok",
+      "traffic_rank": 8,
+      "main_judgement": "Regional transport dominant",
+      "decision_level": "low",
+      "names_traffic": false,
+      "pass": true
+    },
+    {
+      "case": "N2_background_day",
+      "kind": "极低 NO₂ 背景日",
+      "station": "塔门",
+      "window": "2023-10-02 09:00:00",
+      "expected": "不含交通源",
+      "pollutants": {
+        "no2_avg": 2.2,
+        "nox_avg": 11.2,
+        "pm10_avg": 39.5,
+        "o3_max": 118.0,
+        "co_avg": 62.25
+      },
+      "anomaly_score": 0.7,
+      "traffic_pressure": null,
+      "upwind_road_count": 0,
+      "source_attribution": {
+        "traffic_source": 0.0,
+        "local_accumulation": 0.28,
+        "regional_transport": 0.7541,
+        "dust_source": 0.35,
+        "photochemical_source": 0.42,
+        "traffic_available": 0,
+        "traffic_signal_ok": 1,
+        "local_available": 1,
+        "regional_available": 1
+      },
+      "top_source": "traffic_signal_ok",
+      "traffic_rank": 8,
+      "main_judgement": "Regional transport dominant",
+      "decision_level": "low",
+      "names_traffic": false,
+      "pass": true
+    },
+    {
+      "case": "N3_general_station",
+      "kind": "一般站低 NO₂ 时段",
+      "station": "大埔",
+      "window": "2023-07-17 08:00:00",
+      "expected": "不含交通源",
+      "pollutants": {
+        "no2_avg": 1.5,
+        "nox_avg": 2.5,
+        "pm10_avg": 16.8,
+        "o3_max": 76.0,
+        "co_avg": null
+      },
+      "anomaly_score": 0.3,
+      "traffic_pressure": 0.6157,
+      "upwind_road_count": 0,
+      "source_attribution": {
+        "traffic_source": 0.3771,
+        "local_accumulation": 0.12,
+        "regional_transport": 0.8736,
+        "dust_source": 0.2731,
+        "photochemical_source": 0.18,
+        "traffic_available": 1,
+        "traffic_signal_ok": 1,
+        "local_available": 1,
+        "regional_available": 1
+      },
+      "top_source": "traffic_available",
+      "traffic_rank": 6,
+      "main_judgement": "Mixed / uncertain sources",
+      "decision_level": "medium",
+      "names_traffic": false,
+      "pass": true
+    }
+  ]
+}

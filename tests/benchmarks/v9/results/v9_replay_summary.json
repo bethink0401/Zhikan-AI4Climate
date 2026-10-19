@@ -1,0 +1,10 @@
+{
+  "total_cases_expected": 60,
+  "compared": 60,
+  "matched": 60,
+  "mismatched": 0,
+  "skipped_no_candidates": 0,
+  "trace_lines": 60,
+  "acceptance": "PASS",
+  "note": "跳过规则：候选集为空的案例会显式计入 skipped 并写入 trace，不静默忽略"
+}

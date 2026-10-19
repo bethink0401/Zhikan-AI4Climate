@@ -1,0 +1,4263 @@
+{
+  "task": {
+    "task_id": "task_20260801104834",
+    "station_name": "Mong Kok Roadside",
+    "station_id": "",
+    "start_time": "2023-08-15 08:00:00",
+    "end_time": "2023-08-15 11:00:00",
+    "lat": 22.3193,
+    "lon": 114.1694
+  },
+  "air_quality": {
+    "agent_name": "AirQualityAgent",
+    "status": "warning",
+    "result": {
+      "pollution_status": "unknown",
+      "main_pollutants": [],
+      "aqhi_level": "unknown",
+      "traffic_pollutant_signal": "unknown",
+      "anomaly_score": 0.0
+    },
+    "evidence": [
+      "No air quality data for station=Mong Kok Roadside, period=2023-08-15 08:00:00 ~ 2023-08-15 11:00:00."
+    ],
+    "confidence": 0.2,
+    "data_quality": {
+      "missing_rate": 1.0,
+      "note": "数据缺失，请检查 ETL 是否导入对应站点/时段；勿直接报错中断上游。"
+    },
+    "created_at": "2026-08-01 10:48:34",
+    "meta": {
+      "task_id": "task_20260801104834",
+      "station_name": "Mong Kok Roadside",
+      "start_time": "2023-08-15 08:00:00",
+      "end_time": "2023-08-15 11:00:00",
+      "row_count": 0
+    }
+  },
+  "meteorology": {
+    "agent_name": "MeteorologyAgent",
+    "status": "success",
+    "result": {
+      "task_id": "task_20260801104834",
+      "station_id": "",
+      "station_name": "Mong Kok Roadside",
+      "start_time": "2023-08-15 08:00:00",
+      "end_time": "2023-08-15 11:00:00",
+      "lat": 22.3193,
+      "lon": 114.1694,
+      "weather_risk": 0.7237,
+      "risk_type": "high",
+      "dispersion_condition": "有利扩散",
+      "static_wind_score": 0.595,
+      "wind_shift_score": 1.0,
+      "humidity_risk_score": 0.5,
+      "rain_removal_score": 0.8,
+      "insufficient_rain_removal_score": 0.2,
+      "mean_wind_speed": 1.1925,
+      "dominant_wind_direction": 201.5,
+      "dominant_wind_direction_label": "SSW",
+      "upwind_direction": 201.5,
+      "downwind_direction": 21.5,
+      "mean_humidity": 84.75,
+      "total_precipitation": 0.2,
+      "mean_temperature": 28.5,
+      "mean_cloud_cover": 54.5,
+      "weather_code_daily": 51,
+      "dominant_weather_code_daily": 51,
+      "weather_code_daily_series": [
+        {
+          "date": "2023-08-15",
+          "weather_code": 51
+        }
+      ],
+      "hourly_count": 4,
+      "wind_speed": 2.25,
+      "wind_direction": 201.0,
+      "upwind": "上风向（来向）约 南（201°）",
+      "downwind": "下风向（去向）约 北"
+    },
+    "evidence": [
+      "检测到连续 3 小时风速 ≤ 1.5 m/s，平均 0.84 m/s，利于污染物静风积聚",
+      "相邻小时最大风向变化 180.0°（圆周角），存在扩散路径突变风险",
+      "连续 2 小时湿度 ≥ 85%，最高 91%，不利扩散",
+      "近 4 小时累计降水仅 0.20 mm（<1.0 mm），清除不足",
+      "上风向（来向）约 南（201°）",
+      "下风向（去向）约 北"
+    ],
+    "confidence": 1.0,
+    "data_quality": {
+      "missing_rate": 0.0,
+      "fallback_used": false,
+      "source": "Open-Meteo Archive API",
+      "note": "数据完整"
+    },
+    "created_at": "2026-08-01 10:48:35"
+  },
+  "traffic": {
+    "agent_name": "TrafficAgent",
+    "status": "failed",
+    "result": {},
+    "evidence": [
+      "执行失败: no such table: traffic_vehicle_mix"
+    ],
+    "confidence": 0.0,
+    "data_quality": {
+      "missing_rate": 1.0,
+      "note": "no such table: traffic_vehicle_mix"
+    },
+    "created_at": "2026-08-01 10:48:34"
+  },
+  "spatial": {
+    "task_id": "task_20260801104834",
+    "agent_name": "SpatialAgent",
+    "status": "success",
+    "result": {
+      "upwind_roads": [
+        {
+          "road_id": "22495",
+          "street_code": "11777.0",
+          "road_name": "Portland Street",
+          "road_name_zh": "砵蘭街",
+          "distance_to_station_km": 0.129,
+          "bearing_from_station": 203.9,
+          "wind_angle_difference": 2.9,
+          "upwind_alignment": 0.999,
+          "match_score": 0.988,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16907712284826,
+                22.31739742286404
+              ],
+              [
+                114.16889026259413,
+                22.318236864624847
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "30141",
+          "street_code": "11986.0",
+          "road_name": "Shantung Street",
+          "road_name_zh": "山東街",
+          "distance_to_station_km": 0.218,
+          "bearing_from_station": 199.2,
+          "wind_angle_difference": 1.8,
+          "upwind_alignment": 1.0,
+          "match_score": 0.981,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16873230524166,
+                22.317332288726906
+              ],
+              [
+                114.1687035584385,
+                22.317451177169975
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "9847",
+          "street_code": "11984.0",
+          "road_name": "Shanghai Street",
+          "road_name_zh": "上海街",
+          "distance_to_station_km": 0.242,
+          "bearing_from_station": 202.4,
+          "wind_angle_difference": 1.4,
+          "upwind_alignment": 1.0,
+          "match_score": 0.98,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16850466968218,
+                22.317289289211367
+              ],
+              [
+                114.16869368653535,
+                22.31635432495252
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "10379",
+          "street_code": "11504.0",
+          "road_name": "Nathan Road",
+          "road_name_zh": "彌敦道",
+          "distance_to_station_km": 0.004,
+          "bearing_from_station": 216.4,
+          "wind_angle_difference": 15.4,
+          "upwind_alignment": 0.964,
+          "match_score": 0.973,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16967665772873,
+                22.317513344581023
+              ],
+              [
+                114.16934088108995,
+                22.31919169901494
+              ],
+              [
+                114.16937701504833,
+                22.31927120784056
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "9850",
+          "street_code": "12133.0",
+          "road_name": "Soy Street",
+          "road_name_zh": "豉油街",
+          "distance_to_station_km": 0.359,
+          "bearing_from_station": 199.5,
+          "wind_angle_difference": 1.5,
+          "upwind_alignment": 1.0,
+          "match_score": 0.97,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16776767397374,
+                22.31617016995221
+              ],
+              [
+                114.16823371232907,
+                22.31625732253494
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "9853",
+          "street_code": "11810.0",
+          "road_name": "Reclamation Street",
+          "road_name_zh": "新填地街",
+          "distance_to_station_km": 0.359,
+          "bearing_from_station": 199.5,
+          "wind_angle_difference": 1.5,
+          "upwind_alignment": 1.0,
+          "match_score": 0.97,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16849455297225,
+                22.31505532646466
+              ],
+              [
+                114.16823371232907,
+                22.31625732253494
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "14945",
+          "street_code": "10115.0",
+          "road_name": "Canton Road",
+          "road_name_zh": "廣東道",
+          "distance_to_station_km": 0.386,
+          "bearing_from_station": 205.8,
+          "wind_angle_difference": 4.8,
+          "upwind_alignment": 0.997,
+          "match_score": 0.965,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.168021570939,
+                22.314971240131392
+              ],
+              [
+                114.16776767397374,
+                22.31617016995221
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "13742",
+          "street_code": "nan",
+          "road_name": "Unnamed road",
+          "road_name_zh": "",
+          "distance_to_station_km": 0.328,
+          "bearing_from_station": 189.1,
+          "wind_angle_difference": 11.9,
+          "upwind_alignment": 0.979,
+          "match_score": 0.957,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.1688945350271,
+                22.316387698268155
+              ],
+              [
+                114.16891345997522,
+                22.316286559387954
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "9855",
+          "street_code": "10392.0",
+          "road_name": "Dundas Street",
+          "road_name_zh": "登打士街",
+          "distance_to_station_km": 0.502,
+          "bearing_from_station": 196.4,
+          "wind_angle_difference": 4.6,
+          "upwind_alignment": 0.997,
+          "match_score": 0.956,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16758380286875,
+                22.314897295792523
+              ],
+              [
+                114.168021570939,
+                22.314971240131392
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "35638",
+          "street_code": "12532.0",
+          "road_name": "Tung On Street",
+          "road_name_zh": "東安街",
+          "distance_to_station_km": 0.524,
+          "bearing_from_station": 200.9,
+          "wind_angle_difference": 0.1,
+          "upwind_alignment": 1.0,
+          "match_score": 0.956,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16770334197005,
+                22.314309731111994
+              ],
+              [
+                114.16758380286875,
+                22.314897295792523
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "34654",
+          "street_code": "10953.0",
+          "road_name": "Kam Fong Street",
+          "road_name_zh": "甘芳街",
+          "distance_to_station_km": 0.42,
+          "bearing_from_station": 211.7,
+          "wind_angle_difference": 10.7,
+          "upwind_alignment": 0.983,
+          "match_score": 0.952,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16744661899236,
+                22.31524929163683
+              ],
+              [
+                114.16725281048826,
+                22.316083259688536
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "34335",
+          "street_code": "11207.0",
+          "road_name": "Lee Yip Street",
+          "road_name_zh": "利業街",
+          "distance_to_station_km": 0.582,
+          "bearing_from_station": 197.5,
+          "wind_angle_difference": 3.5,
+          "upwind_alignment": 0.998,
+          "match_score": 0.95,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.1671433297919,
+                22.31421165792062
+              ],
+              [
+                114.16770334197005,
+                22.314309731111994
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "13242",
+          "street_code": "10483.0",
+          "road_name": "Ferry Street",
+          "road_name_zh": "渡船街",
+          "distance_to_station_km": 0.535,
+          "bearing_from_station": 208.7,
+          "wind_angle_difference": 7.7,
+          "upwind_alignment": 0.991,
+          "match_score": 0.949,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16689753706206,
+                22.31507735425976
+              ],
+              [
+                114.16717437338961,
+                22.313305424553594
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "21446",
+          "street_code": "12301.0",
+          "road_name": "Tak Cheong Street",
+          "road_name_zh": "德昌街",
+          "distance_to_station_km": 0.496,
+          "bearing_from_station": 211.1,
+          "wind_angle_difference": 10.1,
+          "upwind_alignment": 0.984,
+          "match_score": 0.947,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16696126791479,
+                22.315157052103743
+              ],
+              [
+                114.16690817478423,
+                22.31548501149709
+              ]
+            ]
+          }
+        },
+        {
+          "road_id": "24116",
+          "street_code": "14494.0",
+          "road_name": "Gascoigne Road Flyover",
+          "road_name_zh": "加士居道天橋",
+          "distance_to_station_km": 0.637,
+          "bearing_from_station": 206.0,
+          "wind_angle_difference": 5.0,
+          "upwind_alignment": 0.996,
+          "match_score": 0.944,
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                114.16805884464321,
+                22.309222450032642
+              ],
+              [
+                114.16756389890745,
+                22.309787569986927
+              ],
+              [
+                114.16732312431986,
+                22.310334717773674
+              ],
+              [
+                114.16668199034204,
+                22.314154843489543
+              ]
+            ]
+          }
+        }
+      ],
+      "nearby_road_count": 780,
+      "nearby_road_segment_count": 5775,
+      "affected_area": "downwind sector within 3 km",
+      "affected_area_geojson": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              114.1694,
+              22.3193
+            ],
+            [
+              114.15753560626557,
+              22.343946669367302
+            ],
+            [
+              114.15930381442807,
+              22.344611724641165
+            ],
+            [
+              114.16111527951875,
+              22.345168372916167
+            ],
+            [
+              114.16296224077252,
+              22.345614229227824
+            ],
+            [
+              114.1648367850864,
+              22.34594738328019
+            ],
+            [
+              114.16673088097545,
+              22.346166407644393
+            ],
+            [
+              114.1686364130401,
+              22.346270363885
+            ],
+            [
+              114.17054521679628,
+              22.346258806587844
+            ],
+            [
+              114.17244911371753,
+              22.34613178527173
+            ],
+            [
+              114.17433994633794,
+              22.345889844175915
+            ],
+            [
+              114.17620961326391,
+              22.34553401992419
+            ],
+            [
+              114.1780501039437,
+              22.345065837075715
+            ],
+            [
+              114.17985353304444,
+              22.344487301581765
+            ],
+            [
+              114.18161217428796,
+              22.343800892176745
+            ],
+            [
+              114.1833184935997,
+              22.343009549740618
+            ],
+            [
+              114.18496518142719,
+              22.34211666467868
+            ],
+            [
+              114.18654518408924,
+              22.341126062373252
+            ],
+            [
+              114.18805173402046,
+              22.340041986770046
+            ],
+            [
+              114.18947837878083,
+              22.338869082170056
+            ],
+            [
+              114.19081900870597,
+              22.3376123733056
+            ],
+            [
+              114.19206788307898,
+              22.336277243786377
+            ],
+            [
+              114.1932196547119,
+              22.334869413008526
+            ],
+            [
+              114.1942693928313,
+              22.333394911626208
+            ],
+            [
+              114.19521260417056,
+              22.33186005569132
+            ],
+            [
+              114.1960452521784,
+              22.33027141957282
+            ],
+            [
+              114.1694,
+              22.3193
+            ]
+          ]
+        ]
+      },
+      "sensitive_poi_count": 348,
+      "sensitive_poi_by_type": {
+        "rail_transit": 42,
+        "community_service": 6,
+        "healthcare": 64,
+        "school": 223,
+        "community_centre": 13
+      },
+      "sensitive_pois": [
+        {
+          "poi_id": "531526",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok Station-D1 Access",
+          "name_zh": "香港鐵路旺角站-D1進出口",
+          "distance_to_station_km": 0.023,
+          "bearing_from_station": 55.4,
+          "lon": 114.1695852,
+          "lat": 22.319418
+        },
+        {
+          "poi_id": "533184",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok Station-A1 Access",
+          "name_zh": "香港鐵路旺角站-A1進出口",
+          "distance_to_station_km": 0.115,
+          "bearing_from_station": 337.0,
+          "lon": 114.1689639,
+          "lat": 22.3202488
+        },
+        {
+          "poi_id": "538602",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok Station-B1 Access",
+          "name_zh": "香港鐵路旺角站-B1進出口",
+          "distance_to_station_km": 0.115,
+          "bearing_from_station": 358.5,
+          "lon": 114.1693716,
+          "lat": 22.3203301
+        },
+        {
+          "poi_id": "529600",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok Station-B2 Access",
+          "name_zh": "香港鐵路旺角站-B2進出口",
+          "distance_to_station_km": 0.123,
+          "bearing_from_station": 12.2,
+          "lon": 114.1696531,
+          "lat": 22.3203843
+        },
+        {
+          "poi_id": "21118041",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok Station-B4 Access",
+          "name_zh": "香港鐵路旺角站-B4進出口",
+          "distance_to_station_km": 0.134,
+          "bearing_from_station": 3.5,
+          "lon": 114.1694784,
+          "lat": 22.3205017
+        },
+        {
+          "poi_id": "551634",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok Station-B3 Access",
+          "name_zh": "香港鐵路旺角站-B3進出口",
+          "distance_to_station_km": 0.144,
+          "bearing_from_station": 12.4,
+          "lon": 114.1697016,
+          "lat": 22.3205649
+        },
+        {
+          "poi_id": "530216",
+          "poi_type": "community_service",
+          "name": "FA YUEN STREET PUBLIC LIBRARY STUDENTS' STUDY ROOM",
+          "name_zh": "花園街公共圖書館學生自修室",
+          "distance_to_station_km": 0.212,
+          "bearing_from_station": 39.1,
+          "lon": 114.1707013,
+          "lat": 22.3207817
+        },
+        {
+          "poi_id": "540028",
+          "poi_type": "healthcare",
+          "name": "YAN OI CONVALESCENT HOME",
+          "name_zh": "仁愛護理安老院",
+          "distance_to_station_km": 0.231,
+          "bearing_from_station": 45.9,
+          "lon": 114.1710119,
+          "lat": 22.3207456
+        },
+        {
+          "poi_id": "21199280",
+          "poi_type": "school",
+          "name": "TWGHS CHI-LI PAO SCHOOL (PRIMARY SECTION)",
+          "name_zh": "東華三院包玉星學校(小學部)",
+          "distance_to_station_km": 0.255,
+          "bearing_from_station": 358.7,
+          "lon": 114.1693424,
+          "lat": 22.3215944
+        },
+        {
+          "poi_id": "21199279",
+          "poi_type": "school",
+          "name": "TWGHS CHI-LI PAO SCHOOL (SECONDARY SECTION)",
+          "name_zh": "東華三院包玉星學校(中學部)",
+          "distance_to_station_km": 0.255,
+          "bearing_from_station": 358.7,
+          "lon": 114.1693424,
+          "lat": 22.3215944
+        },
+        {
+          "poi_id": "21136287",
+          "poi_type": "healthcare",
+          "name": "KIN PAK (MONG KOK) ELDERLY HOME",
+          "name_zh": "健柏（旺角）護老院",
+          "distance_to_station_km": 0.28,
+          "bearing_from_station": 343.9,
+          "lon": 114.1686436,
+          "lat": 22.3217208
+        },
+        {
+          "poi_id": "21104855",
+          "poi_type": "school",
+          "name": "C C C MONGKOK CHURCH JEANNETTE KINDERGARTEN",
+          "name_zh": "中華基督教會望覺堂賢貞幼稚園",
+          "distance_to_station_km": 0.294,
+          "bearing_from_station": 357.9,
+          "lon": 114.1692939,
+          "lat": 22.3219465
+        },
+        {
+          "poi_id": "21104856",
+          "poi_type": "school",
+          "name": "C C C MONGKOK CHURCH JEANNETTE KINDERGARTEN",
+          "name_zh": "中華基督教會望覺堂賢貞幼稚園",
+          "distance_to_station_km": 0.295,
+          "bearing_from_station": 358.3,
+          "lon": 114.1693133,
+          "lat": 22.3219556
+        },
+        {
+          "poi_id": "548119",
+          "poi_type": "school",
+          "name": "HONG KONG & KOWLOON CHIU CHOW PUBLIC ASSOCIATION SECONDARY SCHOOL",
+          "name_zh": "港九潮州公會中學",
+          "distance_to_station_km": 0.364,
+          "bearing_from_station": 33.5,
+          "lon": 114.1713516,
+          "lat": 22.3220279
+        },
+        {
+          "poi_id": "527820",
+          "poi_type": "school",
+          "name": "S.K.H. KEI WING PRIMARY SCHOOL",
+          "name_zh": "聖公會基榮小學",
+          "distance_to_station_km": 0.372,
+          "bearing_from_station": 336.5,
+          "lon": 114.1679544,
+          "lat": 22.3223709
+        },
+        {
+          "poi_id": "529303",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok East Station-B Access",
+          "name_zh": "香港鐵路旺角東站-B進出口",
+          "distance_to_station_km": 0.414,
+          "bearing_from_station": 50.0,
+          "lon": 114.1724872,
+          "lat": 22.3216938
+        },
+        {
+          "poi_id": "537497",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok East Station-A Access",
+          "name_zh": "香港鐵路旺角東站-A進出口",
+          "distance_to_station_km": 0.428,
+          "bearing_from_station": 51.5,
+          "lon": 114.1726522,
+          "lat": 22.3216938
+        },
+        {
+          "poi_id": "557494",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok East Station",
+          "name_zh": "香港鐵路旺角東站",
+          "distance_to_station_km": 0.446,
+          "bearing_from_station": 47.4,
+          "lon": 114.1725939,
+          "lat": 22.3220189
+        },
+        {
+          "poi_id": "553909",
+          "poi_type": "school",
+          "name": "DIOCESAN BOYS' SCHOOL",
+          "name_zh": "拔萃男書院",
+          "distance_to_station_km": 0.45,
+          "bearing_from_station": 60.6,
+          "lon": 114.1732055,
+          "lat": 22.3212875
+        },
+        {
+          "poi_id": "561450",
+          "poi_type": "healthcare",
+          "name": "WING SING NURSING HOME",
+          "name_zh": "永成護理之家",
+          "distance_to_station_km": 0.457,
+          "bearing_from_station": 342.6,
+          "lon": 114.1680708,
+          "lat": 22.3232198
+        },
+        {
+          "poi_id": "537978",
+          "poi_type": "healthcare",
+          "name": "TUNG KONG SANATORIUM",
+          "name_zh": "東江安老院",
+          "distance_to_station_km": 0.461,
+          "bearing_from_station": 342.6,
+          "lon": 114.1680611,
+          "lat": 22.3232559
+        },
+        {
+          "poi_id": "532892",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok East Station-C Access",
+          "name_zh": "香港鐵路旺角東站-C進出口",
+          "distance_to_station_km": 0.488,
+          "bearing_from_station": 41.4,
+          "lon": 114.1725357,
+          "lat": 22.3225878
+        },
+        {
+          "poi_id": "563091",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Mong Kok East Station-D Access",
+          "name_zh": "香港鐵路旺角東站-D進出口",
+          "distance_to_station_km": 0.501,
+          "bearing_from_station": 41.9,
+          "lon": 114.1726522,
+          "lat": 22.3226511
+        },
+        {
+          "poi_id": "528920",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Prince Edward Station-B2 Access",
+          "name_zh": "香港鐵路太子站-B2進出口",
+          "distance_to_station_km": 0.511,
+          "bearing_from_station": 355.5,
+          "lon": 114.1690123,
+          "lat": 22.3238791
+        },
+        {
+          "poi_id": "530307",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Prince Edward Station-C1 Access",
+          "name_zh": "香港鐵路太子站-C1進出口",
+          "distance_to_station_km": 0.545,
+          "bearing_from_station": 346.9,
+          "lon": 114.1681969,
+          "lat": 22.3240687
+        },
+        {
+          "poi_id": "529719",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Prince Edward Station-B1 Access",
+          "name_zh": "香港鐵路太子站-B1進出口",
+          "distance_to_station_km": 0.546,
+          "bearing_from_station": 351.2,
+          "lon": 114.1685852,
+          "lat": 22.32415
+        },
+        {
+          "poi_id": "561230",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Prince Edward Station-C2 Access",
+          "name_zh": "香港鐵路太子站-C2進出口",
+          "distance_to_station_km": 0.546,
+          "bearing_from_station": 345.1,
+          "lon": 114.1680319,
+          "lat": 22.3240416
+        },
+        {
+          "poi_id": "527239",
+          "poi_type": "school",
+          "name": "QUEEN ELIZABETH SCHOOL",
+          "name_zh": "伊利沙伯中學",
+          "distance_to_station_km": 0.551,
+          "bearing_from_station": 20.7,
+          "lon": 114.1712932,
+          "lat": 22.3239334
+        },
+        {
+          "poi_id": "21168984",
+          "poi_type": "school",
+          "name": "RUDOLF STEINER EDUCATION FOUNDATION HONG KONG MARIA COLLEGE",
+          "name_zh": "香港華德福教育基金會瑪利亞書院",
+          "distance_to_station_km": 0.551,
+          "bearing_from_station": 20.7,
+          "lon": 114.1712932,
+          "lat": 22.3239334
+        },
+        {
+          "poi_id": "537817",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Prince Edward Station",
+          "name_zh": "香港鐵路太子站",
+          "distance_to_station_km": 0.58,
+          "bearing_from_station": 348.6,
+          "lon": 114.1682843,
+          "lat": 22.3244119
+        },
+        {
+          "poi_id": "21136298",
+          "poi_type": "healthcare",
+          "name": "GREAT KINDNESS ELDERLY HOME LIMITED",
+          "name_zh": "厚愛護老院有限公司",
+          "distance_to_station_km": 0.582,
+          "bearing_from_station": 5.0,
+          "lon": 114.1698955,
+          "lat": 22.3245113
+        },
+        {
+          "poi_id": "527206",
+          "poi_type": "school",
+          "name": "THE CHURCH OF CHRIST IN CHINA HEEP WOH PRIMARY SCHOOL",
+          "name_zh": "中華基督教會協和小學",
+          "distance_to_station_km": 0.592,
+          "bearing_from_station": 27.9,
+          "lon": 114.1720989,
+          "lat": 22.3240056
+        },
+        {
+          "poi_id": "543056",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Prince Edward Station-A Access",
+          "name_zh": "香港鐵路太子站-A進出口",
+          "distance_to_station_km": 0.651,
+          "bearing_from_station": 350.6,
+          "lon": 114.1683619,
+          "lat": 22.3250711
+        },
+        {
+          "poi_id": "21014827",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Prince Edward Station-E Access",
+          "name_zh": "香港鐵路太子站-E進出口",
+          "distance_to_station_km": 0.668,
+          "bearing_from_station": 347.1,
+          "lon": 114.1679542,
+          "lat": 22.3251523
+        },
+        {
+          "poi_id": "540024",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Prince Edward Station-D Access",
+          "name_zh": "香港鐵路太子站-D進出口",
+          "distance_to_station_km": 0.669,
+          "bearing_from_station": 344.6,
+          "lon": 114.1676727,
+          "lat": 22.3250981
+        },
+        {
+          "poi_id": "527665",
+          "poi_type": "school",
+          "name": "DIOCESAN BOYS' SCHOOL",
+          "name_zh": "拔萃男書院",
+          "distance_to_station_km": 0.671,
+          "bearing_from_station": 47.1,
+          "lon": 114.174176,
+          "lat": 22.3234097
+        },
+        {
+          "poi_id": "21243343",
+          "poi_type": "school",
+          "name": "Lingnan Institute of Further Education",
+          "name_zh": "嶺南大學持續進修學院",
+          "distance_to_station_km": 0.686,
+          "bearing_from_station": 347.2,
+          "lon": 114.1679251,
+          "lat": 22.3253149
+        },
+        {
+          "poi_id": "21106017",
+          "poi_type": "school",
+          "name": "MING WAI INTERNATIONAL KINDERGARTEN (PRINCE EDWARD BRANCH)",
+          "name_zh": "明慧國際幼稚園(太子分校)",
+          "distance_to_station_km": 0.696,
+          "bearing_from_station": 1.0,
+          "lon": 114.1695169,
+          "lat": 22.3255588
+        },
+        {
+          "poi_id": "21106016",
+          "poi_type": "school",
+          "name": "MING WAI INTERNATIONAL KINDERGARTEN (PRINCE EDWARD BRANCH)",
+          "name_zh": "明慧國際幼稚園(太子分校)",
+          "distance_to_station_km": 0.697,
+          "bearing_from_station": 1.2,
+          "lon": 114.169546,
+          "lat": 22.3255678
+        },
+        {
+          "poi_id": "541527",
+          "poi_type": "healthcare",
+          "name": "KANG TAI GEROCOMY CENTRE",
+          "name_zh": "康泰護老中心",
+          "distance_to_station_km": 0.714,
+          "bearing_from_station": 6.1,
+          "lon": 114.1701381,
+          "lat": 22.3256853
+        },
+        {
+          "poi_id": "553729",
+          "poi_type": "healthcare",
+          "name": "HANG ON AGED HOME",
+          "name_zh": "恒安護老院",
+          "distance_to_station_km": 0.72,
+          "bearing_from_station": 355.3,
+          "lon": 114.1688277,
+          "lat": 22.3257574
+        },
+        {
+          "poi_id": "21124701",
+          "poi_type": "school",
+          "name": "RUDOLF STEINER EDUCATION FOUNDATION HONG KONG MARIA COLLEGE",
+          "name_zh": "香港華德福教育基金會瑪利亞書院",
+          "distance_to_station_km": 0.744,
+          "bearing_from_station": 350.8,
+          "lon": 114.1682454,
+          "lat": 22.3259019
+        },
+        {
+          "poi_id": "546178",
+          "poi_type": "school",
+          "name": "KOWLOON SAM YUK SECONDARY SCHOOL",
+          "name_zh": "九龍三育中學",
+          "distance_to_station_km": 0.779,
+          "bearing_from_station": 1.2,
+          "lon": 114.1695557,
+          "lat": 22.3263083
+        },
+        {
+          "poi_id": "21117588",
+          "poi_type": "healthcare",
+          "name": "SZE HONG ELDERLY CARE CENTRE",
+          "name_zh": "思康護老院",
+          "distance_to_station_km": 0.79,
+          "bearing_from_station": 354.6,
+          "lon": 114.1686724,
+          "lat": 22.3263715
+        },
+        {
+          "poi_id": "546933",
+          "poi_type": "school",
+          "name": "Hong Kong Society For The Protection of Children Air Cargo Community Day Creche",
+          "name_zh": "香港保護兒童會香港空運業界嬰兒園",
+          "distance_to_station_km": 0.79,
+          "bearing_from_station": 341.3,
+          "lon": 114.166935,
+          "lat": 22.3260282
+        },
+        {
+          "poi_id": "539476",
+          "poi_type": "school",
+          "name": "HONG KONG SOCIETY FOR THE PROTECTION OF CHILDREN PORTLAND STREET NURSERY SCHOOL",
+          "name_zh": "香港保護兒童會砵蘭街幼兒學校",
+          "distance_to_station_km": 0.793,
+          "bearing_from_station": 341.7,
+          "lon": 114.1669738,
+          "lat": 22.3260734
+        },
+        {
+          "poi_id": "21129813",
+          "poi_type": "school",
+          "name": "HARTS PRESCHOOL",
+          "name_zh": "樂希幼兒學校",
+          "distance_to_station_km": 0.795,
+          "bearing_from_station": 4.5,
+          "lon": 114.1700119,
+          "lat": 22.3264258
+        },
+        {
+          "poi_id": "21129913",
+          "poi_type": "school",
+          "name": "HARTS PRESCHOOL",
+          "name_zh": "樂希幼兒學校",
+          "distance_to_station_km": 0.795,
+          "bearing_from_station": 4.6,
+          "lon": 114.1700216,
+          "lat": 22.3264258
+        },
+        {
+          "poi_id": "545602",
+          "poi_type": "school",
+          "name": "HONG KONG SOCIETY FOR THE PROTECTION OF CHILDREN PARK'N SHOP STAFF CHARITABLE FUND NURSERY SCHOOL",
+          "name_zh": "香港保護兒童會百佳員工慈善基金幼兒學校",
+          "distance_to_station_km": 0.796,
+          "bearing_from_station": 341.3,
+          "lon": 114.1669253,
+          "lat": 22.3260824
+        },
+        {
+          "poi_id": "544088",
+          "poi_type": "healthcare",
+          "name": "YAN OI OLD MAN HOME",
+          "name_zh": "仁愛老人院",
+          "distance_to_station_km": 0.845,
+          "bearing_from_station": 349.8,
+          "lon": 114.1679444,
+          "lat": 22.3267778
+        },
+        {
+          "poi_id": "539538",
+          "poi_type": "healthcare",
+          "name": "THE LODGE",
+          "name_zh": "老舍",
+          "distance_to_station_km": 0.867,
+          "bearing_from_station": 351.1,
+          "lon": 114.1680997,
+          "lat": 22.3270036
+        },
+        {
+          "poi_id": "21129989",
+          "poi_type": "school",
+          "name": "ARISTLE INTERNATIONAL KINDERGARTEN",
+          "name_zh": "雅士圖國際幼稚園",
+          "distance_to_station_km": 0.907,
+          "bearing_from_station": 348.6,
+          "lon": 114.1676532,
+          "lat": 22.3272926
+        },
+        {
+          "poi_id": "21271945",
+          "poi_type": "school",
+          "name": "CHAN'S CREATIVE KINDERGARTEN",
+          "name_zh": "啓基幼稚園",
+          "distance_to_station_km": 0.928,
+          "bearing_from_station": 19.6,
+          "lon": 114.1724288,
+          "lat": 22.3271573
+        },
+        {
+          "poi_id": "21271942",
+          "poi_type": "school",
+          "name": "CHAN'S CREATIVE KINDERGARTEN",
+          "name_zh": "啓基幼稚園",
+          "distance_to_station_km": 0.93,
+          "bearing_from_station": 20.0,
+          "lon": 114.172487,
+          "lat": 22.3271573
+        },
+        {
+          "poi_id": "21271947",
+          "poi_type": "school",
+          "name": "CHAN'S CREATIVE KINDERGARTEN",
+          "name_zh": "啓基幼稚園",
+          "distance_to_station_km": 0.932,
+          "bearing_from_station": 19.9,
+          "lon": 114.1724773,
+          "lat": 22.3271844
+        },
+        {
+          "poi_id": "539247",
+          "poi_type": "school",
+          "name": "CHAN'S CREATIVE SCHOOL",
+          "name_zh": "啓基學校",
+          "distance_to_station_km": 0.932,
+          "bearing_from_station": 20.1,
+          "lon": 114.1725161,
+          "lat": 22.3271663
+        },
+        {
+          "poi_id": "529350",
+          "poi_type": "school",
+          "name": "ST. ROSE OF LIMA'S SCHOOL",
+          "name_zh": "聖羅撒學校",
+          "distance_to_station_km": 0.972,
+          "bearing_from_station": 36.8,
+          "lon": 114.1750593,
+          "lat": 22.3262995
+        },
+        {
+          "poi_id": "527818",
+          "poi_type": "school",
+          "name": "THE CHURCH OF CHRIST IN CHINA HEEP WOH KINDERGARTEN",
+          "name_zh": "中華基督教會協和幼稚園",
+          "distance_to_station_km": 0.997,
+          "bearing_from_station": 349.3,
+          "lon": 114.1675949,
+          "lat": 22.3281053
+        },
+        {
+          "poi_id": "547921",
+          "poi_type": "healthcare",
+          "name": "MERCY NURSING HOME",
+          "name_zh": "慈愛安老院",
+          "distance_to_station_km": 1.014,
+          "bearing_from_station": 341.5,
+          "lon": 114.1662651,
+          "lat": 22.3279427
+        },
+        {
+          "poi_id": "529130",
+          "poi_type": "school",
+          "name": "YAU YAT CHUEN SCHOOL",
+          "name_zh": "又一村學校",
+          "distance_to_station_km": 1.014,
+          "bearing_from_station": 19.4,
+          "lon": 114.1726714,
+          "lat": 22.3278978
+        },
+        {
+          "poi_id": "21105415",
+          "poi_type": "school",
+          "name": "ST. ROSE OF LIMA'S KINDERGARTEN",
+          "name_zh": "聖羅撒幼稚園",
+          "distance_to_station_km": 1.028,
+          "bearing_from_station": 36.7,
+          "lon": 114.1753699,
+          "lat": 22.3267149
+        },
+        {
+          "poi_id": "542064",
+          "poi_type": "school",
+          "name": "ST. ROSE OF LIMA'S KINDERGARTEN",
+          "name_zh": "聖羅撒幼稚園",
+          "distance_to_station_km": 1.029,
+          "bearing_from_station": 36.7,
+          "lon": 114.1753796,
+          "lat": 22.3267149
+        },
+        {
+          "poi_id": "562885",
+          "poi_type": "healthcare",
+          "name": "SIU SIN NURSING CENTRE",
+          "name_zh": "兆善護老中心",
+          "distance_to_station_km": 1.05,
+          "bearing_from_station": 344.6,
+          "lon": 114.1666824,
+          "lat": 22.3284033
+        },
+        {
+          "poi_id": "539479",
+          "poi_type": "healthcare",
+          "name": "LA SALLE OLD MEN AND WOMEN REST HOME LIMITED",
+          "name_zh": "喇沙老人休養院有限公司",
+          "distance_to_station_km": 1.053,
+          "bearing_from_station": 38.7,
+          "lon": 114.1758067,
+          "lat": 22.3266878
+        },
+        {
+          "poi_id": "551001",
+          "poi_type": "healthcare",
+          "name": "TELFORD NURSING CENTRE",
+          "name_zh": "德福護老中心",
+          "distance_to_station_km": 1.054,
+          "bearing_from_station": 344.5,
+          "lon": 114.166663,
+          "lat": 22.3284304
+        },
+        {
+          "poi_id": "546630",
+          "poi_type": "healthcare",
+          "name": "INTERNATIONAL HOME OF AGED LIMITED",
+          "name_zh": "環球護老院有限公司",
+          "distance_to_station_km": 1.059,
+          "bearing_from_station": 40.2,
+          "lon": 114.1760396,
+          "lat": 22.3265794
+        },
+        {
+          "poi_id": "551104",
+          "poi_type": "school",
+          "name": "TSUNG TSIN PRIMARY SCHOOL AND KINDERGARTEN",
+          "name_zh": "崇真小學暨幼稚園",
+          "distance_to_station_km": 1.101,
+          "bearing_from_station": 351.0,
+          "lon": 114.1677307,
+          "lat": 22.3290806
+        },
+        {
+          "poi_id": "528443",
+          "poi_type": "school",
+          "name": "KLT FUNFUL ENGLISH PRIMARY SCHOOL",
+          "name_zh": "九龍塘方方樂趣英文小學",
+          "distance_to_station_km": 1.118,
+          "bearing_from_station": 38.3,
+          "lon": 114.1761367,
+          "lat": 22.3271935
+        },
+        {
+          "poi_id": "541156",
+          "poi_type": "community_centre",
+          "name": "Caritas Community Centre-Kowloon",
+          "name_zh": "明愛九龍社區中心",
+          "distance_to_station_km": 1.139,
+          "bearing_from_station": 49.2,
+          "lon": 114.1777868,
+          "lat": 22.3259924
+        },
+        {
+          "poi_id": "540815",
+          "poi_type": "healthcare",
+          "name": "PROSPEROUS NURSING CENTRE LIMITED",
+          "name_zh": "鴻基護老中心有限公司",
+          "distance_to_station_km": 1.141,
+          "bearing_from_station": 339.1,
+          "lon": 114.1654497,
+          "lat": 22.3288908
+        },
+        {
+          "poi_id": "527264",
+          "poi_type": "school",
+          "name": "UNITED CHRISTIAN COLLEGE",
+          "name_zh": "滙基書院",
+          "distance_to_station_km": 1.15,
+          "bearing_from_station": 6.6,
+          "lon": 114.1706912,
+          "lat": 22.3295775
+        },
+        {
+          "poi_id": "527235",
+          "poi_type": "healthcare",
+          "name": "Kowloon Hospital",
+          "name_zh": "九龍醫院",
+          "distance_to_station_km": 1.155,
+          "bearing_from_station": 64.9,
+          "lon": 114.1795727,
+          "lat": 22.3237077
+        },
+        {
+          "poi_id": "541568",
+          "poi_type": "healthcare",
+          "name": "WAN LUEN HOME FOR ELDERLY",
+          "name_zh": "溫暖護老院",
+          "distance_to_station_km": 1.163,
+          "bearing_from_station": 345.8,
+          "lon": 114.1666338,
+          "lat": 22.3294418
+        },
+        {
+          "poi_id": "21104758",
+          "poi_type": "school",
+          "name": "ANFIELD INTERNATIONAL KINDERGARTEN",
+          "name_zh": "安菲爾國際幼稚園",
+          "distance_to_station_km": 1.167,
+          "bearing_from_station": 37.1,
+          "lon": 114.1762337,
+          "lat": 22.3276721
+        },
+        {
+          "poi_id": "21104759",
+          "poi_type": "school",
+          "name": "ANFIELD INTERNATIONAL KINDERGARTEN",
+          "name_zh": "安菲爾國際幼稚園",
+          "distance_to_station_km": 1.167,
+          "bearing_from_station": 37.2,
+          "lon": 114.1762531,
+          "lat": 22.3276631
+        },
+        {
+          "poi_id": "540553",
+          "poi_type": "healthcare",
+          "name": "LOC SHUN ELDERLY HOME LIMITED",
+          "name_zh": "樂順護老院有限公司",
+          "distance_to_station_km": 1.195,
+          "bearing_from_station": 343.4,
+          "lon": 114.1660805,
+          "lat": 22.3295953
+        },
+        {
+          "poi_id": "531178",
+          "poi_type": "community_service",
+          "name": "CARITAS COMMUNITY CENTRE LIBRARY- KOWLOON",
+          "name_zh": "明愛九龍社區中心圖書館",
+          "distance_to_station_km": 1.198,
+          "bearing_from_station": 46.3,
+          "lon": 114.1778256,
+          "lat": 22.326742
+        },
+        {
+          "poi_id": "21212570",
+          "poi_type": "school",
+          "name": "SAINT TOO BLOOM ACADEMY",
+          "name_zh": "聖道百卉書院",
+          "distance_to_station_km": 1.202,
+          "bearing_from_station": 5.3,
+          "lon": 114.1704874,
+          "lat": 22.3300651
+        },
+        {
+          "poi_id": "546924",
+          "poi_type": "school",
+          "name": "KOWLOON TONG SCHOOL",
+          "name_zh": "九龍塘學校",
+          "distance_to_station_km": 1.207,
+          "bearing_from_station": 33.5,
+          "lon": 114.1758746,
+          "lat": 22.3283494
+        },
+        {
+          "poi_id": "21104829",
+          "poi_type": "school",
+          "name": "CANNAN KINDERGARTEN (KOWLOON TONG)",
+          "name_zh": "迦南幼稚園(九龍塘)",
+          "distance_to_station_km": 1.212,
+          "bearing_from_station": 36.6,
+          "lon": 114.1764182,
+          "lat": 22.3280514
+        },
+        {
+          "poi_id": "530825",
+          "poi_type": "school",
+          "name": "CANNAN KINDERGARTEN (KOWLOON TONG)",
+          "name_zh": "迦南幼稚園(九龍塘)",
+          "distance_to_station_km": 1.221,
+          "bearing_from_station": 36.7,
+          "lon": 114.1764861,
+          "lat": 22.3281056
+        },
+        {
+          "poi_id": "539554",
+          "poi_type": "school",
+          "name": "HONG KONG CHRISTIAN SERVICE TAI HANG TUNG NURSERY SCHOOL",
+          "name_zh": "香港基督教服務處大坑東幼兒學校",
+          "distance_to_station_km": 1.222,
+          "bearing_from_station": 3.7,
+          "lon": 114.170167,
+          "lat": 22.3302638
+        },
+        {
+          "poi_id": "563184",
+          "poi_type": "school",
+          "name": "KOWLOON TONG SCHOOL (SECONDARY SECTION)",
+          "name_zh": "九龍塘學校(中學部)",
+          "distance_to_station_km": 1.24,
+          "bearing_from_station": 32.3,
+          "lon": 114.1758455,
+          "lat": 22.3287287
+        },
+        {
+          "poi_id": "21105970",
+          "poi_type": "school",
+          "name": "KEEN MIND KINDERGARTEN",
+          "name_zh": "劍鳴幼稚園",
+          "distance_to_station_km": 1.25,
+          "bearing_from_station": 36.6,
+          "lon": 114.1766414,
+          "lat": 22.3283314
+        },
+        {
+          "poi_id": "543200",
+          "poi_type": "community_centre",
+          "name": "Tai Hang Tung Community Centre",
+          "name_zh": "大坑東社區中心",
+          "distance_to_station_km": 1.251,
+          "bearing_from_station": 4.0,
+          "lon": 114.1702447,
+          "lat": 22.3305256
+        },
+        {
+          "poi_id": "562740",
+          "poi_type": "school",
+          "name": "KEEN MIND KINDERGARTEN",
+          "name_zh": "劍鳴幼稚園",
+          "distance_to_station_km": 1.253,
+          "bearing_from_station": 37.2,
+          "lon": 114.1767579,
+          "lat": 22.3282772
+        },
+        {
+          "poi_id": "21105849",
+          "poi_type": "school",
+          "name": "CHRISTIAN YOUTH CENTRE KINDERGARTEN",
+          "name_zh": "基督教中心幼稚園",
+          "distance_to_station_km": 1.258,
+          "bearing_from_station": 44.6,
+          "lon": 114.1779809,
+          "lat": 22.327356
+        },
+        {
+          "poi_id": "558289",
+          "poi_type": "school",
+          "name": "CHRISTIAN YOUTH CENTRE KINDERGARTEN",
+          "name_zh": "基督教中心幼稚園",
+          "distance_to_station_km": 1.259,
+          "bearing_from_station": 44.6,
+          "lon": 114.1780003,
+          "lat": 22.327356
+        },
+        {
+          "poi_id": "544977",
+          "poi_type": "school",
+          "name": "THE HONG KONG SZE YAP COMMERCIAL & INDUSTRIAL ASSOCIATION SAN WUI COMMERCIAL SOCIETY SCHOOL",
+          "name_zh": "香港四邑商工總會新會商會學校",
+          "distance_to_station_km": 1.28,
+          "bearing_from_station": 3.4,
+          "lon": 114.1701476,
+          "lat": 22.3307875
+        },
+        {
+          "poi_id": "527242",
+          "poi_type": "school",
+          "name": "CONCORDIA LUTHERAN SCHOOL",
+          "name_zh": "路德會協同中學",
+          "distance_to_station_km": 1.293,
+          "bearing_from_station": 12.9,
+          "lon": 114.1722054,
+          "lat": 22.3306341
+        },
+        {
+          "poi_id": "527045",
+          "poi_type": "school",
+          "name": "ST. FRANCIS OF ASSISI'S ENGLISH PRIMARY SCHOOL",
+          "name_zh": "聖方濟各英文小學",
+          "distance_to_station_km": 1.3,
+          "bearing_from_station": 346.9,
+          "lon": 114.1665367,
+          "lat": 22.330688
+        },
+        {
+          "poi_id": "21105386",
+          "poi_type": "school",
+          "name": "ST. CATHERINE'S INTERNATIONAL KINDERGARTEN",
+          "name_zh": "國際英文幼稚園",
+          "distance_to_station_km": 1.301,
+          "bearing_from_station": 41.4,
+          "lon": 114.1777577,
+          "lat": 22.3280785
+        },
+        {
+          "poi_id": "21105115",
+          "poi_type": "school",
+          "name": "KOWLOON RHENISH SCHOOL",
+          "name_zh": "九龍禮賢學校",
+          "distance_to_station_km": 1.314,
+          "bearing_from_station": 28.7,
+          "lon": 114.1755348,
+          "lat": 22.3296679
+        },
+        {
+          "poi_id": "527454",
+          "poi_type": "school",
+          "name": "ALLIANCE PRIMARY SCHOOL, TAI HANG TUNG",
+          "name_zh": "大坑東宣道小學",
+          "distance_to_station_km": 1.317,
+          "bearing_from_station": 3.3,
+          "lon": 114.1701379,
+          "lat": 22.3311217
+        },
+        {
+          "poi_id": "530840",
+          "poi_type": "healthcare",
+          "name": "Shek Kip Mei Chest Clinic (all services suspended)",
+          "name_zh": "石硤尾胸肺科診所 (暫停所有服務)",
+          "distance_to_station_km": 1.32,
+          "bearing_from_station": 350.6,
+          "lon": 114.1672938,
+          "lat": 22.3310132
+        },
+        {
+          "poi_id": "21129838",
+          "poi_type": "school",
+          "name": "ST. JOHANNES COLLEGE",
+          "name_zh": "聖若望英文書院",
+          "distance_to_station_km": 1.32,
+          "bearing_from_station": 42.8,
+          "lon": 114.1781265,
+          "lat": 22.3280062
+        },
+        {
+          "poi_id": "539811",
+          "poi_type": "healthcare",
+          "name": "EVER HAPPY AGED HOME",
+          "name_zh": "百樂安老院",
+          "distance_to_station_km": 1.328,
+          "bearing_from_station": 341.0,
+          "lon": 114.1651972,
+          "lat": 22.3305886
+        },
+        {
+          "poi_id": "21105816",
+          "poi_type": "school",
+          "name": "CANNAN KINDERGARTEN (WATERLOO ROAD)",
+          "name_zh": "迦南幼稚園(窩打老道)",
+          "distance_to_station_km": 1.337,
+          "bearing_from_station": 42.6,
+          "lon": 114.1781945,
+          "lat": 22.3281507
+        },
+        {
+          "poi_id": "545361",
+          "poi_type": "school",
+          "name": "CANNAN KINDERGARTEN (WATERLOO ROAD)",
+          "name_zh": "迦南幼稚園(窩打老道)",
+          "distance_to_station_km": 1.337,
+          "bearing_from_station": 42.6,
+          "lon": 114.1781945,
+          "lat": 22.3281598
+        },
+        {
+          "poi_id": "546852",
+          "poi_type": "school",
+          "name": "TAK NGA SECONDARY SCHOOL",
+          "name_zh": "德雅中學",
+          "distance_to_station_km": 1.352,
+          "bearing_from_station": 26.1,
+          "lon": 114.1751854,
+          "lat": 22.3302187
+        },
+        {
+          "poi_id": "21067810",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Shek Kip Mei Station Access",
+          "name_zh": "香港鐵路石硤尾站進出口",
+          "distance_to_station_km": 1.354,
+          "bearing_from_station": 356.8,
+          "lon": 114.1686721,
+          "lat": 22.3314557
+        },
+        {
+          "poi_id": "526902",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Shek Kip Mei Station-B1 Access",
+          "name_zh": "香港鐵路石硤尾站-B1進出口",
+          "distance_to_station_km": 1.354,
+          "bearing_from_station": 358.9,
+          "lon": 114.169138,
+          "lat": 22.3314738
+        },
+        {
+          "poi_id": "549915",
+          "poi_type": "school",
+          "name": "HONG KONG YOUNG WOMEN'S CHRISTIAN ASSOCIATION SHIU PONG NURSERY SCHOOL",
+          "name_zh": "香港基督教女青年會紹邦幼兒學校",
+          "distance_to_station_km": 1.354,
+          "bearing_from_station": 10.9,
+          "lon": 114.1718851,
+          "lat": 22.3312572
+        },
+        {
+          "poi_id": "545513",
+          "poi_type": "school",
+          "name": "MARYKNOLL CONVENT SCHOOL (PRIMARY SECTION)",
+          "name_zh": "瑪利諾修院學校（小學部）",
+          "distance_to_station_km": 1.355,
+          "bearing_from_station": 47.2,
+          "lon": 114.179068,
+          "lat": 22.3275728
+        },
+        {
+          "poi_id": "563102",
+          "poi_type": "school",
+          "name": "KINGSTON INTERNATIONAL SCHOOL",
+          "name_zh": "京斯敦國際學校",
+          "distance_to_station_km": 1.375,
+          "bearing_from_station": 41.1,
+          "lon": 114.1781848,
+          "lat": 22.3286203
+        },
+        {
+          "poi_id": "540162",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Shek Kip Mei Station-B2 Access",
+          "name_zh": "香港鐵路石硤尾站-B2進出口",
+          "distance_to_station_km": 1.378,
+          "bearing_from_station": 358.2,
+          "lon": 114.1689827,
+          "lat": 22.3316905
+        },
+        {
+          "poi_id": "527259",
+          "poi_type": "school",
+          "name": "CONCORDIA INTERNATIONAL SCHOOL",
+          "name_zh": "協同國際學校",
+          "distance_to_station_km": 1.378,
+          "bearing_from_station": 12.3,
+          "lon": 114.1722636,
+          "lat": 22.3314017
+        },
+        {
+          "poi_id": "531251",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Shek Kip Mei Station-A Access",
+          "name_zh": "香港鐵路石硤尾站-A進出口",
+          "distance_to_station_km": 1.379,
+          "bearing_from_station": 356.4,
+          "lon": 114.1685556,
+          "lat": 22.3316725
+        },
+        {
+          "poi_id": "553912",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Shek Kip Mei Station",
+          "name_zh": "香港鐵路石硤尾站",
+          "distance_to_station_km": 1.39,
+          "bearing_from_station": 357.5,
+          "lon": 114.1688177,
+          "lat": 22.3317899
+        },
+        {
+          "poi_id": "547217",
+          "poi_type": "school",
+          "name": "THE CHURCH OF CHRIST IN CHINA MING YIN COLLEGE",
+          "name_zh": "中華基督教會銘賢書院",
+          "distance_to_station_km": 1.397,
+          "bearing_from_station": 356.5,
+          "lon": 114.168575,
+          "lat": 22.331844
+        },
+        {
+          "poi_id": "546195",
+          "poi_type": "school",
+          "name": "Bishop Versiglia Memorial School",
+          "name_zh": "德雅學校",
+          "distance_to_station_km": 1.398,
+          "bearing_from_station": 25.8,
+          "lon": 114.1753116,
+          "lat": 22.3306251
+        },
+        {
+          "poi_id": "21161867",
+          "poi_type": "healthcare",
+          "name": "Shek Kip Mei Family Medicine Clinic",
+          "name_zh": "石硤尾家庭醫學診所",
+          "distance_to_station_km": 1.41,
+          "bearing_from_station": 351.7,
+          "lon": 114.1674102,
+          "lat": 22.331844
+        },
+        {
+          "poi_id": "21163843",
+          "poi_type": "school",
+          "name": "THE CHURCH OF CHRIST IN CHINA SHUM OI CHURCH KINDERGARTEN",
+          "name_zh": "中華基督教會深愛堂幼稚園",
+          "distance_to_station_km": 1.422,
+          "bearing_from_station": 354.5,
+          "lon": 114.16808,
+          "lat": 22.3320337
+        },
+        {
+          "poi_id": "21104859",
+          "poi_type": "school",
+          "name": "THE CHURCH OF CHRIST IN CHINA SHUM OI CHURCH KINDERGARTEN",
+          "name_zh": "中華基督教會深愛堂幼稚園",
+          "distance_to_station_km": 1.428,
+          "bearing_from_station": 354.9,
+          "lon": 114.1681576,
+          "lat": 22.3320878
+        },
+        {
+          "poi_id": "21104860",
+          "poi_type": "school",
+          "name": "THE CHURCH OF CHRIST IN CHINA SHUM OI CHURCH KINDERGARTEN",
+          "name_zh": "中華基督教會深愛堂幼稚園",
+          "distance_to_station_km": 1.428,
+          "bearing_from_station": 354.8,
+          "lon": 114.1681382,
+          "lat": 22.3320878
+        },
+        {
+          "poi_id": "527718",
+          "poi_type": "school",
+          "name": "HOLY TRINITY COLLEGE",
+          "name_zh": "寶血會上智英文書院",
+          "distance_to_station_km": 1.457,
+          "bearing_from_station": 356.2,
+          "lon": 114.1684585,
+          "lat": 22.3323768
+        },
+        {
+          "poi_id": "540137",
+          "poi_type": "school",
+          "name": "Hong Kong Institute of Technology",
+          "name_zh": "香港科技專上書院",
+          "distance_to_station_km": 1.462,
+          "bearing_from_station": 344.0,
+          "lon": 114.1654882,
+          "lat": 22.3319432
+        },
+        {
+          "poi_id": "544544",
+          "poi_type": "school",
+          "name": "DIOCESAN PREPARATORY SCHOOL",
+          "name_zh": "拔萃小學",
+          "distance_to_station_km": 1.479,
+          "bearing_from_station": 41.9,
+          "lon": 114.1790001,
+          "lat": 22.3291983
+        },
+        {
+          "poi_id": "550693",
+          "poi_type": "school",
+          "name": "MANHABIT KINDERGARTEN",
+          "name_zh": "文娜雅拔幼稚園",
+          "distance_to_station_km": 1.484,
+          "bearing_from_station": 31.5,
+          "lon": 114.1769423,
+          "lat": 22.3306793
+        },
+        {
+          "poi_id": "545913",
+          "poi_type": "school",
+          "name": "MARYKNOLL CONVENT SCHOOL (SECONDARY SECTION)",
+          "name_zh": "瑪利諾修院學校（中學部）",
+          "distance_to_station_km": 1.493,
+          "bearing_from_station": 48.5,
+          "lon": 114.1802717,
+          "lat": 22.3281959
+        },
+        {
+          "poi_id": "533211",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Shek Kip Mei Station-C Access",
+          "name_zh": "香港鐵路石硤尾站-C進出口",
+          "distance_to_station_km": 1.495,
+          "bearing_from_station": 357.7,
+          "lon": 114.1688274,
+          "lat": 22.3327381
+        },
+        {
+          "poi_id": "561257",
+          "poi_type": "school",
+          "name": "CHRIST CHURCH KINDERGARTEN",
+          "name_zh": "基督堂幼稚園",
+          "distance_to_station_km": 1.498,
+          "bearing_from_station": 40.5,
+          "lon": 114.1788545,
+          "lat": 22.3295505
+        },
+        {
+          "poi_id": "538421",
+          "poi_type": "healthcare",
+          "name": "TEAM FOOK AGED HOME",
+          "name_zh": "添福老人院",
+          "distance_to_station_km": 1.502,
+          "bearing_from_station": 55.7,
+          "lon": 114.1814655,
+          "lat": 22.3269045
+        },
+        {
+          "poi_id": "563236",
+          "poi_type": "healthcare",
+          "name": "FUK KIN HOME FOR AGED",
+          "name_zh": "福健護老院",
+          "distance_to_station_km": 1.503,
+          "bearing_from_station": 337.2,
+          "lon": 114.1637313,
+          "lat": 22.3317534
+        },
+        {
+          "poi_id": "21016026",
+          "poi_type": "school",
+          "name": "Gratia Christian College",
+          "name_zh": "宏恩基督教學院",
+          "distance_to_station_km": 1.514,
+          "bearing_from_station": 355.4,
+          "lon": 114.1682158,
+          "lat": 22.3328735
+        },
+        {
+          "poi_id": "553624",
+          "poi_type": "school",
+          "name": "KOWLOON TRUE LIGHT SCHOOL (PRIMARY SECTION)",
+          "name_zh": "九龍真光中學（小學部）",
+          "distance_to_station_km": 1.52,
+          "bearing_from_station": 37.1,
+          "lon": 114.178311,
+          "lat": 22.3302097
+        },
+        {
+          "poi_id": "558078",
+          "poi_type": "school",
+          "name": "LA SALLE PRIMARY SCHOOL",
+          "name_zh": "喇沙小學",
+          "distance_to_station_km": 1.52,
+          "bearing_from_station": 53.0,
+          "lon": 114.1812035,
+          "lat": 22.3275276
+        },
+        {
+          "poi_id": "527056",
+          "poi_type": "school",
+          "name": "ST. FRANCIS OF ASSISI'S CARITAS SCHOOL",
+          "name_zh": "聖方濟愛德小學",
+          "distance_to_station_km": 1.521,
+          "bearing_from_station": 353.7,
+          "lon": 114.1677693,
+          "lat": 22.3328915
+        },
+        {
+          "poi_id": "21130005",
+          "poi_type": "school",
+          "name": "CHATSWORTH INTERNATIONAL KINDERGARTEN (BOUNDARY STREET)",
+          "name_zh": "新加坡卓薈國際幼稚園(界限街)",
+          "distance_to_station_km": 1.526,
+          "bearing_from_station": 55.9,
+          "lon": 114.1816888,
+          "lat": 22.3269948
+        },
+        {
+          "poi_id": "21129824",
+          "poi_type": "school",
+          "name": "CHATSWORTH INTERNATIONAL KINDERGARTEN (BOUNDARY STREET)",
+          "name_zh": "新加坡卓薈國際幼稚園(界限街)",
+          "distance_to_station_km": 1.527,
+          "bearing_from_station": 55.9,
+          "lon": 114.1816985,
+          "lat": 22.3269948
+        },
+        {
+          "poi_id": "563662",
+          "poi_type": "community_centre",
+          "name": "Shek Kip Mei Community Hall",
+          "name_zh": "石硤尾社區會堂",
+          "distance_to_station_km": 1.531,
+          "bearing_from_station": 346.6,
+          "lon": 114.1659638,
+          "lat": 22.3326928
+        },
+        {
+          "poi_id": "21105644",
+          "poi_type": "school",
+          "name": "YORK ENGLISH PRIMARY SCHOOL & KINDERGARTEN (KOWLOON TONG)",
+          "name_zh": "約克英文小學暨幼稚園(九龍塘)",
+          "distance_to_station_km": 1.536,
+          "bearing_from_station": 30.9,
+          "lon": 114.1770588,
+          "lat": 22.3311579
+        },
+        {
+          "poi_id": "529379",
+          "poi_type": "school",
+          "name": "YORK ENGLISH PRIMARY SCHOOL & KINDERGARTEN (KOWLOON TONG)",
+          "name_zh": "約克英文小學暨幼稚園(九龍塘)",
+          "distance_to_station_km": 1.537,
+          "bearing_from_station": 30.9,
+          "lon": 114.1770782,
+          "lat": 22.3311579
+        },
+        {
+          "poi_id": "538505",
+          "poi_type": "community_centre",
+          "name": "Hong Kong Young Women's Christian Association Jockey Club Shamshuipo Integrated Social Service Centre",
+          "name_zh": "香港基督教女青年會賽馬會深水埗綜合社會服務處",
+          "distance_to_station_km": 1.545,
+          "bearing_from_station": 336.1,
+          "lon": 114.1633236,
+          "lat": 22.3320062
+        },
+        {
+          "poi_id": "539540",
+          "poi_type": "healthcare",
+          "name": "YAU YAT CHUEN HOME FOR THE ELDERLY LIMITED",
+          "name_zh": "又一村老人中心有限公司",
+          "distance_to_station_km": 1.551,
+          "bearing_from_station": 24.3,
+          "lon": 114.1756028,
+          "lat": 22.3320158
+        },
+        {
+          "poi_id": "526484",
+          "poi_type": "school",
+          "name": "TUNG WAH GROUP OF HOSPITALS WONG FUT NAM COLLEGE",
+          "name_zh": "東華三院黃笏南中學",
+          "distance_to_station_km": 1.551,
+          "bearing_from_station": 44.9,
+          "lon": 114.1800484,
+          "lat": 22.3291802
+        },
+        {
+          "poi_id": "527251",
+          "poi_type": "school",
+          "name": "OUR LADY OF THE ROSARY COLLEGE",
+          "name_zh": "聖母玫瑰書院",
+          "distance_to_station_km": 1.556,
+          "bearing_from_station": 12.6,
+          "lon": 114.1727004,
+          "lat": 22.332955
+        },
+        {
+          "poi_id": "21064736",
+          "poi_type": "healthcare",
+          "name": "The Methodist Church, Hong Kong Yang Memorial Methodist Social Service Sham Shui Po Nursing Home cum Day Care Service",
+          "name_zh": "香港基督教循道衛理聯合教會循道衛理楊震社會服務處深水埗護養院暨日間護理服務",
+          "distance_to_station_km": 1.559,
+          "bearing_from_station": 351.4,
+          "lon": 114.1671286,
+          "lat": 22.3331624
+        },
+        {
+          "poi_id": "538657",
+          "poi_type": "community_centre",
+          "name": "Chinese Young Men's Christian Association of Hong Kong Shek Kip Mei Centre",
+          "name_zh": "香港中華基督教青年會石硤尾會所",
+          "distance_to_station_km": 1.563,
+          "bearing_from_station": 351.8,
+          "lon": 114.1672354,
+          "lat": 22.3332166
+        },
+        {
+          "poi_id": "555064",
+          "poi_type": "community_centre",
+          "name": "Neighbourhood Advice-Action Council Sham Shui Po District Elderly Community Centre",
+          "name_zh": "鄰舍輔導會深水埗康齡社區服務中心",
+          "distance_to_station_km": 1.563,
+          "bearing_from_station": 351.8,
+          "lon": 114.1672354,
+          "lat": 22.3332166
+        },
+        {
+          "poi_id": "533804",
+          "poi_type": "school",
+          "name": "ALLIANCE PRIMARY SCHOOL KOWLOON TONG",
+          "name_zh": "九龍塘宣道小學",
+          "distance_to_station_km": 1.563,
+          "bearing_from_station": 39.3,
+          "lon": 114.1790293,
+          "lat": 22.3301736
+        },
+        {
+          "poi_id": "546303",
+          "poi_type": "school",
+          "name": "THE ALLIANCE KINDERGARTEN",
+          "name_zh": "宣道幼稚園",
+          "distance_to_station_km": 1.563,
+          "bearing_from_station": 39.3,
+          "lon": 114.1790293,
+          "lat": 22.3301736
+        },
+        {
+          "poi_id": "558556",
+          "poi_type": "school",
+          "name": "KINGSTON INTERNATIONAL KINDERGARTEN",
+          "name_zh": "京斯敦國際幼稚園",
+          "distance_to_station_km": 1.565,
+          "bearing_from_station": 32.1,
+          "lon": 114.1774956,
+          "lat": 22.3312211
+        },
+        {
+          "poi_id": "21105646",
+          "poi_type": "school",
+          "name": "YORK INTERNATIONAL KINDERGARTEN",
+          "name_zh": "約克國際幼稚園",
+          "distance_to_station_km": 1.57,
+          "bearing_from_station": 29.8,
+          "lon": 114.1769908,
+          "lat": 22.3315462
+        },
+        {
+          "poi_id": "552826",
+          "poi_type": "school",
+          "name": "YORK INTERNATIONAL KINDERGARTEN",
+          "name_zh": "約克國際幼稚園",
+          "distance_to_station_km": 1.57,
+          "bearing_from_station": 29.7,
+          "lon": 114.1769714,
+          "lat": 22.3315553
+        },
+        {
+          "poi_id": "21129930",
+          "poi_type": "school",
+          "name": "PO LEUNG KUK ANGELA LEONG ON KEI KINDERGARTEN",
+          "name_zh": "保良局梁安琪幼稚園",
+          "distance_to_station_km": 1.573,
+          "bearing_from_station": 348.9,
+          "lon": 114.1664685,
+          "lat": 22.3331804
+        },
+        {
+          "poi_id": "545200",
+          "poi_type": "healthcare",
+          "name": "HAPPY FAMILY FOR THE AGED LIMITED",
+          "name_zh": "家樂護老院有限公司",
+          "distance_to_station_km": 1.576,
+          "bearing_from_station": 340.2,
+          "lon": 114.1642166,
+          "lat": 22.3326384
+        },
+        {
+          "poi_id": "542336",
+          "poi_type": "healthcare",
+          "name": "WING LOK HOME FOR AGED",
+          "name_zh": "永樂安老院",
+          "distance_to_station_km": 1.576,
+          "bearing_from_station": 340.2,
+          "lon": 114.1642166,
+          "lat": 22.3326384
+        },
+        {
+          "poi_id": "537740",
+          "poi_type": "community_centre",
+          "name": "Hong Kong Lutheran Social Service Shek Kip Mei Lutheran Centre for the Blind",
+          "name_zh": "路德會石硤尾失明者中心",
+          "distance_to_station_km": 1.591,
+          "bearing_from_station": 342.4,
+          "lon": 114.164731,
+          "lat": 22.3329365
+        },
+        {
+          "poi_id": "561327",
+          "poi_type": "school",
+          "name": "Hong Kong Sheng Kung Hui St. Thomas' Child Care Centre",
+          "name_zh": "香港聖公會聖多馬幼兒中心",
+          "distance_to_station_km": 1.591,
+          "bearing_from_station": 342.4,
+          "lon": 114.164731,
+          "lat": 22.3329365
+        },
+        {
+          "poi_id": "528315",
+          "poi_type": "school",
+          "name": "ST. THOMAS' CHURCH KINDERGARTEN",
+          "name_zh": "聖多馬堂幼稚園",
+          "distance_to_station_km": 1.594,
+          "bearing_from_station": 345.1,
+          "lon": 114.1654105,
+          "lat": 22.3331533
+        },
+        {
+          "poi_id": "555378",
+          "poi_type": "community_service",
+          "name": "THE CHRISTIAN THE FAITH HOPE LOVE CHURCH INTEGRATED COMMUNITY SERVICE CENTER",
+          "name_zh": "基督徒信望愛堂燃亮社區綜合服務中心",
+          "distance_to_station_km": 1.597,
+          "bearing_from_station": 345.2,
+          "lon": 114.1654396,
+          "lat": 22.3331894
+        },
+        {
+          "poi_id": "21105420",
+          "poi_type": "school",
+          "name": "ST. THOMAS' CHURCH KINDERGARTEN",
+          "name_zh": "聖多馬堂幼稚園",
+          "distance_to_station_km": 1.598,
+          "bearing_from_station": 345.2,
+          "lon": 114.1654299,
+          "lat": 22.3331984
+        },
+        {
+          "poi_id": "21105421",
+          "poi_type": "school",
+          "name": "ST. THOMAS' CHURCH KINDERGARTEN",
+          "name_zh": "聖多馬堂幼稚園",
+          "distance_to_station_km": 1.6,
+          "bearing_from_station": 345.3,
+          "lon": 114.1654396,
+          "lat": 22.3332165
+        },
+        {
+          "poi_id": "545443",
+          "poi_type": "school",
+          "name": "AMERICAN INTERNATIONAL SCHOOL",
+          "name_zh": "美國國際學校",
+          "distance_to_station_km": 1.602,
+          "bearing_from_station": 34.9,
+          "lon": 114.178311,
+          "lat": 22.3311128
+        },
+        {
+          "poi_id": "21126862",
+          "poi_type": "school",
+          "name": "THE EVANGELICAL LUTHERAN CHURCH OF HONG KONG FAITH LUTHERAN SCHOOL",
+          "name_zh": "基督教香港信義會深信學校",
+          "distance_to_station_km": 1.613,
+          "bearing_from_station": 350.8,
+          "lon": 114.1668859,
+          "lat": 22.3336139
+        },
+        {
+          "poi_id": "527600",
+          "poi_type": "school",
+          "name": "CREATIVE PRIMARY SCHOOL",
+          "name_zh": "啓思小學",
+          "distance_to_station_km": 1.617,
+          "bearing_from_station": 48.4,
+          "lon": 114.1811647,
+          "lat": 22.3289454
+        },
+        {
+          "poi_id": "549879",
+          "poi_type": "school",
+          "name": "THE CHURCH OF CHRIST IN CHINA KEI WA PRIMARY SCHOOL (KOWLOON TONG)",
+          "name_zh": "中華基督教會基華小學(九龍塘)",
+          "distance_to_station_km": 1.617,
+          "bearing_from_station": 44.6,
+          "lon": 114.1804367,
+          "lat": 22.3296588
+        },
+        {
+          "poi_id": "21104915",
+          "poi_type": "school",
+          "name": "CREATIVE PRIMARY SCHOOL'S KINDERGARTEN",
+          "name_zh": "啓思小學附屬幼稚園",
+          "distance_to_station_km": 1.619,
+          "bearing_from_station": 48.5,
+          "lon": 114.1811841,
+          "lat": 22.3289454
+        },
+        {
+          "poi_id": "555929",
+          "poi_type": "school",
+          "name": "HONG KONG CHRISTIAN SERVICE SHEK KIP MEI NURSERY SCHOOL",
+          "name_zh": "香港基督教服務處石硤尾幼兒學校",
+          "distance_to_station_km": 1.619,
+          "bearing_from_station": 345.5,
+          "lon": 114.165459,
+          "lat": 22.3333971
+        },
+        {
+          "poi_id": "547060",
+          "poi_type": "school",
+          "name": "CREATIVE PRIMARY SCHOOL'S KINDERGARTEN",
+          "name_zh": "啓思小學附屬幼稚園",
+          "distance_to_station_km": 1.62,
+          "bearing_from_station": 48.5,
+          "lon": 114.1811938,
+          "lat": 22.3289544
+        },
+        {
+          "poi_id": "540308",
+          "poi_type": "healthcare",
+          "name": "LONG LIFE NURSING HOME",
+          "name_zh": "萬年護老院",
+          "distance_to_station_km": 1.633,
+          "bearing_from_station": 339.6,
+          "lon": 114.1638768,
+          "lat": 22.3330719
+        },
+        {
+          "poi_id": "538662",
+          "poi_type": "healthcare",
+          "name": "LOTUS NURSING HOME",
+          "name_zh": "荷花護老院",
+          "distance_to_station_km": 1.633,
+          "bearing_from_station": 339.6,
+          "lon": 114.1638768,
+          "lat": 22.3330719
+        },
+        {
+          "poi_id": "533805",
+          "poi_type": "school",
+          "name": "AMERICAN INTERNATIONAL SCHOOL",
+          "name_zh": "美國國際學校",
+          "distance_to_station_km": 1.637,
+          "bearing_from_station": 34.8,
+          "lon": 114.178476,
+          "lat": 22.3313927
+        },
+        {
+          "poi_id": "530374",
+          "poi_type": "community_service",
+          "name": "THE PEACE EVANGELICAL CENTRE NAM SHAN STUDY ROOM",
+          "name_zh": "平安福音堂南山自修室",
+          "distance_to_station_km": 1.638,
+          "bearing_from_station": 7.6,
+          "lon": 114.1715064,
+          "lat": 22.3339031
+        },
+        {
+          "poi_id": "21089122",
+          "poi_type": "school",
+          "name": "AMERICAN INTERNATIONAL SCHOOL",
+          "name_zh": "美國國際學校",
+          "distance_to_station_km": 1.638,
+          "bearing_from_station": 34.7,
+          "lon": 114.1784663,
+          "lat": 22.3314108
+        },
+        {
+          "poi_id": "21105409",
+          "poi_type": "school",
+          "name": "ST. NICHOLAS' ENGLISH KINDERGARTEN",
+          "name_zh": "金巴倫英文幼稚園",
+          "distance_to_station_km": 1.638,
+          "bearing_from_station": 29.0,
+          "lon": 114.1771073,
+          "lat": 22.3321874
+        },
+        {
+          "poi_id": "542824",
+          "poi_type": "school",
+          "name": "St. Nicholas English Primary School And Kindergarten",
+          "name_zh": "金巴倫英文小學暨幼稚園",
+          "distance_to_station_km": 1.638,
+          "bearing_from_station": 29.0,
+          "lon": 114.1771073,
+          "lat": 22.3321874
+        },
+        {
+          "poi_id": "541969",
+          "poi_type": "healthcare",
+          "name": "YI WO YUEN AGED SANATORIUM CENTRE LIMITED",
+          "name_zh": "頤和園護老中心有限公司",
+          "distance_to_station_km": 1.64,
+          "bearing_from_station": 58.5,
+          "lon": 114.1829992,
+          "lat": 22.3270037
+        },
+        {
+          "poi_id": "21088113",
+          "poi_type": "healthcare",
+          "name": "Central Kowloon Child Asessment Centre",
+          "name_zh": "中九龍兒童體能智力測驗中心",
+          "distance_to_station_km": 1.642,
+          "bearing_from_station": 65.5,
+          "lon": 114.1839212,
+          "lat": 22.3254324
+        },
+        {
+          "poi_id": "546707",
+          "poi_type": "school",
+          "name": "Caritas Lok Mo Integrated Vocational Training Centre",
+          "name_zh": "明愛樂務綜合職業訓練中心",
+          "distance_to_station_km": 1.642,
+          "bearing_from_station": 65.5,
+          "lon": 114.1839212,
+          "lat": 22.3254324
+        },
+        {
+          "poi_id": "557269",
+          "poi_type": "school",
+          "name": "JOCKEY CLUB GOVERNMENT SECONDARY SCHOOL",
+          "name_zh": "賽馬會官立中學",
+          "distance_to_station_km": 1.645,
+          "bearing_from_station": 47.4,
+          "lon": 114.1811744,
+          "lat": 22.3293156
+        },
+        {
+          "poi_id": "547218",
+          "poi_type": "school",
+          "name": "WAI KIU COLLEGE",
+          "name_zh": "惠僑英文中學",
+          "distance_to_station_km": 1.653,
+          "bearing_from_station": 350.5,
+          "lon": 114.16675,
+          "lat": 22.3339661
+        },
+        {
+          "poi_id": "547389",
+          "poi_type": "healthcare",
+          "name": "Nam Shan Family Medicine Clinic",
+          "name_zh": "南山家庭醫學診所",
+          "distance_to_station_km": 1.654,
+          "bearing_from_station": 4.6,
+          "lon": 114.1706813,
+          "lat": 22.3341289
+        },
+        {
+          "poi_id": "543647",
+          "poi_type": "school",
+          "name": "SAHK Shek Kip Mei Pre-school Centre (特殊幼兒中心)",
+          "name_zh": "香港耀能協會石硤尾幼兒中心 (SCCC)",
+          "distance_to_station_km": 1.658,
+          "bearing_from_station": 344.7,
+          "lon": 114.1651484,
+          "lat": 22.3336861
+        },
+        {
+          "poi_id": "553570",
+          "poi_type": "healthcare",
+          "name": "SURE ON ELDERS HOME COMPANY LIMITED",
+          "name_zh": "順安老人家有限公司",
+          "distance_to_station_km": 1.678,
+          "bearing_from_station": 336.5,
+          "lon": 114.1628867,
+          "lat": 22.333135
+        },
+        {
+          "poi_id": "527250",
+          "poi_type": "school",
+          "name": "MARYKNOLL FATHERS' SCHOOL",
+          "name_zh": "瑪利諾神父教會學校",
+          "distance_to_station_km": 1.678,
+          "bearing_from_station": 14.2,
+          "lon": 114.1733896,
+          "lat": 22.3339303
+        },
+        {
+          "poi_id": "527241",
+          "poi_type": "school",
+          "name": "BISHOP HALL JUBILEE SCHOOL",
+          "name_zh": "何明華會督銀禧中學",
+          "distance_to_station_km": 1.68,
+          "bearing_from_station": 46.2,
+          "lon": 114.1811938,
+          "lat": 22.3297581
+        },
+        {
+          "poi_id": "542473",
+          "poi_type": "healthcare",
+          "name": "Nam Shan Elderly Health Centre",
+          "name_zh": "南山長者健康中心",
+          "distance_to_station_km": 1.681,
+          "bearing_from_station": 5.1,
+          "lon": 114.170856,
+          "lat": 22.3343546
+        },
+        {
+          "poi_id": "21105055",
+          "poi_type": "school",
+          "name": "HONG KONG SOKA KINDERGARTEN",
+          "name_zh": "香港創價幼稚園",
+          "distance_to_station_km": 1.694,
+          "bearing_from_station": 40.8,
+          "lon": 114.1801552,
+          "lat": 22.3308328
+        },
+        {
+          "poi_id": "558075",
+          "poi_type": "school",
+          "name": "HONG KONG SOKA KINDERGARTEN",
+          "name_zh": "香港創價幼稚園",
+          "distance_to_station_km": 1.696,
+          "bearing_from_station": 40.8,
+          "lon": 114.1801747,
+          "lat": 22.3308418
+        },
+        {
+          "poi_id": "547894",
+          "poi_type": "school",
+          "name": "AMERICAN INTERNATIONAL SCHOOL (PRIMARY BRANCH)",
+          "name_zh": "AMERICAN INTERNATIONAL SCHOOL (PRIMARY BRANCH)",
+          "distance_to_station_km": 1.706,
+          "bearing_from_station": 32.9,
+          "lon": 114.178408,
+          "lat": 22.3321874
+        },
+        {
+          "poi_id": "21199326",
+          "poi_type": "school",
+          "name": "YORK INTERNATIONAL PRE-SCHOOL",
+          "name_zh": "YORK INTERNATIONAL PRE-SCHOOL",
+          "distance_to_station_km": 1.706,
+          "bearing_from_station": 32.1,
+          "lon": 114.1782236,
+          "lat": 22.3322958
+        },
+        {
+          "poi_id": "21243388",
+          "poi_type": "school",
+          "name": "YORK ENGLISH PRE-SCHOOL",
+          "name_zh": "YORK ENGLISH PRE-SCHOOL",
+          "distance_to_station_km": 1.707,
+          "bearing_from_station": 32.1,
+          "lon": 114.1782236,
+          "lat": 22.3323048
+        },
+        {
+          "poi_id": "21243389",
+          "poi_type": "school",
+          "name": "YORK ENGLISH PRE-SCHOOL",
+          "name_zh": "YORK ENGLISH PRE-SCHOOL",
+          "distance_to_station_km": 1.708,
+          "bearing_from_station": 32.0,
+          "lon": 114.1782042,
+          "lat": 22.3323229
+        },
+        {
+          "poi_id": "21243387",
+          "poi_type": "school",
+          "name": "YORK ENGLISH PRE-SCHOOL",
+          "name_zh": "YORK ENGLISH PRE-SCHOOL",
+          "distance_to_station_km": 1.709,
+          "bearing_from_station": 32.1,
+          "lon": 114.1782333,
+          "lat": 22.3323138
+        },
+        {
+          "poi_id": "529851",
+          "poi_type": "school",
+          "name": "THE HONG KONG SZE YAP COMMERCIAL & INDUSTRIAL ASSOCIATION WONG TAI SHAN MEMORIAL COLLEGE",
+          "name_zh": "香港四邑商工總會黃棣珊紀念中學",
+          "distance_to_station_km": 1.71,
+          "bearing_from_station": 357.1,
+          "lon": 114.1685554,
+          "lat": 22.3346616
+        },
+        {
+          "poi_id": "544455",
+          "poi_type": "school",
+          "name": "LA SALLE COLLEGE",
+          "name_zh": "喇沙書院",
+          "distance_to_station_km": 1.712,
+          "bearing_from_station": 50.9,
+          "lon": 114.1823198,
+          "lat": 22.3290086
+        },
+        {
+          "poi_id": "528900",
+          "poi_type": "healthcare",
+          "name": "CHINA COAST COMMUNITY LIMITED",
+          "name_zh": "中華海岸老人院",
+          "distance_to_station_km": 1.717,
+          "bearing_from_station": 27.5,
+          "lon": 114.1771073,
+          "lat": 22.3330002
+        },
+        {
+          "poi_id": "21168982",
+          "poi_type": "school",
+          "name": "RUDOLF STEINER EDUCATION FOUNDATION HONG KONG MARIA COLLEGE",
+          "name_zh": "香港華德福教育基金會瑪利亞書院",
+          "distance_to_station_km": 1.722,
+          "bearing_from_station": 43.8,
+          "lon": 114.18099,
+          "lat": 22.3304806
+        },
+        {
+          "poi_id": "537500",
+          "poi_type": "community_centre",
+          "name": "Hong Kong Christian Service Shamshuipo East Integrated Children and Youth Service (Shamshuipo East Happy Teens Club)",
+          "name_zh": "香港基督教服務處深水埗東青少年綜合服務 (深東樂Teen會)",
+          "distance_to_station_km": 1.726,
+          "bearing_from_station": 6.4,
+          "lon": 114.1712831,
+          "lat": 22.3347249
+        },
+        {
+          "poi_id": "556820",
+          "poi_type": "school",
+          "name": "N-M-S' LUTHERAN KINDERGARTEN",
+          "name_zh": "基督教挪威差會主辦信義中英文幼稚園",
+          "distance_to_station_km": 1.733,
+          "bearing_from_station": 15.8,
+          "lon": 114.1739914,
+          "lat": 22.3342915
+        },
+        {
+          "poi_id": "546783",
+          "poi_type": "healthcare",
+          "name": "Salvation Army Nam Ming Haven for Women (The)",
+          "name_zh": "救世軍南明婦女之家",
+          "distance_to_station_km": 1.792,
+          "bearing_from_station": 9.8,
+          "lon": 114.1723606,
+          "lat": 22.3351855
+        },
+        {
+          "poi_id": "553596",
+          "poi_type": "healthcare",
+          "name": "Salvation Army Nam Shan Residence for Senior Citizens (The)",
+          "name_zh": "救世軍南山長者之家",
+          "distance_to_station_km": 1.792,
+          "bearing_from_station": 9.8,
+          "lon": 114.1723606,
+          "lat": 22.3351855
+        },
+        {
+          "poi_id": "526797",
+          "poi_type": "school",
+          "name": "CREATIVE KINDERGARTEN",
+          "name_zh": "啓思幼稚園",
+          "distance_to_station_km": 1.796,
+          "bearing_from_station": 27.5,
+          "lon": 114.1774568,
+          "lat": 22.3336323
+        },
+        {
+          "poi_id": "538085",
+          "poi_type": "school",
+          "name": "LINGNAN UNIVERSITY ALUMNI ASSOCIATION (HONG KONG) PRIMARY SCHOOL",
+          "name_zh": "嶺南大學香港同學會小學",
+          "distance_to_station_km": 1.798,
+          "bearing_from_station": 346.1,
+          "lon": 114.1652162,
+          "lat": 22.3349955
+        },
+        {
+          "poi_id": "540991",
+          "poi_type": "healthcare",
+          "name": "St. Teresa's Hospital",
+          "name_zh": "聖德肋撒醫院",
+          "distance_to_station_km": 1.806,
+          "bearing_from_station": 63.3,
+          "lon": 114.185086,
+          "lat": 22.3265973
+        },
+        {
+          "poi_id": "21105864",
+          "poi_type": "school",
+          "name": "CREATIVE KINDERGARTEN",
+          "name_zh": "啓思幼稚園",
+          "distance_to_station_km": 1.806,
+          "bearing_from_station": 27.5,
+          "lon": 114.177515,
+          "lat": 22.3337045
+        },
+        {
+          "poi_id": "21105865",
+          "poi_type": "school",
+          "name": "CREATIVE KINDERGARTEN",
+          "name_zh": "啓思幼稚園",
+          "distance_to_station_km": 1.807,
+          "bearing_from_station": 27.7,
+          "lon": 114.1775539,
+          "lat": 22.3336955
+        },
+        {
+          "poi_id": "527564",
+          "poi_type": "school",
+          "name": "TUNG WAH GROUP OF HOSPITALS KWAN FONG KAI CHI SCHOOL (PRIMARY SECTION)",
+          "name_zh": "東華三院群芳啓智學校(小學部)",
+          "distance_to_station_km": 1.807,
+          "bearing_from_station": 7.2,
+          "lon": 114.1716131,
+          "lat": 22.3354203
+        },
+        {
+          "poi_id": "21096227",
+          "poi_type": "school",
+          "name": "TUNG WAH GROUP OF HOSPITALS KWAN FONG KAI CHI SCHOOL (SECONDARY SECTION)",
+          "name_zh": "東華三院群芳啓智學校(中學部)",
+          "distance_to_station_km": 1.807,
+          "bearing_from_station": 7.2,
+          "lon": 114.1716131,
+          "lat": 22.3354203
+        },
+        {
+          "poi_id": "529782",
+          "poi_type": "school",
+          "name": "SAVIOUR LUTHERAN SCHOOL (PRIMARY SECTION)",
+          "name_zh": "路德會救主學校(小學部)",
+          "distance_to_station_km": 1.82,
+          "bearing_from_station": 340.0,
+          "lon": 114.1633331,
+          "lat": 22.3346793
+        },
+        {
+          "poi_id": "21096231",
+          "poi_type": "school",
+          "name": "SAVIOUR LUTHERAN SCHOOL (SECONDARY SECTION)",
+          "name_zh": "路德會救主學校(中學部)",
+          "distance_to_station_km": 1.82,
+          "bearing_from_station": 340.0,
+          "lon": 114.1633331,
+          "lat": 22.3346793
+        },
+        {
+          "poi_id": "527043",
+          "poi_type": "school",
+          "name": "THE EVANGELICAL LUTHERAN CHURCH OF HONG KONG FAITH LUTHERAN SCHOOL",
+          "name_zh": "基督教香港信義會深信學校",
+          "distance_to_station_km": 1.841,
+          "bearing_from_station": 346.6,
+          "lon": 114.165255,
+          "lat": 22.3354109
+        },
+        {
+          "poi_id": "21163855",
+          "poi_type": "school",
+          "name": "BLOOM KKCA ACADEMY",
+          "name_zh": "百卉九江書院",
+          "distance_to_station_km": 1.852,
+          "bearing_from_station": 345.9,
+          "lon": 114.1650026,
+          "lat": 22.335447
+        },
+        {
+          "poi_id": "527249",
+          "poi_type": "school",
+          "name": "HEUNG TO MIDDLE SCHOOL",
+          "name_zh": "香島中學",
+          "distance_to_station_km": 1.857,
+          "bearing_from_station": 15.2,
+          "lon": 114.1741273,
+          "lat": 22.3354203
+        },
+        {
+          "poi_id": "526680",
+          "poi_type": "school",
+          "name": "ST. JOHANNES COLLEGE",
+          "name_zh": "聖若望英文書院",
+          "distance_to_station_km": 1.865,
+          "bearing_from_station": 30.0,
+          "lon": 114.178476,
+          "lat": 22.3338219
+        },
+        {
+          "poi_id": "21105547",
+          "poi_type": "school",
+          "name": "TSUNG TSIN MISSION PAK TIN GRACEFUL KINDERGARTEN",
+          "name_zh": "崇真會白田美善幼稚園",
+          "distance_to_station_km": 1.877,
+          "bearing_from_station": 354.9,
+          "lon": 114.1677691,
+          "lat": 22.3361155
+        },
+        {
+          "poi_id": "531639",
+          "poi_type": "school",
+          "name": "TSUNG TSIN MISSION PAK TIN GRACEFUL KINDERGARTEN",
+          "name_zh": "崇真會白田美善幼稚園",
+          "distance_to_station_km": 1.878,
+          "bearing_from_station": 354.8,
+          "lon": 114.16774,
+          "lat": 22.3361155
+        },
+        {
+          "poi_id": "21105548",
+          "poi_type": "school",
+          "name": "TSUNG TSIN MISSION PAK TIN GRACEFUL KINDERGARTEN",
+          "name_zh": "崇真會白田美善幼稚園",
+          "distance_to_station_km": 1.879,
+          "bearing_from_station": 354.8,
+          "lon": 114.16774,
+          "lat": 22.3361245
+        },
+        {
+          "poi_id": "528091",
+          "poi_type": "healthcare",
+          "name": "GRACE NURSING HOME",
+          "name_zh": "頌恩護理院",
+          "distance_to_station_km": 1.894,
+          "bearing_from_station": 40.8,
+          "lon": 114.1814366,
+          "lat": 22.3321873
+        },
+        {
+          "poi_id": "545457",
+          "poi_type": "school",
+          "name": "City University of Hong Kong",
+          "name_zh": "香港城市大學",
+          "distance_to_station_km": 1.91,
+          "bearing_from_station": 12.2,
+          "lon": 114.1733313,
+          "lat": 22.3360886
+        },
+        {
+          "poi_id": "21129998",
+          "poi_type": "school",
+          "name": "JAMES ANGLO-CHINESE KINDERGARTEN (SHAM SHUI PO)",
+          "name_zh": "雅各中英文幼稚園（深水埗校）",
+          "distance_to_station_km": 1.921,
+          "bearing_from_station": 336.4,
+          "lon": 114.1619255,
+          "lat": 22.3351307
+        },
+        {
+          "poi_id": "21129881",
+          "poi_type": "school",
+          "name": "JAMES ANGLO-CHINESE KINDERGARTEN (SHAM SHUI PO)",
+          "name_zh": "雅各中英文幼稚園（深水埗校）",
+          "distance_to_station_km": 1.923,
+          "bearing_from_station": 336.2,
+          "lon": 114.1618673,
+          "lat": 22.3351307
+        },
+        {
+          "poi_id": "21130009",
+          "poi_type": "school",
+          "name": "JAMES ANGLO-CHINESE KINDERGARTEN (SHAM SHUI PO)",
+          "name_zh": "雅各中英文幼稚園（深水埗校）",
+          "distance_to_station_km": 1.923,
+          "bearing_from_station": 336.4,
+          "lon": 114.1619158,
+          "lat": 22.3351488
+        },
+        {
+          "poi_id": "527167",
+          "poi_type": "community_centre",
+          "name": "Pak Tin Community Hall",
+          "name_zh": "白田社區會堂",
+          "distance_to_station_km": 1.93,
+          "bearing_from_station": 358.3,
+          "lon": 114.1688368,
+          "lat": 22.3366483
+        },
+        {
+          "poi_id": "21129614",
+          "poi_type": "school",
+          "name": "ST. CATHERINE'S INTERNATIONAL KINDERGARTEN",
+          "name_zh": "國際英文幼稚園",
+          "distance_to_station_km": 1.954,
+          "bearing_from_station": 26.6,
+          "lon": 114.1779033,
+          "lat": 22.335014
+        },
+        {
+          "poi_id": "544625",
+          "poi_type": "school",
+          "name": "KOWLOON LING LIANG CHURCH KINDERGARTEN",
+          "name_zh": "九龍靈糧堂幼稚園",
+          "distance_to_station_km": 1.958,
+          "bearing_from_station": 62.1,
+          "lon": 114.1862218,
+          "lat": 22.3275454
+        },
+        {
+          "poi_id": "21105981",
+          "poi_type": "school",
+          "name": "KOWLOON LING LIANG CHURCH DAY NURSERY",
+          "name_zh": "九龍靈糧堂幼兒園",
+          "distance_to_station_km": 1.959,
+          "bearing_from_station": 62.1,
+          "lon": 114.1862315,
+          "lat": 22.3275364
+        },
+        {
+          "poi_id": "542887",
+          "poi_type": "school",
+          "name": "KOWLOON LING LIANG CHURCH KINDERGARTEN",
+          "name_zh": "九龍靈糧堂幼稚園",
+          "distance_to_station_km": 1.96,
+          "bearing_from_station": 62.1,
+          "lon": 114.1862412,
+          "lat": 22.3275364
+        },
+        {
+          "poi_id": "545201",
+          "poi_type": "healthcare",
+          "name": "HUNG TO FOR THE HOME",
+          "name_zh": "鴻圖老人院",
+          "distance_to_station_km": 1.969,
+          "bearing_from_station": 64.9,
+          "lon": 114.1867361,
+          "lat": 22.3268049
+        },
+        {
+          "poi_id": "542337",
+          "poi_type": "healthcare",
+          "name": "KIN TAT HOME FOR THE AGED",
+          "name_zh": "健達耆老之家",
+          "distance_to_station_km": 1.969,
+          "bearing_from_station": 64.9,
+          "lon": 114.1867361,
+          "lat": 22.3268049
+        },
+        {
+          "poi_id": "531577",
+          "poi_type": "healthcare",
+          "name": "PRINCE HOME FOR THE ELDERLY",
+          "name_zh": "太子護老中心",
+          "distance_to_station_km": 1.969,
+          "bearing_from_station": 64.9,
+          "lon": 114.1867361,
+          "lat": 22.3268049
+        },
+        {
+          "poi_id": "547140",
+          "poi_type": "school",
+          "name": "HKPC Academy",
+          "name_zh": "生產力學院",
+          "distance_to_station_km": 1.984,
+          "bearing_from_station": 19.2,
+          "lon": 114.1757386,
+          "lat": 22.3361518
+        },
+        {
+          "poi_id": "539287",
+          "poi_type": "school",
+          "name": "THE SALVATION ARMY PAK TIN NURSERY SCHOOL",
+          "name_zh": "救世軍白田幼兒學校",
+          "distance_to_station_km": 1.988,
+          "bearing_from_station": 358.5,
+          "lon": 114.1689048,
+          "lat": 22.3371721
+        },
+        {
+          "poi_id": "537499",
+          "poi_type": "community_centre",
+          "name": "Hong Kong Christian Service Shamshuipo East Integrated Children and Youth Service (Shamshuipo East Happy Teens Club)(Sub-base)",
+          "name_zh": "香港基督教服務處深水埗東青少年綜合服務 (深東樂Teen會)(分處)",
+          "distance_to_station_km": 1.992,
+          "bearing_from_station": 354.5,
+          "lon": 114.1675458,
+          "lat": 22.3371359
+        },
+        {
+          "poi_id": "21271950",
+          "poi_type": "school",
+          "name": "LOK SIN TONG TUNG CHING BOR KINDERGARTEN",
+          "name_zh": "樂善堂董清波幼稚園",
+          "distance_to_station_km": 1.992,
+          "bearing_from_station": 352.7,
+          "lon": 114.1669439,
+          "lat": 22.3370727
+        },
+        {
+          "poi_id": "21271953",
+          "poi_type": "school",
+          "name": "LOK SIN TONG TUNG CHING BOR KINDERGARTEN",
+          "name_zh": "樂善堂董清波幼稚園",
+          "distance_to_station_km": 1.992,
+          "bearing_from_station": 352.7,
+          "lon": 114.1669536,
+          "lat": 22.3370727
+        },
+        {
+          "poi_id": "21271954",
+          "poi_type": "school",
+          "name": "LOK SIN TONG TUNG CHING BOR KINDERGARTEN",
+          "name_zh": "樂善堂董清波幼稚園",
+          "distance_to_station_km": 1.993,
+          "bearing_from_station": 352.7,
+          "lon": 114.1669439,
+          "lat": 22.3370817
+        },
+        {
+          "poi_id": "558435",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL SCHOOL - SECONDARY",
+          "name_zh": "耀中國際學校（中學）",
+          "distance_to_station_km": 1.998,
+          "bearing_from_station": 23.7,
+          "lon": 114.1772044,
+          "lat": 22.3357545
+        },
+        {
+          "poi_id": "540164",
+          "poi_type": "community_service",
+          "name": "PAK TIN STUDY CENTRE OF SEVENTH-DAY ADVENTISTS",
+          "name_zh": "基督復臨安息日會白田閱讀中心",
+          "distance_to_station_km": 2.011,
+          "bearing_from_station": 356.8,
+          "lon": 114.1683223,
+          "lat": 22.3373617
+        },
+        {
+          "poi_id": "561926",
+          "poi_type": "school",
+          "name": "AUSTRALIAN INTERNATIONAL SCHOOL HONG KONG",
+          "name_zh": "香港澳洲國際學校",
+          "distance_to_station_km": 2.014,
+          "bearing_from_station": 25.8,
+          "lon": 114.1779324,
+          "lat": 22.335601
+        },
+        {
+          "poi_id": "549704",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-C2 Access",
+          "name_zh": "香港鐵路九龍塘站-C2進出口",
+          "distance_to_station_km": 2.038,
+          "bearing_from_station": 18.2,
+          "lon": 114.1755736,
+          "lat": 22.3367117
+        },
+        {
+          "poi_id": "529859",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-D Access",
+          "name_zh": "香港鐵路九龍塘站-D進出口",
+          "distance_to_station_km": 2.044,
+          "bearing_from_station": 21.0,
+          "lon": 114.1765152,
+          "lat": 22.3364679
+        },
+        {
+          "poi_id": "546507",
+          "poi_type": "healthcare",
+          "name": "Asia Women's League Limited Chan Kwun Tung Care and Attention Home for the Elderly",
+          "name_zh": "亞洲婦女協進會陳昆棟頤養之家護理安老院",
+          "distance_to_station_km": 2.052,
+          "bearing_from_station": 35.8,
+          "lon": 114.1810775,
+          "lat": 22.3342644
+        },
+        {
+          "poi_id": "21118683",
+          "poi_type": "school",
+          "name": "City University of Hong Kong - School of Continuing and Professional Education",
+          "name_zh": "香港城巿大學 - 專業進修學院",
+          "distance_to_station_km": 2.052,
+          "bearing_from_station": 6.0,
+          "lon": 114.1714966,
+          "lat": 22.3376508
+        },
+        {
+          "poi_id": "543448",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-C1 Access",
+          "name_zh": "香港鐵路九龍塘站-C1進出口",
+          "distance_to_station_km": 2.064,
+          "bearing_from_station": 17.4,
+          "lon": 114.1753989,
+          "lat": 22.3370097
+        },
+        {
+          "poi_id": "549608",
+          "poi_type": "school",
+          "name": "KOWLOON TONG GOVERNMENT PRIMARY SCHOOL",
+          "name_zh": "九龍塘官立小學",
+          "distance_to_station_km": 2.067,
+          "bearing_from_station": 26.9,
+          "lon": 114.178476,
+          "lat": 22.3358809
+        },
+        {
+          "poi_id": "549148",
+          "poi_type": "healthcare",
+          "name": "ASIA WOMEN'S LEAGUE LIMITED SELF-FINANCING HOME FOR THE ELDERLY",
+          "name_zh": "亞洲婦女協進會頤養之家",
+          "distance_to_station_km": 2.07,
+          "bearing_from_station": 35.3,
+          "lon": 114.1810387,
+          "lat": 22.3344902
+        },
+        {
+          "poi_id": "547523",
+          "poi_type": "healthcare",
+          "name": "Asia Women's League Limited Ho Leung Kit Ting Care and Attention Home for the Elderly",
+          "name_zh": "亞洲婦女協進會何梁潔庭頤養之家護理院",
+          "distance_to_station_km": 2.072,
+          "bearing_from_station": 35.4,
+          "lon": 114.1810775,
+          "lat": 22.3344811
+        },
+        {
+          "poi_id": "527055",
+          "poi_type": "school",
+          "name": "POOI TO MIDDLE SCHOOL",
+          "name_zh": "香港培道中學",
+          "distance_to_station_km": 2.076,
+          "bearing_from_station": 53.9,
+          "lon": 114.1856978,
+          "lat": 22.3303088
+        },
+        {
+          "poi_id": "544548",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station",
+          "name_zh": "香港鐵路九龍塘站",
+          "distance_to_station_km": 2.087,
+          "bearing_from_station": 18.3,
+          "lon": 114.1757775,
+          "lat": 22.3371181
+        },
+        {
+          "poi_id": "532298",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-G1 Access",
+          "name_zh": "香港鐵路九龍塘站-G1進出口",
+          "distance_to_station_km": 2.089,
+          "bearing_from_station": 19.0,
+          "lon": 114.1760201,
+          "lat": 22.3370639
+        },
+        {
+          "poi_id": "549732",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-H Access",
+          "name_zh": "香港鐵路九龍塘站-H進出口",
+          "distance_to_station_km": 2.091,
+          "bearing_from_station": 17.2,
+          "lon": 114.175428,
+          "lat": 22.3372626
+        },
+        {
+          "poi_id": "538295",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-G2 Access",
+          "name_zh": "香港鐵路九龍塘站-G2進出口",
+          "distance_to_station_km": 2.096,
+          "bearing_from_station": 18.8,
+          "lon": 114.1759522,
+          "lat": 22.3371452
+        },
+        {
+          "poi_id": "547513",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-F Access",
+          "name_zh": "香港鐵路九龍塘站-F進出口",
+          "distance_to_station_km": 2.097,
+          "bearing_from_station": 19.5,
+          "lon": 114.1762046,
+          "lat": 22.337082
+        },
+        {
+          "poi_id": "562534",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-B Access",
+          "name_zh": "香港鐵路九龍塘站-B進出口",
+          "distance_to_station_km": 2.098,
+          "bearing_from_station": 20.5,
+          "lon": 114.1765346,
+          "lat": 22.3369736
+        },
+        {
+          "poi_id": "537691",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-E Access",
+          "name_zh": "香港鐵路九龍塘站-E進出口",
+          "distance_to_station_km": 2.103,
+          "bearing_from_station": 23.3,
+          "lon": 114.1775053,
+          "lat": 22.3366666
+        },
+        {
+          "poi_id": "539814",
+          "poi_type": "healthcare",
+          "name": "HONG WAI HOME CENTRE LIMITED",
+          "name_zh": "康惠護老中心有限公司",
+          "distance_to_station_km": 2.111,
+          "bearing_from_station": 57.9,
+          "lon": 114.1867849,
+          "lat": 22.3293967
+        },
+        {
+          "poi_id": "542692",
+          "poi_type": "school",
+          "name": "MARY ROSE SCHOOL (PRIMARY SECTION)",
+          "name_zh": "天保民學校(小學部)",
+          "distance_to_station_km": 2.113,
+          "bearing_from_station": 34.9,
+          "lon": 114.1811455,
+          "lat": 22.3348875
+        },
+        {
+          "poi_id": "21096245",
+          "poi_type": "school",
+          "name": "MARY ROSE SCHOOL (SECONDARY SECTION)",
+          "name_zh": "天保民學校(中學部)",
+          "distance_to_station_km": 2.113,
+          "bearing_from_station": 34.9,
+          "lon": 114.1811455,
+          "lat": 22.3348875
+        },
+        {
+          "poi_id": "527668",
+          "poi_type": "school",
+          "name": "CMA SECONDARY SCHOOL",
+          "name_zh": "廠商會中學",
+          "distance_to_station_km": 2.131,
+          "bearing_from_station": 0.3,
+          "lon": 114.1695065,
+          "lat": 22.3384635
+        },
+        {
+          "poi_id": "562335",
+          "poi_type": "school",
+          "name": "HOLY FAMILY CANOSSIAN SCHOOL (KOWLOON TONG)",
+          "name_zh": "嘉諾撒聖家學校（九龍塘）",
+          "distance_to_station_km": 2.132,
+          "bearing_from_station": 26.4,
+          "lon": 114.1786119,
+          "lat": 22.3364769
+        },
+        {
+          "poi_id": "557995",
+          "poi_type": "healthcare",
+          "name": "KOWLOON TONG WING KIN ELDERLY HOME (SUFFOLK ROAD)",
+          "name_zh": "九龍塘永健護老院（沙福道）",
+          "distance_to_station_km": 2.14,
+          "bearing_from_station": 21.4,
+          "lon": 114.1769811,
+          "lat": 22.3372265
+        },
+        {
+          "poi_id": "21171796",
+          "poi_type": "school",
+          "name": "IMPERIAL CHILDREN KINDERGARTEN",
+          "name_zh": "茵晴幼稚園",
+          "distance_to_station_km": 2.14,
+          "bearing_from_station": 61.7,
+          "lon": 114.1877166,
+          "lat": 22.3284213
+        },
+        {
+          "poi_id": "546789",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-A1 Access",
+          "name_zh": "香港鐵路九龍塘站-A1進出口",
+          "distance_to_station_km": 2.142,
+          "bearing_from_station": 23.9,
+          "lon": 114.1778354,
+          "lat": 22.3369104
+        },
+        {
+          "poi_id": "549304",
+          "poi_type": "school",
+          "name": "IU SHAN SCHOOL",
+          "name_zh": "耀山學校",
+          "distance_to_station_km": 2.147,
+          "bearing_from_station": 56.1,
+          "lon": 114.1867267,
+          "lat": 22.330074
+        },
+        {
+          "poi_id": "539640",
+          "poi_type": "school",
+          "name": "TUNG WAH GROUP OF HOSPITALS CHANG MING THIEN COLLEGE",
+          "name_zh": "東華三院張明添中學",
+          "distance_to_station_km": 2.152,
+          "bearing_from_station": 358.9,
+          "lon": 114.168992,
+          "lat": 22.3386531
+        },
+        {
+          "poi_id": "529043",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Kowloon Tong Station-A2 Access",
+          "name_zh": "香港鐵路九龍塘站-A2進出口",
+          "distance_to_station_km": 2.156,
+          "bearing_from_station": 24.9,
+          "lon": 114.1782334,
+          "lat": 22.3368833
+        },
+        {
+          "poi_id": "21129939",
+          "poi_type": "school",
+          "name": "SAINT BRIGIT INTERNATIONAL KINDERGARTEN",
+          "name_zh": "聖姬莉國際幼稚園",
+          "distance_to_station_km": 2.169,
+          "bearing_from_station": 61.8,
+          "lon": 114.1879787,
+          "lat": 22.3285206
+        },
+        {
+          "poi_id": "21129781",
+          "poi_type": "school",
+          "name": "SAINT BRIGIT INTERNATIONAL KINDERGARTEN",
+          "name_zh": "聖姬莉國際幼稚園",
+          "distance_to_station_km": 2.17,
+          "bearing_from_station": 61.8,
+          "lon": 114.1879884,
+          "lat": 22.3285296
+        },
+        {
+          "poi_id": "560865",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL SCHOOL",
+          "name_zh": "耀中國際學校",
+          "distance_to_station_km": 2.183,
+          "bearing_from_station": 21.0,
+          "lon": 114.1769909,
+          "lat": 22.3376328
+        },
+        {
+          "poi_id": "21106233",
+          "poi_type": "school",
+          "name": "YEW CHUNG CHILDREN'S HOUSE (SOMERSET ROAD)",
+          "name_zh": "耀中幼稚園（森麻實道）",
+          "distance_to_station_km": 2.188,
+          "bearing_from_station": 21.4,
+          "lon": 114.1771656,
+          "lat": 22.3376238
+        },
+        {
+          "poi_id": "561350",
+          "poi_type": "school",
+          "name": "YEW CHUNG CHILDREN'S HOUSE (SOMERSET ROAD)",
+          "name_zh": "耀中幼稚園（森麻實道）",
+          "distance_to_station_km": 2.189,
+          "bearing_from_station": 21.4,
+          "lon": 114.1771559,
+          "lat": 22.3376328
+        },
+        {
+          "poi_id": "551659",
+          "poi_type": "school",
+          "name": "RHENISH CHURCH PANG HOK-KO MEMORIAL COLLEGE",
+          "name_zh": "禮賢會彭學高紀念中學",
+          "distance_to_station_km": 2.192,
+          "bearing_from_station": 40.1,
+          "lon": 114.183116,
+          "lat": 22.3343817
+        },
+        {
+          "poi_id": "529595",
+          "poi_type": "healthcare",
+          "name": "Hong Kong Sheng Kung Hui Li Ka Shing Care and Attention Home for the Elderly",
+          "name_zh": "香港聖公會李嘉誠護理安老院",
+          "distance_to_station_km": 2.193,
+          "bearing_from_station": 355.1,
+          "lon": 114.1675845,
+          "lat": 22.338951
+        },
+        {
+          "poi_id": "21183901",
+          "poi_type": "school",
+          "name": "KOWLOON BAPTIST CHURCH KINDERGARTEN",
+          "name_zh": "KOWLOON BAPTIST CHURCH KINDERGARTEN",
+          "distance_to_station_km": 2.195,
+          "bearing_from_station": 51.4,
+          "lon": 114.1860764,
+          "lat": 22.3316182
+        },
+        {
+          "poi_id": "21243371",
+          "poi_type": "school",
+          "name": "The Education University of Hong Kong",
+          "name_zh": "香港教育大學",
+          "distance_to_station_km": 2.202,
+          "bearing_from_station": 16.5,
+          "lon": 114.1754765,
+          "lat": 22.3382921
+        },
+        {
+          "poi_id": "21105096",
+          "poi_type": "school",
+          "name": "KENTVILLE KINDERGARTEN",
+          "name_zh": "根德園幼稚園",
+          "distance_to_station_km": 2.207,
+          "bearing_from_station": 18.4,
+          "lon": 114.1761852,
+          "lat": 22.3381295
+        },
+        {
+          "poi_id": "526781",
+          "poi_type": "school",
+          "name": "KENTVILLE KINDERGARTEN",
+          "name_zh": "根德園幼稚園",
+          "distance_to_station_km": 2.208,
+          "bearing_from_station": 18.5,
+          "lon": 114.1762046,
+          "lat": 22.3381295
+        },
+        {
+          "poi_id": "527227",
+          "poi_type": "school",
+          "name": "KOWLOON TRUE LIGHT SCHOOL",
+          "name_zh": "九龍真光中學",
+          "distance_to_station_km": 2.213,
+          "bearing_from_station": 16.6,
+          "lon": 114.1755639,
+          "lat": 22.3383643
+        },
+        {
+          "poi_id": "21274129",
+          "poi_type": "school",
+          "name": "MUNSANG COLLEGE KINDERGARTEN",
+          "name_zh": "民生書院幼稚園",
+          "distance_to_station_km": 2.224,
+          "bearing_from_station": 50.9,
+          "lon": 114.1861735,
+          "lat": 22.3319253
+        },
+        {
+          "poi_id": "529651",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL SCHOOL",
+          "name_zh": "耀中國際學校",
+          "distance_to_station_km": 2.234,
+          "bearing_from_station": 20.2,
+          "lon": 114.1769035,
+          "lat": 22.3381566
+        },
+        {
+          "poi_id": "533390",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL SCHOOL",
+          "name_zh": "耀中國際學校",
+          "distance_to_station_km": 2.234,
+          "bearing_from_station": 18.1,
+          "lon": 114.1761463,
+          "lat": 22.3384004
+        },
+        {
+          "poi_id": "21274127",
+          "poi_type": "school",
+          "name": "MUNSANG COLLEGE KINDERGARTEN",
+          "name_zh": "民生書院幼稚園",
+          "distance_to_station_km": 2.245,
+          "bearing_from_station": 51.3,
+          "lon": 114.1864356,
+          "lat": 22.3319252
+        },
+        {
+          "poi_id": "545484",
+          "poi_type": "school",
+          "name": "MUNSANG COLLEGE",
+          "name_zh": "民生書院",
+          "distance_to_station_km": 2.254,
+          "bearing_from_station": 50.2,
+          "lon": 114.1862221,
+          "lat": 22.3322865
+        },
+        {
+          "poi_id": "21098015",
+          "poi_type": "healthcare",
+          "name": "KOWLOON CITY POK HONG HOME FOR AGED",
+          "name_zh": "九龍城博康護老院",
+          "distance_to_station_km": 2.255,
+          "bearing_from_station": 63.8,
+          "lon": 114.1890658,
+          "lat": 22.3282677
+        },
+        {
+          "poi_id": "543674",
+          "poi_type": "school",
+          "name": "HOLY FAMILY CANOSSIAN SCHOOL",
+          "name_zh": "嘉諾撒聖家學校",
+          "distance_to_station_km": 2.261,
+          "bearing_from_station": 54.2,
+          "lon": 114.1872412,
+          "lat": 22.3311847
+        },
+        {
+          "poi_id": "541222",
+          "poi_type": "school",
+          "name": "SOCIETY OF BOYS' CENTRES CHAK YAN CENTRE SCHOOL (PRIMARY SECTION)",
+          "name_zh": "香港扶幼會則仁中心學校(小學部)",
+          "distance_to_station_km": 2.262,
+          "bearing_from_station": 356.8,
+          "lon": 114.1681863,
+          "lat": 22.3396103
+        },
+        {
+          "poi_id": "21096285",
+          "poi_type": "school",
+          "name": "SOCIETY OF BOYS' CENTRES CHAK YAN CENTRE SCHOOL (SECONDARY SECTION)",
+          "name_zh": "香港扶幼會則仁中心學校(中學部)",
+          "distance_to_station_km": 2.262,
+          "bearing_from_station": 356.8,
+          "lon": 114.1681863,
+          "lat": 22.3396103
+        },
+        {
+          "poi_id": "21168045",
+          "poi_type": "school",
+          "name": "HOLY FAMILY CANOSSIAN SCHOOL",
+          "name_zh": "嘉諾撒聖家學校",
+          "distance_to_station_km": 2.269,
+          "bearing_from_station": 55.0,
+          "lon": 114.1874645,
+          "lat": 22.3310131
+        },
+        {
+          "poi_id": "531241",
+          "poi_type": "school",
+          "name": "THE MENTAL HEALTH ASSOCIATION OF HONG KONG - CORNWALL SCHOOL (PRIMARY SECTION)",
+          "name_zh": "香港心理衞生會-臻和學校(小學部)",
+          "distance_to_station_km": 2.271,
+          "bearing_from_station": 354.8,
+          "lon": 114.1674,
+          "lat": 22.3396374
+        },
+        {
+          "poi_id": "21096243",
+          "poi_type": "school",
+          "name": "THE MENTAL HEALTH ASSOCIATION OF HONG KONG - CORNWALL SCHOOL (SECONDARY SECTION)",
+          "name_zh": "香港心理衞生會-臻和學校(中學部)",
+          "distance_to_station_km": 2.271,
+          "bearing_from_station": 354.8,
+          "lon": 114.1674,
+          "lat": 22.3396374
+        },
+        {
+          "poi_id": "528506",
+          "poi_type": "school",
+          "name": "MUNSANG COLLEGE PRIMARY SCHOOL",
+          "name_zh": "民生書院小學",
+          "distance_to_station_km": 2.28,
+          "bearing_from_station": 49.1,
+          "lon": 114.1861444,
+          "lat": 22.332729
+        },
+        {
+          "poi_id": "21142783",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL SCHOOL",
+          "name_zh": "耀中國際學校",
+          "distance_to_station_km": 2.283,
+          "bearing_from_station": 23.7,
+          "lon": 114.1783305,
+          "lat": 22.3380934
+        },
+        {
+          "poi_id": "21105624",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL SCHOOL",
+          "name_zh": "耀中國際學校",
+          "distance_to_station_km": 2.285,
+          "bearing_from_station": 23.8,
+          "lon": 114.1783499,
+          "lat": 22.3381115
+        },
+        {
+          "poi_id": "21105625",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL SCHOOL",
+          "name_zh": "耀中國際學校",
+          "distance_to_station_km": 2.285,
+          "bearing_from_station": 23.7,
+          "lon": 114.1783402,
+          "lat": 22.3381115
+        },
+        {
+          "poi_id": "543014",
+          "poi_type": "healthcare",
+          "name": "Hong Kong Baptist Mr & Mrs Au Shue Hung Rehabilitation and Healthcare Home Limited",
+          "name_zh": "香港浸信會區樹洪伉儷康復護養院有限公司",
+          "distance_to_station_km": 2.293,
+          "bearing_from_station": 352.5,
+          "lon": 114.1665069,
+          "lat": 22.3397457
+        },
+        {
+          "poi_id": "21105097",
+          "poi_type": "school",
+          "name": "KENTVILLE KINDERGARTEN",
+          "name_zh": "根德園幼稚園",
+          "distance_to_station_km": 2.303,
+          "bearing_from_station": 22.5,
+          "lon": 114.1779713,
+          "lat": 22.3384366
+        },
+        {
+          "poi_id": "561756",
+          "poi_type": "school",
+          "name": "KENTVILLE KINDERGARTEN",
+          "name_zh": "根德園幼稚園",
+          "distance_to_station_km": 2.303,
+          "bearing_from_station": 22.5,
+          "lon": 114.1779616,
+          "lat": 22.3384366
+        },
+        {
+          "poi_id": "21157770",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Sung Wong Toi Station-B2 Access",
+          "name_zh": "香港鐵路宋皇臺站-B2進出口",
+          "distance_to_station_km": 2.315,
+          "bearing_from_station": 65.2,
+          "lon": 114.1898326,
+          "lat": 22.3280328
+        },
+        {
+          "poi_id": "21106206",
+          "poi_type": "school",
+          "name": "TUTOR TIME INTERNATIONAL KINDERGARTEN (KOWLOON TONG)",
+          "name_zh": "多多國際幼稚園（九龍塘）",
+          "distance_to_station_km": 2.321,
+          "bearing_from_station": 24.1,
+          "lon": 114.1786217,
+          "lat": 22.3383553
+        },
+        {
+          "poi_id": "555466",
+          "poi_type": "school",
+          "name": "TUTOR TIME INTERNATIONAL KINDERGARTEN (KOWLOON TONG)",
+          "name_zh": "多多國際幼稚園（九龍塘）",
+          "distance_to_station_km": 2.321,
+          "bearing_from_station": 24.1,
+          "lon": 114.178612,
+          "lat": 22.3383553
+        },
+        {
+          "poi_id": "21157773",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Sung Wong Toi Station-B3 Access",
+          "name_zh": "香港鐵路宋皇臺站-B3進出口",
+          "distance_to_station_km": 2.341,
+          "bearing_from_station": 64.0,
+          "lon": 114.1898521,
+          "lat": 22.3285385
+        },
+        {
+          "poi_id": "554911",
+          "poi_type": "school",
+          "name": "Hong Kong Baptist University Baptist University Road Campus",
+          "name_zh": "香港浸會大學浸會大學道校園",
+          "distance_to_station_km": 2.342,
+          "bearing_from_station": 35.6,
+          "lon": 114.1826501,
+          "lat": 22.3364317
+        },
+        {
+          "poi_id": "545434",
+          "poi_type": "school",
+          "name": "HOLY FAMILY CANOSSIAN COLLEGE",
+          "name_zh": "嘉諾撒聖家書院",
+          "distance_to_station_km": 2.344,
+          "bearing_from_station": 44.6,
+          "lon": 114.1854068,
+          "lat": 22.3343094
+        },
+        {
+          "poi_id": "527748",
+          "poi_type": "healthcare",
+          "name": "Tung Wah Group of Hospitals Ma Cheng Shuk Ying Home for the Elderly",
+          "name_zh": "東華三院馬鄭淑英安老院",
+          "distance_to_station_km": 2.346,
+          "bearing_from_station": 336.8,
+          "lon": 114.1604108,
+          "lat": 22.3386886
+        },
+        {
+          "poi_id": "21088193",
+          "poi_type": "healthcare",
+          "name": "Kowloon City Lions Clubs Student Health Service Centre",
+          "name_zh": "九龍城獅子會學生健康服務中心",
+          "distance_to_station_km": 2.355,
+          "bearing_from_station": 59.1,
+          "lon": 114.1890369,
+          "lat": 22.3301912
+        },
+        {
+          "poi_id": "555289",
+          "poi_type": "school",
+          "name": "Hong Kong Baptist University - School of Continuing Education",
+          "name_zh": "香港浸會大學持續教育學院",
+          "distance_to_station_km": 2.362,
+          "bearing_from_station": 32.5,
+          "lon": 114.1817377,
+          "lat": 22.3372174
+        },
+        {
+          "poi_id": "526304",
+          "poi_type": "healthcare",
+          "name": "Kowloon City Elderly Health Centre",
+          "name_zh": "九龍城長者健康中心",
+          "distance_to_station_km": 2.363,
+          "bearing_from_station": 59.3,
+          "lon": 114.1891534,
+          "lat": 22.3301551
+        },
+        {
+          "poi_id": "548244",
+          "poi_type": "healthcare",
+          "name": "Kowloon City Lee Kee Memorial Family Medicine Clinic",
+          "name_zh": "九龍城李基紀念家庭醫學診所",
+          "distance_to_station_km": 2.365,
+          "bearing_from_station": 58.6,
+          "lon": 114.1890369,
+          "lat": 22.3303718
+        },
+        {
+          "poi_id": "21106235",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL CHILDREN'S HOUSE (KENT ROAD)",
+          "name_zh": "耀中國際幼稚園（根德道）",
+          "distance_to_station_km": 2.367,
+          "bearing_from_station": 15.5,
+          "lon": 114.1755542,
+          "lat": 22.3398092
+        },
+        {
+          "poi_id": "21106236",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL CHILDREN'S HOUSE (KENT ROAD)",
+          "name_zh": "耀中國際幼稚園（根德道）",
+          "distance_to_station_km": 2.367,
+          "bearing_from_station": 15.6,
+          "lon": 114.1755736,
+          "lat": 22.3398092
+        },
+        {
+          "poi_id": "541804",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL CHILDREN'S HOUSE (KENT ROAD)",
+          "name_zh": "耀中國際幼稚園（根德道）",
+          "distance_to_station_km": 2.367,
+          "bearing_from_station": 15.5,
+          "lon": 114.1755639,
+          "lat": 22.3398092
+        },
+        {
+          "poi_id": "563887",
+          "poi_type": "school",
+          "name": "YEW CHUNG INTERNATIONAL CHILDREN'S HOUSE (WATERLOO ROAD)",
+          "name_zh": "耀中國際幼稚園（窩打老道）",
+          "distance_to_station_km": 2.374,
+          "bearing_from_station": 23.9,
+          "lon": 114.1787576,
+          "lat": 22.3388158
+        },
+        {
+          "poi_id": "527876",
+          "poi_type": "school",
+          "name": "HONG KONG INSTITUTE OF CONTEMPORARY CULTURE LEE SHAU KEE SCHOOL OF CREATIVITY",
+          "name_zh": "香港兆基創意書院（李兆基基金會贊助、香港當代文化中心主辦）",
+          "distance_to_station_km": 2.396,
+          "bearing_from_station": 48.5,
+          "lon": 114.1868531,
+          "lat": 22.3335688
+        },
+        {
+          "poi_id": "546093",
+          "poi_type": "school",
+          "name": "S.K.H. KEI OI PRIMARY SCHOOL",
+          "name_zh": "聖公會基愛小學",
+          "distance_to_station_km": 2.413,
+          "bearing_from_station": 338.4,
+          "lon": 114.1607699,
+          "lat": 22.3394743
+        },
+        {
+          "poi_id": "550416",
+          "poi_type": "school",
+          "name": "KOWLOON TONG BISHOP WALSH CATHOLIC SCHOOL",
+          "name_zh": "九龍塘天主教華德學校",
+          "distance_to_station_km": 2.42,
+          "bearing_from_station": 45.7,
+          "lon": 114.1862416,
+          "lat": 22.334499
+        },
+        {
+          "poi_id": "527529",
+          "poi_type": "school",
+          "name": "ARTS & TECHNOLOGY EDUCATION CENTRE",
+          "name_zh": "藝術與科技教育中心",
+          "distance_to_station_km": 2.488,
+          "bearing_from_station": 46.9,
+          "lon": 114.1870667,
+          "lat": 22.3345802
+        },
+        {
+          "poi_id": "540517",
+          "poi_type": "healthcare",
+          "name": "SEE YAN HOME FOR AGED (FIRST BRANCH)",
+          "name_zh": "思恩護老院（第一分院）",
+          "distance_to_station_km": 2.517,
+          "bearing_from_station": 61.1,
+          "lon": 114.1908229,
+          "lat": 22.3302362
+        },
+        {
+          "poi_id": "547481",
+          "poi_type": "healthcare",
+          "name": "Hong Kong Baptist Hospital",
+          "name_zh": "香港浸信會醫院",
+          "distance_to_station_km": 2.519,
+          "bearing_from_station": 24.6,
+          "lon": 114.1796021,
+          "lat": 22.3398995
+        },
+        {
+          "poi_id": "537895",
+          "poi_type": "school",
+          "name": "GOOD COUNSEL CATHOLIC PRIMARY SCHOOL",
+          "name_zh": "天主教善導小學",
+          "distance_to_station_km": 2.548,
+          "bearing_from_station": 337.0,
+          "lon": 114.1597116,
+          "lat": 22.3403863
+        },
+        {
+          "poi_id": "527713",
+          "poi_type": "school",
+          "name": "BISHOP WALSH PRIMARY SCHOOL",
+          "name_zh": "華德學校",
+          "distance_to_station_km": 2.55,
+          "bearing_from_station": 47.3,
+          "lon": 114.1876298,
+          "lat": 22.334842
+        },
+        {
+          "poi_id": "21105105",
+          "poi_type": "school",
+          "name": "KOWLOON BAPTIST CHURCH KINDERGARTEN",
+          "name_zh": "KOWLOON BAPTIST CHURCH KINDERGARTEN",
+          "distance_to_station_km": 2.563,
+          "bearing_from_station": 29.7,
+          "lon": 114.1817572,
+          "lat": 22.3393125
+        },
+        {
+          "poi_id": "541498",
+          "poi_type": "school",
+          "name": "KOWLOON BAPTIST CHURCH KINDERGARTEN",
+          "name_zh": "KOWLOON BAPTIST CHURCH KINDERGARTEN",
+          "distance_to_station_km": 2.565,
+          "bearing_from_station": 29.7,
+          "lon": 114.1817669,
+          "lat": 22.3393305
+        },
+        {
+          "poi_id": "538118",
+          "poi_type": "school",
+          "name": "SAN WUI COMMERCIAL SOCIETY YMCA OF HONG KONG CHRISTIAN SCHOOL",
+          "name_zh": "新會商會港青基信學校",
+          "distance_to_station_km": 2.584,
+          "bearing_from_station": 336.3,
+          "lon": 114.1592845,
+          "lat": 22.3405668
+        },
+        {
+          "poi_id": "527537",
+          "poi_type": "school",
+          "name": "CHRISTIAN EVANGELICAL CENTRE LOK FU KINDERGARTEN",
+          "name_zh": "基督教佈道中心樂富幼稚園",
+          "distance_to_station_km": 2.599,
+          "bearing_from_station": 44.3,
+          "lon": 114.1870377,
+          "lat": 22.3360431
+        },
+        {
+          "poi_id": "21104902",
+          "poi_type": "school",
+          "name": "CHRISTIAN EVANGELICAL CENTRE LOK FU KINDERGARTEN",
+          "name_zh": "基督教佈道中心樂富幼稚園",
+          "distance_to_station_km": 2.602,
+          "bearing_from_station": 44.3,
+          "lon": 114.1870668,
+          "lat": 22.3360522
+        },
+        {
+          "poi_id": "21104901",
+          "poi_type": "school",
+          "name": "CHRISTIAN EVANGELICAL CENTRE LOK FU KINDERGARTEN",
+          "name_zh": "基督教佈道中心樂富幼稚園",
+          "distance_to_station_km": 2.604,
+          "bearing_from_station": 44.3,
+          "lon": 114.1870668,
+          "lat": 22.3360702
+        },
+        {
+          "poi_id": "546706",
+          "poi_type": "healthcare",
+          "name": "Helping Hand Hong Kong Bank Foundation Lok Fu Care Home",
+          "name_zh": "伸手助人協會匯豐銀行基金樂富護老院",
+          "distance_to_station_km": 2.632,
+          "bearing_from_station": 42.7,
+          "lon": 114.186766,
+          "lat": 22.3366843
+        },
+        {
+          "poi_id": "526724",
+          "poi_type": "school",
+          "name": "Hong Kong Baptist University",
+          "name_zh": "香港浸會大學",
+          "distance_to_station_km": 2.634,
+          "bearing_from_station": 25.1,
+          "lon": 114.1802623,
+          "lat": 22.3407484
+        },
+        {
+          "poi_id": "538113",
+          "poi_type": "healthcare",
+          "name": "The Hong Kong Buddhist Association - The University of Hong Kong Clinical Centre for Teaching and Research in Chinese Medicine",
+          "name_zh": "香港佛教聯合會-香港大學中醫臨床教研中心",
+          "distance_to_station_km": 2.684,
+          "bearing_from_station": 48.9,
+          "lon": 114.1890761,
+          "lat": 22.335149
+        },
+        {
+          "poi_id": "21271964",
+          "poi_type": "school",
+          "name": "WYCOMBE ABBEY SCHOOL HONG KONG (KOWLOON)",
+          "name_zh": "香港威雅學校(九龍)",
+          "distance_to_station_km": 2.686,
+          "bearing_from_station": 61.6,
+          "lon": 114.1923761,
+          "lat": 22.3307779
+        },
+        {
+          "poi_id": "527188",
+          "poi_type": "healthcare",
+          "name": "Hong Kong Buddhist Hospital",
+          "name_zh": "香港佛教醫院",
+          "distance_to_station_km": 2.697,
+          "bearing_from_station": 47.5,
+          "lon": 114.1887364,
+          "lat": 22.3356818
+        },
+        {
+          "poi_id": "21066290",
+          "poi_type": "healthcare",
+          "name": "Hong Kong Buddhist Hospital Family Medicine Clinic",
+          "name_zh": "香港佛教醫院家庭醫學診所",
+          "distance_to_station_km": 2.697,
+          "bearing_from_station": 47.5,
+          "lon": 114.1887364,
+          "lat": 22.3356818
+        },
+        {
+          "poi_id": "529051",
+          "poi_type": "school",
+          "name": "BEACON HILL SCHOOL",
+          "name_zh": "BEACON HILL SCHOOL",
+          "distance_to_station_km": 2.705,
+          "bearing_from_station": 19.2,
+          "lon": 114.1780587,
+          "lat": 22.3422746
+        },
+        {
+          "poi_id": "21088276",
+          "poi_type": "healthcare",
+          "name": "Red Ribbon Centre",
+          "name_zh": "紅絲帶中心",
+          "distance_to_station_km": 2.743,
+          "bearing_from_station": 36.5,
+          "lon": 114.1852809,
+          "lat": 22.3391227
+        },
+        {
+          "poi_id": "548595",
+          "poi_type": "healthcare",
+          "name": "Wang Tau Hom Jockey Club Family Medicine Clinic",
+          "name_zh": "橫頭磡賽馬會家庭醫學診所",
+          "distance_to_station_km": 2.749,
+          "bearing_from_station": 36.7,
+          "lon": 114.185378,
+          "lat": 22.3391136
+        },
+        {
+          "poi_id": "548658",
+          "poi_type": "healthcare",
+          "name": "Wang Tau Hom Maternal & Child Health Centre",
+          "name_zh": "橫頭磡母嬰健康院",
+          "distance_to_station_km": 2.749,
+          "bearing_from_station": 36.7,
+          "lon": 114.185378,
+          "lat": 22.3391136
+        },
+        {
+          "poi_id": "528166",
+          "poi_type": "school",
+          "name": "PO YAN OBLATE PRIMARY SCHOOL",
+          "name_zh": "獻主會溥仁小學",
+          "distance_to_station_km": 2.755,
+          "bearing_from_station": 59.6,
+          "lon": 114.1925024,
+          "lat": 22.3318345
+        },
+        {
+          "poi_id": "538339",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Lok Fu Station",
+          "name_zh": "香港鐵路樂富站",
+          "distance_to_station_km": 2.76,
+          "bearing_from_station": 41.1,
+          "lon": 114.1870282,
+          "lat": 22.3380118
+        },
+        {
+          "poi_id": "546304",
+          "poi_type": "school",
+          "name": "BISHOP FORD MEMORIAL SCHOOL",
+          "name_zh": "福德學校",
+          "distance_to_station_km": 2.762,
+          "bearing_from_station": 50.4,
+          "lon": 114.1900857,
+          "lat": 22.3351399
+        },
+        {
+          "poi_id": "529461",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Lok Fu Station-B Access",
+          "name_zh": "香港鐵路樂富站-B進出口",
+          "distance_to_station_km": 2.792,
+          "bearing_from_station": 42.6,
+          "lon": 114.1877659,
+          "lat": 22.337786
+        },
+        {
+          "poi_id": "21105944",
+          "poi_type": "school",
+          "name": "HONG KONG TAOIST ASSOCIATION YUEN YUEN KINDERGARTEN (TUNG TAU ESTATE)",
+          "name_zh": "香港道教聯合會圓玄幼稚園(東頭邨)",
+          "distance_to_station_km": 2.808,
+          "bearing_from_station": 55.1,
+          "lon": 114.1917843,
+          "lat": 22.333749
+        },
+        {
+          "poi_id": "21105945",
+          "poi_type": "school",
+          "name": "HONG KONG TAOIST ASSOCIATION YUEN YUEN KINDERGARTEN (TUNG TAU ESTATE)",
+          "name_zh": "香港道教聯合會圓玄幼稚園(東頭邨)",
+          "distance_to_station_km": 2.808,
+          "bearing_from_station": 55.1,
+          "lon": 114.1917843,
+          "lat": 22.333758
+        },
+        {
+          "poi_id": "529042",
+          "poi_type": "rail_transit",
+          "name": "Mass Transit Railway Lok Fu Station-A Access",
+          "name_zh": "香港鐵路樂富站-A進出口",
+          "distance_to_station_km": 2.82,
+          "bearing_from_station": 41.8,
+          "lon": 114.1876689,
+          "lat": 22.3382104
+        },
+        {
+          "poi_id": "560371",
+          "poi_type": "community_centre",
+          "name": "Tung Tau Community Centre",
+          "name_zh": "東頭社區中心",
+          "distance_to_station_km": 2.844,
+          "bearing_from_station": 60.4,
+          "lon": 114.1934342,
+          "lat": 22.3319427
+        },
+        {
+          "poi_id": "557172",
+          "poi_type": "community_centre",
+          "name": "Hong Kong Federation of Youth Groups Jockey Club Wang Tau Hom Youth S.P.O.T. (Sub-base)",
+          "name_zh": "香港青年協會賽馬會橫頭磡青年空間(分處)",
+          "distance_to_station_km": 2.884,
+          "bearing_from_station": 36.4,
+          "lon": 114.1860285,
+          "lat": 22.3401882
+        },
+        {
+          "poi_id": "544346",
+          "poi_type": "community_centre",
+          "name": "Hong Kong Federation of Youth Groups Jockey Club Wang Tau Hom Youth S.P.O.T.",
+          "name_zh": "香港青年協會賽馬會橫頭磡青年空間",
+          "distance_to_station_km": 2.889,
+          "bearing_from_station": 37.4,
+          "lon": 114.1864653,
+          "lat": 22.3399354
+        },
+        {
+          "poi_id": "529879",
+          "poi_type": "community_service",
+          "name": "THE HONG KONG FEDERATION OF YOUTH GROUPS WANG TAU HOM YOUTH S.P.O.T.",
+          "name_zh": "香港青年協會賽馬會橫頭磡青年空間",
+          "distance_to_station_km": 2.889,
+          "bearing_from_station": 37.4,
+          "lon": 114.1864653,
+          "lat": 22.3399354
+        },
+        {
+          "poi_id": "543649",
+          "poi_type": "school",
+          "name": "ST. PATRICK'S SCHOOL",
+          "name_zh": "聖博德學校",
+          "distance_to_station_km": 2.921,
+          "bearing_from_station": 43.4,
+          "lon": 114.1889308,
+          "lat": 22.3383729
+        },
+        {
+          "poi_id": "546109",
+          "poi_type": "school",
+          "name": "KIT SAM LAM BING YIM SECONDARY SCHOOL",
+          "name_zh": "潔心林炳炎中學",
+          "distance_to_station_km": 2.927,
+          "bearing_from_station": 33.8,
+          "lon": 114.1852228,
+          "lat": 22.3411816
+        },
+        {
+          "poi_id": "527535",
+          "poi_type": "school",
+          "name": "SAHK Wang Tau Hom Pre-school Centre",
+          "name_zh": "香港耀能協會橫頭磡幼兒中心",
+          "distance_to_station_km": 2.94,
+          "bearing_from_station": 37.3,
+          "lon": 114.1867274,
+          "lat": 22.3403327
+        },
+        {
+          "poi_id": "21105150",
+          "poi_type": "school",
+          "name": "LOK FU RHENISH CHURCH KINDERGARTEN",
+          "name_zh": "樂富禮賢會幼稚園",
+          "distance_to_station_km": 2.951,
+          "bearing_from_station": 35.4,
+          "lon": 114.1860382,
+          "lat": 22.3409197
+        },
+        {
+          "poi_id": "527802",
+          "poi_type": "school",
+          "name": "LOK FU RHENISH CHURCH KINDERGARTEN",
+          "name_zh": "樂富禮賢會幼稚園",
+          "distance_to_station_km": 2.956,
+          "bearing_from_station": 35.6,
+          "lon": 114.1861159,
+          "lat": 22.3409197
+        },
+        {
+          "poi_id": "21105149",
+          "poi_type": "school",
+          "name": "LOK FU RHENISH CHURCH KINDERGARTEN",
+          "name_zh": "樂富禮賢會幼稚園",
+          "distance_to_station_km": 2.958,
+          "bearing_from_station": 35.6,
+          "lon": 114.1861644,
+          "lat": 22.3409197
+        },
+        {
+          "poi_id": "527035",
+          "poi_type": "school",
+          "name": "LEE KAU YAN MEMORIAL SCHOOL",
+          "name_zh": "李求恩紀念中學",
+          "distance_to_station_km": 2.961,
+          "bearing_from_station": 61.7,
+          "lon": 114.1947446,
+          "lat": 22.3319336
+        },
+        {
+          "poi_id": "527222",
+          "poi_type": "school",
+          "name": "LOK SIN TONG YU KAN HING SECONDARY SCHOOL",
+          "name_zh": "樂善堂余近卿中學",
+          "distance_to_station_km": 2.963,
+          "bearing_from_station": 33.2,
+          "lon": 114.185184,
+          "lat": 22.341588
+        }
+      ],
+      "wind_direction_interpreted_as": "meteorological wind-from bearing clockwise from true north",
+      "station": {
+        "station_id": "MK",
+        "station_name": "Mong Kok Roadside",
+        "aliases": [
+          "Mong Kok",
+          "旺角",
+          "旺角路边站",
+          "旺角路邊站"
+        ],
+        "lat": 22.3193,
+        "lon": 114.1694,
+        "station_type": "roadside",
+        "address": "Junction of Nathan Road and Lai Chi Kok Road, Mong Kok, Kowloon"
+      },
+      "analysis_radius_km": 3.0,
+      "wind_direction": 201.0,
+      "wind_speed": 2.25,
+      "spatial_confidence": "high"
+    },
+    "evidence": [
+      "在站点 3 km 范围内匹配到 780 条道路中心线。",
+      "识别到 15 条上风向候选道路。",
+      "潜在影响区内识别到 348 个敏感 POI。"
+    ],
+    "confidence": 0.95,
+    "data_quality": {
+      "missing_rate": 0.0,
+      "note": "道路、敏感 POI 与气象输入可用"
+    },
+    "warnings": [],
+    "created_at": "2026-08-01T10:48:35+08:00"
+  },
+  "source": {
+    "agent_name": "SourceAgent",
+    "status": "success",
+    "result": {
+      "source_attribution": {
+        "traffic_source": 0.6445,
+        "local_accumulation": 0.638,
+        "regional_transport": 0.425,
+        "dust_source": 0.44,
+        "photochemical_source": 0.481
+      },
+      "main_judgement": "Traffic source dominant",
+      "risk_level": "medium",
+      "component_scores": {
+        "no2_anomaly": 0.5,
+        "traffic_pressure": 0.5,
+        "upwind_match": 1.0,
+        "static_wind": 0.595,
+        "roadside_boost": 0.85,
+        "anomaly_score": 0.5
+      },
+      "meteorology_summary": {
+        "wind_direction": 201.5,
+        "mean_wind_speed": 1.1925,
+        "rain_removal_score": 0.8,
+        "total_precipitation": 0.2
+      },
+      "spatial_summary": {
+        "spatial_confidence": "high",
+        "upwind_roads_count": 1
+      }
+    },
+    "evidence": [
+      "TrafficAgent结果缺失，使用默认值",
+      "Moderate anomaly score (0.50) detected.",
+      "Low wind speed (1.19 m/s) indicates poor dispersion conditions.",
+      "Dominant wind direction: 202° (201.5).",
+      "Low precipitation (0.20 mm) reduces washout effect, enhancing local pollution.",
+      "Nearby traffic links identified: Shantung Street.",
+      "High confidence in spatial matching based on wind-road alignment."
+    ],
+    "confidence": 0.75,
+    "data_quality": {
+      "missing_rate": 0.5,
+      "note": "AirQualityAgent结果缺失，使用默认值；TrafficAgent结果缺失，使用默认值"
+    },
+    "created_at": "2026-08-01 10:48:35",
+    "meta": {
+      "task_id": "task_20260801104834",
+      "station_name": "Mong Kok Roadside"
+    }
+  },
+  "decision": {
+    "agent_name": "DecisionAgent",
+    "status": "success",
+    "result": {
+      "decision_level": "high",
+      "suggested_area": "downwind sector within 3 km",
+      "suggested_time": "2023-08-15 08:00:00 至 2023-08-15 11:00:00",
+      "suggested_roads": [
+        "Portland Street",
+        "Shantung Street",
+        "Shanghai Street",
+        "Nathan Road",
+        "Soy Street",
+        "Reclamation Street",
+        "Canton Road",
+        "Unnamed road",
+        "Dundas Street",
+        "Tung On Street",
+        "Kam Fong Street",
+        "Lee Yip Street",
+        "Ferry Street",
+        "Tak Cheong Street",
+        "Gascoigne Road Flyover"
+      ],
+      "vehicle_focus": [
+        "Private Car",
+        "Bus"
+      ],
+      "actions": [
+        "建议早高峰重点道路实施短时分流引导。",
+        "建议增加公交运力以替代私家车出行。",
+        "周边学校医院密集，建议发布健康防护提醒。"
+      ],
+      "review_indicators": [
+        "交通源风险分数 = 0.64",
+        "AQHI等级 = N/A",
+        "交通压力指数 = 0.00",
+        "平均风速 = 2.25 m/s"
+      ]
+    },
+    "confidence": 0.8,
+    "evidence": [
+      "基于污染溯源、交通结构和空间匹配综合判断。"
+    ],
+    "data_quality": {
+      "missing_rate": 0.0,
+      "note": "输入数据完整"
+    },
+    "created_at": "2026-07-19 12:00:00"
+  },
+  "report": {
+    "agent_name": "ReportAgent",
+    "result": {
+      "report_title": "监测区域路边站污染事件溯源分析报告",
+      "report_text": "一、事件概况\n系统于早高峰时段监测到监测区域区域空气质量异常，多项污染物指标异常，AQHI等级达【高】级。\n\n二、空气质量异常情况\n监测数据显示：No air quality data for station=Mong Kok Roadside, period=2023-08-15 08:00:00 ~ 2023-08-15 11:00:00.。其中多项污染物指标异常，需立即启动溯源研判。\n\n三、气象扩散条件分析\n气象场方面，风速仅0m/s，属静稳天气，扩散条件极差，污染物易在近地面累积。当前气象风险等级评定为【中】级。\n\n四、交通源可能性溯源\n污染源快速溯源结论：交通源贡献率为0%，需结合气象条件综合研判。综合判定为「交通与局地积累复合型」事件。\n\n五、影响区域与重点道路\n空间分布显示，上风向主要道路等上风向路段污染输送作用明显。周边1km范围内敏感点共0个，需重点防护。\n\n六、分流/限行建议\n基于当前高浓度水平，建议执行【高】级别响应：建议加强实时监测与交通疏导。重点管控区域为监测区域周边辐射路段。\n\n七、后续复盘指标\n后续复盘指标：综合复盘污染积累阶段的气象场变化及排放源活动水平，并同步校验当日气象预报偏差对扩散趋势的影响。",
+      "summary": "本次事件为交通源贡献率为0%，需结合气象条件综合研判，叠加静稳气象导致浓度攀升，建议立即采取交通分流措施。",
+      "decision_summary": "建议启动交通分流预案"
+    },
+    "confidence": 0.6
+  },
+  "pipeline_status": {
+    "AirQualityAgent": "warning",
+    "MeteorologyAgent": "success",
+    "TrafficAgent": "failed",
+    "SpatialAgent": "success",
+    "SourceAgent": "success",
+    "DecisionAgent": "success",
+    "ReportAgent": "unknown",
+    "overall_status": "warning",
+    "success_count": 4,
+    "warning_count": 1,
+    "failed_count": 1,
+    "total_agents": 7
+  },
+  "metadata": {
+    "started_at": "2026-08-01T10:48:34.311801+08:00",
+    "completed_at": "2026-08-01T10:48:35.947646+08:00",
+    "duration_seconds": 1.64,
+    "task_id": "task_20260801104834"
+  }
+}

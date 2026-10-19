@@ -1,0 +1,145 @@
+{
+  "note": "V9.5 统计口径审计：同批预测下的正确口径 vs 旧（命中率）口径",
+  "holdout_2024": {
+    "cases_file": "v9_governance_cases.csv",
+    "n": 254,
+    "n_clusters": 147,
+    "point_f1_main_labels": {
+      "A": 0.2995,
+      "B": 0.4646,
+      "Bplus": 0.4649,
+      "C": 0.479
+    },
+    "abstention_rate": {
+      "A": 0.311,
+      "B": 0.2205,
+      "Bplus": 0.2795,
+      "C": 0.3819
+    },
+    "ci": {
+      "C": {
+        "correct_macro_f1_diff": {
+          "metric": "macro_f1_diff",
+          "mean_diff": 0.0145,
+          "ci95": [
+            -0.0659,
+            0.0778
+          ],
+          "n": 254,
+          "n_clusters": 147
+        },
+        "legacy_hit_rate_diff": {
+          "metric": "per_window_hit_rate_diff",
+          "mean_diff": -0.0354,
+          "ci95": [
+            -0.1039,
+            0.0354
+          ]
+        }
+      },
+      "Bplus": {
+        "correct_macro_f1_diff": {
+          "metric": "macro_f1_diff",
+          "mean_diff": 0.0004,
+          "ci95": [
+            -0.0327,
+            0.0315
+          ],
+          "n": 254,
+          "n_clusters": 147
+        },
+        "legacy_hit_rate_diff": {
+          "metric": "per_window_hit_rate_diff",
+          "mean_diff": 0.0197,
+          "ci95": [
+            -0.0199,
+            0.0605
+          ]
+        }
+      }
+    },
+    "consistency_checks": {
+      "C": {
+        "point_estimate_diff": 0.014466,
+        "ci_mean_diff": 0.0145,
+        "consistent": true
+      },
+      "Bplus": {
+        "point_estimate_diff": 0.000354,
+        "ci_mean_diff": 0.0004,
+        "consistent": true
+      }
+    }
+  },
+  "pit_2024": {
+    "cases_file": "v9_governance_pit_cases.csv",
+    "n": 254,
+    "n_clusters": 147,
+    "point_f1_main_labels": {
+      "A": 0.3091,
+      "B": 0.4598,
+      "Bplus": 0.4619,
+      "C": 0.4489
+    },
+    "abstention_rate": {
+      "A": 0.3071,
+      "B": 0.2087,
+      "Bplus": 0.2638,
+      "C": 0.4094
+    },
+    "ci": {
+      "C": {
+        "correct_macro_f1_diff": {
+          "metric": "macro_f1_diff",
+          "mean_diff": -0.0109,
+          "ci95": [
+            -0.0932,
+            0.0529
+          ],
+          "n": 254,
+          "n_clusters": 147
+        },
+        "legacy_hit_rate_diff": {
+          "metric": "per_window_hit_rate_diff",
+          "mean_diff": -0.0669,
+          "ci95": [
+            -0.1434,
+            0.0087
+          ]
+        }
+      },
+      "Bplus": {
+        "correct_macro_f1_diff": {
+          "metric": "macro_f1_diff",
+          "mean_diff": 0.0021,
+          "ci95": [
+            -0.0342,
+            0.0351
+          ],
+          "n": 254,
+          "n_clusters": 147
+        },
+        "legacy_hit_rate_diff": {
+          "metric": "per_window_hit_rate_diff",
+          "mean_diff": 0.0197,
+          "ci95": [
+            -0.0238,
+            0.062
+          ]
+        }
+      }
+    },
+    "consistency_checks": {
+      "C": {
+        "point_estimate_diff": -0.01089,
+        "ci_mean_diff": -0.0109,
+        "consistent": true
+      },
+      "Bplus": {
+        "point_estimate_diff": 0.00207,
+        "ci_mean_diff": 0.0021,
+        "consistent": true
+      }
+    }
+  }
+}

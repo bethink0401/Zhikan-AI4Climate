@@ -1,0 +1,1148 @@
+{
+  "design": {
+    "note": "V9.3 机制消融矩阵：统一场景/阈值规则下分离动态风场、衰减标定、双尺度结构各自贡献；V6 原参数 = plume 0.55 / decay 2h / crosswind 0.09",
+    "v6_original_params": {
+      "plume_scale": 0.55,
+      "decay_half_life_hours": 2.0,
+      "crosswind_coefficient": 0.09
+    },
+    "attribution_test_iou": {
+      "dynamic_wind_arm2_minus_arm1": {
+        "mean_diff": 0.0567,
+        "ci95": [
+          0.0089,
+          0.1101
+        ],
+        "n_scenarios": 20
+      },
+      "recalibration_arm3_minus_arm2": {
+        "mean_diff": 0.0132,
+        "ci95": [
+          0.0007,
+          0.0275
+        ],
+        "n_scenarios": 20
+      },
+      "twoscale_arm4_minus_arm3": {
+        "mean_diff": 0.0015,
+        "ci95": [
+          0.0002,
+          0.0035
+        ],
+        "n_scenarios": 20
+      },
+      "point_estimates": {
+        "arm1_fixed_wind_orig": 0.2364,
+        "arm2_dynamic_orig": 0.293,
+        "arm3_dynamic_new": 0.3063,
+        "arm4_full_twoscale": 0.3078
+      },
+      "by_category": {
+        "stable": {
+          "arm1": 0.6191,
+          "arm2": 0.6028,
+          "arm3": 0.6661,
+          "arm4": 0.6661
+        },
+        "veering": {
+          "arm1": 0.0139,
+          "arm2": 0.0571,
+          "arm3": 0.0539,
+          "arm4": 0.0539
+        },
+        "cross_zero": {
+          "arm1": 0.1306,
+          "arm2": 0.4009,
+          "arm3": 0.4075,
+          "arm4": 0.4075
+        },
+        "calm": {
+          "arm1": 0.2438,
+          "arm2": 0.2468,
+          "arm3": 0.235,
+          "arm4": 0.2414
+        },
+        "gust": {
+          "arm1": 0.1744,
+          "arm2": 0.1576,
+          "arm3": 0.1688,
+          "arm4": 0.1701
+        }
+      }
+    }
+  },
+  "arms": [
+    {
+      "arm": "fixed_wind_orig",
+      "threshold": 0.02,
+      "validation": {
+        "n": 20,
+        "mean_iou": 0.3186,
+        "by_category": {
+          "stable": 0.6332,
+          "veering": 0.0298,
+          "cross_zero": 0.129,
+          "calm": 0.3655,
+          "gust": 0.4355
+        }
+      },
+      "test": {
+        "n": 20,
+        "mean_iou": 0.2364,
+        "by_category": {
+          "stable": 0.6191,
+          "veering": 0.0139,
+          "cross_zero": 0.1306,
+          "calm": 0.2438,
+          "gust": 0.1744
+        }
+      },
+      "per_scenario": [
+        {
+          "scenario_id": "stable_0",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.6575
+        },
+        {
+          "scenario_id": "stable_1",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.6346
+        },
+        {
+          "scenario_id": "stable_2",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.6579
+        },
+        {
+          "scenario_id": "stable_3",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.5827
+        },
+        {
+          "scenario_id": "stable_4",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.5822
+        },
+        {
+          "scenario_id": "stable_5",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6246
+        },
+        {
+          "scenario_id": "stable_6",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6143
+        },
+        {
+          "scenario_id": "stable_7",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6554
+        },
+        {
+          "scenario_id": "veering_0",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "veering_1",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.005
+        },
+        {
+          "scenario_id": "veering_2",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "veering_3",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.1141
+        },
+        {
+          "scenario_id": "veering_4",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "veering_5",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "veering_6",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0557
+        },
+        {
+          "scenario_id": "veering_7",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "cross_zero_0",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.1211
+        },
+        {
+          "scenario_id": "cross_zero_1",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.1664
+        },
+        {
+          "scenario_id": "cross_zero_2",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.1222
+        },
+        {
+          "scenario_id": "cross_zero_3",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.1065
+        },
+        {
+          "scenario_id": "cross_zero_4",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.1664
+        },
+        {
+          "scenario_id": "cross_zero_5",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.11
+        },
+        {
+          "scenario_id": "cross_zero_6",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.1379
+        },
+        {
+          "scenario_id": "cross_zero_7",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.1082
+        },
+        {
+          "scenario_id": "calm_0",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.3731
+        },
+        {
+          "scenario_id": "calm_1",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.2444
+        },
+        {
+          "scenario_id": "calm_2",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.4529
+        },
+        {
+          "scenario_id": "calm_3",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.3918
+        },
+        {
+          "scenario_id": "calm_4",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2844
+        },
+        {
+          "scenario_id": "calm_5",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2531
+        },
+        {
+          "scenario_id": "calm_6",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2864
+        },
+        {
+          "scenario_id": "calm_7",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.1513
+        },
+        {
+          "scenario_id": "gust_0",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.6636
+        },
+        {
+          "scenario_id": "gust_1",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.3747
+        },
+        {
+          "scenario_id": "gust_2",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.6168
+        },
+        {
+          "scenario_id": "gust_3",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.0868
+        },
+        {
+          "scenario_id": "gust_4",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.043
+        },
+        {
+          "scenario_id": "gust_5",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "gust_6",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.6545
+        },
+        {
+          "scenario_id": "gust_7",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "dynamic_orig",
+      "threshold": 0.02,
+      "validation": {
+        "n": 20,
+        "mean_iou": 0.37,
+        "by_category": {
+          "stable": 0.6202,
+          "veering": 0.0988,
+          "cross_zero": 0.4032,
+          "calm": 0.3655,
+          "gust": 0.3624
+        }
+      },
+      "test": {
+        "n": 20,
+        "mean_iou": 0.293,
+        "by_category": {
+          "stable": 0.6028,
+          "veering": 0.0571,
+          "cross_zero": 0.4009,
+          "calm": 0.2468,
+          "gust": 0.1576
+        }
+      },
+      "per_scenario": [
+        {
+          "scenario_id": "stable_0",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.648
+        },
+        {
+          "scenario_id": "stable_1",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.5738
+        },
+        {
+          "scenario_id": "stable_2",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.658
+        },
+        {
+          "scenario_id": "stable_3",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.601
+        },
+        {
+          "scenario_id": "stable_4",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.5818
+        },
+        {
+          "scenario_id": "stable_5",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6087
+        },
+        {
+          "scenario_id": "stable_6",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6085
+        },
+        {
+          "scenario_id": "stable_7",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.612
+        },
+        {
+          "scenario_id": "veering_0",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0144
+        },
+        {
+          "scenario_id": "veering_1",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0738
+        },
+        {
+          "scenario_id": "veering_2",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.003
+        },
+        {
+          "scenario_id": "veering_3",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.3038
+        },
+        {
+          "scenario_id": "veering_4",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.037
+        },
+        {
+          "scenario_id": "veering_5",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0175
+        },
+        {
+          "scenario_id": "veering_6",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.1667
+        },
+        {
+          "scenario_id": "veering_7",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0073
+        },
+        {
+          "scenario_id": "cross_zero_0",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.4024
+        },
+        {
+          "scenario_id": "cross_zero_1",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.4353
+        },
+        {
+          "scenario_id": "cross_zero_2",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.3969
+        },
+        {
+          "scenario_id": "cross_zero_3",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.3781
+        },
+        {
+          "scenario_id": "cross_zero_4",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.4471
+        },
+        {
+          "scenario_id": "cross_zero_5",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.3735
+        },
+        {
+          "scenario_id": "cross_zero_6",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.4067
+        },
+        {
+          "scenario_id": "cross_zero_7",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.3762
+        },
+        {
+          "scenario_id": "calm_0",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.3731
+        },
+        {
+          "scenario_id": "calm_1",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.2444
+        },
+        {
+          "scenario_id": "calm_2",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.4529
+        },
+        {
+          "scenario_id": "calm_3",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.3918
+        },
+        {
+          "scenario_id": "calm_4",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2844
+        },
+        {
+          "scenario_id": "calm_5",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2531
+        },
+        {
+          "scenario_id": "calm_6",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2864
+        },
+        {
+          "scenario_id": "calm_7",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.1634
+        },
+        {
+          "scenario_id": "gust_0",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.468
+        },
+        {
+          "scenario_id": "gust_1",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.3108
+        },
+        {
+          "scenario_id": "gust_2",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.5714
+        },
+        {
+          "scenario_id": "gust_3",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.0995
+        },
+        {
+          "scenario_id": "gust_4",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.1064
+        },
+        {
+          "scenario_id": "gust_5",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.0208
+        },
+        {
+          "scenario_id": "gust_6",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.5031
+        },
+        {
+          "scenario_id": "gust_7",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "dynamic_new",
+      "threshold": 0.06,
+      "validation": {
+        "n": 20,
+        "mean_iou": 0.3884,
+        "by_category": {
+          "stable": 0.676,
+          "veering": 0.1017,
+          "cross_zero": 0.4078,
+          "calm": 0.3645,
+          "gust": 0.392
+        }
+      },
+      "test": {
+        "n": 20,
+        "mean_iou": 0.3063,
+        "by_category": {
+          "stable": 0.6661,
+          "veering": 0.0539,
+          "cross_zero": 0.4075,
+          "calm": 0.235,
+          "gust": 0.1688
+        }
+      },
+      "per_scenario": [
+        {
+          "scenario_id": "stable_0",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.7284
+        },
+        {
+          "scenario_id": "stable_1",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.6695
+        },
+        {
+          "scenario_id": "stable_2",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.7013
+        },
+        {
+          "scenario_id": "stable_3",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.6048
+        },
+        {
+          "scenario_id": "stable_4",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6542
+        },
+        {
+          "scenario_id": "stable_5",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6835
+        },
+        {
+          "scenario_id": "stable_6",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6437
+        },
+        {
+          "scenario_id": "stable_7",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6828
+        },
+        {
+          "scenario_id": "veering_0",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0055
+        },
+        {
+          "scenario_id": "veering_1",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0694
+        },
+        {
+          "scenario_id": "veering_2",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "veering_3",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.332
+        },
+        {
+          "scenario_id": "veering_4",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0288
+        },
+        {
+          "scenario_id": "veering_5",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0056
+        },
+        {
+          "scenario_id": "veering_6",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.1814
+        },
+        {
+          "scenario_id": "veering_7",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "cross_zero_0",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.4004
+        },
+        {
+          "scenario_id": "cross_zero_1",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.4451
+        },
+        {
+          "scenario_id": "cross_zero_2",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.4058
+        },
+        {
+          "scenario_id": "cross_zero_3",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.3801
+        },
+        {
+          "scenario_id": "cross_zero_4",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.4495
+        },
+        {
+          "scenario_id": "cross_zero_5",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.3852
+        },
+        {
+          "scenario_id": "cross_zero_6",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.4103
+        },
+        {
+          "scenario_id": "cross_zero_7",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.3849
+        },
+        {
+          "scenario_id": "calm_0",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.3552
+        },
+        {
+          "scenario_id": "calm_1",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.2271
+        },
+        {
+          "scenario_id": "calm_2",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.4672
+        },
+        {
+          "scenario_id": "calm_3",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.4085
+        },
+        {
+          "scenario_id": "calm_4",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2769
+        },
+        {
+          "scenario_id": "calm_5",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2393
+        },
+        {
+          "scenario_id": "calm_6",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2725
+        },
+        {
+          "scenario_id": "calm_7",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.1514
+        },
+        {
+          "scenario_id": "gust_0",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.4728
+        },
+        {
+          "scenario_id": "gust_1",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.3452
+        },
+        {
+          "scenario_id": "gust_2",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.6471
+        },
+        {
+          "scenario_id": "gust_3",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.1029
+        },
+        {
+          "scenario_id": "gust_4",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.1098
+        },
+        {
+          "scenario_id": "gust_5",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "gust_6",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.5654
+        },
+        {
+          "scenario_id": "gust_7",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.0
+        }
+      ]
+    },
+    {
+      "arm": "full_twoscale",
+      "threshold": 0.06,
+      "validation": {
+        "n": 20,
+        "mean_iou": 0.3879,
+        "by_category": {
+          "stable": 0.676,
+          "veering": 0.1017,
+          "cross_zero": 0.4078,
+          "calm": 0.3655,
+          "gust": 0.3884
+        }
+      },
+      "test": {
+        "n": 20,
+        "mean_iou": 0.3078,
+        "by_category": {
+          "stable": 0.6661,
+          "veering": 0.0539,
+          "cross_zero": 0.4075,
+          "calm": 0.2414,
+          "gust": 0.1701
+        }
+      },
+      "per_scenario": [
+        {
+          "scenario_id": "stable_0",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.7284
+        },
+        {
+          "scenario_id": "stable_1",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.6695
+        },
+        {
+          "scenario_id": "stable_2",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.7013
+        },
+        {
+          "scenario_id": "stable_3",
+          "category": "stable",
+          "split": "validation",
+          "iou": 0.6048
+        },
+        {
+          "scenario_id": "stable_4",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6542
+        },
+        {
+          "scenario_id": "stable_5",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6835
+        },
+        {
+          "scenario_id": "stable_6",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6437
+        },
+        {
+          "scenario_id": "stable_7",
+          "category": "stable",
+          "split": "test",
+          "iou": 0.6828
+        },
+        {
+          "scenario_id": "veering_0",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0055
+        },
+        {
+          "scenario_id": "veering_1",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0694
+        },
+        {
+          "scenario_id": "veering_2",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "veering_3",
+          "category": "veering",
+          "split": "validation",
+          "iou": 0.332
+        },
+        {
+          "scenario_id": "veering_4",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0288
+        },
+        {
+          "scenario_id": "veering_5",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0056
+        },
+        {
+          "scenario_id": "veering_6",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.1814
+        },
+        {
+          "scenario_id": "veering_7",
+          "category": "veering",
+          "split": "test",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "cross_zero_0",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.4004
+        },
+        {
+          "scenario_id": "cross_zero_1",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.4451
+        },
+        {
+          "scenario_id": "cross_zero_2",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.4058
+        },
+        {
+          "scenario_id": "cross_zero_3",
+          "category": "cross_zero",
+          "split": "validation",
+          "iou": 0.3801
+        },
+        {
+          "scenario_id": "cross_zero_4",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.4495
+        },
+        {
+          "scenario_id": "cross_zero_5",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.3852
+        },
+        {
+          "scenario_id": "cross_zero_6",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.4103
+        },
+        {
+          "scenario_id": "cross_zero_7",
+          "category": "cross_zero",
+          "split": "test",
+          "iou": 0.3849
+        },
+        {
+          "scenario_id": "calm_0",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.3586
+        },
+        {
+          "scenario_id": "calm_1",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.2292
+        },
+        {
+          "scenario_id": "calm_2",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.4681
+        },
+        {
+          "scenario_id": "calm_3",
+          "category": "calm",
+          "split": "validation",
+          "iou": 0.4061
+        },
+        {
+          "scenario_id": "calm_4",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2782
+        },
+        {
+          "scenario_id": "calm_5",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2413
+        },
+        {
+          "scenario_id": "calm_6",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.2772
+        },
+        {
+          "scenario_id": "calm_7",
+          "category": "calm",
+          "split": "test",
+          "iou": 0.1689
+        },
+        {
+          "scenario_id": "gust_0",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.4627
+        },
+        {
+          "scenario_id": "gust_1",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.3409
+        },
+        {
+          "scenario_id": "gust_2",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.6471
+        },
+        {
+          "scenario_id": "gust_3",
+          "category": "gust",
+          "split": "validation",
+          "iou": 0.1029
+        },
+        {
+          "scenario_id": "gust_4",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.1098
+        },
+        {
+          "scenario_id": "gust_5",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.0
+        },
+        {
+          "scenario_id": "gust_6",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.5707
+        },
+        {
+          "scenario_id": "gust_7",
+          "category": "gust",
+          "split": "test",
+          "iou": 0.0
+        }
+      ]
+    }
+  ]
+}

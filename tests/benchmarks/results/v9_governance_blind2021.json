@@ -1,0 +1,295 @@
+{
+  "design": {
+    "holdout_year": 2021,
+    "effective_config": {
+      "judgement_rule": "score_argmax",
+      "min_strength": 0.35,
+      "dominance_margin": 0.05,
+      "gate_anomaly_min": 0.45,
+      "traffic_nox_pct_min": 0.65,
+      "signature_weights": {
+        "traffic": {
+          "pressure": 0.6,
+          "upwind": 0.4
+        },
+        "local": {
+          "static_wind": 0.6,
+          "anomaly": 0.4,
+          "station_elevation": 0.0
+        },
+        "regional": {
+          "sync": 0.6,
+          "high_wind": 0.25,
+          "wind_stability": 0.15,
+          "elevation": 0.0,
+          "uniformity": 0.0
+        }
+      }
+    },
+    "leakage_audit": "2021 未进入任何建模/阈值选择/评分脚本（V9.9 谱系审计：results/v99_blind_year_lineage.json）",
+    "run_nature": "cross-year holdout（跨年份留出），非按时间顺序的未来预测测试",
+    "one_shot": true,
+    "frozen": "运行前未做任何参数改动；产物写入独立文件，不覆盖开发年结果",
+    "human_blind_rating": "PENDING — 模板已提供（v9_governance_label_template.csv），未伪造标签",
+    "sample_plan": {
+      "traffic_dominant": 30,
+      "local_accumulation": 18,
+      "regional_transport": 24,
+      "uncertain": 24,
+      "weekend_negative": 12
+    },
+    "bplus_definition": "B 输入 + V8 结构机制（NOx 分位门控/区域优先/积聚分支），隔离机制价值"
+  },
+  "point_f1_main_labels": {
+    "A": 0.3207,
+    "B": 0.5094,
+    "Bplus": 0.4905,
+    "C": 0.4381
+  },
+  "point_f1_independent_v2": {
+    "A": 0.2377,
+    "B": 0.5817,
+    "Bplus": 0.6054,
+    "C": 0.2856
+  },
+  "point_f1_independent_v3": {
+    "A": 0.304,
+    "B": 0.2636,
+    "Bplus": 0.2518,
+    "C": 0.1703
+  },
+  "clustered_ci_vs_B": {
+    "C": {
+      "metric": "macro_f1_diff",
+      "mean_diff": -0.0714,
+      "ci95": [
+        -0.3335,
+        0.015
+      ],
+      "n": 237,
+      "n_clusters": 147
+    },
+    "Bplus": {
+      "metric": "macro_f1_diff",
+      "mean_diff": -0.019,
+      "ci95": [
+        -0.0858,
+        0.0398
+      ],
+      "n": 237,
+      "n_clusters": 147
+    }
+  },
+  "by_station": {
+    "Mong Kok Roadside": {
+      "A": 0.3331,
+      "B": 0.5702,
+      "Bplus": 0.5549,
+      "C": 0.416
+    },
+    "Central Roadside": {
+      "A": 0.3401,
+      "B": 0.4876,
+      "Bplus": 0.4342,
+      "C": 0.3756
+    },
+    "Causeway Bay Roadside": {
+      "A": 0.264,
+      "B": 0.4108,
+      "Bplus": 0.4153,
+      "C": 0.3734
+    }
+  },
+  "confusion": {
+    "A": {
+      "local_accumulation": {
+        "local_accumulation": 0,
+        "regional_transport": 0,
+        "traffic_dominant": 3,
+        "uncertain": 0
+      },
+      "regional_transport": {
+        "local_accumulation": 12,
+        "regional_transport": 0,
+        "traffic_dominant": 57,
+        "uncertain": 7
+      },
+      "traffic_dominant": {
+        "local_accumulation": 7,
+        "regional_transport": 0,
+        "traffic_dominant": 42,
+        "uncertain": 5
+      },
+      "uncertain": {
+        "local_accumulation": 13,
+        "regional_transport": 0,
+        "traffic_dominant": 15,
+        "uncertain": 76
+      }
+    },
+    "B": {
+      "local_accumulation": {
+        "local_accumulation": 0,
+        "regional_transport": 0,
+        "traffic_dominant": 3,
+        "uncertain": 0
+      },
+      "regional_transport": {
+        "local_accumulation": 0,
+        "regional_transport": 76,
+        "traffic_dominant": 0,
+        "uncertain": 0
+      },
+      "traffic_dominant": {
+        "local_accumulation": 0,
+        "regional_transport": 28,
+        "traffic_dominant": 26,
+        "uncertain": 0
+      },
+      "uncertain": {
+        "local_accumulation": 0,
+        "regional_transport": 2,
+        "traffic_dominant": 37,
+        "uncertain": 65
+      }
+    },
+    "Bplus": {
+      "local_accumulation": {
+        "local_accumulation": 0,
+        "regional_transport": 3,
+        "traffic_dominant": 0,
+        "uncertain": 0
+      },
+      "regional_transport": {
+        "local_accumulation": 0,
+        "regional_transport": 76,
+        "traffic_dominant": 0,
+        "uncertain": 0
+      },
+      "traffic_dominant": {
+        "local_accumulation": 0,
+        "regional_transport": 40,
+        "traffic_dominant": 14,
+        "uncertain": 0
+      },
+      "uncertain": {
+        "local_accumulation": 0,
+        "regional_transport": 2,
+        "traffic_dominant": 21,
+        "uncertain": 81
+      }
+    },
+    "C": {
+      "local_accumulation": {
+        "local_accumulation": 2,
+        "regional_transport": 0,
+        "traffic_dominant": 0,
+        "uncertain": 1
+      },
+      "regional_transport": {
+        "local_accumulation": 1,
+        "regional_transport": 55,
+        "traffic_dominant": 1,
+        "uncertain": 19
+      },
+      "traffic_dominant": {
+        "local_accumulation": 2,
+        "regional_transport": 25,
+        "traffic_dominant": 21,
+        "uncertain": 6
+      },
+      "uncertain": {
+        "local_accumulation": 19,
+        "regional_transport": 21,
+        "traffic_dominant": 17,
+        "uncertain": 47
+      }
+    }
+  },
+  "coverage_risk_curves": {
+    "A": [
+      {
+        "coverage": 0.6287,
+        "macro_f1": 0.3207,
+        "abstain_rule": "none"
+      },
+      {
+        "coverage": 0.4937,
+        "macro_f1": 0.3215,
+        "abstain_rule": "drop local_accumulation"
+      }
+    ],
+    "B": [
+      {
+        "coverage": 0.7257,
+        "macro_f1": 0.5094,
+        "abstain_rule": "none"
+      },
+      {
+        "coverage": 0.4473,
+        "macro_f1": 0.4258,
+        "abstain_rule": "drop traffic_dominant"
+      }
+    ],
+    "Bplus": [
+      {
+        "coverage": 0.6582,
+        "macro_f1": 0.4905,
+        "abstain_rule": "none"
+      },
+      {
+        "coverage": 0.5105,
+        "macro_f1": 0.4247,
+        "abstain_rule": "drop traffic_dominant"
+      }
+    ],
+    "C": [
+      {
+        "coverage": 0.692,
+        "macro_f1": 0.4381,
+        "abstain_rule": "none"
+      },
+      {
+        "coverage": 0.5907,
+        "macro_f1": 0.4324,
+        "abstain_rule": "drop local_accumulation"
+      },
+      {
+        "coverage": 0.4262,
+        "macro_f1": 0.3283,
+        "abstain_rule": "drop traffic_dominant"
+      }
+    ]
+  },
+  "weak_evidence_traffic_misfire": {
+    "A": 4,
+    "B": 9,
+    "Bplus": 3,
+    "C": 0
+  },
+  "abstention_coverage": {
+    "A": {
+      "uncertain_rate": 0.3713,
+      "uncertain_n": 88
+    },
+    "B": {
+      "uncertain_rate": 0.2743,
+      "uncertain_n": 65
+    },
+    "Bplus": {
+      "uncertain_rate": 0.3418,
+      "uncertain_n": 81
+    },
+    "C": {
+      "uncertain_rate": 0.308,
+      "uncertain_n": 73
+    }
+  },
+  "human_labels_n": 0,
+  "label_distribution": {
+    "traffic_dominant": 54,
+    "local_accumulation": 3,
+    "regional_transport": 76,
+    "uncertain": 104
+  }
+}

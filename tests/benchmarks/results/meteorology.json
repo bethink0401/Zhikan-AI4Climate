@@ -1,0 +1,123 @@
+{
+  "agent": "MeteorologyAgent",
+  "dispersion": {
+    "windows": [
+      {
+        "date": "2023-02-13",
+        "status": "success",
+        "weather_risk": 0.4178,
+        "dispersion_condition": "有利扩散",
+        "mean_wind_speed": 3.1775,
+        "downwind_consistent": true
+      },
+      {
+        "date": "2023-04-11",
+        "status": "success",
+        "weather_risk": 0.52,
+        "dispersion_condition": "有利扩散",
+        "mean_wind_speed": 3.5375,
+        "downwind_consistent": true
+      },
+      {
+        "date": "2023-05-25",
+        "status": "success",
+        "weather_risk": 0.2881,
+        "dispersion_condition": "有利扩散",
+        "mean_wind_speed": 4.405,
+        "downwind_consistent": true
+      },
+      {
+        "date": "2023-07-06",
+        "status": "success",
+        "weather_risk": 0.0185,
+        "dispersion_condition": "有利扩散",
+        "mean_wind_speed": 4.475,
+        "downwind_consistent": true
+      },
+      {
+        "date": "2023-08-15",
+        "status": "success",
+        "weather_risk": 0.7237,
+        "dispersion_condition": "一般",
+        "mean_wind_speed": 1.1925,
+        "downwind_consistent": true
+      },
+      {
+        "date": "2023-09-21",
+        "status": "success",
+        "weather_risk": 0.4975,
+        "dispersion_condition": "不利扩散（静风或弱风）",
+        "mean_wind_speed": 0.88,
+        "downwind_consistent": true
+      },
+      {
+        "date": "2023-11-20",
+        "status": "success",
+        "weather_risk": 0.3011,
+        "dispersion_condition": "有利扩散",
+        "mean_wind_speed": 2.845,
+        "downwind_consistent": true
+      },
+      {
+        "date": "2023-12-14",
+        "status": "success",
+        "weather_risk": 0.2683,
+        "dispersion_condition": "有利扩散",
+        "mean_wind_speed": 5.0475,
+        "downwind_consistent": true
+      }
+    ],
+    "weather_risk_stats": {
+      "n": 8,
+      "mean": 0.3794,
+      "median": 0.3594,
+      "min": 0.0185,
+      "max": 0.7237
+    },
+    "condition_distribution": {
+      "不利扩散（静风或弱风）": 1,
+      "一般": 1,
+      "有利扩散": 6
+    },
+    "downwind_consistency": "8/8"
+  },
+  "wind_averaging": {
+    "stations": [
+      {
+        "station": "Mong Kok Roadside",
+        "direction": 201.5,
+        "speed": 1.1925
+      },
+      {
+        "station": "Causeway Bay Roadside",
+        "direction": 201.5,
+        "speed": 1.1925
+      },
+      {
+        "station": "Central Roadside",
+        "direction": 201.5,
+        "speed": 1.1925
+      }
+    ],
+    "vector_mean_direction": 201.5,
+    "scalar_mean_direction": 201.5,
+    "angular_error_of_scalar": 0.0,
+    "synthetic_edge_case": {
+      "input_directions": [
+        350.0,
+        10.0
+      ],
+      "vector_mean": 0.0,
+      "scalar_mean": 180.0,
+      "note": "北北西 350° 与 北北东 10° 的算术平均得到 180°（南风），方向完全反转；矢量平均正确得到 0°（北风）"
+    },
+    "note": "scalar averaging of compass angles is the naive baseline; the API layer uses vector averaging (api/travel_api.py)"
+  },
+  "latency_ms": {
+    "n": 11,
+    "mean": 1977.627,
+    "median": 1889.8873,
+    "min": 1798.7954,
+    "max": 2922.2567
+  }
+}

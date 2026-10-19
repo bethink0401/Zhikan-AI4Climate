@@ -1,0 +1,616 @@
+{
+  "design": {
+    "note": "离线规则扫描：同一批观测量、只换判定规则",
+    "variants": [
+      "R1_sync",
+      "R2_abs_contrast",
+      "R3_net_relative",
+      "R4_hybrid"
+    ],
+    "base_config": {
+      "traffic_nox_pct_min": 0.55,
+      "min_strength": 0.4,
+      "margin": 0.12,
+      "local_station_term": "none",
+      "traffic_gate_uses_no2_signal": false,
+      "gate_anomaly_min": 0.45
+    }
+  },
+  "cross_domain_variants": {
+    "R1_sync": {
+      "synthetic_dev": {
+        "n": 138,
+        "macro_f1": 0.6445,
+        "by_station": {
+          "Causeway Bay Roadside": 0.6452,
+          "Central Roadside": 0.6394,
+          "Mong Kok Roadside": 0.6292
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.5833,
+          "local_accumulation": 0.2727,
+          "regional_transport": 0.8333,
+          "uncertain": 0.9091
+        },
+        "abstention_rate": 0.5217,
+        "coverage": 0.4783,
+        "error_on_covered": 0.0909,
+        "pred_distribution": {
+          "traffic_dominant": 21,
+          "local_accumulation": 12,
+          "regional_transport": 33,
+          "uncertain": 72
+        }
+      },
+      "synthetic_blind": {
+        "n": 138,
+        "macro_f1": 0.6636,
+        "by_station": {
+          "Causeway Bay Roadside": 0.6396,
+          "Central Roadside": 0.7436,
+          "Mong Kok Roadside": 0.5534
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.5278,
+          "local_accumulation": 0.4545,
+          "regional_transport": 0.7778,
+          "uncertain": 0.8485
+        },
+        "abstention_rate": 0.5,
+        "coverage": 0.5,
+        "error_on_covered": 0.1014,
+        "pred_distribution": {
+          "traffic_dominant": 19,
+          "local_accumulation": 20,
+          "regional_transport": 30,
+          "uncertain": 69
+        }
+      },
+      "real_full": {
+        "n": 254,
+        "macro_f1": 0.5386,
+        "by_station": {
+          "Causeway Bay Roadside": 0.4596,
+          "Central Roadside": 0.5392,
+          "Mong Kok Roadside": 0.4836
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.3387,
+          "local_accumulation": 0.9167,
+          "regional_transport": 0.4167,
+          "uncertain": 0.6389
+        },
+        "abstention_rate": 0.5591,
+        "coverage": 0.4409,
+        "error_on_covered": 0.4464,
+        "pred_distribution": {
+          "traffic_dominant": 45,
+          "local_accumulation": 19,
+          "regional_transport": 48,
+          "uncertain": 142
+        }
+      },
+      "real_pit": {
+        "n": 254,
+        "macro_f1": 0.4463,
+        "by_station": {
+          "Causeway Bay Roadside": 0.3802,
+          "Central Roadside": 0.4691,
+          "Mong Kok Roadside": 0.3929
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.3226,
+          "local_accumulation": 0.9167,
+          "regional_transport": 0.2778,
+          "uncertain": 0.6481
+        },
+        "abstention_rate": 0.5551,
+        "coverage": 0.4449,
+        "error_on_covered": 0.5487,
+        "pred_distribution": {
+          "traffic_dominant": 44,
+          "local_accumulation": 35,
+          "regional_transport": 34,
+          "uncertain": 141
+        }
+      }
+    },
+    "R2_abs_contrast": {
+      "synthetic_dev": {
+        "n": 138,
+        "macro_f1": 0.7268,
+        "by_station": {
+          "Causeway Bay Roadside": 0.7145,
+          "Central Roadside": 0.6853,
+          "Mong Kok Roadside": 0.7787
+        },
+        "per_class_recall": {
+          "traffic_dominant": 1.0,
+          "local_accumulation": 0.2727,
+          "regional_transport": 0.8611,
+          "uncertain": 0.8182
+        },
+        "abstention_rate": 0.4058,
+        "coverage": 0.5942,
+        "error_on_covered": 0.0732,
+        "pred_distribution": {
+          "traffic_dominant": 36,
+          "local_accumulation": 15,
+          "regional_transport": 31,
+          "uncertain": 56
+        }
+      },
+      "synthetic_blind": {
+        "n": 138,
+        "macro_f1": 0.7995,
+        "by_station": {
+          "Causeway Bay Roadside": 0.7492,
+          "Central Roadside": 0.8149,
+          "Mong Kok Roadside": 0.8125
+        },
+        "per_class_recall": {
+          "traffic_dominant": 1.0,
+          "local_accumulation": 0.4545,
+          "regional_transport": 0.9722,
+          "uncertain": 0.7879
+        },
+        "abstention_rate": 0.3261,
+        "coverage": 0.6739,
+        "error_on_covered": 0.0753,
+        "pred_distribution": {
+          "traffic_dominant": 36,
+          "local_accumulation": 22,
+          "regional_transport": 35,
+          "uncertain": 45
+        }
+      },
+      "real_full": {
+        "n": 254,
+        "macro_f1": 0.3017,
+        "by_station": {
+          "Causeway Bay Roadside": 0.0871,
+          "Central Roadside": 0.3547,
+          "Mong Kok Roadside": 0.3553
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.629,
+          "local_accumulation": 1.0,
+          "regional_transport": 0.0,
+          "uncertain": 0.3796
+        },
+        "abstention_rate": 0.311,
+        "coverage": 0.689,
+        "error_on_covered": 0.7086,
+        "pred_distribution": {
+          "traffic_dominant": 112,
+          "local_accumulation": 63,
+          "regional_transport": 0,
+          "uncertain": 79
+        }
+      },
+      "real_pit": {
+        "n": 254,
+        "macro_f1": 0.3042,
+        "by_station": {
+          "Causeway Bay Roadside": 0.0801,
+          "Central Roadside": 0.3917,
+          "Mong Kok Roadside": 0.3265
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.6774,
+          "local_accumulation": 1.0,
+          "regional_transport": 0.0,
+          "uncertain": 0.3704
+        },
+        "abstention_rate": 0.2795,
+        "coverage": 0.7205,
+        "error_on_covered": 0.7049,
+        "pred_distribution": {
+          "traffic_dominant": 108,
+          "local_accumulation": 75,
+          "regional_transport": 0,
+          "uncertain": 71
+        }
+      }
+    },
+    "R3_net_relative": {
+      "synthetic_dev": {
+        "n": 138,
+        "macro_f1": 0.6934,
+        "by_station": {
+          "Causeway Bay Roadside": 0.6659,
+          "Central Roadside": 0.6645,
+          "Mong Kok Roadside": 0.7404
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.9167,
+          "local_accumulation": 0.2727,
+          "regional_transport": 0.8333,
+          "uncertain": 0.7879
+        },
+        "abstention_rate": 0.4275,
+        "coverage": 0.5725,
+        "error_on_covered": 0.0886,
+        "pred_distribution": {
+          "traffic_dominant": 33,
+          "local_accumulation": 10,
+          "regional_transport": 36,
+          "uncertain": 59
+        }
+      },
+      "synthetic_blind": {
+        "n": 138,
+        "macro_f1": 0.748,
+        "by_station": {
+          "Causeway Bay Roadside": 0.7811,
+          "Central Roadside": 0.8116,
+          "Mong Kok Roadside": 0.6499
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.8333,
+          "local_accumulation": 0.4545,
+          "regional_transport": 0.9722,
+          "uncertain": 0.7273
+        },
+        "abstention_rate": 0.3551,
+        "coverage": 0.6449,
+        "error_on_covered": 0.1011,
+        "pred_distribution": {
+          "traffic_dominant": 30,
+          "local_accumulation": 17,
+          "regional_transport": 42,
+          "uncertain": 49
+        }
+      },
+      "real_full": {
+        "n": 254,
+        "macro_f1": 0.3545,
+        "by_station": {
+          "Causeway Bay Roadside": 0.1978,
+          "Central Roadside": 0.4195,
+          "Mong Kok Roadside": 0.3779
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.4839,
+          "local_accumulation": 1.0,
+          "regional_transport": 0.1806,
+          "uncertain": 0.2685
+        },
+        "abstention_rate": 0.3504,
+        "coverage": 0.6496,
+        "error_on_covered": 0.6667,
+        "pred_distribution": {
+          "traffic_dominant": 78,
+          "local_accumulation": 38,
+          "regional_transport": 49,
+          "uncertain": 89
+        }
+      },
+      "real_pit": {
+        "n": 254,
+        "macro_f1": 0.3278,
+        "by_station": {
+          "Causeway Bay Roadside": 0.1733,
+          "Central Roadside": 0.4076,
+          "Mong Kok Roadside": 0.3122
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.5323,
+          "local_accumulation": 1.0,
+          "regional_transport": 0.1389,
+          "uncertain": 0.287
+        },
+        "abstention_rate": 0.2953,
+        "coverage": 0.7047,
+        "error_on_covered": 0.6927,
+        "pred_distribution": {
+          "traffic_dominant": 80,
+          "local_accumulation": 62,
+          "regional_transport": 37,
+          "uncertain": 75
+        }
+      }
+    },
+    "R4_hybrid": {
+      "synthetic_dev": {
+        "n": 138,
+        "macro_f1": 0.6735,
+        "by_station": {
+          "Causeway Bay Roadside": 0.6825,
+          "Central Roadside": 0.6618,
+          "Mong Kok Roadside": 0.6656
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.6667,
+          "local_accumulation": 0.2727,
+          "regional_transport": 0.8611,
+          "uncertain": 0.9091
+        },
+        "abstention_rate": 0.5145,
+        "coverage": 0.4855,
+        "error_on_covered": 0.0448,
+        "pred_distribution": {
+          "traffic_dominant": 24,
+          "local_accumulation": 10,
+          "regional_transport": 33,
+          "uncertain": 71
+        }
+      },
+      "synthetic_blind": {
+        "n": 138,
+        "macro_f1": 0.7213,
+        "by_station": {
+          "Causeway Bay Roadside": 0.766,
+          "Central Roadside": 0.7601,
+          "Mong Kok Roadside": 0.6167
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.6111,
+          "local_accumulation": 0.4545,
+          "regional_transport": 0.8889,
+          "uncertain": 0.9091
+        },
+        "abstention_rate": 0.471,
+        "coverage": 0.529,
+        "error_on_covered": 0.0548,
+        "pred_distribution": {
+          "traffic_dominant": 22,
+          "local_accumulation": 17,
+          "regional_transport": 34,
+          "uncertain": 65
+        }
+      },
+      "real_full": {
+        "n": 254,
+        "macro_f1": 0.3752,
+        "by_station": {
+          "Causeway Bay Roadside": 0.2065,
+          "Central Roadside": 0.4844,
+          "Mong Kok Roadside": 0.3372
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.4677,
+          "local_accumulation": 1.0,
+          "regional_transport": 0.1667,
+          "uncertain": 0.3611
+        },
+        "abstention_rate": 0.4331,
+        "coverage": 0.5669,
+        "error_on_covered": 0.6319,
+        "pred_distribution": {
+          "traffic_dominant": 69,
+          "local_accumulation": 38,
+          "regional_transport": 37,
+          "uncertain": 110
+        }
+      },
+      "real_pit": {
+        "n": 254,
+        "macro_f1": 0.3225,
+        "by_station": {
+          "Causeway Bay Roadside": 0.1775,
+          "Central Roadside": 0.3895,
+          "Mong Kok Roadside": 0.3043
+        },
+        "per_class_recall": {
+          "traffic_dominant": 0.5,
+          "local_accumulation": 1.0,
+          "regional_transport": 0.0972,
+          "uncertain": 0.3333
+        },
+        "abstention_rate": 0.374,
+        "coverage": 0.626,
+        "error_on_covered": 0.6855,
+        "pred_distribution": {
+          "traffic_dominant": 70,
+          "local_accumulation": 62,
+          "regional_transport": 27,
+          "uncertain": 95
+        }
+      }
+    }
+  },
+  "frozen_config": {
+    "traffic_nox_pct_min": 0.55,
+    "min_strength": 0.3,
+    "margin": 0.12,
+    "local_station_term": "net_relative",
+    "traffic_gate_uses_no2_signal": false,
+    "gate_anomaly_min": 0.45,
+    "regional_variant": "R2_abs_contrast"
+  },
+  "report": {
+    "synthetic_dev": {
+      "n": 138,
+      "macro_f1": 0.9027,
+      "by_station": {
+        "Causeway Bay Roadside": 0.868,
+        "Central Roadside": 0.8734,
+        "Mong Kok Roadside": 0.9583
+      },
+      "per_class_recall": {
+        "traffic_dominant": 1.0,
+        "local_accumulation": 1.0,
+        "regional_transport": 0.8611,
+        "uncertain": 0.7576
+      },
+      "abstention_rate": 0.2174,
+      "coverage": 0.7826,
+      "error_on_covered": 0.0741,
+      "pred_distribution": {
+        "traffic_dominant": 36,
+        "local_accumulation": 41,
+        "regional_transport": 31,
+        "uncertain": 30
+      }
+    },
+    "synthetic_blind": {
+      "n": 138,
+      "macro_f1": 0.9313,
+      "by_station": {
+        "Causeway Bay Roadside": 0.8495,
+        "Central Roadside": 0.9159,
+        "Mong Kok Roadside": 1.0
+      },
+      "per_class_recall": {
+        "traffic_dominant": 1.0,
+        "local_accumulation": 1.0,
+        "regional_transport": 0.9722,
+        "uncertain": 0.7576
+      },
+      "abstention_rate": 0.1884,
+      "coverage": 0.8116,
+      "error_on_covered": 0.0714,
+      "pred_distribution": {
+        "traffic_dominant": 36,
+        "local_accumulation": 41,
+        "regional_transport": 35,
+        "uncertain": 26
+      }
+    },
+    "real_full": {
+      "n": 254,
+      "macro_f1": 0.1848,
+      "by_station": {
+        "Causeway Bay Roadside": 0.1171,
+        "Central Roadside": 0.1319,
+        "Mong Kok Roadside": 0.2569
+      },
+      "per_class_recall": {
+        "traffic_dominant": 0.3548,
+        "local_accumulation": 1.0,
+        "regional_transport": 0.0,
+        "uncertain": 0.1852
+      },
+      "abstention_rate": 0.2323,
+      "coverage": 0.7677,
+      "error_on_covered": 0.8256,
+      "pred_distribution": {
+        "traffic_dominant": 79,
+        "local_accumulation": 116,
+        "regional_transport": 0,
+        "uncertain": 59
+      }
+    },
+    "real_pit": {
+      "n": 254,
+      "macro_f1": 0.1939,
+      "by_station": {
+        "Causeway Bay Roadside": 0.1138,
+        "Central Roadside": 0.1632,
+        "Mong Kok Roadside": 0.2483
+      },
+      "per_class_recall": {
+        "traffic_dominant": 0.371,
+        "local_accumulation": 1.0,
+        "regional_transport": 0.0,
+        "uncertain": 0.1944
+      },
+      "abstention_rate": 0.2244,
+      "coverage": 0.7756,
+      "error_on_covered": 0.8223,
+      "pred_distribution": {
+        "traffic_dominant": 70,
+        "local_accumulation": 127,
+        "regional_transport": 0,
+        "uncertain": 57
+      }
+    },
+    "real_full_vs_R1_ci": {
+      "metric": "macro_f1_diff",
+      "mean_diff": -0.17,
+      "ci95": [
+        -0.219,
+        -0.1181
+      ],
+      "n": 254,
+      "n_clusters": 147,
+      "arm_config": {
+        "traffic_nox_pct_min": 0.55,
+        "min_strength": 0.3,
+        "margin": 0.12,
+        "local_station_term": "net_relative",
+        "traffic_gate_uses_no2_signal": false,
+        "gate_anomaly_min": 0.45,
+        "regional_variant": "R2_abs_contrast"
+      },
+      "baseline_config": {
+        "traffic_nox_pct_min": 0.55,
+        "min_strength": 0.3,
+        "margin": 0.12,
+        "local_station_term": "net_relative",
+        "traffic_gate_uses_no2_signal": false,
+        "gate_anomaly_min": 0.45,
+        "regional_variant": "R1_sync"
+      },
+      "arm_point_f1": 0.1848,
+      "baseline_point_f1": 0.3548,
+      "baseline_label": "R1_sync",
+      "paired_unit": "date"
+    },
+    "real_pit_vs_R1_ci": {
+      "metric": "macro_f1_diff",
+      "mean_diff": -0.0962,
+      "ci95": [
+        -0.1461,
+        -0.0441
+      ],
+      "n": 254,
+      "n_clusters": 147,
+      "arm_config": {
+        "traffic_nox_pct_min": 0.55,
+        "min_strength": 0.3,
+        "margin": 0.12,
+        "local_station_term": "net_relative",
+        "traffic_gate_uses_no2_signal": false,
+        "gate_anomaly_min": 0.45,
+        "regional_variant": "R2_abs_contrast"
+      },
+      "baseline_config": {
+        "traffic_nox_pct_min": 0.55,
+        "min_strength": 0.3,
+        "margin": 0.12,
+        "local_station_term": "net_relative",
+        "traffic_gate_uses_no2_signal": false,
+        "gate_anomaly_min": 0.45,
+        "regional_variant": "R1_sync"
+      },
+      "arm_point_f1": 0.1939,
+      "baseline_point_f1": 0.2901,
+      "baseline_label": "R1_sync",
+      "paired_unit": "date"
+    },
+    "synthetic_blind_vs_R1_ci": {
+      "metric": "macro_f1_diff",
+      "mean_diff": 0.1547,
+      "ci95": [
+        0.0822,
+        0.2427
+      ],
+      "n": 138,
+      "n_clusters": 46,
+      "arm_config": {
+        "traffic_nox_pct_min": 0.55,
+        "min_strength": 0.3,
+        "margin": 0.12,
+        "local_station_term": "net_relative",
+        "traffic_gate_uses_no2_signal": false,
+        "gate_anomaly_min": 0.45,
+        "regional_variant": "R2_abs_contrast"
+      },
+      "baseline_config": {
+        "traffic_nox_pct_min": 0.55,
+        "min_strength": 0.3,
+        "margin": 0.12,
+        "local_station_term": "net_relative",
+        "traffic_gate_uses_no2_signal": false,
+        "gate_anomaly_min": 0.45,
+        "regional_variant": "R1_sync"
+      },
+      "arm_point_f1": 0.9313,
+      "baseline_point_f1": 0.7767,
+      "baseline_label": "R1_sync",
+      "paired_unit": "date"
+    }
+  }
+}

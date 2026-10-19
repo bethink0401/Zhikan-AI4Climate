@@ -1,0 +1,70 @@
+{
+  "agent_name": "TrafficAgent",
+  "status": "success",
+  "result": {
+    "traffic_pressure": "high",
+    "traffic_pressure_score": 0.7363,
+    "traffic_pressure_index": 2.0615,
+    "traffic_pressure_level": "high",
+    "dominant_vehicle_types": [
+      "Franchised Bus DD",
+      "Private Car",
+      "Taxi"
+    ],
+    "heavy_vehicle_signal": "high",
+    "bus_ratio": 0.426,
+    "goods_vehicle_ratio": 0.17,
+    "taxi_ratio": 0.165,
+    "private_car_ratio": 0.206,
+    "vehicle_focus": [
+      "Bus",
+      "Goods Vehicle",
+      "Taxi"
+    ],
+    "proportions_pct": {
+      "Franchised Bus DD": 41.6,
+      "Private Car": 20.6,
+      "Taxi": 16.5,
+      "Goods Vehicle Light": 16.1,
+      "Motor Cycle": 2.8,
+      "Goods Vehicle M&H": 0.9,
+      "Non Franchised Bus": 0.9,
+      "Private LB": 0.5,
+      "Franchised Bus SD": 0.1,
+      "PLB": 0.0
+    },
+    "road_links": [
+      "NATHAN RD (from SHANTUNG ST to DUNDAS ST)"
+    ]
+  },
+  "evidence": [
+    "Morning peak period (0800-0900, 0900-1000, 1000-1100) near Mong Kok Roadside shows elevated traffic-related vehicle mix.",
+    "Peak traffic-pressure hour within window: 0800-0900.",
+    "Dominant vehicle types: Franchised Bus DD, Private Car, Taxi.",
+    "Bus and goods vehicle proportions increase traffic-related NOx risk.",
+    "Taxi proportion is relatively high during the selected window.",
+    "Traffic pollution pressure score=0.7363 (level=high), for risk screening only.",
+    "ATC links used: NATHAN RD (from SHANTUNG ST to DUNDAS ST)"
+  ],
+  "confidence": 0.82,
+  "data_quality": {
+    "missing_rate": 0.0,
+    "note": "使用 ATC 2023 年 Mon-Fri 车型结构；压力指数仅供风险判断。"
+  },
+  "created_at": "2026-08-02 10:42:05",
+  "meta": {
+    "task_id": "HK_MK_2023_0800",
+    "station_name": "Mong Kok Roadside",
+    "year_used": 2023,
+    "atc_station_ids": [
+      "3006"
+    ],
+    "time_slots": [
+      "0800-0900",
+      "0900-1000",
+      "1000-1100"
+    ],
+    "peak_time_slot": "0800-0900",
+    "row_count": 30
+  }
+}

@@ -1,0 +1,223 @@
+[
+  {
+    "agent_name": "TrafficAgent",
+    "status": "success",
+    "result": {
+      "traffic_pressure": "high",
+      "traffic_pressure_score": 0.7363,
+      "traffic_pressure_index": 2.0615,
+      "traffic_pressure_level": "high",
+      "dominant_vehicle_types": [
+        "Franchised Bus DD",
+        "Private Car",
+        "Taxi"
+      ],
+      "heavy_vehicle_signal": "high",
+      "bus_ratio": 0.426,
+      "goods_vehicle_ratio": 0.17,
+      "taxi_ratio": 0.165,
+      "private_car_ratio": 0.206,
+      "vehicle_focus": [
+        "Bus",
+        "Goods Vehicle",
+        "Taxi"
+      ],
+      "proportions_pct": {
+        "Franchised Bus DD": 41.6,
+        "Private Car": 20.6,
+        "Taxi": 16.5,
+        "Goods Vehicle Light": 16.1,
+        "Motor Cycle": 2.8,
+        "Goods Vehicle M&H": 0.9,
+        "Non Franchised Bus": 0.9,
+        "Private LB": 0.5,
+        "Franchised Bus SD": 0.1,
+        "PLB": 0.0
+      },
+      "road_links": [
+        "NATHAN RD (from SHANTUNG ST to DUNDAS ST)"
+      ]
+    },
+    "evidence": [
+      "Morning peak period (0800-0900, 0900-1000, 1000-1100) near Mong Kok Roadside shows elevated traffic-related vehicle mix.",
+      "Peak traffic-pressure hour within window: 0800-0900.",
+      "Dominant vehicle types: Franchised Bus DD, Private Car, Taxi.",
+      "Bus and goods vehicle proportions increase traffic-related NOx risk.",
+      "Taxi proportion is relatively high during the selected window.",
+      "Traffic pollution pressure score=0.7363 (level=high), for risk screening only.",
+      "ATC links used: NATHAN RD (from SHANTUNG ST to DUNDAS ST)"
+    ],
+    "confidence": 0.82,
+    "data_quality": {
+      "missing_rate": 0.0,
+      "note": "使用 ATC 2023 年 Mon-Fri 车型结构；压力指数仅供风险判断。"
+    },
+    "created_at": "2026-07-21 21:56:30",
+    "meta": {
+      "task_id": "HK_MK_2023_0800",
+      "station_name": "Mong Kok Roadside",
+      "year_used": 2023,
+      "atc_station_ids": [
+        "3006"
+      ],
+      "time_slots": [
+        "0800-0900",
+        "0900-1000",
+        "1000-1100"
+      ],
+      "peak_time_slot": "0800-0900",
+      "row_count": 30
+    }
+  },
+  {
+    "agent_name": "TrafficAgent",
+    "status": "success",
+    "result": {
+      "traffic_pressure": "medium",
+      "traffic_pressure_score": 0.5827,
+      "traffic_pressure_index": 1.6316,
+      "traffic_pressure_level": "medium",
+      "dominant_vehicle_types": [
+        "Private Car",
+        "Taxi",
+        "Franchised Bus DD"
+      ],
+      "heavy_vehicle_signal": "high",
+      "bus_ratio": 0.169,
+      "goods_vehicle_ratio": 0.181,
+      "taxi_ratio": 0.233,
+      "private_car_ratio": 0.381,
+      "vehicle_focus": [
+        "Bus",
+        "Goods Vehicle",
+        "Taxi",
+        "Private Car"
+      ],
+      "proportions_pct": {
+        "Private Car": 38.1,
+        "Taxi": 23.3,
+        "Franchised Bus DD": 15.9,
+        "Goods Vehicle Light": 15.1,
+        "Goods Vehicle M&H": 3.0,
+        "PLB": 1.8,
+        "Motor Cycle": 1.2,
+        "Non Franchised Bus": 0.9,
+        "Private LB": 0.6,
+        "Franchised Bus SD": 0.1
+      },
+      "road_links": [
+        "CAUSEWAY RD (from SHELTER ST to HING FAT ST)"
+      ]
+    },
+    "evidence": [
+      "Morning peak period (0800-0900, 0900-1000, 1000-1100) near Causeway Bay Roadside shows elevated traffic-related vehicle mix.",
+      "Peak traffic-pressure hour within window: 1000-1100.",
+      "Dominant vehicle types: Private Car, Taxi, Franchised Bus DD.",
+      "Bus and goods vehicle proportions increase traffic-related NOx risk.",
+      "Taxi proportion is relatively high during the selected window.",
+      "Traffic pollution pressure score=0.5827 (level=medium), for risk screening only.",
+      "ATC links used: CAUSEWAY RD (from SHELTER ST to HING FAT ST)"
+    ],
+    "confidence": 0.72,
+    "data_quality": {
+      "missing_rate": 0.0,
+      "note": "使用 ATC 2023 年 Mon-Fri 车型结构；压力指数仅供风险判断。 主站无匹配时已扩展至周边 ATC 站。"
+    },
+    "created_at": "2026-07-21 21:56:30",
+    "meta": {
+      "task_id": "HK_CB_2023_0800",
+      "station_name": "Causeway Bay Roadside",
+      "year_used": 2023,
+      "atc_station_ids": [
+        "1029",
+        "2214",
+        "1002",
+        "1032"
+      ],
+      "time_slots": [
+        "0800-0900",
+        "0900-1000",
+        "1000-1100"
+      ],
+      "peak_time_slot": "1000-1100",
+      "row_count": 30
+    }
+  },
+  {
+    "agent_name": "TrafficAgent",
+    "status": "success",
+    "result": {
+      "traffic_pressure": "high",
+      "traffic_pressure_score": 0.6298,
+      "traffic_pressure_index": 1.7633,
+      "traffic_pressure_level": "high",
+      "dominant_vehicle_types": [
+        "Private Car",
+        "Taxi",
+        "Goods Vehicle Light"
+      ],
+      "heavy_vehicle_signal": "high",
+      "bus_ratio": 0.2373,
+      "goods_vehicle_ratio": 0.228,
+      "taxi_ratio": 0.2417,
+      "private_car_ratio": 0.2613,
+      "vehicle_focus": [
+        "Bus",
+        "Goods Vehicle",
+        "Taxi",
+        "Private Car"
+      ],
+      "proportions_pct": {
+        "Private Car": 26.13,
+        "Taxi": 24.17,
+        "Goods Vehicle Light": 22.0,
+        "Franchised Bus DD": 21.73,
+        "Motor Cycle": 2.0,
+        "Non Franchised Bus": 2.0,
+        "Goods Vehicle M&H": 0.8,
+        "Private LB": 0.6,
+        "PLB": 0.6,
+        "Franchised Bus SD": 0.0
+      },
+      "road_links": [
+        "CONNAUGHT RD C (from CLEVERLY ST to GILMAN ST)",
+        "DES VOEUX RD C (from MORRISON ST to QUEEN VICTORIA ST)",
+        "QUEEN'S RD C (from QUEEN VICTORIA ST to BONHAM STRAND)"
+      ]
+    },
+    "evidence": [
+      "Morning peak period (0800-0900, 0900-1000, 1000-1100) near Central Roadside shows elevated traffic-related vehicle mix.",
+      "Peak traffic-pressure hour within window: 0800-0900.",
+      "Dominant vehicle types: Private Car, Taxi, Goods Vehicle Light.",
+      "Bus and goods vehicle proportions increase traffic-related NOx risk.",
+      "Taxi proportion is relatively high during the selected window.",
+      "Traffic pollution pressure score=0.6298 (level=high), for risk screening only.",
+      "ATC links used: CONNAUGHT RD C (from CLEVERLY ST to GILMAN ST); DES VOEUX RD C (from MORRISON ST to QUEEN VICTORIA ST); QUEEN'S RD C (from QUEEN VICTORIA ST to BONHAM STRAND)"
+    ],
+    "confidence": 0.72,
+    "data_quality": {
+      "missing_rate": 0.0,
+      "note": "使用 ATC 2023 年 Mon-Fri 车型结构；压力指数仅供风险判断。 主站无匹配时已扩展至周边 ATC 站。"
+    },
+    "created_at": "2026-07-21 21:56:30",
+    "meta": {
+      "task_id": "HK_CT_2023_0800",
+      "station_name": "Central Roadside",
+      "year_used": 2023,
+      "atc_station_ids": [
+        "1030",
+        "2207",
+        "2208",
+        "2209",
+        "1001"
+      ],
+      "time_slots": [
+        "0800-0900",
+        "0900-1000",
+        "1000-1100"
+      ],
+      "peak_time_slot": "0800-0900",
+      "row_count": 90
+    }
+  }
+]

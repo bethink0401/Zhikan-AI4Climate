@@ -1,0 +1,25 @@
+{
+  "manifest_version": "V9-2026-10-13",
+  "data_sources": {
+    "air_quality": {"path": "data/air_quality.db", "sha256_prefix": "6ba9fce3939f7ea8",
+                    "coverage": "2018-2024 逐小时 EPD EPICDI+AQHI，2024 年 153549 行 NO2、3 路边站齐全"},
+    "traffic": {"path": "data/traffic.db", "sha256_prefix": "08193523beb4ba7e",
+                "note": "traffic_vehicle_mix 仅 Mon-Fri"},
+    "wind": {"source": "Open-Meteo Archive（历史再分析）",
+             "framing": "历史气象驱动回测，不得称真实预报",
+             "cache": "tests/benchmarks/results/wind_openmeteo_*.json"}
+  },
+  "leakage_audit": {
+    "years_used_in_v1_v8": {"governance": [2023, 2022], "travel_dates": ["2023-08-15", "2023-10-18", "2023-12-06", "2023-11-15", "2023-10-25", "2023-11-22", "2023-11-29"], "propagation": ["2022/2023 派生场景（种子 zhikan-prop-*、zhikan-prop-v7-*）"]},
+    "v9_blind_year": 2024,
+    "audit_method": "逐脚本核查 YEAR 常量与日期常量（bench_governance_baselines=2023、bench_governance_v6=2022、bench_travel_*=上列日期、bench_propagation_*=2022/2023 场景种子）；2024 在 V1-V8 的任何代码路径/结果 JSON 中均未出现",
+    "audit_result": "PASS - 2024 年为真正的未见数据",
+    "human_labels": "PENDING（模板已提供，零伪造）",
+    "user_study": "PENDING（推荐材料已导出，零评价数字）"
+  },
+  "v9_samples": {
+    "governance_holdout": {"script": "governance_holdout.py", "year": 2024, "stations": ["MONG KOK", "CENTRAL", "CAUSEWAY BAY"], "plan": {"traffic_dominant": 30, "local_accumulation": 18, "regional_transport": 24, "uncertain": 24, "weekend_negative": 12}},
+    "propagation_backtest": {"script": "propagation_external.py", "source": "Mong Kok Roadside", "held_out": ["Central Roadside", "Causeway Bay Roadside"], "windows": "2024 全年 3h 窗口（0/4/8/12/16/20 时起）"},
+    "travel_recommendations": {"script": "travel_user_study.py", "date": "2024-03-13", "note": "研究材料；用户盲评 PENDING"}
+  }
+}

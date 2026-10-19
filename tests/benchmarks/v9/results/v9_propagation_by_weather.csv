@@ -1,0 +1,7 @@
+weather,method,n,precision,recall,roc_auc
+calm,A,2,,,
+calm,B,2,,,
+calm,C,2,,,
+windy,A,4070,,0.0,0.4967
+windy,B,4070,,0.0,0.5
+windy,C,4070,0.3333,0.0026,0.4584

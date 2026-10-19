@@ -1,0 +1,6124 @@
+{
+  "design": {
+    "annotation": "固定标准（先于方法运行）：区域传输=≥8 个一般站同步超各自 p90 且风≥3 m/s；局地积聚=风<2.5 m/s 且 NO2≥窗口均值 p60；交通源=工作日高峰时段且 NOx≥窗口均值 p70 且 NO2/NOx≥0.4；其余=不确定。标注为资料标准，F1 度量一致性而非真实溯源准确率。周末窗口（ATC 仅 Mon-Fri）全部作为弱证据负向进入测试集。",
+    "methods": {
+      "A": "单源规则：仅 EPD 站点 NO2/NOx/AQHI 阈值（结构性无法输出区域传输）",
+      "B": "多源固定规则：EPD+ATC+风速+区域同步，缺失输入按常见做法 0.5 默认插补；无智能体协同、无逐结论证据链",
+      "C": "智瞰七智能体流水线（重构后）：缺测不插补、异常分仅做门控、交通源需真实交通+空间证据、阈值在开发窗口标定后冻结"
+    },
+    "dev_test_split": "每类前 60% 开发 / 其余测试；周末负向全部测试",
+    "frozen_thresholds": {
+      "gate_anomaly_min": 0.45,
+      "traffic_threshold": 0.45,
+      "local_threshold": 0.45,
+      "regional_threshold": 0.65,
+      "traffic_signal_min": 0.8,
+      "traffic_nox_pct_min": 0.8
+    },
+    "threshold_grid_top": [
+      {
+        "traffic_threshold": 0.45,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.45,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4827,
+        "dev_pred_traffic": 1
+      },
+      {
+        "traffic_threshold": 0.45,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.55,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4827,
+        "dev_pred_traffic": 1
+      },
+      {
+        "traffic_threshold": 0.55,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.45,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4827,
+        "dev_pred_traffic": 1
+      },
+      {
+        "traffic_threshold": 0.55,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.55,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4827,
+        "dev_pred_traffic": 1
+      },
+      {
+        "traffic_threshold": 0.65,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.45,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4827,
+        "dev_pred_traffic": 1
+      },
+      {
+        "traffic_threshold": 0.65,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.55,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4827,
+        "dev_pred_traffic": 1
+      },
+      {
+        "traffic_threshold": 0.45,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.45,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4789,
+        "dev_pred_traffic": 1
+      },
+      {
+        "traffic_threshold": 0.45,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.55,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4789,
+        "dev_pred_traffic": 1
+      },
+      {
+        "traffic_threshold": 0.55,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.45,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4789,
+        "dev_pred_traffic": 1
+      },
+      {
+        "traffic_threshold": 0.55,
+        "local_threshold": 0.45,
+        "regional_threshold": 0.65,
+        "gate_anomaly_min": 0.55,
+        "traffic_signal_min": 0.8,
+        "traffic_nox_pct_min": 0.8,
+        "dev_macro_f1": 0.4789,
+        "dev_pred_traffic": 1
+      }
+    ]
+  },
+  "summary_dev": {
+    "n": 30,
+    "note": "开发窗口（阈值在此标定）",
+    "methods": {
+      "A": {
+        "macro_f1": 0.2972,
+        "median_ms": 0.5,
+        "mean_traceability": 0.5,
+        "completion_rate": 1.0,
+        "weak_evidence_pred_traffic": "0/0",
+        "weak_evidence_flagged": "0/0",
+        "confusion": {
+          "uncertain->traffic_dominant": 2,
+          "regional_transport->traffic_dominant": 8,
+          "traffic_dominant->uncertain": 2,
+          "uncertain->uncertain": 6,
+          "traffic_dominant->local_accumulation": 3,
+          "regional_transport->local_accumulation": 1,
+          "traffic_dominant->traffic_dominant": 7,
+          "uncertain->local_accumulation": 1
+        }
+      },
+      "B": {
+        "macro_f1": 0.4936,
+        "median_ms": 0.3,
+        "mean_traceability": 0.5,
+        "completion_rate": 1.0,
+        "weak_evidence_pred_traffic": "0/0",
+        "weak_evidence_flagged": "0/0",
+        "confusion": {
+          "uncertain->regional_transport": 3,
+          "regional_transport->regional_transport": 9,
+          "traffic_dominant->traffic_dominant": 7,
+          "uncertain->uncertain": 4,
+          "traffic_dominant->regional_transport": 5,
+          "uncertain->traffic_dominant": 2
+        }
+      },
+      "C": {
+        "macro_f1": 0.4432,
+        "median_ms": 2066.4,
+        "mean_traceability": 1.0,
+        "completion_rate": 1.0,
+        "weak_evidence_pred_traffic": "0/0",
+        "weak_evidence_flagged": "0/0",
+        "confusion": {
+          "uncertain->regional_transport": 1,
+          "regional_transport->regional_transport": 9,
+          "traffic_dominant->uncertain": 4,
+          "uncertain->uncertain": 8,
+          "traffic_dominant->local_accumulation": 5,
+          "traffic_dominant->regional_transport": 2,
+          "traffic_dominant->traffic_dominant": 1
+        }
+      }
+    }
+  },
+  "summary_test": {
+    "n": 31,
+    "note": "独立测试窗口（阈值冻结后一次性评估）",
+    "methods": {
+      "A": {
+        "macro_f1": 0.3042,
+        "median_ms": 0.4,
+        "mean_traceability": 0.5,
+        "completion_rate": 0.806,
+        "weak_evidence_pred_traffic": "1/8",
+        "weak_evidence_flagged": "0/8",
+        "confusion": {
+          "uncertain->uncertain": 10,
+          "uncertain->local_accumulation": 3,
+          "regional_transport->traffic_dominant": 5,
+          "traffic_dominant->traffic_dominant": 5,
+          "traffic_dominant->uncertain": 2,
+          "uncertain->traffic_dominant": 2,
+          "traffic_dominant->local_accumulation": 1,
+          "local_accumulation->traffic_dominant": 1,
+          "regional_transport->local_accumulation": 2
+        }
+      },
+      "B": {
+        "macro_f1": 0.4674,
+        "median_ms": 0.3,
+        "mean_traceability": 0.5,
+        "completion_rate": 1.0,
+        "weak_evidence_pred_traffic": "1/8",
+        "weak_evidence_flagged": "8/8",
+        "confusion": {
+          "uncertain->uncertain": 6,
+          "uncertain->regional_transport": 5,
+          "regional_transport->regional_transport": 7,
+          "traffic_dominant->regional_transport": 2,
+          "traffic_dominant->traffic_dominant": 6,
+          "uncertain->traffic_dominant": 4,
+          "local_accumulation->traffic_dominant": 1
+        }
+      },
+      "C": {
+        "macro_f1": 0.6272,
+        "median_ms": 2147.4,
+        "mean_traceability": 1.0,
+        "completion_rate": 1.0,
+        "weak_evidence_pred_traffic": "0/8",
+        "weak_evidence_flagged": "8/8",
+        "confusion": {
+          "uncertain->uncertain": 12,
+          "regional_transport->regional_transport": 6,
+          "regional_transport->traffic_dominant": 1,
+          "uncertain->local_accumulation": 3,
+          "traffic_dominant->local_accumulation": 2,
+          "traffic_dominant->traffic_dominant": 3,
+          "traffic_dominant->uncertain": 3,
+          "local_accumulation->local_accumulation": 1
+        }
+      }
+    }
+  },
+  "results": [
+    {
+      "window": {
+        "date": "2023-01-05",
+        "start_hour": 12,
+        "start_time": "2023-01-05 12:00:00",
+        "end_time": "2023-01-05 14:59:59",
+        "mean_no2": 98.0,
+        "mean_nox": 199.33,
+        "mean_aqhi": 4.0,
+        "mean_wind": 12.87,
+        "sync_count": 3,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-01-05 12:00:00–2023-01-05 14:59:59 NO2=98.0 NOx=199.33（分位 nox_p84）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.38,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 84%、NO2 分位 84%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 12.87 m/s；区域同步升高站数 3"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.3,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.23（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 3.57 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 37°，上风向 36.67。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 5 站窗口均值超自身 p90（CENTRAL, CAUSEWAY BAY, KWUN TONG）。",
+            "上风向匹配道路：Tung Choi Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 4183.93,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-01-05",
+        "start_hour": 18,
+        "start_time": "2023-01-05 18:00:00",
+        "end_time": "2023-01-05 20:59:59",
+        "mean_no2": 139.33,
+        "mean_nox": 243.0,
+        "mean_aqhi": 5.67,
+        "mean_wind": 5.1,
+        "sync_count": 13,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-01-05 18:00:00–2023-01-05 20:59:59 NO2=139.33 NOx=243.0（分位 nox_p93）",
+            "AQHI 均值 5.67（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.36,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 93%、NO2 分位 97%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 5.1 m/s；区域同步升高站数 13"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.74（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.42 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 96°，上风向 96.32。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 16 站窗口均值超自身 p90（KWAI CHUNG, CAUSEWAY BAY, CENTRAL）。",
+            "上风向匹配道路：Yim Po Fong Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2491.75,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-01-18",
+        "start_hour": 18,
+        "start_time": "2023-01-18 18:00:00",
+        "end_time": "2023-01-18 20:59:59",
+        "mean_no2": 129.33,
+        "mean_nox": 340.67,
+        "mean_aqhi": 5.0,
+        "mean_wind": 8.1,
+        "sync_count": 11,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-01-18 18:00:00–2023-01-18 20:59:59 NO2=129.33 NOx=340.67（分位 nox_p99）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 99%、NO2 分位 96%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 8.1 m/s；区域同步升高站数 11"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.37,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.62（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.25 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 18°，上风向 17.73。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 14 站窗口均值超自身 p90（CAUSEWAY BAY, MONG KOK, SHAM SHUI PO）。",
+            "上风向匹配道路：Sai Yeung Choi Street South（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2143.51,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-01-19",
+        "start_hour": 7,
+        "start_time": "2023-01-19 07:00:00",
+        "end_time": "2023-01-19 09:59:59",
+        "mean_no2": 73.67,
+        "mean_nox": 177.33,
+        "mean_aqhi": 3.0,
+        "mean_wind": 10.57,
+        "sync_count": 2,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-01-19 07:00:00–2023-01-19 09:59:59 NO2=73.67 NOx=177.33（分位 nox_p77）",
+            "AQHI 均值 3.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.53,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 77%、NO2 分位 61%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 10.57 m/s；区域同步升高站数 2"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.78，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.92（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.93 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 15°，上风向 14.67。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 2 站窗口均值超自身 p90（SHATIN, TSEUNG KWAN O）。",
+            "上风向匹配道路：Unnamed road（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2016.62,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-01-25",
+        "start_hour": 18,
+        "start_time": "2023-01-25 18:00:00",
+        "end_time": "2023-01-25 20:59:59",
+        "mean_no2": 86.33,
+        "mean_nox": 146.67,
+        "mean_aqhi": 4.0,
+        "mean_wind": 10.13,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-01-25 18:00:00–2023-01-25 20:59:59 NO2=86.33 NOx=146.67（分位 nox_p62）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.42,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 62%、NO2 分位 75%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 10.13 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.3,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.08（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.81 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 73°，上风向 73.34。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Sai Yee Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2066.59,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-01-26",
+        "start_hour": 18,
+        "start_time": "2023-01-26 18:00:00",
+        "end_time": "2023-01-26 20:59:59",
+        "mean_no2": 96.0,
+        "mean_nox": 182.33,
+        "mean_aqhi": 4.0,
+        "mean_wind": 8.37,
+        "sync_count": 3,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-01-26 18:00:00–2023-01-26 20:59:59 NO2=96.0 NOx=182.33（分位 nox_p79）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.43,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 79%、NO2 分位 82%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 8.37 m/s；区域同步升高站数 3"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.29,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.20（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.32 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 53°，上风向 53.05。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 3 站窗口均值超自身 p90（TUEN MUN, TSUEN WAN, EASTERN）。",
+            "上风向匹配道路：Sai Yeung Choi Street South（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.9
+        },
+        "ms": 1991.8,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-01-27",
+        "start_hour": 12,
+        "start_time": "2023-01-27 12:00:00",
+        "end_time": "2023-01-27 14:59:59",
+        "mean_no2": 68.67,
+        "mean_nox": 134.67,
+        "mean_aqhi": 4.0,
+        "mean_wind": 27.7,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-01-27 12:00:00–2023-01-27 14:59:59 NO2=68.67 NOx=134.67（分位 nox_p55）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.41,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 55%、NO2 分位 55%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 27.7 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.26,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.86（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 7.70 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 11°，上风向 10.67。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Mong Kok Road（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2090.63,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-02-01",
+        "start_hour": 7,
+        "start_time": "2023-02-01 07:00:00",
+        "end_time": "2023-02-01 09:59:59",
+        "mean_no2": 92.67,
+        "mean_nox": 155.67,
+        "mean_aqhi": 4.0,
+        "mean_wind": 10.8,
+        "sync_count": 9,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-02-01 07:00:00–2023-02-01 09:59:59 NO2=92.67 NOx=155.67（分位 nox_p67）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.36,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 67%、NO2 分位 80%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 10.8 m/s；区域同步升高站数 9"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.31,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.78，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.16（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 3.00 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 42°，上风向 42.0。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 9 站窗口均值超自身 p90（SHAM SHUI PO, TUEN MUN, KWUN TONG）。",
+            "上风向匹配道路：Sai Yee Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2180.81,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-02-04",
+        "start_hour": 7,
+        "start_time": "2023-02-04 07:00:00",
+        "end_time": "2023-02-04 09:59:59",
+        "mean_no2": 56.67,
+        "mean_nox": 88.67,
+        "mean_aqhi": 4.0,
+        "mean_wind": 22.0,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "weekend_negative",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-02-04 07:00:00–2023-02-04 09:59:59 NO2=56.67 NOx=88.67（分位 nox_p30）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.27,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 30%、NO2 分位 38%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 22.0 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.23,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.78（EPD 逐小时数据）。",
+            "交通源：ATC 交通数据缺失，本窗口不判定交通源。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.71（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 6.11 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 74°，上风向 74.0。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Fa Yuen Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [
+            "traffic 状态异常",
+            "TrafficAgent结果缺失，无法判定交通源"
+          ],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.74
+        },
+        "ms": 2125.0,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "warning",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-02-07",
+        "start_hour": 18,
+        "start_time": "2023-02-07 18:00:00",
+        "end_time": "2023-02-07 20:59:59",
+        "mean_no2": 90.0,
+        "mean_nox": 196.67,
+        "mean_aqhi": 4.0,
+        "mean_wind": 8.73,
+        "sync_count": 12,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-02-07 18:00:00–2023-02-07 20:59:59 NO2=90.0 NOx=196.67（分位 nox_p83）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.47,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 83%、NO2 分位 78%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 8.73 m/s；区域同步升高站数 12"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.34,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.13（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.42 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 70°，上风向 69.67。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 12 站窗口均值超自身 p90（TSUEN WAN, KWAI CHUNG, TUEN MUN）。",
+            "上风向匹配道路：Tung Choi Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2029.82,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-02-17",
+        "start_hour": 7,
+        "start_time": "2023-02-17 07:00:00",
+        "end_time": "2023-02-17 09:59:59",
+        "mean_no2": 77.33,
+        "mean_nox": 121.33,
+        "mean_aqhi": 4.0,
+        "mean_wind": 13.67,
+        "sync_count": 2,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-02-17 07:00:00–2023-02-17 09:59:59 NO2=77.33 NOx=121.33（分位 nox_p48）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.41,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "medium",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 48%、NO2 分位 66%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 13.67 m/s；区域同步升高站数 2"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.27,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.94（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.78，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.97（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 3.80 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 59°，上风向 59.02。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 2 站窗口均值超自身 p90（YUEN LONG, NORTH）。",
+            "上风向匹配道路：Unnamed road（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2137.85,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-02-22",
+        "start_hour": 18,
+        "start_time": "2023-02-22 18:00:00",
+        "end_time": "2023-02-22 20:59:59",
+        "mean_no2": 116.33,
+        "mean_nox": 188.33,
+        "mean_aqhi": 5.0,
+        "mean_wind": 9.03,
+        "sync_count": 5,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-02-22 18:00:00–2023-02-22 20:59:59 NO2=116.33 NOx=188.33（分位 nox_p81）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.49,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 81%、NO2 分位 93%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 9.03 m/s；区域同步升高站数 5"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.37,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.46（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.51 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 87°，上风向 87.41。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 6 站窗口均值超自身 p90（MONG KOK, TSUEN WAN, SHAM SHUI PO）。",
+            "上风向匹配道路：Soares Avenue（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.9
+        },
+        "ms": 1986.83,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-02-24",
+        "start_hour": 12,
+        "start_time": "2023-02-24 12:00:00",
+        "end_time": "2023-02-24 14:59:59",
+        "mean_no2": 125.67,
+        "mean_nox": 209.33,
+        "mean_aqhi": 4.67,
+        "mean_wind": 12.43,
+        "sync_count": 8,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-02-24 12:00:00–2023-02-24 14:59:59 NO2=125.67 NOx=209.33（分位 nox_p87）",
+            "AQHI 均值 4.67（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.47,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 87%、NO2 分位 95%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 12.43 m/s；区域同步升高站数 8"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.33,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.57（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 3.45 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 19°，上风向 19.34。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 11 站窗口均值超自身 p90（CAUSEWAY BAY, MONG KOK, CENTRAL）。",
+            "上风向匹配道路：Sai Yeung Choi Street South（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 1962.05,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-03-01",
+        "start_hour": 12,
+        "start_time": "2023-03-01 12:00:00",
+        "end_time": "2023-03-01 14:59:59",
+        "mean_no2": 145.0,
+        "mean_nox": 240.0,
+        "mean_aqhi": 5.0,
+        "mean_wind": 6.13,
+        "sync_count": 8,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-03-01 12:00:00–2023-03-01 14:59:59 NO2=145.0 NOx=240.0（分位 nox_p92）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.45,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 92%、NO2 分位 98%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 6.13 m/s；区域同步升高站数 8"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.81（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.71 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 203°，上风向 203.13。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 11 站窗口均值超自身 p90（CAUSEWAY BAY, CENTRAL, MONG KOK）。",
+            "上风向匹配道路：Portland Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2103.81,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-03-01",
+        "start_hour": 18,
+        "start_time": "2023-03-01 18:00:00",
+        "end_time": "2023-03-01 20:59:59",
+        "mean_no2": 190.33,
+        "mean_nox": 290.67,
+        "mean_aqhi": 6.33,
+        "mean_wind": 6.17,
+        "sync_count": 14,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-03-01 18:00:00–2023-03-01 20:59:59 NO2=190.33 NOx=290.67（分位 nox_p97）",
+            "AQHI 均值 6.33（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.49,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 97%、NO2 分位 99%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 6.17 m/s；区域同步升高站数 14"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.34,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 2.38（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.71 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 270°，上风向 270.14。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 17 站窗口均值超自身 p90（CENTRAL, CAUSEWAY BAY, MONG KOK）。",
+            "上风向匹配道路：Pok Hok Lane（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2040.37,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-03-03",
+        "start_hour": 18,
+        "start_time": "2023-03-03 18:00:00",
+        "end_time": "2023-03-03 20:59:59",
+        "mean_no2": 143.0,
+        "mean_nox": 195.0,
+        "mean_aqhi": 7.0,
+        "mean_wind": 7.13,
+        "sync_count": 6,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-03-03 18:00:00–2023-03-03 20:59:59 NO2=143.0 NOx=195.0（分位 nox_p83）",
+            "AQHI 均值 7.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.43,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 83%、NO2 分位 97%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 7.13 m/s；区域同步升高站数 6"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.31,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.79（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.98 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 66°，上风向 65.63。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 8 站窗口均值超自身 p90（MONG KOK, CENTRAL, TSUEN WAN）。",
+            "上风向匹配道路：Luen Wan Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2011.1,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-03-06",
+        "start_hour": 7,
+        "start_time": "2023-03-06 07:00:00",
+        "end_time": "2023-03-06 09:59:59",
+        "mean_no2": 113.67,
+        "mean_nox": 178.0,
+        "mean_aqhi": 5.0,
+        "mean_wind": 15.43,
+        "sync_count": 5,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-03-06 07:00:00–2023-03-06 09:59:59 NO2=113.67 NOx=178.0（分位 nox_p77）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.42,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 77%、NO2 分位 92%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 15.43 m/s；区域同步升高站数 5"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.31,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.78，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.42（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 4.28 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 65°，上风向 64.67。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 6 站窗口均值超自身 p90（MONG KOK, YUEN LONG, NORTH）。",
+            "上风向匹配道路：Luen Wan Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2198.23,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-03-06",
+        "start_hour": 18,
+        "start_time": "2023-03-06 18:00:00",
+        "end_time": "2023-03-06 20:59:59",
+        "mean_no2": 131.0,
+        "mean_nox": 193.33,
+        "mean_aqhi": 5.67,
+        "mean_wind": 11.47,
+        "sync_count": 0,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-03-06 18:00:00–2023-03-06 20:59:59 NO2=131.0 NOx=193.33（分位 nox_p83）",
+            "AQHI 均值 5.67（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.5,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 83%、NO2 分位 96%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 11.47 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "建议启动临时区域交通管制方案。; 建议高排放货车绕行避开上风向走廊。; 建议发布健康警报。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.83 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.95（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.64（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "NO2/NOx 在 Mong Kok Roadside 高峰时段显著上升（EPD）。",
+            "风速 3.18 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 85°，上风向 85.14。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 1 站窗口均值超自身 p90（MONG KOK）。",
+            "上风向匹配道路：Soares Avenue（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Traffic source dominant",
+          "confidence": 0.9
+        },
+        "ms": 2057.81,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-03-13",
+        "start_hour": 12,
+        "start_time": "2023-03-13 12:00:00",
+        "end_time": "2023-03-13 14:59:59",
+        "mean_no2": 90.67,
+        "mean_nox": 158.67,
+        "mean_aqhi": 5.0,
+        "mean_wind": 14.4,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-03-13 12:00:00–2023-03-13 14:59:59 NO2=90.67 NOx=158.67（分位 nox_p69）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.5,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 69%、NO2 分位 78%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 14.4 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.28,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.13（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 4.00 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 74°，上风向 74.0。",
+            "降水量 0.10 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Fa Yuen Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 1949.62,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-03-28",
+        "start_hour": 18,
+        "start_time": "2023-03-28 18:00:00",
+        "end_time": "2023-03-28 20:59:59",
+        "mean_no2": 95.0,
+        "mean_nox": 183.0,
+        "mean_aqhi": 4.0,
+        "mean_wind": 19.67,
+        "sync_count": 2,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-03-28 18:00:00–2023-03-28 20:59:59 NO2=95.0 NOx=183.0（分位 nox_p79）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.53,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 79%、NO2 分位 82%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 19.67 m/s；区域同步升高站数 2"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.35,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.19（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 5.46 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 81°，上风向 81.33。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 2 站窗口均值超自身 p90（NORTH, TAP MUN）。",
+            "上风向匹配道路：Tung Choi Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2017.29,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-03-31",
+        "start_hour": 18,
+        "start_time": "2023-03-31 18:00:00",
+        "end_time": "2023-03-31 20:59:59",
+        "mean_no2": 97.33,
+        "mean_nox": 151.33,
+        "mean_aqhi": 4.0,
+        "mean_wind": 17.07,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-03-31 18:00:00–2023-03-31 20:59:59 NO2=97.33 NOx=151.33（分位 nox_p65）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.39,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 65%、NO2 分位 84%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 17.07 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.27,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.22（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 4.75 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 93°，上风向 93.33。",
+            "降水量 0.20 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Victory Avenue（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2085.19,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-04-14",
+        "start_hour": 18,
+        "start_time": "2023-04-14 18:00:00",
+        "end_time": "2023-04-14 20:59:59",
+        "mean_no2": 99.67,
+        "mean_nox": 229.0,
+        "mean_aqhi": 5.0,
+        "mean_wind": 3.33,
+        "sync_count": 9,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-04-14 18:00:00–2023-04-14 20:59:59 NO2=99.67 NOx=229.0（分位 nox_p90）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.93,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 90%、NO2 分位 85%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 3.33 m/s；区域同步升高站数 9"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.33,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.25（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 0.93 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 251°，上风向 251.34。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 11 站窗口均值超自身 p90（CENTRAL, CAUSEWAY BAY, KWAI CHUNG）。",
+            "上风向匹配道路：Tong Mi Road（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2260.38,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-04-16",
+        "start_hour": 12,
+        "start_time": "2023-04-16 12:00:00",
+        "end_time": "2023-04-16 14:59:59",
+        "mean_no2": 101.67,
+        "mean_nox": 132.67,
+        "mean_aqhi": 5.33,
+        "mean_wind": 12.6,
+        "sync_count": 3,
+        "label": "uncertain",
+        "sample_group": "weekend_negative",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-04-16 12:00:00–2023-04-16 14:59:59 NO2=101.67 NOx=132.67（分位 nox_p54）",
+            "AQHI 均值 5.33（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.46,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 54%、NO2 分位 87%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 12.6 m/s；区域同步升高站数 3"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.94（EPD 逐小时数据）。",
+            "交通源：ATC 交通数据缺失，本窗口不判定交通源。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.27（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 3.50 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 106°，上风向 105.98。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 3 站窗口均值超自身 p90（KWAI CHUNG, TUNG CHUNG, TSUEN WAN）。",
+            "上风向匹配道路：Yim Po Fong Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [
+            "traffic 状态异常",
+            "TrafficAgent结果缺失，无法判定交通源"
+          ],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.74
+        },
+        "ms": 2204.52,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "warning",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-04-17",
+        "start_hour": 7,
+        "start_time": "2023-04-17 07:00:00",
+        "end_time": "2023-04-17 09:59:59",
+        "mean_no2": 76.33,
+        "mean_nox": 104.33,
+        "mean_aqhi": 5.0,
+        "mean_wind": 8.63,
+        "sync_count": 1,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-04-17 07:00:00–2023-04-17 09:59:59 NO2=76.33 NOx=104.33（分位 nox_p38）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.3,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 38%、NO2 分位 65%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 8.63 m/s；区域同步升高站数 1"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.28,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.94（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.78，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.96（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.40 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 100°，上风向 99.69。",
+            "降水量 0.70 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 1 站窗口均值超自身 p90（NORTH）。",
+            "上风向匹配道路：Peace Avenue（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2007.87,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-04-18",
+        "start_hour": 7,
+        "start_time": "2023-04-18 07:00:00",
+        "end_time": "2023-04-18 09:59:59",
+        "mean_no2": 69.67,
+        "mean_nox": 129.67,
+        "mean_aqhi": 3.0,
+        "mean_wind": 12.1,
+        "sync_count": 2,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-04-18 07:00:00–2023-04-18 09:59:59 NO2=69.67 NOx=129.67（分位 nox_p53）",
+            "AQHI 均值 3.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.28,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "medium",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 53%、NO2 分位 56%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 12.1 m/s；区域同步升高站数 2"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.28,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.70（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.78，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.87（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 3.36 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 153°，上风向 153.0。",
+            "降水量 0.40 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 2 站窗口均值超自身 p90（TSUEN WAN, NORTH）。",
+            "上风向匹配道路：Sai Yeung Choi Street South（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 1990.09,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-04-19",
+        "start_hour": 18,
+        "start_time": "2023-04-19 18:00:00",
+        "end_time": "2023-04-19 20:59:59",
+        "mean_no2": 175.67,
+        "mean_nox": 338.0,
+        "mean_aqhi": 6.0,
+        "mean_wind": 12.0,
+        "sync_count": 14,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-04-19 18:00:00–2023-04-19 20:59:59 NO2=175.67 NOx=338.0（分位 nox_p99）",
+            "AQHI 均值 6.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.33,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 99%、NO2 分位 99%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 12.0 m/s；区域同步升高站数 14"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 2.20（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 3.33 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 221°，上风向 221.01。",
+            "多站同步：全站 18 站中 17 站窗口均值超自身 p90（MONG KOK, CENTRAL, KWAI CHUNG）。",
+            "上风向匹配道路：Shanghai Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2207.61,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-04-24",
+        "start_hour": 18,
+        "start_time": "2023-04-24 18:00:00",
+        "end_time": "2023-04-24 20:59:59",
+        "mean_no2": 124.0,
+        "mean_nox": 246.67,
+        "mean_aqhi": 5.0,
+        "mean_wind": 10.5,
+        "sync_count": 10,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-04-24 18:00:00–2023-04-24 20:59:59 NO2=124.0 NOx=246.67（分位 nox_p93）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.46,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 93%、NO2 分位 95%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 10.5 m/s；区域同步升高站数 10"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.4,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.55（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.92 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 80°，上风向 79.65。",
+            "降水量 0.20 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 12 站窗口均值超自身 p90（MONG KOK, CENTRAL, SHAM SHUI PO）。",
+            "上风向匹配道路：Tung Choi Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2069.2,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-04-25",
+        "start_hour": 18,
+        "start_time": "2023-04-25 18:00:00",
+        "end_time": "2023-04-25 20:59:59",
+        "mean_no2": 85.33,
+        "mean_nox": 254.67,
+        "mean_aqhi": 4.0,
+        "mean_wind": 10.47,
+        "sync_count": 8,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-04-25 18:00:00–2023-04-25 20:59:59 NO2=85.33 NOx=254.67（分位 nox_p94）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.57,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 94%、NO2 分位 74%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 10.47 m/s；区域同步升高站数 8"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.49,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议启动临时区域交通管制方案。; 建议高排放货车绕行避开上风向走廊。; 建议发布健康警报。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.83 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.95（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.07（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "NO2/NOx 在 Mong Kok Roadside 高峰时段显著上升（EPD）。",
+            "风速 2.91 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 15°，上风向 15.28。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 8 站窗口均值超自身 p90（EASTERN, SOUTHERN, CENTRAL/WESTERN）。",
+            "上风向匹配道路：Unnamed road（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2019.68,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-05-19",
+        "start_hour": 18,
+        "start_time": "2023-05-19 18:00:00",
+        "end_time": "2023-05-19 20:59:59",
+        "mean_no2": 99.33,
+        "mean_nox": 242.33,
+        "mean_aqhi": 4.0,
+        "mean_wind": 7.13,
+        "sync_count": 1,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-05-19 18:00:00–2023-05-19 20:59:59 NO2=99.33 NOx=242.33（分位 nox_p93）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.52,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 93%、NO2 分位 85%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 7.13 m/s；区域同步升高站数 1"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.38,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.24（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.98 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 128°，上风向 127.66。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 1 站窗口均值超自身 p90（TSUEN WAN）。",
+            "上风向匹配道路：Fa Yuen Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.9
+        },
+        "ms": 2051.15,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-05-31",
+        "start_hour": 18,
+        "start_time": "2023-05-31 18:00:00",
+        "end_time": "2023-05-31 20:59:59",
+        "mean_no2": 186.67,
+        "mean_nox": 324.33,
+        "mean_aqhi": 6.0,
+        "mean_wind": 6.2,
+        "sync_count": 11,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-05-31 18:00:00–2023-05-31 20:59:59 NO2=186.67 NOx=324.33（分位 nox_p99）",
+            "AQHI 均值 6.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.56,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 99%、NO2 分位 99%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 6.2 m/s；区域同步升高站数 11"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.45,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "建议启动临时区域交通管制方案。; 建议高排放货车绕行避开上风向走廊。; 建议发布健康警报。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.83 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.95（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 2.34（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "NO2/NOx 在 Mong Kok Roadside 高峰时段显著上升（EPD）。",
+            "风速 1.73 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 307°，上风向 306.98。",
+            "多站同步：全站 18 站中 14 站窗口均值超自身 p90（MONG KOK, CENTRAL, CAUSEWAY BAY）。",
+            "上风向匹配道路：Arran Lane（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Traffic source with local accumulation",
+          "confidence": 0.9
+        },
+        "ms": 2010.31,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-06-02",
+        "start_hour": 18,
+        "start_time": "2023-06-02 18:00:00",
+        "end_time": "2023-06-02 20:59:59",
+        "mean_no2": 125.67,
+        "mean_nox": 243.67,
+        "mean_aqhi": 5.67,
+        "mean_wind": 8.77,
+        "sync_count": 1,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-06-02 18:00:00–2023-06-02 20:59:59 NO2=125.67 NOx=243.67（分位 nox_p93）",
+            "AQHI 均值 5.67（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.53,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 93%、NO2 分位 95%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 8.77 m/s；区域同步升高站数 1"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.35,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.57（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.43 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 193°，上风向 193.0。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 3 站窗口均值超自身 p90（MONG KOK, CAUSEWAY BAY, KWAI CHUNG）。",
+            "上风向匹配道路：Shanghai Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2088.66,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-06-13",
+        "start_hour": 18,
+        "start_time": "2023-06-13 18:00:00",
+        "end_time": "2023-06-13 20:59:59",
+        "mean_no2": 108.33,
+        "mean_nox": 209.33,
+        "mean_aqhi": 4.0,
+        "mean_wind": 4.4,
+        "sync_count": 2,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-06-13 18:00:00–2023-06-13 20:59:59 NO2=108.33 NOx=209.33（分位 nox_p87）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.66,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 87%、NO2 分位 90%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 4.4 m/s；区域同步升高站数 2"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.38,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.36（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.22 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 151°，上风向 151.0。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 3 站窗口均值超自身 p90（MONG KOK, KWAI CHUNG, NORTH）。",
+            "上风向匹配道路：Sai Yeung Choi Street South（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.9
+        },
+        "ms": 2242.96,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-06-14",
+        "start_hour": 18,
+        "start_time": "2023-06-14 18:00:00",
+        "end_time": "2023-06-14 20:59:59",
+        "mean_no2": 98.0,
+        "mean_nox": 213.33,
+        "mean_aqhi": 4.0,
+        "mean_wind": 5.5,
+        "sync_count": 4,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-06-14 18:00:00–2023-06-14 20:59:59 NO2=98.0 NOx=213.33（分位 nox_p87）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.48,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 87%、NO2 分位 84%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 5.5 m/s；区域同步升高站数 4"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.35,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.23（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.54 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 178°，上风向 177.95。",
+            "多站同步：全站 18 站中 4 站窗口均值超自身 p90（KWAI CHUNG, SHATIN, NORTH）。",
+            "上风向匹配道路：Dundas Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.9
+        },
+        "ms": 2147.27,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-06-22",
+        "start_hour": 18,
+        "start_time": "2023-06-22 18:00:00",
+        "end_time": "2023-06-22 20:59:59",
+        "mean_no2": 66.0,
+        "mean_nox": 193.33,
+        "mean_aqhi": 3.0,
+        "mean_wind": 16.67,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "low",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-06-22 18:00:00–2023-06-22 20:59:59 NO2=66.0 NOx=193.33（分位 nox_p83）",
+            "AQHI 均值 3.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.47,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 83%、NO2 分位 51%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 16.67 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.83（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 4.62 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 203°，上风向 203.43。",
+            "降水量 0.10 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Portland Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2066.14,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-06-25",
+        "start_hour": 12,
+        "start_time": "2023-06-25 12:00:00",
+        "end_time": "2023-06-25 14:59:59",
+        "mean_no2": 52.33,
+        "mean_nox": 120.33,
+        "mean_aqhi": 2.0,
+        "mean_wind": 10.3,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "weekend_negative",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-06-25 12:00:00–2023-06-25 14:59:59 NO2=52.33 NOx=120.33（分位 nox_p47）",
+            "AQHI 均值 2.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.36,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 47%、NO2 分位 33%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 10.3 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.26,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.94（EPD 逐小时数据）。",
+            "交通源：ATC 交通数据缺失，本窗口不判定交通源。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.65（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.86 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 179°，上风向 179.0。",
+            "降水量 0.40 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 16 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Changsha Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [
+            "traffic 状态异常",
+            "TrafficAgent结果缺失，无法判定交通源"
+          ],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.74
+        },
+        "ms": 2199.78,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "warning",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-06-29",
+        "start_hour": 18,
+        "start_time": "2023-06-29 18:00:00",
+        "end_time": "2023-06-29 20:59:59",
+        "mean_no2": 84.0,
+        "mean_nox": 182.33,
+        "mean_aqhi": 3.0,
+        "mean_wind": 6.3,
+        "sync_count": 1,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "dev"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-06-29 18:00:00–2023-06-29 20:59:59 NO2=84.0 NOx=182.33（分位 nox_p79）",
+            "AQHI 均值 3.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.98,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 79%、NO2 分位 72%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 6.3 m/s；区域同步升高站数 1"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.6,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.05（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.75 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 135°，上风向 135.41。",
+            "降水量 0.10 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 1 站窗口均值超自身 p90（KWAI CHUNG）。",
+            "上风向匹配道路：Dundas Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2015.49,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-07-15",
+        "start_hour": 18,
+        "start_time": "2023-07-15 18:00:00",
+        "end_time": "2023-07-15 20:59:59",
+        "mean_no2": 97.0,
+        "mean_nox": 164.0,
+        "mean_aqhi": 6.0,
+        "mean_wind": 5.8,
+        "sync_count": 3,
+        "label": "uncertain",
+        "sample_group": "weekend_negative",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-07-15 18:00:00–2023-07-15 20:59:59 NO2=97.0 NOx=164.0（分位 nox_p71）",
+            "AQHI 均值 6.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.42,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 71%、NO2 分位 83%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 5.8 m/s；区域同步升高站数 3"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.28,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源：ATC 交通数据缺失，本窗口不判定交通源。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.21（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.61 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 102°，上风向 102.22。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 4 站窗口均值超自身 p90（CENTRAL, KWAI CHUNG, TSUEN WAN）。",
+            "上风向匹配道路：Sai Yee Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [
+            "traffic 状态异常",
+            "TrafficAgent结果缺失，无法判定交通源"
+          ],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.74
+        },
+        "ms": 1959.46,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "warning",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-07-16",
+        "start_hour": 7,
+        "start_time": "2023-07-16 07:00:00",
+        "end_time": "2023-07-16 09:59:59",
+        "mean_no2": 32.67,
+        "mean_nox": 59.0,
+        "mean_aqhi": 2.0,
+        "mean_wind": 17.1,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "weekend_negative",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-07-16 07:00:00–2023-07-16 09:59:59 NO2=32.67 NOx=59.0（分位 nox_p19）",
+            "AQHI 均值 2.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.27,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 19%、NO2 分位 13%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 17.1 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.17,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.46（EPD 逐小时数据）。",
+            "交通源：ATC 交通数据缺失，本窗口不判定交通源。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.41（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 4.74 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 43°，上风向 43.26。",
+            "降水量 0.30 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Sai Yee Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [
+            "traffic 状态异常",
+            "TrafficAgent结果缺失，无法判定交通源"
+          ],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.74
+        },
+        "ms": 2557.38,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "warning",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-07-26",
+        "start_hour": 18,
+        "start_time": "2023-07-26 18:00:00",
+        "end_time": "2023-07-26 20:59:59",
+        "mean_no2": 179.0,
+        "mean_nox": 213.33,
+        "mean_aqhi": 8.33,
+        "mean_wind": 4.1,
+        "sync_count": 7,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-07-26 18:00:00–2023-07-26 20:59:59 NO2=179.0 NOx=213.33（分位 nox_p87）",
+            "AQHI 均值 8.33（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.75,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 87%、NO2 分位 99%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 4.1 m/s；区域同步升高站数 7"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.3,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 2.24（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.14 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 5°，上风向 5.03。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 10 站窗口均值超自身 p90（CENTRAL, CAUSEWAY BAY, MONG KOK）。",
+            "上风向匹配道路：Playing Field Road（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.9
+        },
+        "ms": 2018.16,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-07-27",
+        "start_hour": 18,
+        "start_time": "2023-07-27 18:00:00",
+        "end_time": "2023-07-27 20:59:59",
+        "mean_no2": 134.33,
+        "mean_nox": 244.67,
+        "mean_aqhi": 6.0,
+        "mean_wind": 7.5,
+        "sync_count": 4,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-07-27 18:00:00–2023-07-27 20:59:59 NO2=134.33 NOx=244.67（分位 nox_p93）",
+            "AQHI 均值 6.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.43,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 93%、NO2 分位 97%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 7.5 m/s；区域同步升高站数 4"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.3,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "建议启动临时区域交通管制方案。; 建议高排放货车绕行避开上风向走廊。; 建议发布健康警报。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.83 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.95（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.68（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "NO2/NOx 在 Mong Kok Roadside 高峰时段显著上升（EPD）。",
+            "风速 2.08 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 308°，上风向 307.8。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 7 站窗口均值超自身 p90（CENTRAL, CAUSEWAY BAY, MONG KOK）。",
+            "上风向匹配道路：Arran Lane（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Traffic source dominant",
+          "confidence": 0.9
+        },
+        "ms": 2008.71,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-08-02",
+        "start_hour": 18,
+        "start_time": "2023-08-02 18:00:00",
+        "end_time": "2023-08-02 20:59:59",
+        "mean_no2": 73.67,
+        "mean_nox": 183.67,
+        "mean_aqhi": 3.0,
+        "mean_wind": 6.7,
+        "sync_count": 0,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-08-02 18:00:00–2023-08-02 20:59:59 NO2=73.67 NOx=183.67（分位 nox_p79）",
+            "AQHI 均值 3.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.4,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 79%、NO2 分位 61%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 6.7 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.28,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.92（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.86 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 140°，上风向 140.14。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Sai Yeung Choi Street South（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2147.45,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-08-10",
+        "start_hour": 18,
+        "start_time": "2023-08-10 18:00:00",
+        "end_time": "2023-08-10 20:59:59",
+        "mean_no2": 104.67,
+        "mean_nox": 343.67,
+        "mean_aqhi": 3.67,
+        "mean_wind": 5.1,
+        "sync_count": 13,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "low",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-08-10 18:00:00–2023-08-10 20:59:59 NO2=104.67 NOx=343.67（分位 nox_p99）",
+            "AQHI 均值 3.67（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.48,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 99%、NO2 分位 88%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 5.1 m/s；区域同步升高站数 13"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.31,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.31（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.42 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 311°，上风向 311.06。",
+            "降水量 0.10 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 13 站窗口均值超自身 p90（KWAI CHUNG, KWUN TONG, SHAM SHUI PO）。",
+            "上风向匹配道路：Mong Kok Road（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2217.35,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-08-22",
+        "start_hour": 7,
+        "start_time": "2023-08-22 07:00:00",
+        "end_time": "2023-08-22 09:59:59",
+        "mean_no2": 51.0,
+        "mean_nox": 170.0,
+        "mean_aqhi": 2.0,
+        "mean_wind": 7.87,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-08-22 07:00:00–2023-08-22 09:59:59 NO2=51.0 NOx=170.0（分位 nox_p74）",
+            "AQHI 均值 2.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.35,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 74%、NO2 分位 31%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 7.87 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.24,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.78，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.64（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.19 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 197°，上风向 196.87。",
+            "降水量 0.40 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Dundas Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 1995.43,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-08-29",
+        "start_hour": 12,
+        "start_time": "2023-08-29 12:00:00",
+        "end_time": "2023-08-29 14:59:59",
+        "mean_no2": 88.0,
+        "mean_nox": 233.33,
+        "mean_aqhi": null,
+        "mean_wind": 3.73,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "unknown",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-08-29 12:00:00–2023-08-29 14:59:59 NO2=88.0 NOx=233.33（分位 nox_p91）",
+            "AQHI 均值 None（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.41,
+        "traceability": 0.5,
+        "complete": false
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 91%、NO2 分位 76%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 3.73 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.28,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.10（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.05 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 112°，上风向 112.17。",
+            "降水量 0.50 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Hak Po Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.9
+        },
+        "ms": 2576.27,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-08-30",
+        "start_hour": 18,
+        "start_time": "2023-08-30 18:00:00",
+        "end_time": "2023-08-30 20:59:59",
+        "mean_no2": 97.33,
+        "mean_nox": 183.0,
+        "mean_aqhi": null,
+        "mean_wind": 5.37,
+        "sync_count": 2,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "unknown",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-08-30 18:00:00–2023-08-30 20:59:59 NO2=97.33 NOx=183.0（分位 nox_p79）",
+            "AQHI 均值 None（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.4,
+        "traceability": 0.5,
+        "complete": false
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 79%、NO2 分位 84%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 5.37 m/s；区域同步升高站数 2"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.29,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.22（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.49 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 344°，上风向 343.97。",
+            "降水量 0.10 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 4 站窗口均值超自身 p90（CENTRAL, CAUSEWAY BAY, EASTERN）。",
+            "上风向匹配道路：Prince Edward Road West（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.9
+        },
+        "ms": 2139.27,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-09-10",
+        "start_hour": 7,
+        "start_time": "2023-09-10 07:00:00",
+        "end_time": "2023-09-10 09:59:59",
+        "mean_no2": 61.67,
+        "mean_nox": 101.0,
+        "mean_aqhi": 3.0,
+        "mean_wind": 12.0,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "weekend_negative",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-09-10 07:00:00–2023-09-10 09:59:59 NO2=61.67 NOx=101.0（分位 nox_p36）",
+            "AQHI 均值 3.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.39,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 36%、NO2 分位 45%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 12.0 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.22,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.62（EPD 逐小时数据）。",
+            "交通源：ATC 交通数据缺失，本窗口不判定交通源。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.77（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 3.33 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 137°，上风向 137.06。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Tung Choi Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [
+            "traffic 状态异常",
+            "TrafficAgent结果缺失，无法判定交通源"
+          ],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.74
+        },
+        "ms": 1993.95,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "warning",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-09-16",
+        "start_hour": 18,
+        "start_time": "2023-09-16 18:00:00",
+        "end_time": "2023-09-16 20:59:59",
+        "mean_no2": 63.67,
+        "mean_nox": 202.0,
+        "mean_aqhi": 3.0,
+        "mean_wind": 9.8,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "weekend_negative",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "low",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-09-16 18:00:00–2023-09-16 20:59:59 NO2=63.67 NOx=202.0（分位 nox_p85）",
+            "AQHI 均值 3.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.36,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 85%、NO2 分位 48%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 9.8 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.28,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源：ATC 交通数据缺失，本窗口不判定交通源。",
+            "日内交通信号分 0.95（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.80（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "NO2/NOx 在 Mong Kok Roadside 高峰时段显著上升（EPD）。",
+            "风速 2.72 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 97°，上风向 96.7。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Yim Po Fong Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [
+            "traffic 状态异常",
+            "TrafficAgent结果缺失，无法判定交通源"
+          ],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.74
+        },
+        "ms": 2296.92,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "warning",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-09-18",
+        "start_hour": 18,
+        "start_time": "2023-09-18 18:00:00",
+        "end_time": "2023-09-18 20:59:59",
+        "mean_no2": 65.67,
+        "mean_nox": 162.67,
+        "mean_aqhi": 3.0,
+        "mean_wind": 4.63,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-09-18 18:00:00–2023-09-18 20:59:59 NO2=65.67 NOx=162.67（分位 nox_p71）",
+            "AQHI 均值 3.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.39,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 71%、NO2 分位 51%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 4.63 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.28,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.82（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.29 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 109°，上风向 109.43。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Fa Yuen Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.9
+        },
+        "ms": 2152.43,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-09-28",
+        "start_hour": 18,
+        "start_time": "2023-09-28 18:00:00",
+        "end_time": "2023-09-28 20:59:59",
+        "mean_no2": 99.0,
+        "mean_nox": 211.67,
+        "mean_aqhi": 4.0,
+        "mean_wind": 6.8,
+        "sync_count": 0,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-09-28 18:00:00–2023-09-28 20:59:59 NO2=99.0 NOx=211.67（分位 nox_p87）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.52,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 87%、NO2 分位 85%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 6.8 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.33,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.24（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.88 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 83°，上风向 82.67。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Yim Po Fong Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2075.01,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-10-03",
+        "start_hour": 12,
+        "start_time": "2023-10-03 12:00:00",
+        "end_time": "2023-10-03 14:59:59",
+        "mean_no2": 119.67,
+        "mean_nox": 224.33,
+        "mean_aqhi": null,
+        "mean_wind": 1.7,
+        "sync_count": 1,
+        "label": "local_accumulation",
+        "sample_group": "local_accumulation",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "unknown",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-10-03 12:00:00–2023-10-03 14:59:59 NO2=119.67 NOx=224.33（分位 nox_p90）",
+            "AQHI 均值 None（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.42,
+        "traceability": 0.5,
+        "complete": false
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 90%、NO2 分位 94%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 1.7 m/s；区域同步升高站数 1"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.31,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.50（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 0.48 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 141°，上风向 140.8。",
+            "多站同步：全站 18 站中 3 站窗口均值超自身 p90（MONG KOK, CENTRAL, KWAI CHUNG）。",
+            "上风向道路匹配为空，无空间侧交通证据。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [
+            "spatial 状态异常",
+            "SpatialAgent结果缺失，无法做上风向道路匹配"
+          ],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Local accumulation dominant",
+          "confidence": 0.74
+        },
+        "ms": 2258.0,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "warning"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-10-03",
+        "start_hour": 18,
+        "start_time": "2023-10-03 18:00:00",
+        "end_time": "2023-10-03 20:59:59",
+        "mean_no2": 127.67,
+        "mean_nox": 262.33,
+        "mean_aqhi": null,
+        "mean_wind": 7.37,
+        "sync_count": 2,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "unknown",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-10-03 18:00:00–2023-10-03 20:59:59 NO2=127.67 NOx=262.33（分位 nox_p95）",
+            "AQHI 均值 None（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.64,
+        "traceability": 0.5,
+        "complete": false
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 95%、NO2 分位 96%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 7.37 m/s；区域同步升高站数 2"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.3,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "建议启动临时区域交通管制方案。; 建议高排放货车绕行避开上风向走廊。; 建议发布健康警报。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.83 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.95（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.60（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "NO2/NOx 在 Mong Kok Roadside 高峰时段显著上升（EPD）。",
+            "风速 2.04 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 238°，上风向 238.31。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 4 站窗口均值超自身 p90（MONG KOK, CENTRAL, KWAI CHUNG）。",
+            "上风向匹配道路：West Kowloon Corridor West（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Traffic source dominant",
+          "confidence": 0.9
+        },
+        "ms": 2339.81,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-10-05",
+        "start_hour": 18,
+        "start_time": "2023-10-05 18:00:00",
+        "end_time": "2023-10-05 20:59:59",
+        "mean_no2": 92.33,
+        "mean_nox": 200.67,
+        "mean_aqhi": null,
+        "mean_wind": 11.0,
+        "sync_count": 0,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "unknown",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-10-05 18:00:00–2023-10-05 20:59:59 NO2=92.33 NOx=200.67（分位 nox_p85）",
+            "AQHI 均值 None（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.48,
+        "traceability": 0.5,
+        "complete": false
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 85%、NO2 分位 80%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 11.0 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "high",
+          "advice": "建议启动临时区域交通管制方案。; 建议高排放货车绕行避开上风向走廊。; 建议发布健康警报。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.83 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.95（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.16（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "NO2/NOx 在 Mong Kok Roadside 高峰时段显著上升（EPD）。",
+            "风速 3.05 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 25°，上风向 25.33。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 1 站窗口均值超自身 p90（CENTRAL）。",
+            "上风向匹配道路：Sai Yee Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Traffic source dominant",
+          "confidence": 0.9
+        },
+        "ms": 2136.92,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-10-10",
+        "start_hour": 18,
+        "start_time": "2023-10-10 18:00:00",
+        "end_time": "2023-10-10 20:59:59",
+        "mean_no2": 76.67,
+        "mean_nox": 182.33,
+        "mean_aqhi": null,
+        "mean_wind": 10.93,
+        "sync_count": 1,
+        "label": "traffic_dominant",
+        "sample_group": "traffic_dominant",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "unknown",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-10-10 18:00:00–2023-10-10 20:59:59 NO2=76.67 NOx=182.33（分位 nox_p79）",
+            "AQHI 均值 None（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.47,
+        "traceability": 0.5,
+        "complete": false
+      },
+      "B": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "对周边主干道实施临时交通疏导并加密路边监测",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 79%、NO2 分位 65%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 10.93 m/s；区域同步升高站数 1"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.96（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 3.03 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 33°，上风向 33.0。",
+            "降水量 0.30 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 1 站窗口均值超自身 p90（TAI PO）。",
+            "上风向匹配道路：Fa Yuen Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2039.33,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-10-18",
+        "start_hour": 18,
+        "start_time": "2023-10-18 18:00:00",
+        "end_time": "2023-10-18 20:59:59",
+        "mean_no2": 109.33,
+        "mean_nox": 165.33,
+        "mean_aqhi": 5.0,
+        "mean_wind": 21.3,
+        "sync_count": 2,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-10-18 18:00:00–2023-10-18 20:59:59 NO2=109.33 NOx=165.33（分位 nox_p72）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.43,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "medium",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 72%、NO2 分位 91%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 21.3 m/s；区域同步升高站数 2"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.29,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.37（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 5.92 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 89°，上风向 88.66。",
+            "多站同步：全站 18 站中 3 站窗口均值超自身 p90（MONG KOK, NORTH, TAI PO）。",
+            "上风向匹配道路：Soares Avenue（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2168.12,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-11-03",
+        "start_hour": 7,
+        "start_time": "2023-11-03 07:00:00",
+        "end_time": "2023-11-03 09:59:59",
+        "mean_no2": 78.33,
+        "mean_nox": 128.0,
+        "mean_aqhi": 4.0,
+        "mean_wind": 9.4,
+        "sync_count": 3,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-11-03 07:00:00–2023-11-03 09:59:59 NO2=78.33 NOx=128.0（分位 nox_p51）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.34,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 51%、NO2 分位 67%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 9.4 m/s；区域同步升高站数 3"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.26,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.94（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.78，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.98（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.61 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 68°，上风向 68.3。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 3 站窗口均值超自身 p90（YUEN LONG, NORTH, TSEUNG KWAN O）。",
+            "上风向匹配道路：Luen Wan Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2210.68,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-11-19",
+        "start_hour": 7,
+        "start_time": "2023-11-19 07:00:00",
+        "end_time": "2023-11-19 09:59:59",
+        "mean_no2": 71.0,
+        "mean_nox": 109.67,
+        "mean_aqhi": 4.0,
+        "mean_wind": 6.67,
+        "sync_count": 2,
+        "label": "uncertain",
+        "sample_group": "weekend_negative",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-11-19 07:00:00–2023-11-19 09:59:59 NO2=71.0 NOx=109.67（分位 nox_p41）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 3.97,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "medium",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 41%、NO2 分位 58%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 6.67 m/s；区域同步升高站数 2"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.25,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.86（EPD 逐小时数据）。",
+            "交通源：ATC 交通数据缺失，本窗口不判定交通源。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.89（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.85 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 21°，上风向 20.61。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 2 站窗口均值超自身 p90（NORTH, TSEUNG KWAN O）。",
+            "上风向匹配道路：Sai Yeung Choi Street South（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [
+            "traffic 状态异常",
+            "TrafficAgent结果缺失，无法判定交通源"
+          ],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.74
+        },
+        "ms": 2558.42,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "warning",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-11-22",
+        "start_hour": 18,
+        "start_time": "2023-11-22 18:00:00",
+        "end_time": "2023-11-22 20:59:59",
+        "mean_no2": 111.67,
+        "mean_nox": 164.67,
+        "mean_aqhi": 5.0,
+        "mean_wind": 5.47,
+        "sync_count": 12,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-11-22 18:00:00–2023-11-22 20:59:59 NO2=111.67 NOx=164.67（分位 nox_p72）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.39,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 72%、NO2 分位 91%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 5.47 m/s；区域同步升高站数 12"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.3,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.40（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.53 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 66°，上风向 65.9。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 13 站窗口均值超自身 p90（MONG KOK, TUEN MUN, YUEN LONG）。",
+            "上风向匹配道路：Luen Wan Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2808.74,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-11-28",
+        "start_hour": 12,
+        "start_time": "2023-11-28 12:00:00",
+        "end_time": "2023-11-28 14:59:59",
+        "mean_no2": 73.33,
+        "mean_nox": 106.67,
+        "mean_aqhi": 5.0,
+        "mean_wind": 17.67,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-11-28 12:00:00–2023-11-28 14:59:59 NO2=73.33 NOx=106.67（分位 nox_p39）",
+            "AQHI 均值 5.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.32,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 39%、NO2 分位 61%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 17.67 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.24,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.92（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 4.91 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 77°，上风向 76.67。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 17 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Argyle Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2022.83,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-12-04",
+        "start_hour": 12,
+        "start_time": "2023-12-04 12:00:00",
+        "end_time": "2023-12-04 14:59:59",
+        "mean_no2": 114.67,
+        "mean_nox": 246.67,
+        "mean_aqhi": 4.67,
+        "mean_wind": 4.97,
+        "sync_count": 8,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "traffic_dominant",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-12-04 12:00:00–2023-12-04 14:59:59 NO2=114.67 NOx=246.67（分位 nox_p93）",
+            "AQHI 均值 4.67（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 1.77,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 93%、NO2 分位 93%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 4.97 m/s；区域同步升高站数 8"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.31,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.43（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 1.38 m/s（Open-Meteo），扩散条件差，利于局地积聚。",
+            "主导风向 348°，上风向 348.32。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 11 站窗口均值超自身 p90（CAUSEWAY BAY, MONG KOK, CENTRAL）。",
+            "上风向匹配道路：Argyle Street（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2060.37,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-12-08",
+        "start_hour": 7,
+        "start_time": "2023-12-08 07:00:00",
+        "end_time": "2023-12-08 09:59:59",
+        "mean_no2": 100.0,
+        "mean_nox": 173.0,
+        "mean_aqhi": 4.0,
+        "mean_wind": 9.63,
+        "sync_count": 11,
+        "label": "regional_transport",
+        "sample_group": "regional_transport",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "local_accumulation",
+          "risk_level": "medium",
+          "advice": "加强该站周边巡查并关注下一小时监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-12-08 07:00:00–2023-12-08 09:59:59 NO2=100.0 NOx=173.0（分位 nox_p75）",
+            "AQHI 均值 4.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.44,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "通报上风向区域并核对区域站点趋势",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 75%、NO2 分位 85%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 9.63 m/s；区域同步升高站数 11"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.29,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "regional_transport",
+          "risk_level": "high",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 1.00（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.78，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 1.25（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 2.67 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 51°，上风向 51.0。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 11 站窗口均值超自身 p90（TUEN MUN, KWAI CHUNG, YUEN LONG）。",
+            "上风向匹配道路：Sai Yeung Choi Street South（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Regional transport dominant",
+          "confidence": 0.9
+        },
+        "ms": 2196.44,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    },
+    {
+      "window": {
+        "date": "2023-12-21",
+        "start_hour": 18,
+        "start_time": "2023-12-21 18:00:00",
+        "end_time": "2023-12-21 20:59:59",
+        "mean_no2": 45.67,
+        "mean_nox": 104.0,
+        "mean_aqhi": 3.0,
+        "mean_wind": 22.47,
+        "sync_count": 0,
+        "label": "uncertain",
+        "sample_group": "uncertain",
+        "split": "test"
+      },
+      "A": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "继续常规监测",
+          "evidence": [
+            "EPD Mong Kok Roadside 2023-12-21 18:00:00–2023-12-21 20:59:59 NO2=45.67 NOx=104.0（分位 nox_p38）",
+            "AQHI 均值 3.0（EPD 逐小时数据）"
+          ],
+          "datasets": [
+            "EPD"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.29,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "B": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "low",
+          "advice": "维持常规监测，等待更多证据",
+          "evidence": [
+            "EPD Mong Kok Roadside NOx 分位 38%、NO2 分位 25%",
+            "ATC 重型车比例归一 0.5（0 条车种记录）",
+            "Open-Meteo 风速 22.47 m/s；区域同步升高站数 0"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo"
+          ],
+          "missing_flags": [
+            "ATC 交通数据缺失，按默认值插补"
+          ],
+          "per_conclusion_provenance": false
+        },
+        "ms": 0.2,
+        "traceability": 0.5,
+        "complete": true
+      },
+      "C": {
+        "output": {
+          "label": "uncertain",
+          "risk_level": "medium",
+          "advice": "建议维持常规空气质量监测，无需特殊管控。; 周边学校医院密集，建议发布健康防护提醒。",
+          "evidence": [
+            "污染门控：Mong Kok Roadside 异常分 0.78（EPD 逐小时数据）。",
+            "交通源可能性=0.00 （交通压力 0.63，ATC 车种数据）。",
+            "日内交通信号分 0.75（EPD NO2/NOx 高峰形态），阈值 0.8。",
+            "交通气候态比值 0.57（窗口 NO2 / 本站当年 11-15 时基线，阈值 1.3）。",
+            "风速 6.24 m/s（Open-Meteo），扩散条件可。",
+            "主导风向 16°，上风向 15.67。",
+            "降水量 0.00 mm，湿清除弱，利于污染物累积。",
+            "多站同步：全站 18 站中 0 站窗口均值超自身 p90。",
+            "上风向匹配道路：Unnamed road（路网+POI 空间匹配）。"
+          ],
+          "datasets": [
+            "EPD",
+            "ATC",
+            "Open-Meteo",
+            "路网/POI"
+          ],
+          "missing_flags": [],
+          "per_conclusion_provenance": true,
+          "main_judgement": "Mixed / uncertain sources",
+          "confidence": 0.9
+        },
+        "ms": 2201.02,
+        "agent_statuses": {
+          "air": "success",
+          "meteo": "success",
+          "traffic": "success",
+          "spatial": "success"
+        },
+        "traceability": 1.0,
+        "complete": true
+      }
+    }
+  ]
+}

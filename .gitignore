@@ -1,0 +1,21 @@
+data/raw_atc/
+__pycache__/
+*.pyc
+.DS_Store
+
+# WorkBuddy 工作区文件
+.workbuddy/
+
+# Vite 临时文件
+frontend/*.timestamp-*.mjs
+
+# 本地运行日志
+*.log
+
+# 本地环境变量（含模型密钥，禁止入库）
+/.env
+/.env.local
+
+# V9.6 气象年度缓存（可再生，仅本地加速用）
+tests/benchmarks/results/meteo_cache/
+tests/results/

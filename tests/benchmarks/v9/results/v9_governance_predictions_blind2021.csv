@@ -1,0 +1,949 @@
+station,date,start_hour,truth,method,prediction
+Mong Kok Roadside,2021-07-22,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-07-22,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-07-22,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-07-22,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-03-09,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-03-09,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-03-09,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-03-09,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-06-08,18,traffic_dominant,A,uncertain
+Mong Kok Roadside,2021-06-08,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-06-08,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-06-08,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-01-19,18,traffic_dominant,A,local_accumulation
+Mong Kok Roadside,2021-01-19,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-01-19,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-01-19,18,traffic_dominant,C,regional_transport
+Mong Kok Roadside,2021-07-14,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-07-14,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-07-14,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-07-14,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-08-31,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-08-31,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-08-31,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-08-31,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-04-30,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-04-30,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-04-30,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-04-30,18,traffic_dominant,C,regional_transport
+Mong Kok Roadside,2021-08-04,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-08-04,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-08-04,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-08-04,18,traffic_dominant,C,regional_transport
+Mong Kok Roadside,2021-09-28,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-09-28,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-09-28,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-09-28,18,traffic_dominant,C,regional_transport
+Mong Kok Roadside,2021-09-29,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-09-29,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-09-29,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-09-29,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-05-05,7,traffic_dominant,A,uncertain
+Mong Kok Roadside,2021-05-05,7,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-05-05,7,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-05-05,7,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-03-11,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-03-11,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-03-11,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-03-11,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-09-30,7,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-09-30,7,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-09-30,7,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-09-30,7,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-07-26,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-07-26,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-07-26,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-07-26,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-09-15,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-09-15,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-09-15,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-09-15,18,traffic_dominant,C,uncertain
+Mong Kok Roadside,2021-07-28,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-07-28,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-07-28,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-07-28,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-06-23,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-06-23,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-06-23,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-06-23,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-07-27,7,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-07-27,7,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-07-27,7,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-07-27,7,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-08-02,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-08-02,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-08-02,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-08-02,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-09-30,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-09-30,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-09-30,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-09-30,18,traffic_dominant,C,uncertain
+Mong Kok Roadside,2021-10-20,18,traffic_dominant,A,local_accumulation
+Mong Kok Roadside,2021-10-20,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-10-20,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-10-20,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-07-27,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-07-27,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-07-27,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-07-27,18,traffic_dominant,C,regional_transport
+Mong Kok Roadside,2021-02-19,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-02-19,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-02-19,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-02-19,18,traffic_dominant,C,regional_transport
+Mong Kok Roadside,2021-01-20,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-01-20,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-01-20,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-01-20,18,traffic_dominant,C,regional_transport
+Mong Kok Roadside,2021-12-30,18,traffic_dominant,A,traffic_dominant
+Mong Kok Roadside,2021-12-30,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-12-30,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-12-30,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-03-04,18,traffic_dominant,A,uncertain
+Mong Kok Roadside,2021-03-04,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-03-04,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-03-04,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-11-19,18,traffic_dominant,A,local_accumulation
+Mong Kok Roadside,2021-11-19,18,traffic_dominant,B,regional_transport
+Mong Kok Roadside,2021-11-19,18,traffic_dominant,Bplus,regional_transport
+Mong Kok Roadside,2021-11-19,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-10-11,18,traffic_dominant,A,uncertain
+Mong Kok Roadside,2021-10-11,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-10-11,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-10-11,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-04-12,18,traffic_dominant,A,uncertain
+Mong Kok Roadside,2021-04-12,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-04-12,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-04-12,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-04-08,18,traffic_dominant,A,local_accumulation
+Mong Kok Roadside,2021-04-08,18,traffic_dominant,B,traffic_dominant
+Mong Kok Roadside,2021-04-08,18,traffic_dominant,Bplus,traffic_dominant
+Mong Kok Roadside,2021-04-08,18,traffic_dominant,C,traffic_dominant
+Mong Kok Roadside,2021-09-21,18,local_accumulation,A,traffic_dominant
+Mong Kok Roadside,2021-09-21,18,local_accumulation,B,traffic_dominant
+Mong Kok Roadside,2021-09-21,18,local_accumulation,Bplus,regional_transport
+Mong Kok Roadside,2021-09-21,18,local_accumulation,C,uncertain
+Mong Kok Roadside,2021-04-29,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-04-29,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-04-29,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-04-29,18,regional_transport,C,uncertain
+Mong Kok Roadside,2021-11-29,7,regional_transport,A,uncertain
+Mong Kok Roadside,2021-11-29,7,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-11-29,7,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-11-29,7,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-04-22,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-04-22,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-04-22,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-04-22,18,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-01-05,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-01-05,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-01-05,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-01-05,18,regional_transport,C,uncertain
+Mong Kok Roadside,2021-11-11,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-11-11,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-11-11,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-11-11,18,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-03-01,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-03-01,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-03-01,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-03-01,18,regional_transport,C,uncertain
+Mong Kok Roadside,2021-01-14,12,regional_transport,A,local_accumulation
+Mong Kok Roadside,2021-01-14,12,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-01-14,12,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-01-14,12,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-09-15,12,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-09-15,12,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-09-15,12,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-09-15,12,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-12-03,18,regional_transport,A,local_accumulation
+Mong Kok Roadside,2021-12-03,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-12-03,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-12-03,18,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-02-02,12,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-02-02,12,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-02-02,12,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-02-02,12,regional_transport,C,uncertain
+Mong Kok Roadside,2021-04-23,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-04-23,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-04-23,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-04-23,18,regional_transport,C,uncertain
+Mong Kok Roadside,2021-01-14,7,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-01-14,7,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-01-14,7,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-01-14,7,regional_transport,C,uncertain
+Mong Kok Roadside,2021-03-16,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-03-16,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-03-16,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-03-16,18,regional_transport,C,uncertain
+Mong Kok Roadside,2021-12-10,7,regional_transport,A,uncertain
+Mong Kok Roadside,2021-12-10,7,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-12-10,7,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-12-10,7,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-12-07,7,regional_transport,A,uncertain
+Mong Kok Roadside,2021-12-07,7,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-12-07,7,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-12-07,7,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-05-07,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-05-07,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-05-07,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-05-07,18,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-02-22,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-02-22,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-02-22,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-02-22,18,regional_transport,C,uncertain
+Mong Kok Roadside,2021-11-16,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-11-16,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-11-16,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-11-16,18,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-05-05,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-05-05,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-05-05,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-05-05,18,regional_transport,C,uncertain
+Mong Kok Roadside,2021-12-14,18,regional_transport,A,local_accumulation
+Mong Kok Roadside,2021-12-14,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-12-14,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-12-14,18,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-12-09,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-12-09,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-12-09,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-12-09,18,regional_transport,C,traffic_dominant
+Mong Kok Roadside,2021-09-16,12,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-09-16,12,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-09-16,12,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-09-16,12,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-11-09,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-11-09,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-11-09,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-11-09,18,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-01-15,7,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-01-15,7,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-01-15,7,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-01-15,7,regional_transport,C,uncertain
+Mong Kok Roadside,2021-08-18,12,uncertain,A,uncertain
+Mong Kok Roadside,2021-08-18,12,uncertain,B,traffic_dominant
+Mong Kok Roadside,2021-08-18,12,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-08-18,12,uncertain,C,traffic_dominant
+Mong Kok Roadside,2021-11-12,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-11-12,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-11-12,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-11-12,7,uncertain,C,regional_transport
+Mong Kok Roadside,2021-04-26,18,uncertain,A,uncertain
+Mong Kok Roadside,2021-04-26,18,uncertain,B,uncertain
+Mong Kok Roadside,2021-04-26,18,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-04-26,18,uncertain,C,regional_transport
+Mong Kok Roadside,2021-03-30,12,uncertain,A,traffic_dominant
+Mong Kok Roadside,2021-03-30,12,uncertain,B,traffic_dominant
+Mong Kok Roadside,2021-03-30,12,uncertain,Bplus,traffic_dominant
+Mong Kok Roadside,2021-03-30,12,uncertain,C,traffic_dominant
+Mong Kok Roadside,2021-10-25,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-10-25,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-10-25,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-10-25,7,uncertain,C,uncertain
+Mong Kok Roadside,2021-02-12,12,uncertain,A,uncertain
+Mong Kok Roadside,2021-02-12,12,uncertain,B,uncertain
+Mong Kok Roadside,2021-02-12,12,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-02-12,12,uncertain,C,local_accumulation
+Mong Kok Roadside,2021-05-21,18,uncertain,A,traffic_dominant
+Mong Kok Roadside,2021-05-21,18,uncertain,B,traffic_dominant
+Mong Kok Roadside,2021-05-21,18,uncertain,Bplus,traffic_dominant
+Mong Kok Roadside,2021-05-21,18,uncertain,C,traffic_dominant
+Mong Kok Roadside,2021-03-26,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-03-26,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-03-26,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-03-26,7,uncertain,C,regional_transport
+Mong Kok Roadside,2021-09-10,12,uncertain,A,uncertain
+Mong Kok Roadside,2021-09-10,12,uncertain,B,uncertain
+Mong Kok Roadside,2021-09-10,12,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-09-10,12,uncertain,C,uncertain
+Mong Kok Roadside,2021-03-30,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-03-30,7,uncertain,B,traffic_dominant
+Mong Kok Roadside,2021-03-30,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-03-30,7,uncertain,C,traffic_dominant
+Mong Kok Roadside,2021-05-03,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-05-03,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-05-03,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-05-03,7,uncertain,C,uncertain
+Mong Kok Roadside,2021-05-10,12,uncertain,A,uncertain
+Mong Kok Roadside,2021-05-10,12,uncertain,B,traffic_dominant
+Mong Kok Roadside,2021-05-10,12,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-05-10,12,uncertain,C,traffic_dominant
+Mong Kok Roadside,2021-03-01,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-03-01,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-03-01,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-03-01,7,uncertain,C,uncertain
+Mong Kok Roadside,2021-09-02,18,uncertain,A,uncertain
+Mong Kok Roadside,2021-09-02,18,uncertain,B,uncertain
+Mong Kok Roadside,2021-09-02,18,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-09-02,18,uncertain,C,local_accumulation
+Mong Kok Roadside,2021-01-08,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-01-08,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-01-08,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-01-08,7,uncertain,C,regional_transport
+Mong Kok Roadside,2021-10-12,18,uncertain,A,uncertain
+Mong Kok Roadside,2021-10-12,18,uncertain,B,uncertain
+Mong Kok Roadside,2021-10-12,18,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-10-12,18,uncertain,C,regional_transport
+Mong Kok Roadside,2021-09-27,12,uncertain,A,local_accumulation
+Mong Kok Roadside,2021-09-27,12,uncertain,B,traffic_dominant
+Mong Kok Roadside,2021-09-27,12,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-09-27,12,uncertain,C,traffic_dominant
+Mong Kok Roadside,2021-08-26,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-08-26,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-08-26,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-08-26,7,uncertain,C,local_accumulation
+Mong Kok Roadside,2021-04-22,12,uncertain,A,local_accumulation
+Mong Kok Roadside,2021-04-22,12,uncertain,B,traffic_dominant
+Mong Kok Roadside,2021-04-22,12,uncertain,Bplus,traffic_dominant
+Mong Kok Roadside,2021-04-22,12,uncertain,C,traffic_dominant
+Mong Kok Roadside,2021-08-30,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-08-30,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-08-30,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-08-30,7,uncertain,C,uncertain
+Mong Kok Roadside,2021-03-02,18,uncertain,A,uncertain
+Mong Kok Roadside,2021-03-02,18,uncertain,B,uncertain
+Mong Kok Roadside,2021-03-02,18,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-03-02,18,uncertain,C,uncertain
+Mong Kok Roadside,2021-04-20,18,uncertain,A,local_accumulation
+Mong Kok Roadside,2021-04-20,18,uncertain,B,uncertain
+Mong Kok Roadside,2021-04-20,18,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-04-20,18,uncertain,C,uncertain
+Mong Kok Roadside,2021-07-19,18,uncertain,A,uncertain
+Mong Kok Roadside,2021-07-19,18,uncertain,B,uncertain
+Mong Kok Roadside,2021-07-19,18,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-07-19,18,uncertain,C,uncertain
+Mong Kok Roadside,2021-11-01,18,uncertain,A,local_accumulation
+Mong Kok Roadside,2021-11-01,18,uncertain,B,uncertain
+Mong Kok Roadside,2021-11-01,18,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-11-01,18,uncertain,C,local_accumulation
+Mong Kok Roadside,2021-05-30,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-05-30,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-05-30,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-05-30,7,uncertain,C,regional_transport
+Mong Kok Roadside,2021-09-18,12,uncertain,A,local_accumulation
+Mong Kok Roadside,2021-09-18,12,uncertain,B,traffic_dominant
+Mong Kok Roadside,2021-09-18,12,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-09-18,12,uncertain,C,local_accumulation
+Mong Kok Roadside,2021-08-01,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-08-01,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-08-01,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-08-01,7,uncertain,C,local_accumulation
+Mong Kok Roadside,2021-11-07,12,uncertain,A,uncertain
+Mong Kok Roadside,2021-11-07,12,uncertain,B,uncertain
+Mong Kok Roadside,2021-11-07,12,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-11-07,12,uncertain,C,regional_transport
+Mong Kok Roadside,2021-11-14,18,uncertain,A,local_accumulation
+Mong Kok Roadside,2021-11-14,18,uncertain,B,uncertain
+Mong Kok Roadside,2021-11-14,18,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-11-14,18,uncertain,C,local_accumulation
+Mong Kok Roadside,2021-01-16,7,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-01-16,7,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-01-16,7,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-01-16,7,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-12-04,18,regional_transport,A,traffic_dominant
+Mong Kok Roadside,2021-12-04,18,regional_transport,B,regional_transport
+Mong Kok Roadside,2021-12-04,18,regional_transport,Bplus,regional_transport
+Mong Kok Roadside,2021-12-04,18,regional_transport,C,regional_transport
+Mong Kok Roadside,2021-10-31,12,uncertain,A,uncertain
+Mong Kok Roadside,2021-10-31,12,uncertain,B,uncertain
+Mong Kok Roadside,2021-10-31,12,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-10-31,12,uncertain,C,uncertain
+Mong Kok Roadside,2021-11-13,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-11-13,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-11-13,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-11-13,7,uncertain,C,uncertain
+Mong Kok Roadside,2021-06-19,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-06-19,7,uncertain,B,uncertain
+Mong Kok Roadside,2021-06-19,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-06-19,7,uncertain,C,uncertain
+Mong Kok Roadside,2021-02-14,7,uncertain,A,uncertain
+Mong Kok Roadside,2021-02-14,7,uncertain,B,traffic_dominant
+Mong Kok Roadside,2021-02-14,7,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-02-14,7,uncertain,C,local_accumulation
+Mong Kok Roadside,2021-11-28,12,uncertain,A,uncertain
+Mong Kok Roadside,2021-11-28,12,uncertain,B,uncertain
+Mong Kok Roadside,2021-11-28,12,uncertain,Bplus,uncertain
+Mong Kok Roadside,2021-11-28,12,uncertain,C,uncertain
+Central Roadside,2021-11-12,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-11-12,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-11-12,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-11-12,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-09-30,7,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-09-30,7,traffic_dominant,B,traffic_dominant
+Central Roadside,2021-09-30,7,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-09-30,7,traffic_dominant,C,local_accumulation
+Central Roadside,2021-07-26,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-07-26,18,traffic_dominant,B,traffic_dominant
+Central Roadside,2021-07-26,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-07-26,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-12-24,7,traffic_dominant,A,local_accumulation
+Central Roadside,2021-12-24,7,traffic_dominant,B,regional_transport
+Central Roadside,2021-12-24,7,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-12-24,7,traffic_dominant,C,uncertain
+Central Roadside,2021-04-30,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-04-30,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-04-30,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-04-30,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-07-27,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-07-27,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-07-27,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-07-27,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-03-19,18,traffic_dominant,A,local_accumulation
+Central Roadside,2021-03-19,18,traffic_dominant,B,traffic_dominant
+Central Roadside,2021-03-19,18,traffic_dominant,Bplus,traffic_dominant
+Central Roadside,2021-03-19,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-07-27,7,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-07-27,7,traffic_dominant,B,traffic_dominant
+Central Roadside,2021-07-27,7,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-07-27,7,traffic_dominant,C,regional_transport
+Central Roadside,2021-01-28,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-01-28,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-01-28,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-01-28,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-09-17,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-09-17,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-09-17,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-09-17,18,traffic_dominant,C,uncertain
+Central Roadside,2021-09-29,7,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-09-29,7,traffic_dominant,B,traffic_dominant
+Central Roadside,2021-09-29,7,traffic_dominant,Bplus,traffic_dominant
+Central Roadside,2021-09-29,7,traffic_dominant,C,local_accumulation
+Central Roadside,2021-10-25,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-10-25,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-10-25,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-10-25,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-01-19,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-01-19,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-01-19,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-01-19,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-09-27,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-09-27,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-09-27,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-09-27,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-09-30,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-09-30,18,traffic_dominant,B,traffic_dominant
+Central Roadside,2021-09-30,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-09-30,18,traffic_dominant,C,uncertain
+Central Roadside,2021-07-28,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-07-28,18,traffic_dominant,B,traffic_dominant
+Central Roadside,2021-07-28,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-07-28,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-08-06,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-08-06,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-08-06,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-08-06,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-09-29,18,traffic_dominant,A,traffic_dominant
+Central Roadside,2021-09-29,18,traffic_dominant,B,regional_transport
+Central Roadside,2021-09-29,18,traffic_dominant,Bplus,regional_transport
+Central Roadside,2021-09-29,18,traffic_dominant,C,regional_transport
+Central Roadside,2021-09-21,18,local_accumulation,A,traffic_dominant
+Central Roadside,2021-09-21,18,local_accumulation,B,traffic_dominant
+Central Roadside,2021-09-21,18,local_accumulation,Bplus,regional_transport
+Central Roadside,2021-09-21,18,local_accumulation,C,local_accumulation
+Central Roadside,2021-09-15,12,regional_transport,A,traffic_dominant
+Central Roadside,2021-09-15,12,regional_transport,B,regional_transport
+Central Roadside,2021-09-15,12,regional_transport,Bplus,regional_transport
+Central Roadside,2021-09-15,12,regional_transport,C,regional_transport
+Central Roadside,2021-05-05,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-05-05,18,regional_transport,B,regional_transport
+Central Roadside,2021-05-05,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-05-05,18,regional_transport,C,uncertain
+Central Roadside,2021-04-29,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-04-29,18,regional_transport,B,regional_transport
+Central Roadside,2021-04-29,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-04-29,18,regional_transport,C,regional_transport
+Central Roadside,2021-01-12,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-01-12,18,regional_transport,B,regional_transport
+Central Roadside,2021-01-12,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-01-12,18,regional_transport,C,regional_transport
+Central Roadside,2021-01-18,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-01-18,18,regional_transport,B,regional_transport
+Central Roadside,2021-01-18,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-01-18,18,regional_transport,C,local_accumulation
+Central Roadside,2021-01-25,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-01-25,18,regional_transport,B,regional_transport
+Central Roadside,2021-01-25,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-01-25,18,regional_transport,C,regional_transport
+Central Roadside,2021-09-16,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-09-16,18,regional_transport,B,regional_transport
+Central Roadside,2021-09-16,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-09-16,18,regional_transport,C,regional_transport
+Central Roadside,2021-02-05,18,regional_transport,A,local_accumulation
+Central Roadside,2021-02-05,18,regional_transport,B,regional_transport
+Central Roadside,2021-02-05,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-02-05,18,regional_transport,C,regional_transport
+Central Roadside,2021-02-16,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-02-16,18,regional_transport,B,regional_transport
+Central Roadside,2021-02-16,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-02-16,18,regional_transport,C,regional_transport
+Central Roadside,2021-01-15,7,regional_transport,A,traffic_dominant
+Central Roadside,2021-01-15,7,regional_transport,B,regional_transport
+Central Roadside,2021-01-15,7,regional_transport,Bplus,regional_transport
+Central Roadside,2021-01-15,7,regional_transport,C,regional_transport
+Central Roadside,2021-11-18,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-11-18,18,regional_transport,B,regional_transport
+Central Roadside,2021-11-18,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-11-18,18,regional_transport,C,regional_transport
+Central Roadside,2021-12-07,7,regional_transport,A,traffic_dominant
+Central Roadside,2021-12-07,7,regional_transport,B,regional_transport
+Central Roadside,2021-12-07,7,regional_transport,Bplus,regional_transport
+Central Roadside,2021-12-07,7,regional_transport,C,regional_transport
+Central Roadside,2021-12-10,7,regional_transport,A,local_accumulation
+Central Roadside,2021-12-10,7,regional_transport,B,regional_transport
+Central Roadside,2021-12-10,7,regional_transport,Bplus,regional_transport
+Central Roadside,2021-12-10,7,regional_transport,C,regional_transport
+Central Roadside,2021-03-01,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-03-01,18,regional_transport,B,regional_transport
+Central Roadside,2021-03-01,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-03-01,18,regional_transport,C,regional_transport
+Central Roadside,2021-12-24,12,regional_transport,A,traffic_dominant
+Central Roadside,2021-12-24,12,regional_transport,B,regional_transport
+Central Roadside,2021-12-24,12,regional_transport,Bplus,regional_transport
+Central Roadside,2021-12-24,12,regional_transport,C,regional_transport
+Central Roadside,2021-11-11,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-11-11,18,regional_transport,B,regional_transport
+Central Roadside,2021-11-11,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-11-11,18,regional_transport,C,regional_transport
+Central Roadside,2021-07-23,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-07-23,18,regional_transport,B,regional_transport
+Central Roadside,2021-07-23,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-07-23,18,regional_transport,C,regional_transport
+Central Roadside,2021-12-29,12,regional_transport,A,traffic_dominant
+Central Roadside,2021-12-29,12,regional_transport,B,regional_transport
+Central Roadside,2021-12-29,12,regional_transport,Bplus,regional_transport
+Central Roadside,2021-12-29,12,regional_transport,C,regional_transport
+Central Roadside,2021-01-13,7,regional_transport,A,traffic_dominant
+Central Roadside,2021-01-13,7,regional_transport,B,regional_transport
+Central Roadside,2021-01-13,7,regional_transport,Bplus,regional_transport
+Central Roadside,2021-01-13,7,regional_transport,C,regional_transport
+Central Roadside,2021-12-13,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-12-13,18,regional_transport,B,regional_transport
+Central Roadside,2021-12-13,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-12-13,18,regional_transport,C,regional_transport
+Central Roadside,2021-11-23,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-11-23,18,regional_transport,B,regional_transport
+Central Roadside,2021-11-23,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-11-23,18,regional_transport,C,regional_transport
+Central Roadside,2021-12-24,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-12-24,18,regional_transport,B,regional_transport
+Central Roadside,2021-12-24,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-12-24,18,regional_transport,C,uncertain
+Central Roadside,2021-11-09,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-11-09,18,regional_transport,B,regional_transport
+Central Roadside,2021-11-09,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-11-09,18,regional_transport,C,regional_transport
+Central Roadside,2021-01-13,18,regional_transport,A,traffic_dominant
+Central Roadside,2021-01-13,18,regional_transport,B,regional_transport
+Central Roadside,2021-01-13,18,regional_transport,Bplus,regional_transport
+Central Roadside,2021-01-13,18,regional_transport,C,uncertain
+Central Roadside,2021-07-20,18,uncertain,A,uncertain
+Central Roadside,2021-07-20,18,uncertain,B,traffic_dominant
+Central Roadside,2021-07-20,18,uncertain,Bplus,uncertain
+Central Roadside,2021-07-20,18,uncertain,C,uncertain
+Central Roadside,2021-06-02,18,uncertain,A,traffic_dominant
+Central Roadside,2021-06-02,18,uncertain,B,traffic_dominant
+Central Roadside,2021-06-02,18,uncertain,Bplus,traffic_dominant
+Central Roadside,2021-06-02,18,uncertain,C,uncertain
+Central Roadside,2021-02-12,18,uncertain,A,uncertain
+Central Roadside,2021-02-12,18,uncertain,B,uncertain
+Central Roadside,2021-02-12,18,uncertain,Bplus,uncertain
+Central Roadside,2021-02-12,18,uncertain,C,local_accumulation
+Central Roadside,2021-04-28,12,uncertain,A,uncertain
+Central Roadside,2021-04-28,12,uncertain,B,traffic_dominant
+Central Roadside,2021-04-28,12,uncertain,Bplus,uncertain
+Central Roadside,2021-04-28,12,uncertain,C,uncertain
+Central Roadside,2021-01-08,7,uncertain,A,uncertain
+Central Roadside,2021-01-08,7,uncertain,B,uncertain
+Central Roadside,2021-01-08,7,uncertain,Bplus,uncertain
+Central Roadside,2021-01-08,7,uncertain,C,regional_transport
+Central Roadside,2021-04-26,18,uncertain,A,uncertain
+Central Roadside,2021-04-26,18,uncertain,B,uncertain
+Central Roadside,2021-04-26,18,uncertain,Bplus,uncertain
+Central Roadside,2021-04-26,18,uncertain,C,regional_transport
+Central Roadside,2021-03-17,18,uncertain,A,traffic_dominant
+Central Roadside,2021-03-17,18,uncertain,B,traffic_dominant
+Central Roadside,2021-03-17,18,uncertain,Bplus,traffic_dominant
+Central Roadside,2021-03-17,18,uncertain,C,regional_transport
+Central Roadside,2021-04-19,7,uncertain,A,uncertain
+Central Roadside,2021-04-19,7,uncertain,B,uncertain
+Central Roadside,2021-04-19,7,uncertain,Bplus,uncertain
+Central Roadside,2021-04-19,7,uncertain,C,uncertain
+Central Roadside,2021-03-25,18,uncertain,A,local_accumulation
+Central Roadside,2021-03-25,18,uncertain,B,uncertain
+Central Roadside,2021-03-25,18,uncertain,Bplus,uncertain
+Central Roadside,2021-03-25,18,uncertain,C,uncertain
+Central Roadside,2021-06-21,7,uncertain,A,uncertain
+Central Roadside,2021-06-21,7,uncertain,B,uncertain
+Central Roadside,2021-06-21,7,uncertain,Bplus,uncertain
+Central Roadside,2021-06-21,7,uncertain,C,uncertain
+Central Roadside,2021-06-15,18,uncertain,A,traffic_dominant
+Central Roadside,2021-06-15,18,uncertain,B,traffic_dominant
+Central Roadside,2021-06-15,18,uncertain,Bplus,traffic_dominant
+Central Roadside,2021-06-15,18,uncertain,C,uncertain
+Central Roadside,2021-09-09,18,uncertain,A,local_accumulation
+Central Roadside,2021-09-09,18,uncertain,B,traffic_dominant
+Central Roadside,2021-09-09,18,uncertain,Bplus,traffic_dominant
+Central Roadside,2021-09-09,18,uncertain,C,uncertain
+Central Roadside,2021-06-24,7,uncertain,A,uncertain
+Central Roadside,2021-06-24,7,uncertain,B,uncertain
+Central Roadside,2021-06-24,7,uncertain,Bplus,uncertain
+Central Roadside,2021-06-24,7,uncertain,C,uncertain
+Central Roadside,2021-07-30,12,uncertain,A,traffic_dominant
+Central Roadside,2021-07-30,12,uncertain,B,traffic_dominant
+Central Roadside,2021-07-30,12,uncertain,Bplus,traffic_dominant
+Central Roadside,2021-07-30,12,uncertain,C,traffic_dominant
+Central Roadside,2021-06-03,7,uncertain,A,uncertain
+Central Roadside,2021-06-03,7,uncertain,B,uncertain
+Central Roadside,2021-06-03,7,uncertain,Bplus,uncertain
+Central Roadside,2021-06-03,7,uncertain,C,uncertain
+Central Roadside,2021-03-31,18,uncertain,A,uncertain
+Central Roadside,2021-03-31,18,uncertain,B,uncertain
+Central Roadside,2021-03-31,18,uncertain,Bplus,uncertain
+Central Roadside,2021-03-31,18,uncertain,C,uncertain
+Central Roadside,2021-01-12,12,uncertain,A,traffic_dominant
+Central Roadside,2021-01-12,12,uncertain,B,traffic_dominant
+Central Roadside,2021-01-12,12,uncertain,Bplus,traffic_dominant
+Central Roadside,2021-01-12,12,uncertain,C,regional_transport
+Central Roadside,2021-07-08,18,uncertain,A,uncertain
+Central Roadside,2021-07-08,18,uncertain,B,traffic_dominant
+Central Roadside,2021-07-08,18,uncertain,Bplus,uncertain
+Central Roadside,2021-07-08,18,uncertain,C,local_accumulation
+Central Roadside,2021-05-24,12,uncertain,A,traffic_dominant
+Central Roadside,2021-05-24,12,uncertain,B,traffic_dominant
+Central Roadside,2021-05-24,12,uncertain,Bplus,traffic_dominant
+Central Roadside,2021-05-24,12,uncertain,C,uncertain
+Central Roadside,2021-12-09,7,uncertain,A,uncertain
+Central Roadside,2021-12-09,7,uncertain,B,uncertain
+Central Roadside,2021-12-09,7,uncertain,Bplus,uncertain
+Central Roadside,2021-12-09,7,uncertain,C,regional_transport
+Central Roadside,2021-03-11,12,uncertain,A,uncertain
+Central Roadside,2021-03-11,12,uncertain,B,uncertain
+Central Roadside,2021-03-11,12,uncertain,Bplus,uncertain
+Central Roadside,2021-03-11,12,uncertain,C,regional_transport
+Central Roadside,2021-06-30,7,uncertain,A,uncertain
+Central Roadside,2021-06-30,7,uncertain,B,uncertain
+Central Roadside,2021-06-30,7,uncertain,Bplus,uncertain
+Central Roadside,2021-06-30,7,uncertain,C,regional_transport
+Central Roadside,2021-06-01,12,uncertain,A,uncertain
+Central Roadside,2021-06-01,12,uncertain,B,traffic_dominant
+Central Roadside,2021-06-01,12,uncertain,Bplus,traffic_dominant
+Central Roadside,2021-06-01,12,uncertain,C,uncertain
+Central Roadside,2021-07-22,12,uncertain,A,uncertain
+Central Roadside,2021-07-22,12,uncertain,B,traffic_dominant
+Central Roadside,2021-07-22,12,uncertain,Bplus,traffic_dominant
+Central Roadside,2021-07-22,12,uncertain,C,uncertain
+Central Roadside,2021-02-27,12,uncertain,A,uncertain
+Central Roadside,2021-02-27,12,uncertain,B,uncertain
+Central Roadside,2021-02-27,12,uncertain,Bplus,uncertain
+Central Roadside,2021-02-27,12,uncertain,C,regional_transport
+Central Roadside,2021-05-22,18,uncertain,A,uncertain
+Central Roadside,2021-05-22,18,uncertain,B,uncertain
+Central Roadside,2021-05-22,18,uncertain,Bplus,uncertain
+Central Roadside,2021-05-22,18,uncertain,C,uncertain
+Central Roadside,2021-11-21,7,uncertain,A,uncertain
+Central Roadside,2021-11-21,7,uncertain,B,uncertain
+Central Roadside,2021-11-21,7,uncertain,Bplus,uncertain
+Central Roadside,2021-11-21,7,uncertain,C,regional_transport
+Central Roadside,2021-06-26,7,uncertain,A,uncertain
+Central Roadside,2021-06-26,7,uncertain,B,uncertain
+Central Roadside,2021-06-26,7,uncertain,Bplus,uncertain
+Central Roadside,2021-06-26,7,uncertain,C,uncertain
+Central Roadside,2021-07-31,18,uncertain,A,uncertain
+Central Roadside,2021-07-31,18,uncertain,B,uncertain
+Central Roadside,2021-07-31,18,uncertain,Bplus,uncertain
+Central Roadside,2021-07-31,18,uncertain,C,regional_transport
+Central Roadside,2021-01-16,7,regional_transport,A,local_accumulation
+Central Roadside,2021-01-16,7,regional_transport,B,regional_transport
+Central Roadside,2021-01-16,7,regional_transport,Bplus,regional_transport
+Central Roadside,2021-01-16,7,regional_transport,C,regional_transport
+Central Roadside,2021-06-19,7,uncertain,A,uncertain
+Central Roadside,2021-06-19,7,uncertain,B,uncertain
+Central Roadside,2021-06-19,7,uncertain,Bplus,uncertain
+Central Roadside,2021-06-19,7,uncertain,C,regional_transport
+Central Roadside,2021-03-27,12,uncertain,A,local_accumulation
+Central Roadside,2021-03-27,12,uncertain,B,traffic_dominant
+Central Roadside,2021-03-27,12,uncertain,Bplus,uncertain
+Central Roadside,2021-03-27,12,uncertain,C,uncertain
+Central Roadside,2021-08-21,12,uncertain,A,uncertain
+Central Roadside,2021-08-21,12,uncertain,B,uncertain
+Central Roadside,2021-08-21,12,uncertain,Bplus,uncertain
+Central Roadside,2021-08-21,12,uncertain,C,uncertain
+Central Roadside,2021-03-13,12,uncertain,A,uncertain
+Central Roadside,2021-03-13,12,uncertain,B,uncertain
+Central Roadside,2021-03-13,12,uncertain,Bplus,uncertain
+Central Roadside,2021-03-13,12,uncertain,C,regional_transport
+Central Roadside,2021-05-08,18,uncertain,A,uncertain
+Central Roadside,2021-05-08,18,uncertain,B,uncertain
+Central Roadside,2021-05-08,18,uncertain,Bplus,uncertain
+Central Roadside,2021-05-08,18,uncertain,C,regional_transport
+Central Roadside,2021-02-13,12,uncertain,A,uncertain
+Central Roadside,2021-02-13,12,uncertain,B,uncertain
+Central Roadside,2021-02-13,12,uncertain,Bplus,uncertain
+Central Roadside,2021-02-13,12,uncertain,C,uncertain
+Causeway Bay Roadside,2021-02-19,18,traffic_dominant,A,local_accumulation
+Causeway Bay Roadside,2021-02-19,18,traffic_dominant,B,regional_transport
+Causeway Bay Roadside,2021-02-19,18,traffic_dominant,Bplus,regional_transport
+Causeway Bay Roadside,2021-02-19,18,traffic_dominant,C,regional_transport
+Causeway Bay Roadside,2021-09-30,18,traffic_dominant,A,traffic_dominant
+Causeway Bay Roadside,2021-09-30,18,traffic_dominant,B,traffic_dominant
+Causeway Bay Roadside,2021-09-30,18,traffic_dominant,Bplus,regional_transport
+Causeway Bay Roadside,2021-09-30,18,traffic_dominant,C,uncertain
+Causeway Bay Roadside,2021-01-28,18,traffic_dominant,A,traffic_dominant
+Causeway Bay Roadside,2021-01-28,18,traffic_dominant,B,regional_transport
+Causeway Bay Roadside,2021-01-28,18,traffic_dominant,Bplus,regional_transport
+Causeway Bay Roadside,2021-01-28,18,traffic_dominant,C,regional_transport
+Causeway Bay Roadside,2021-04-30,18,traffic_dominant,A,traffic_dominant
+Causeway Bay Roadside,2021-04-30,18,traffic_dominant,B,regional_transport
+Causeway Bay Roadside,2021-04-30,18,traffic_dominant,Bplus,regional_transport
+Causeway Bay Roadside,2021-04-30,18,traffic_dominant,C,regional_transport
+Causeway Bay Roadside,2021-09-28,18,traffic_dominant,A,traffic_dominant
+Causeway Bay Roadside,2021-09-28,18,traffic_dominant,B,regional_transport
+Causeway Bay Roadside,2021-09-28,18,traffic_dominant,Bplus,regional_transport
+Causeway Bay Roadside,2021-09-28,18,traffic_dominant,C,regional_transport
+Causeway Bay Roadside,2021-09-27,18,traffic_dominant,A,traffic_dominant
+Causeway Bay Roadside,2021-09-27,18,traffic_dominant,B,regional_transport
+Causeway Bay Roadside,2021-09-27,18,traffic_dominant,Bplus,regional_transport
+Causeway Bay Roadside,2021-09-27,18,traffic_dominant,C,regional_transport
+Causeway Bay Roadside,2021-09-21,18,local_accumulation,A,traffic_dominant
+Causeway Bay Roadside,2021-09-21,18,local_accumulation,B,traffic_dominant
+Causeway Bay Roadside,2021-09-21,18,local_accumulation,Bplus,regional_transport
+Causeway Bay Roadside,2021-09-21,18,local_accumulation,C,local_accumulation
+Causeway Bay Roadside,2021-11-09,18,regional_transport,A,local_accumulation
+Causeway Bay Roadside,2021-11-09,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-11-09,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-11-09,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-12-10,7,regional_transport,A,uncertain
+Causeway Bay Roadside,2021-12-10,7,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-12-10,7,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-12-10,7,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-12-13,18,regional_transport,A,local_accumulation
+Causeway Bay Roadside,2021-12-13,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-12-13,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-12-13,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-10-18,18,regional_transport,A,uncertain
+Causeway Bay Roadside,2021-10-18,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-10-18,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-10-18,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-12-01,18,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-12-01,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-12-01,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-12-01,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-01-26,18,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-01-26,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-01-26,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-01-26,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-11-11,18,regional_transport,A,local_accumulation
+Causeway Bay Roadside,2021-11-11,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-11-11,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-11-11,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-12-09,18,regional_transport,A,local_accumulation
+Causeway Bay Roadside,2021-12-09,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-12-09,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-12-09,18,regional_transport,C,uncertain
+Causeway Bay Roadside,2021-02-16,18,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-02-16,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-02-16,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-02-16,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-11-26,18,regional_transport,A,uncertain
+Causeway Bay Roadside,2021-11-26,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-11-26,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-11-26,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-01-05,18,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-01-05,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-01-05,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-01-05,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-11-29,18,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-11-29,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-11-29,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-11-29,18,regional_transport,C,uncertain
+Causeway Bay Roadside,2021-01-05,7,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-01-05,7,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-01-05,7,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-01-05,7,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-03-24,18,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-03-24,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-03-24,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-03-24,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-03-12,18,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-03-12,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-03-12,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-03-12,18,regional_transport,C,uncertain
+Causeway Bay Roadside,2021-03-24,12,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-03-24,12,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-03-24,12,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-03-24,12,regional_transport,C,uncertain
+Causeway Bay Roadside,2021-01-21,18,regional_transport,A,local_accumulation
+Causeway Bay Roadside,2021-01-21,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-01-21,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-01-21,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-01-22,12,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-01-22,12,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-01-22,12,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-01-22,12,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-11-23,18,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-11-23,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-11-23,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-11-23,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-02-26,18,regional_transport,A,uncertain
+Causeway Bay Roadside,2021-02-26,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-02-26,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-02-26,18,regional_transport,C,uncertain
+Causeway Bay Roadside,2021-01-14,7,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-01-14,7,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-01-14,7,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-01-14,7,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-12-06,7,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-12-06,7,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-12-06,7,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-12-06,7,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-05-07,18,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-05-07,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-05-07,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-05-07,18,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-11-25,18,regional_transport,A,local_accumulation
+Causeway Bay Roadside,2021-11-25,18,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-11-25,18,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-11-25,18,regional_transport,C,uncertain
+Causeway Bay Roadside,2021-08-27,18,uncertain,A,uncertain
+Causeway Bay Roadside,2021-08-27,18,uncertain,B,uncertain
+Causeway Bay Roadside,2021-08-27,18,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-08-27,18,uncertain,C,local_accumulation
+Causeway Bay Roadside,2021-08-18,18,uncertain,A,uncertain
+Causeway Bay Roadside,2021-08-18,18,uncertain,B,regional_transport
+Causeway Bay Roadside,2021-08-18,18,uncertain,Bplus,regional_transport
+Causeway Bay Roadside,2021-08-18,18,uncertain,C,uncertain
+Causeway Bay Roadside,2021-03-31,18,uncertain,A,uncertain
+Causeway Bay Roadside,2021-03-31,18,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-03-31,18,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-03-31,18,uncertain,C,traffic_dominant
+Causeway Bay Roadside,2021-04-08,7,uncertain,A,uncertain
+Causeway Bay Roadside,2021-04-08,7,uncertain,B,uncertain
+Causeway Bay Roadside,2021-04-08,7,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-04-08,7,uncertain,C,local_accumulation
+Causeway Bay Roadside,2021-01-08,7,uncertain,A,uncertain
+Causeway Bay Roadside,2021-01-08,7,uncertain,B,uncertain
+Causeway Bay Roadside,2021-01-08,7,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-01-08,7,uncertain,C,uncertain
+Causeway Bay Roadside,2021-02-19,12,uncertain,A,uncertain
+Causeway Bay Roadside,2021-02-19,12,uncertain,B,uncertain
+Causeway Bay Roadside,2021-02-19,12,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-02-19,12,uncertain,C,local_accumulation
+Causeway Bay Roadside,2021-11-08,12,uncertain,A,traffic_dominant
+Causeway Bay Roadside,2021-11-08,12,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-11-08,12,uncertain,Bplus,traffic_dominant
+Causeway Bay Roadside,2021-11-08,12,uncertain,C,traffic_dominant
+Causeway Bay Roadside,2021-11-22,7,uncertain,A,uncertain
+Causeway Bay Roadside,2021-11-22,7,uncertain,B,uncertain
+Causeway Bay Roadside,2021-11-22,7,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-11-22,7,uncertain,C,uncertain
+Causeway Bay Roadside,2021-02-15,7,uncertain,A,traffic_dominant
+Causeway Bay Roadside,2021-02-15,7,uncertain,B,regional_transport
+Causeway Bay Roadside,2021-02-15,7,uncertain,Bplus,regional_transport
+Causeway Bay Roadside,2021-02-15,7,uncertain,C,traffic_dominant
+Causeway Bay Roadside,2021-03-18,18,uncertain,A,uncertain
+Causeway Bay Roadside,2021-03-18,18,uncertain,B,uncertain
+Causeway Bay Roadside,2021-03-18,18,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-03-18,18,uncertain,C,regional_transport
+Causeway Bay Roadside,2021-03-25,12,uncertain,A,local_accumulation
+Causeway Bay Roadside,2021-03-25,12,uncertain,B,uncertain
+Causeway Bay Roadside,2021-03-25,12,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-03-25,12,uncertain,C,uncertain
+Causeway Bay Roadside,2021-10-28,12,uncertain,A,uncertain
+Causeway Bay Roadside,2021-10-28,12,uncertain,B,uncertain
+Causeway Bay Roadside,2021-10-28,12,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-10-28,12,uncertain,C,uncertain
+Causeway Bay Roadside,2021-08-11,18,uncertain,A,uncertain
+Causeway Bay Roadside,2021-08-11,18,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-08-11,18,uncertain,Bplus,traffic_dominant
+Causeway Bay Roadside,2021-08-11,18,uncertain,C,traffic_dominant
+Causeway Bay Roadside,2021-07-27,12,uncertain,A,traffic_dominant
+Causeway Bay Roadside,2021-07-27,12,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-07-27,12,uncertain,Bplus,traffic_dominant
+Causeway Bay Roadside,2021-07-27,12,uncertain,C,uncertain
+Causeway Bay Roadside,2021-08-02,7,uncertain,A,traffic_dominant
+Causeway Bay Roadside,2021-08-02,7,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-08-02,7,uncertain,Bplus,traffic_dominant
+Causeway Bay Roadside,2021-08-02,7,uncertain,C,traffic_dominant
+Causeway Bay Roadside,2021-08-25,7,uncertain,A,uncertain
+Causeway Bay Roadside,2021-08-25,7,uncertain,B,uncertain
+Causeway Bay Roadside,2021-08-25,7,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-08-25,7,uncertain,C,local_accumulation
+Causeway Bay Roadside,2021-06-21,12,uncertain,A,uncertain
+Causeway Bay Roadside,2021-06-21,12,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-06-21,12,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-06-21,12,uncertain,C,traffic_dominant
+Causeway Bay Roadside,2021-10-15,7,uncertain,A,uncertain
+Causeway Bay Roadside,2021-10-15,7,uncertain,B,uncertain
+Causeway Bay Roadside,2021-10-15,7,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-10-15,7,uncertain,C,uncertain
+Causeway Bay Roadside,2021-06-03,12,uncertain,A,uncertain
+Causeway Bay Roadside,2021-06-03,12,uncertain,B,uncertain
+Causeway Bay Roadside,2021-06-03,12,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-06-03,12,uncertain,C,uncertain
+Causeway Bay Roadside,2021-07-08,7,uncertain,A,uncertain
+Causeway Bay Roadside,2021-07-08,7,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-07-08,7,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-07-08,7,uncertain,C,traffic_dominant
+Causeway Bay Roadside,2021-03-31,12,uncertain,A,uncertain
+Causeway Bay Roadside,2021-03-31,12,uncertain,B,uncertain
+Causeway Bay Roadside,2021-03-31,12,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-03-31,12,uncertain,C,uncertain
+Causeway Bay Roadside,2021-12-30,12,uncertain,A,traffic_dominant
+Causeway Bay Roadside,2021-12-30,12,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-12-30,12,uncertain,Bplus,traffic_dominant
+Causeway Bay Roadside,2021-12-30,12,uncertain,C,traffic_dominant
+Causeway Bay Roadside,2021-03-25,18,uncertain,A,local_accumulation
+Causeway Bay Roadside,2021-03-25,18,uncertain,B,uncertain
+Causeway Bay Roadside,2021-03-25,18,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-03-25,18,uncertain,C,uncertain
+Causeway Bay Roadside,2021-06-23,12,uncertain,A,traffic_dominant
+Causeway Bay Roadside,2021-06-23,12,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-06-23,12,uncertain,Bplus,traffic_dominant
+Causeway Bay Roadside,2021-06-23,12,uncertain,C,traffic_dominant
+Causeway Bay Roadside,2021-02-27,12,uncertain,A,uncertain
+Causeway Bay Roadside,2021-02-27,12,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-02-27,12,uncertain,Bplus,traffic_dominant
+Causeway Bay Roadside,2021-02-27,12,uncertain,C,uncertain
+Causeway Bay Roadside,2021-05-22,18,uncertain,A,uncertain
+Causeway Bay Roadside,2021-05-22,18,uncertain,B,uncertain
+Causeway Bay Roadside,2021-05-22,18,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-05-22,18,uncertain,C,local_accumulation
+Causeway Bay Roadside,2021-11-20,18,uncertain,A,uncertain
+Causeway Bay Roadside,2021-11-20,18,uncertain,B,uncertain
+Causeway Bay Roadside,2021-11-20,18,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-11-20,18,uncertain,C,local_accumulation
+Causeway Bay Roadside,2021-06-26,7,uncertain,A,uncertain
+Causeway Bay Roadside,2021-06-26,7,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-06-26,7,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-06-26,7,uncertain,C,local_accumulation
+Causeway Bay Roadside,2021-07-31,18,uncertain,A,traffic_dominant
+Causeway Bay Roadside,2021-07-31,18,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-07-31,18,uncertain,Bplus,traffic_dominant
+Causeway Bay Roadside,2021-07-31,18,uncertain,C,uncertain
+Causeway Bay Roadside,2021-01-16,7,regional_transport,A,traffic_dominant
+Causeway Bay Roadside,2021-01-16,7,regional_transport,B,regional_transport
+Causeway Bay Roadside,2021-01-16,7,regional_transport,Bplus,regional_transport
+Causeway Bay Roadside,2021-01-16,7,regional_transport,C,regional_transport
+Causeway Bay Roadside,2021-06-19,7,uncertain,A,uncertain
+Causeway Bay Roadside,2021-06-19,7,uncertain,B,uncertain
+Causeway Bay Roadside,2021-06-19,7,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-06-19,7,uncertain,C,uncertain
+Causeway Bay Roadside,2021-03-27,12,uncertain,A,local_accumulation
+Causeway Bay Roadside,2021-03-27,12,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-03-27,12,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-03-27,12,uncertain,C,uncertain
+Causeway Bay Roadside,2021-08-21,7,uncertain,A,uncertain
+Causeway Bay Roadside,2021-08-21,7,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-08-21,7,uncertain,Bplus,traffic_dominant
+Causeway Bay Roadside,2021-08-21,7,uncertain,C,local_accumulation
+Causeway Bay Roadside,2021-03-13,12,uncertain,A,local_accumulation
+Causeway Bay Roadside,2021-03-13,12,uncertain,B,uncertain
+Causeway Bay Roadside,2021-03-13,12,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-03-13,12,uncertain,C,uncertain
+Causeway Bay Roadside,2021-05-08,18,uncertain,A,uncertain
+Causeway Bay Roadside,2021-05-08,18,uncertain,B,traffic_dominant
+Causeway Bay Roadside,2021-05-08,18,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-05-08,18,uncertain,C,uncertain
+Causeway Bay Roadside,2021-02-13,12,uncertain,A,uncertain
+Causeway Bay Roadside,2021-02-13,12,uncertain,B,uncertain
+Causeway Bay Roadside,2021-02-13,12,uncertain,Bplus,uncertain
+Causeway Bay Roadside,2021-02-13,12,uncertain,C,local_accumulation

@@ -1,0 +1,39 @@
+{
+  "agent": "ReportAgent",
+  "status": "success",
+  "sections_found": 7,
+  "sections_expected": 7,
+  "sections": [
+    {
+      "title": "一、事件概况",
+      "chars": 99
+    },
+    {
+      "title": "二、空气质量异常情况",
+      "chars": 87
+    },
+    {
+      "title": "三、气象扩散条件分析",
+      "chars": 82
+    },
+    {
+      "title": "四、交通污染压力分析",
+      "chars": 70
+    },
+    {
+      "title": "五、空间影响范围分析",
+      "chars": 95
+    },
+    {
+      "title": "六、污染源归因分析",
+      "chars": 81
+    },
+    {
+      "title": "七、治理决策与复盘建议",
+      "chars": 151
+    }
+  ],
+  "total_chars": 750,
+  "cjk_ratio": 0.745,
+  "latency_ms": 0.2
+}

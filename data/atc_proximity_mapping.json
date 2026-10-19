@@ -1,0 +1,197 @@
+{
+  "CAUSEWAY BAY": {
+    "station_id": "causeway_bay",
+    "station_type": "roadside",
+    "primary_atc_station_ids": [
+      "1002"
+    ],
+    "nearby_atc_station_ids": [
+      "1022",
+      "1032",
+      "2214"
+    ],
+    "nearest_distance_m": 337,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "CENTRAL": {
+    "station_id": "central",
+    "station_type": "roadside",
+    "primary_atc_station_ids": [
+      "2210"
+    ],
+    "nearby_atc_station_ids": [
+      "2403",
+      "2404",
+      "2405"
+    ],
+    "nearest_distance_m": 168,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "CENTRAL/WESTERN": {
+    "station_id": "central_western",
+    "station_type": "general",
+    "primary_atc_station_ids": [
+      "1026"
+    ],
+    "nearby_atc_station_ids": [
+      "2201",
+      "2209",
+      "2407"
+    ],
+    "nearest_distance_m": 429,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "EASTERN": {
+    "station_id": "eastern",
+    "station_type": "general",
+    "primary_atc_station_ids": [
+      "1025"
+    ],
+    "nearby_atc_station_ids": [
+      "1009",
+      "2215",
+      "1021"
+    ],
+    "nearest_distance_m": 1103,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "KWAI CHUNG": {
+    "station_id": "kwai_chung",
+    "station_type": "general",
+    "primary_atc_station_ids": [
+      "6203"
+    ],
+    "nearby_atc_station_ids": [
+      "6219",
+      "5026"
+    ],
+    "nearest_distance_m": 1570,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "KWUN TONG": {
+    "station_id": "kwun_tong",
+    "station_type": "general",
+    "primary_atc_station_ids": [
+      "5021"
+    ],
+    "nearby_atc_station_ids": [],
+    "nearest_distance_m": 1548,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "MONG KOK": {
+    "station_id": "mong_kok",
+    "station_type": "roadside",
+    "primary_atc_station_ids": [
+      "4404"
+    ],
+    "nearby_atc_station_ids": [
+      "4204",
+      "4203",
+      "4202"
+    ],
+    "nearest_distance_m": 438,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "NORTH": {
+    "station_id": "north",
+    "station_type": "general",
+    "primary_atc_station_ids": [
+      "5003"
+    ],
+    "nearby_atc_station_ids": [
+      "6206"
+    ],
+    "nearest_distance_m": 250,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "SOUTHERN": {
+    "station_id": "southern",
+    "station_type": "general",
+    "primary_atc_station_ids": [],
+    "nearby_atc_station_ids": [],
+    "note": "2000 m 内无 ATC 站"
+  },
+  "SHAM SHUI PO": {
+    "station_id": "sham_shui_po",
+    "station_type": "general",
+    "primary_atc_station_ids": [
+      "4206"
+    ],
+    "nearby_atc_station_ids": [
+      "4202",
+      "4203",
+      "4404"
+    ],
+    "nearest_distance_m": 1080,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "SHATIN": {
+    "station_id": "shatin",
+    "station_type": "general",
+    "primary_atc_station_ids": [],
+    "nearby_atc_station_ids": [],
+    "note": "2000 m 内无 ATC 站"
+  },
+  "TUNG CHUNG": {
+    "station_id": "tung_chung",
+    "station_type": "general",
+    "primary_atc_station_ids": [],
+    "nearby_atc_station_ids": [],
+    "note": "2000 m 内无 ATC 站"
+  },
+  "TSEUNG KWAN O": {
+    "station_id": "tseung_kwan_o",
+    "station_type": "general",
+    "primary_atc_station_ids": [
+      "6224"
+    ],
+    "nearby_atc_station_ids": [
+      "6223"
+    ],
+    "nearest_distance_m": 576,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "TAP MUN": {
+    "station_id": "tap_mun",
+    "station_type": "general",
+    "primary_atc_station_ids": [],
+    "nearby_atc_station_ids": [],
+    "note": "2000 m 内无 ATC 站"
+  },
+  "TUEN MUN": {
+    "station_id": "tuen_mun",
+    "station_type": "general",
+    "primary_atc_station_ids": [],
+    "nearby_atc_station_ids": [],
+    "note": "2000 m 内无 ATC 站"
+  },
+  "TAI PO": {
+    "station_id": "tai_po",
+    "station_type": "general",
+    "primary_atc_station_ids": [
+      "5013"
+    ],
+    "nearby_atc_station_ids": [],
+    "nearest_distance_m": 1871,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "TSUEN WAN": {
+    "station_id": "tsuen_wan",
+    "station_type": "general",
+    "primary_atc_station_ids": [
+      "5018"
+    ],
+    "nearby_atc_station_ids": [
+      "6221"
+    ],
+    "nearest_distance_m": 1664,
+    "note": "按官方 ATC 站点坐标就近匹配（data_process/map_epd_to_atc.py 生成）"
+  },
+  "YUEN LONG": {
+    "station_id": "yuen_long",
+    "station_type": "general",
+    "primary_atc_station_ids": [],
+    "nearby_atc_station_ids": [],
+    "note": "2000 m 内无 ATC 站"
+  }
+}

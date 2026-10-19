@@ -1,0 +1,691 @@
+seed,config,date,label,station,pred,judgement,confidence
+20260412,full,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_nox_gate,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_sync_weight,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_abstention,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_abstention_no_nox_gate,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,full,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-07-30,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-07-30,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-07-30,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-07-30,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-07-30,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-07-17,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,no_nox_gate,2024-07-17,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,no_sync_weight,2024-07-17,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,no_abstention,2024-07-17,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-17,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,full,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-13,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-08-13,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-08-13,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-08-13,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-08-13,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-07-15,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,no_nox_gate,2024-07-15,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,no_sync_weight,2024-07-15,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,no_abstention,2024-07-15,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-15,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.9
+20260412,full,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_nox_gate,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_sync_weight,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_abstention,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_abstention_no_nox_gate,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,full,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-16,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_nox_gate,2024-08-16,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_sync_weight,2024-08-16,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_abstention,2024-08-16,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_abstention_no_nox_gate,2024-08-16,local_accumulation,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,full,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_nox_gate,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_sync_weight,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260412,full,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-29,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_nox_gate,2024-08-29,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_sync_weight,2024-08-29,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_abstention,2024-08-29,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,no_abstention_no_nox_gate,2024-08-29,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260412,full,2024-07-14,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-07-14,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-07-14,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-07-14,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-07-14,regional_transport,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,full,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_nox_gate,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_sync_weight,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,no_abstention_no_nox_gate,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260412,full,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_nox_gate,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_sync_weight,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260412,no_abstention_no_nox_gate,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-07-22,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-08-08,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-08,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-08,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-08,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-08,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-07-27,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-10,uncertain,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,no_nox_gate,2024-07-10,uncertain,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,no_sync_weight,2024-07-10,uncertain,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,no_abstention,2024-07-10,uncertain,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-10,uncertain,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,full,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-07-20,uncertain,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_nox_gate,2024-07-20,uncertain,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_sync_weight,2024-07-20,uncertain,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_abstention,2024-07-20,uncertain,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_abstention_no_nox_gate,2024-07-20,uncertain,Causeway Bay Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,full,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-30,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_nox_gate,2024-07-30,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_sync_weight,2024-07-30,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_abstention,2024-07-30,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_abstention_no_nox_gate,2024-07-30,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,full,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-04,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_nox_gate,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_sync_weight,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_abstention,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,no_abstention_no_nox_gate,2024-08-26,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260413,full,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-23,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,no_nox_gate,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,no_sync_weight,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,no_abstention,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-06,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260413,full,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260413,full,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_nox_gate,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_sync_weight,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,no_abstention_no_nox_gate,2024-08-21,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260413,full,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_nox_gate,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_sync_weight,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260413,full,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_nox_gate,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_sync_weight,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260413,no_abstention_no_nox_gate,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-15,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-01,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-03,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-24,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-29,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-07-22,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260414,no_nox_gate,2024-07-22,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260414,no_sync_weight,2024-07-22,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260414,no_abstention,2024-07-22,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-22,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.9
+20260414,full,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-07-15,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-07-07,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-08,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-20,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-07-12,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-11,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-04,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-09,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-05,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-08-26,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-26,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-26,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-26,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-26,local_accumulation,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-01,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-09,regional_transport,Central Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-31,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-28,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-24,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-07-10,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-25,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-07-20,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-14,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-19,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-08-21,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,no_nox_gate,2024-08-21,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,no_sync_weight,2024-08-21,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,no_abstention,2024-08-21,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,no_abstention_no_nox_gate,2024-08-21,local_accumulation,Mong Kok Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,full,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-11,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-13,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-16,traffic_dominant,Mong Kok Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-06,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-07-17,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-21,traffic_dominant,Central Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-16,local_accumulation,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-26,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-29,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_nox_gate,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_sync_weight,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-10,traffic_dominant,Causeway Bay Roadside,traffic_dominant,Traffic source dominant,0.9
+20260414,full,2024-08-23,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-23,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-23,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-23,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-23,regional_transport,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-19,uncertain,Causeway Bay Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-07-27,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,no_nox_gate,2024-07-27,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,no_sync_weight,2024-07-27,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,no_abstention,2024-07-27,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,no_abstention_no_nox_gate,2024-07-27,local_accumulation,Central Roadside,local_accumulation,Local accumulation dominant,0.74
+20260414,full,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-14,regional_transport,Causeway Bay Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-07-30,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.9
+20260414,no_nox_gate,2024-07-30,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-07-30,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.9
+20260414,no_abstention,2024-07-30,uncertain,Central Roadside,local_accumulation,Local accumulation dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-07-30,uncertain,Central Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_nox_gate,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_sync_weight,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,no_abstention_no_nox_gate,2024-08-18,regional_transport,Mong Kok Roadside,regional_transport,Regional transport dominant,0.9
+20260414,full,2024-08-06,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-08-06,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-08-06,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-08-06,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-08-06,local_accumulation,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-07-25,uncertain,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,full,2024-07-04,regional_transport,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_nox_gate,2024-07-04,regional_transport,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_sync_weight,2024-07-04,regional_transport,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention,2024-07-04,regional_transport,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9
+20260414,no_abstention_no_nox_gate,2024-07-04,regional_transport,Mong Kok Roadside,uncertain,Mixed / uncertain sources,0.9

@@ -1,0 +1,263 @@
+{
+  "blind_year": 2021,
+  "audited_at": "2026-10-14T16:05:15.561303+08:00",
+  "L1_text_scan": {
+    "hits_total": 1668,
+    "by_purpose": {
+      "downloader_default": 1,
+      "data_coverage_audit": 7,
+      "blind_run_artifact": 1632,
+      "input_cache": 4,
+      "blind_run_tooling": 9,
+      "preregistration": 15
+    },
+    "flagged_for_review": [],
+    "excluded_self_referential_files": 4,
+    "excluded_paths": [
+      "tests/benchmarks/v9/audit_blind_year_lineage.py",
+      "tests/benchmarks/v9/results/v99_blind_year_lineage.json",
+      "tests/benchmarks/v9/make_report_tables.py",
+      "tests/test_v99_report_consistency.py"
+    ],
+    "conclusion": "盲测年出现在代码里，但**没有一处参与建模、阈值选择或评分**：命中集中在 ① 数据覆盖审计（examples/audit_day1_9.py 逐年份统计数据表行数，含 2021）② 下载器默认年份串 ③ 预注册文档。因此 V9.8『2018–2021 从未被任何脚本引用』的说法**不准确**，应修正为『从未被任何建模/阈值/评分脚本使用』。"
+  },
+  "L2_sql_surface": {
+    "total": 108,
+    "by_kind": {
+      "unbounded_or_unspecified": 57,
+      "trailing_window": 14,
+      "same_year_like": 37
+    },
+    "trailing_window_sites": [
+      {
+        "file": "tools/air_quality_tools.py",
+        "line": 270,
+        "kind": "trailing_window",
+        "query": "pit_lo = (dt.datetime.fromisoformat(pit_hi) - dt.timedelta(days=365)"
+      },
+      {
+        "file": "tools/air_quality_tools.py",
+        "line": 274,
+        "kind": "trailing_window",
+        "query": "\"WHERE no2 IS NOT NULL AND time >= ? AND time < ?\","
+      },
+      {
+        "file": "tools/air_quality_tools.py",
+        "line": 275,
+        "kind": "trailing_window",
+        "query": "(pit_lo, pit_hi))]"
+      },
+      {
+        "file": "tools/air_quality_tools.py",
+        "line": 286,
+        "kind": "trailing_window",
+        "query": "\"AND time >= ? AND time < ?\", (name, pit_lo, pit_hi)))"
+      },
+      {
+        "file": "agents/air_quality_agent.py",
+        "line": 137,
+        "kind": "trailing_window",
+        "query": "\"AND nox IS NOT NULL AND time >= ? AND time < ?\","
+      },
+      {
+        "file": "tests/benchmarks/v9/governance_pit.py",
+        "line": 50,
+        "kind": "trailing_window",
+        "query": "pit_lo = (dt.datetime.fromisoformat(pit_hi) - dt.timedelta(days=365)"
+      },
+      {
+        "file": "tests/benchmarks/v9/governance_pit.py",
+        "line": 52,
+        "kind": "trailing_window",
+        "query": "return pit_lo, pit_hi"
+      },
+      {
+        "file": "tests/benchmarks/v9/governance_pit.py",
+        "line": 91,
+        "kind": "trailing_window",
+        "query": "pit_lo, pit_hi = pit_pit_filter(YEAR, start)"
+      },
+      {
+        "file": "tests/benchmarks/v9/governance_pit.py",
+        "line": 120,
+        "kind": "trailing_window",
+        "query": "\"AND nox IS NOT NULL AND time >= ? AND time < ?\","
+      },
+      {
+        "file": "tests/benchmarks/v9/governance_pit.py",
+        "line": 121,
+        "kind": "trailing_window",
+        "query": "(station[\"db_name\"], pit_lo, pit_hi)))"
+      },
+      {
+        "file": "tests/benchmarks/v9/governance_pit.py",
+        "line": 124,
+        "kind": "trailing_window",
+        "query": "\"AND no2 IS NOT NULL AND time >= ? AND time < ?\","
+      },
+      {
+        "file": "tests/benchmarks/v9/governance_pit.py",
+        "line": 125,
+        "kind": "trailing_window",
+        "query": "(station[\"db_name\"], pit_lo, pit_hi)))"
+      },
+      {
+        "file": "tests/benchmarks/v9/governance_rule_v95.py",
+        "line": 130,
+        "kind": "trailing_window",
+        "query": "pit_lo = pit_hi - _dt.timedelta(days=365)"
+      },
+      {
+        "file": "tests/benchmarks/v9/governance_rule_v95.py",
+        "line": 132,
+        "kind": "trailing_window",
+        "query": "if pit_hi > t >= pit_lo]"
+      }
+    ]
+  },
+  "L3_trailing_window_reachability": {
+    "query": "tools/air_quality_tools.py:load_station_no2_p90(as_of=<事件月月初>)",
+    "window_rule": "滚动 365 天，严格早于事件月月初（闭开区间）",
+    "blind_year_rows_in_db": 157680,
+    "v9_actual_earliest_window_date": "2023-01-01",
+    "v9_read_blind_year": false,
+    "counterfactual_if_analysis_year_were": {
+      "2022": "窗口会落到 2021-01～2021-12（详见 by_analysis_month）",
+      "2024": "窗口最低点为 2023-01-01（V9.x 的实际情况，未触及 2021）"
+    },
+    "by_analysis_month": [
+      {
+        "analysis_month": "2022-01",
+        "window_lo": "2021-01-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 157680,
+        "share_in_blind_year": 1.0
+      },
+      {
+        "analysis_month": "2022-02",
+        "window_lo": "2021-02-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 144288,
+        "share_in_blind_year": 0.9151
+      },
+      {
+        "analysis_month": "2022-03",
+        "window_lo": "2021-03-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 132192,
+        "share_in_blind_year": 0.8384
+      },
+      {
+        "analysis_month": "2022-04",
+        "window_lo": "2021-04-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 118800,
+        "share_in_blind_year": 0.7534
+      },
+      {
+        "analysis_month": "2022-05",
+        "window_lo": "2021-05-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 105840,
+        "share_in_blind_year": 0.6712
+      },
+      {
+        "analysis_month": "2022-06",
+        "window_lo": "2021-06-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 92448,
+        "share_in_blind_year": 0.5863
+      },
+      {
+        "analysis_month": "2022-07",
+        "window_lo": "2021-07-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 79488,
+        "share_in_blind_year": 0.5041
+      },
+      {
+        "analysis_month": "2022-08",
+        "window_lo": "2021-08-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 66096,
+        "share_in_blind_year": 0.4192
+      },
+      {
+        "analysis_month": "2022-09",
+        "window_lo": "2021-09-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 52704,
+        "share_in_blind_year": 0.3342
+      },
+      {
+        "analysis_month": "2022-10",
+        "window_lo": "2021-10-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 39744,
+        "share_in_blind_year": 0.2521
+      },
+      {
+        "analysis_month": "2022-11",
+        "window_lo": "2021-11-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 26352,
+        "share_in_blind_year": 0.1671
+      },
+      {
+        "analysis_month": "2022-12",
+        "window_lo": "2021-12-01",
+        "rows_total": 157680,
+        "rows_in_blind_year": 13392,
+        "share_in_blind_year": 0.0849
+      }
+    ]
+  },
+  "L4_artifacts": {
+    "files_scanned": 11,
+    "scored_date_years": {
+      "2024": 3136
+    },
+    "blind_year_windows_scored": 0,
+    "this_blind_run_files": [
+      "v99_blind2021_case_matrix.csv",
+      "v99_blind2021_failures.csv",
+      "v9_governance_cases_blind2021.csv",
+      "v9_governance_predictions_blind2021.csv"
+    ],
+    "this_blind_run_scored_years": {
+      "2021": 1626
+    },
+    "note": "`blind_year_windows_scored` 只统计**非本次盲测**的产物；本次盲测自己的产物单列在 this_blind_run_*，两者不可混用。"
+  },
+  "git_history_touching_blind_year": [
+    {
+      "commit": "b771a7a",
+      "subject": "V9.9: 报告断言自动审计 + 盲测年数据谱系（盲测运行前的冻结点）"
+    },
+    {
+      "commit": "8d3aa94",
+      "subject": "V9.8: 运行清单(Git SHA+配置/数据哈希+冻结配置)、预注册2021为盲测年、报告补运行清单与盲测说明"
+    },
+    {
+      "commit": "4b9571c",
+      "subject": "V9.6(WIP): 数据契约(连错库硬断言/特征全空失败/口径一致性)、气象年度磁盘缓存、捕获+离线规则扫描设施、画像权重语义修正+单调性测试、报告历史附录与V9.6章节"
+    },
+    {
+      "commit": "076557a",
+      "subject": "V6 baseline: 对比实验 V1-V6 全套脚本与结果、约束优化、多站同步证据、MTR 补充网络"
+    },
+    {
+      "commit": "bcde5eb",
+      "subject": "feat: 天气多智能体系统（气象预测 + 时空分析 + 前端）"
+    }
+  ],
+  "concept_note": "本盲测的性质是**跨年份留出测试（cross-year holdout）**，不是按时间顺序的未来预测测试：2021 与开发所用的 2022–2024 在时间轴上交错，且系统在2021 之前没有部署记录。因此结论只能说『在未见年份上的泛化』，不能称为『时间外推/未来预测』。",
+  "verdict": {
+    "usable_as_blind": true,
+    "conditions": [
+      "结论表述限定为跨年份留出，不得称为未来预测",
+      "报告中必须记录：2021 的行确实存在于库中、且被数据覆盖审计脚本统计过",
+      "任何后续用 2021 做的调参都必须写明并撤销其盲测地位"
+    ]
+  }
+}

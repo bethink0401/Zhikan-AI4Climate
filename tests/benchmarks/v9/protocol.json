@@ -1,0 +1,232 @@
+{
+  "protocol_version": "V9-executed-2026-10-13",
+  "frozen_at": "2026-10-13T19:50:00+08:00",
+  "git_sha": "ffe7b19ef61bc6d9bb07eb4ed886681c7d3d777d",
+  "data_snapshot_sha256_prefix": {
+    "data/air_quality.db": "6ba9fce3939f7ea8",
+    "data/traffic.db": "08193523beb4ba7e",
+    "config/travel_profile.json": "c4c00e63552db803",
+    "config/pollution_rules.json": "558d083295b6497c"
+  },
+  "python": "3.9 (/usr/bin/python3)",
+  "v8_reference_status": "historical_development; samples analysed in V1-V8 are NOT eligible as V9 blind",
+  "excluded_from_v9_blind": {
+    "governance_windows": [
+      "2023 main-bench windows (dev/test, bench_governance_baselines)",
+      "2022 three-station 52 windows (bench_governance_v6)"
+    ],
+    "travel_blind_dates": [
+      "2023-08-15",
+      "2023-10-18",
+      "2023-12-06",
+      "2023-11-15",
+      "2023-10-25",
+      "2023-11-22",
+      "2023-11-29"
+    ],
+    "propagation_scenario_seeds": [
+      "zhikan-prop-*",
+      "zhikan-prop-v7-*"
+    ]
+  },
+  "v9_blind_allocation": {
+    "innovation_1_governance": {
+      "year": 2024,
+      "stations": [
+        "MONG KOK",
+        "CENTRAL",
+        "CAUSEWAY BAY"
+      ],
+      "data_check": "153549 NO2 rows, 3 roadside stations present"
+    },
+    "innovation_2_propagation": {
+      "year": 2024,
+      "design": "leave-one-station-out observational backtest",
+      "wind_source": "Open-Meteo Archive (historical reanalysis, framed as backtest not forecast)"
+    },
+    "innovation_3_travel": {
+      "replay": "2023-11-29 V8 date reused ONLY for offline/online consistency (P0, not a blind comparison)",
+      "user_study": "pending human participants"
+    }
+  },
+  "human_labels_status": "pending - templates provided, no fabricated labels",
+  "user_study_status": "pending - templates and recommendation export provided",
+  "evaluation_rules": {
+    "cluster_bootstrap": {
+      "governance": "by date",
+      "travel": "by participant and OD",
+      "propagation": "by independent scenario/event",
+      "reps": 10000
+    },
+    "thresholds": "frozen from V8 config; NO threshold touching test results",
+    "coverage_risk_curve": "governance abstention (uncertain) rate vs F1 reported to prevent abstention-inflated F1"
+  },
+  "no_result_fabrication": true,
+  "v9_1_revision": {
+    "date": "2026-10-13T20:45:00+08:00",
+    "changes": [
+      "innovation_1 CI corrected: was per-window hit-rate diff (0.035), now clustered bootstrap on Macro-F1 diff (0.080, CI [-0.037, 0.169])",
+      "abstention coverage added (C 0.441 vs B 0.220; advantage holds at matched coverage)",
+      "look-ahead audit added: full-year baselines = retrospective framing; trailing-baseline gate flip rate 13.8%",
+      "replay acceptance summary file added (60 compared / 60 matched / 0 skipped)",
+      "bench_travel_v8 re-run under unified constraint: D-vs-system 60/60, 2x2 conclusions unchanged"
+    ]
+  },
+  "v9_2_policy": {
+    "human_labels": "CANCELLED per V9.2 principle (no external participants ever)",
+    "user_study": "CANCELLED per V9.2 principle"
+  },
+  "v9_3_revision": {
+    "date": "2026-10-13T22:00:00+08:00",
+    "cluster_units": "travel: OD x slot (no participants); governance: date; propagation: scenario"
+  },
+  "v9_5_preregistration": {
+    "date": "2026-10-14T08:20:00+08:00",
+    "principle": "先冻结划分与参数，再跑独立评价；已查看样本只作回归，不再称盲测",
+    "travel": {
+      "dev_date_for_tuning": "2024-08-14",
+      "blind_date": "2024-09-18",
+      "params_tuned_on_dev": [
+        "lambda_star (weighted sum)",
+        "eps_ratio_star (epsilon-constraint)",
+        "w_star (standard Tchebycheff)"
+      ],
+      "regression_only_dates_do_not_call_blind": [
+        "2023-08-15",
+        "2023-10-18",
+        "2023-11-15",
+        "2023-10-25",
+        "2023-11-22",
+        "2023-11-29",
+        "2024-03-13",
+        "2024-04-12",
+        "2024-05-10",
+        "2024-06-14"
+      ]
+    },
+    "governance": {
+      "proxy_label_year": 2024,
+      "pit_mode": "rolling-12-month trailing baselines (strictly before event month)",
+      "synthetic_dev_seeds": [
+        20260412,
+        20260413,
+        20260414
+      ],
+      "synthetic_final_seeds": [
+        20260501,
+        20260502,
+        20260503
+      ],
+      "note": "synthetic_final_seeds 在分类规则定稿前不运行，用于泛化验证"
+    },
+    "decisioner": {
+      "new_rule": "profile-driven weighted Tchebycheff (normalized, Pareto-guarded)",
+      "config_path": "config/travel_profile.json:decision",
+      "weights": "w_time = max_trip_minutes/(max_trip_minutes+time_flexibility_minutes); w_intake = 1 - w_time"
+    }
+  },
+  "v9_6_preregistration": {
+    "date": "2026-10-14T10:00:00+08:00",
+    "principle": "先冻结划分与参数再跑；已用日期只作回归，不得称盲测",
+    "travel": {
+      "dev_date_for_tuning": "2024-11-13",
+      "blind_date": "2024-10-16",
+      "weights_compared": [
+        "fixed 0.5/0.5",
+        "time_pressure_legacy",
+        "time_pressure (V9.6)"
+      ],
+      "regression_only": [
+        "2023-10-18",
+        "2024-08-14",
+        "2024-09-18",
+        "2024-06-14"
+      ]
+    },
+    "governance": {
+      "synthetic_dev_seeds": [
+        20260412,
+        20260413,
+        20260414
+      ],
+      "synthetic_final_seeds": [
+        20260501,
+        20260502,
+        20260503
+      ],
+      "note": "开发种子 20260412-14；20260501-03 已在 V9.6 开发过程中使用，不再算未见；V9.6 盲测种子 20260601-03 在判定规则定稿前未运行",
+      "synthetic_blind_seeds_v96": [
+        20260601,
+        20260602,
+        20260603
+      ]
+    },
+    "contract": "tests/benchmarks/v9/contracts.py：连错库/特征全空/统计口径不一致 → 实验直接失败",
+    "meteo_cache": {
+      "path": "tests/benchmarks/results/meteo_cache/",
+      "purpose": "消除每窗口联网取数带来的不可复现与静默兜底降级",
+      "self_check": "/usr/bin/python3 tests/benchmarks/v9/meteo_cache.py"
+    }
+  },
+  "v9_8_preregistration": {
+    "date": "2026-10-14T16:30:00+08:00",
+    "principle": "先冻结配置与清单，再跑独立年份；已用年份只作回归，不得再称盲测",
+    "run_manifest": "tests/benchmarks/v9/results/v98_run_manifest.json（Git SHA + 配置哈希 + 数据哈希 + 冻结配置）",
+    "blind_year": {
+      "year": 2021,
+      "rationale": "全仓库检索确认 2018–2021 从未被任何**建模/阈值/评分**脚本使用；2022/2023 用于 V1–V8，2024 用于 V9–V9.8（谱系审计修正了 V9.8『从未被任何脚本引用』的表述，见 v9_9_lineage）",
+      "reserve": [
+        2018,
+        2019,
+        2020
+      ],
+      "caveat": "2020 为疫情年（污染物水平异常），列备选不列主盲测年；2021 同样受疫情影响较小但需在结论中说明",
+      "not_yet_run": false,
+      "executed": "2026-10-14 已一次性执行，详见 v9_9_blind_run；自此 regression_only"
+    },
+    "frozen_configs_for_blind_run": {
+      "innovation_1": "resources: config/pollution_rules.json:source_judgement（judgement_rule=score_argmax）",
+      "innovation_3": "config/travel_profile.json:decision（rule=tchebycheff；weight_basis 需在跑前定稿）",
+      "innovation_2": "冻结，本轮不改"
+    }
+  },
+  "v9_9_blind_run": {
+    "date": "2026-10-14T15:19:00+08:00",
+    "year": 2021,
+    "status": "EXECUTED_ONCE — 已跑即封存，2021 自此为 regression_only，不得再称盲测、不得用于调参",
+    "preregistered_before_run": "tests/benchmarks/v9/results/v98_run_manifest.json（Git SHA b771a7a + 配置/数据/代码/气象缓存哈希；运行前工作区干净）",
+    "inputs_prefetched": "meteo_cache 2021 全年 36 个月块 + wind_openmeteo_2021_*.json（3×8760h），运行期不再联网",
+    "command": "/usr/bin/python3 tests/benchmarks/v9/governance_holdout.py 2021",
+    "sample": {"n": 237, "per_station": {"Mong Kok": 91, "Central": 79, "Causeway Bay": 67},
+               "note": "抽取计划与 2024 开发年完全相同（108/站），候选池不足时如实报告实际 n"},
+    "result": {
+      "macro_f1": {"A": 0.3207, "B": 0.5094, "Bplus": 0.4905, "C": 0.4381},
+      "C_minus_B": {"mean_diff": -0.0714, "ci95": [-0.3335, 0.0150], "crosses_zero": true},
+      "weak_evidence_traffic_misfire": {"A": 4, "B": 9, "Bplus": 3, "C": 0},
+      "verdict": "准确率优势未复现（点估计低于 B，CI 跨 0）；弱证据风险控制复现（C 误报 0，全场最低）；相对单源基线 A 仍大幅领先"
+    },
+    "artifacts": [
+      "tests/benchmarks/results/v9_governance_blind2021.json",
+      "tests/benchmarks/v9/results/v9_governance_cases_blind2021.csv",
+      "tests/benchmarks/v9/results/v99_blind2021_failures.csv（全部失败案例）",
+      "tests/benchmarks/v9/results/v99_blind2021_case_matrix.csv（成功+失败全矩阵）"
+    ],
+    "no_further_tuning": "按验收要求第 6 条：不论结果是否领先，封存本批结果，不再拿同一批数据继续调参"
+  },
+  "v9_9_lineage": {
+    "date": "2026-10-14T19:00:00+08:00",
+    "audit": "tests/benchmarks/v9/audit_blind_year_lineage.py → results/v99_blind_year_lineage.json",
+    "correction": "V9.8 写『2018–2021 从未被任何基准或分析脚本引用』不准确：examples/audit_day1_9.py 与 examples/day1_9_audit.json 会逐年份统计（含 2021）数据表行数，下载器默认年份串也含 2021。正确表述为『从未被任何建模/阈值/评分脚本使用』。",
+    "indirect_read_check": {
+      "mechanism": "roll-of-365-days trailing baseline in load_station_no2_p90(as_of=...) / AirQualityAgent PIT",
+      "finding": "PIT 模式自 V9.2 引入，且历史上只跑过 2024 事件 → 窗口最低点 2023-01-01，未触及 2021",
+      "counterfactual": "若把同一脚本跑在 2022 事件上，滚动窗口将有 8.5%–100% 落在 2021（逐月占比见 v99_blind_year_lineage.json）"
+    },
+    "test_nature": "cross-year holdout（跨年份留出），NOT a chronological future-prediction test——2021 与开发所用的 2022–2024 时间交错，且系统在 2021 之前没有部署记录",
+    "preconditions_before_running": [
+      "结论表述限定为跨年份留出，不得称为未来预测",
+      "报告中记录 2021 的行确实在库中且被数据覆盖审计统计过",
+      "任何后续用 2021 做的调参必须写明并撤销其盲测地位"
+    ]
+  }
+}

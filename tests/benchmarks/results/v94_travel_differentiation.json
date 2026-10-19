@@ -1,0 +1,3848 @@
+{
+  "design": {
+    "note": "V9.4 创新三差异化：同候选同约束下引入 ε-约束法与 Tchebycheff 强基线（开发集按 HV 调优后冻结），新盲测日 2024-06-14；决策后悔值按预设画像目标计算；非凸前沿单元测试检验标量化族的可达性边界",
+    "cap_ratio": 1.25,
+    "dev_tuned": {
+      "lambda_star": 40.0,
+      "eps_ratio_star": 1.15,
+      "w_star": 0.5
+    },
+    "cluster_unit": "OD×时段"
+  },
+  "frontier_diagnosis": {
+    "mean_frontier_size": 2.22,
+    "frontier_size_distribution": {
+      "1": 26,
+      "2": 18,
+      "3": 4,
+      "4": 5,
+      "5": 4,
+      "6": 2,
+      "7": 1
+    },
+    "D_differs_from_A_rate": 0.1667
+  },
+  "summary": {
+    "A_shortest": {
+      "mean_hv": 0.3104,
+      "mean_regret_time": -0.943,
+      "mean_regret_eu": 0.0304,
+      "pref_v1": 0.8167
+    },
+    "B_lowest": {
+      "mean_hv": 0.3718,
+      "mean_regret_time": 1.645,
+      "mean_regret_eu": -0.0064,
+      "pref_v1": 0.8833
+    },
+    "C_weighted_tuned": {
+      "mean_hv": 0.389,
+      "mean_regret_time": -0.242,
+      "mean_regret_eu": 0.0092,
+      "pref_v1": 0.8667
+    },
+    "E_epsilon_tuned": {
+      "mean_hv": 0.3267,
+      "mean_regret_time": 0.06,
+      "mean_regret_eu": 0.0153,
+      "pref_v1": 0.9
+    },
+    "F_tchebycheff_tuned": {
+      "mean_hv": 0.4403,
+      "mean_regret_time": -0.188,
+      "mean_regret_eu": 0.0132,
+      "pref_v1": 0.8667
+    },
+    "D_zhikan": {
+      "mean_hv": 0.3047,
+      "mean_regret_time": 0.348,
+      "mean_regret_eu": 0.0189,
+      "pref_v1": 0.8333
+    }
+  },
+  "comparisons_cluster_bootstrap": {
+    "D_vs_C_weighted_tuned_hv": {
+      "mean_diff": -0.0843,
+      "ci95": [
+        -0.1689,
+        -0.0146
+      ],
+      "n_clusters": 12
+    },
+    "D_vs_E_epsilon_tuned_hv": {
+      "mean_diff": -0.0221,
+      "ci95": [
+        -0.0471,
+        -0.0006
+      ],
+      "n_clusters": 12
+    },
+    "D_vs_F_tchebycheff_tuned_hv": {
+      "mean_diff": -0.1356,
+      "ci95": [
+        -0.2185,
+        -0.0588
+      ],
+      "n_clusters": 12
+    },
+    "D_vs_C_weighted_tuned_regret_time": {
+      "mean_diff": 0.59,
+      "ci95": [
+        -0.52,
+        1.7817
+      ],
+      "n_clusters": 12
+    }
+  },
+  "nonconvex_frontier_unit_test": {
+    "frontier_size": 9,
+    "convex_hull_size": 9,
+    "non_convex_points": [],
+    "weighted_sum_hits": [
+      "c0",
+      "c1",
+      "c2",
+      "c3",
+      "c4",
+      "c5",
+      "c6",
+      "c7"
+    ],
+    "weighted_sum_reaches_non_convex": [],
+    "tchebycheff_hits": [
+      "c0",
+      "c1",
+      "c2",
+      "c3",
+      "c4",
+      "c5",
+      "c6",
+      "c7",
+      "c8"
+    ],
+    "tchebycheff_reaches_non_convex": [],
+    "conclusion": "线性标量化（加权和与智瞰效用式同为 (t, EU) 线性组合）无法到达非凸前沿点；Tchebycheff 可达——差异化能力存在于算法族选择，而非 Pareto 筛选本身"
+  },
+  "rows": [
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "frontier_size": 2,
+      "n_feasible": 5,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.1,
+        "intake_index": 0.5458,
+        "hv": 0.2429,
+        "regret_time": 0.0,
+        "regret_eu": 0.0293,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_1",
+        "duration_minutes": 15.9,
+        "intake_index": 0.5165,
+        "hv": 0.8824,
+        "regret_time": 0.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 15.9,
+        "intake_index": 0.5165,
+        "hv": 0.8824,
+        "regret_time": 0.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.1,
+        "intake_index": 0.5458,
+        "hv": 0.2429,
+        "regret_time": 0.0,
+        "regret_eu": 0.0293,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 15.9,
+        "intake_index": 0.5165,
+        "hv": 0.8824,
+        "regret_time": 0.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.1,
+        "intake_index": 0.5458,
+        "hv": 0.2429,
+        "regret_time": 0.0,
+        "regret_eu": 0.0293,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "frontier_size": 2,
+      "n_feasible": 5,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.8,
+        "intake_index": 0.5708,
+        "hv": 0.2933,
+        "regret_time": 0.0,
+        "regret_eu": 0.0306,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.6,
+        "intake_index": 0.5402,
+        "hv": 0.873,
+        "regret_time": 0.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.6,
+        "intake_index": 0.5402,
+        "hv": 0.873,
+        "regret_time": 0.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.8,
+        "intake_index": 0.5708,
+        "hv": 0.2933,
+        "regret_time": 0.0,
+        "regret_eu": 0.0306,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.6,
+        "intake_index": 0.5402,
+        "hv": 0.873,
+        "regret_time": 0.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.8,
+        "intake_index": 0.5708,
+        "hv": 0.2933,
+        "regret_time": 0.0,
+        "regret_eu": 0.0306,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.6214,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.6214,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.6214,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.6214,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.6214,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.6214,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "frontier_size": 3,
+      "n_feasible": 5,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.3,
+        "intake_index": 0.5536,
+        "hv": 0.0,
+        "regret_time": -6.1,
+        "regret_eu": 0.0598,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.4938,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.1,
+        "intake_index": 0.524,
+        "hv": 0.4301,
+        "regret_time": -5.3,
+        "regret_eu": 0.0302,
+        "pref_v1": false
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.3,
+        "intake_index": 0.5536,
+        "hv": 0.0,
+        "regret_time": -6.1,
+        "regret_eu": 0.0598,
+        "pref_v1": false
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.1,
+        "intake_index": 0.524,
+        "hv": 0.4301,
+        "regret_time": -5.3,
+        "regret_eu": 0.0302,
+        "pref_v1": false
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.4938,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": true
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "frontier_size": 2,
+      "n_feasible": 5,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.9,
+        "intake_index": 0.5374,
+        "hv": 0.4442,
+        "regret_time": 0.0,
+        "regret_eu": 0.0289,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_1",
+        "duration_minutes": 15.7,
+        "intake_index": 0.5085,
+        "hv": 0.8857,
+        "regret_time": 0.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 15.7,
+        "intake_index": 0.5085,
+        "hv": 0.8857,
+        "regret_time": 0.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.9,
+        "intake_index": 0.5374,
+        "hv": 0.4442,
+        "regret_time": 0.0,
+        "regret_eu": 0.0289,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 15.7,
+        "intake_index": 0.5085,
+        "hv": 0.8857,
+        "regret_time": 0.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.9,
+        "intake_index": 0.5374,
+        "hv": 0.4442,
+        "regret_time": 0.0,
+        "regret_eu": 0.0289,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "frontier_size": 4,
+      "n_feasible": 5,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.8,
+        "intake_index": 0.547,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0295,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.4885,
+        "hv": 0.0,
+        "regret_time": 7.1,
+        "regret_eu": -0.029,
+        "pref_v1": false
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.8,
+        "intake_index": 0.547,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0295,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.8,
+        "intake_index": 0.547,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0295,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.1,
+        "intake_index": 0.5175,
+        "hv": 0.4119,
+        "regret_time": 1.3,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.4885,
+        "hv": 0.0,
+        "regret_time": 7.1,
+        "regret_eu": -0.029,
+        "pref_v1": false
+      },
+      "D_differs_from_A": true
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "frontier_size": 3,
+      "n_feasible": 5,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.4,
+        "intake_index": 0.5731,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0623,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.5108,
+        "hv": 0.0,
+        "regret_time": 6.7,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.4,
+        "intake_index": 0.5731,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0623,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 15.4,
+        "intake_index": 0.5731,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0623,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.8,
+        "intake_index": 0.5412,
+        "hv": 0.405,
+        "regret_time": 1.4,
+        "regret_eu": 0.0304,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.5108,
+        "hv": 0.0,
+        "regret_time": 6.7,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": true
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.5416,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.5416,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.5416,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.5416,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.5416,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.4,
+        "intake_index": 0.5416,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "frontier_size": 2,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.3,
+        "intake_index": 0.5248,
+        "hv": 0.0358,
+        "regret_time": -5.1,
+        "regret_eu": 0.0861,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.4387,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.3,
+        "intake_index": 0.5248,
+        "hv": 0.0358,
+        "regret_time": -5.1,
+        "regret_eu": 0.0861,
+        "pref_v1": false
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.4387,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 16.3,
+        "intake_index": 0.5248,
+        "hv": 0.0358,
+        "regret_time": -5.1,
+        "regret_eu": 0.0861,
+        "pref_v1": false
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.4387,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": true
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "frontier_size": 3,
+      "n_feasible": 5,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.5,
+        "intake_index": 0.5386,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0293,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.4925,
+        "hv": 0.0,
+        "regret_time": 7.4,
+        "regret_eu": -0.0168,
+        "pref_v1": false
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.5,
+        "intake_index": 0.5386,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0293,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.5,
+        "intake_index": 0.5386,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0293,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 15.8,
+        "intake_index": 0.5093,
+        "hv": 0.5239,
+        "regret_time": 1.3,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.4925,
+        "hv": 0.0,
+        "regret_time": 7.4,
+        "regret_eu": -0.0168,
+        "pref_v1": false
+      },
+      "D_differs_from_A": true
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "frontier_size": 1,
+      "n_feasible": 2,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.3,
+        "intake_index": 0.3934,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.3,
+        "intake_index": 0.3934,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.3,
+        "intake_index": 0.3934,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.3,
+        "intake_index": 0.3934,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.3,
+        "intake_index": 0.3934,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.3,
+        "intake_index": 0.3934,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "frontier_size": 1,
+      "n_feasible": 2,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.8,
+        "intake_index": 0.4113,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.8,
+        "intake_index": 0.4113,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.8,
+        "intake_index": 0.4113,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.8,
+        "intake_index": 0.4113,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.8,
+        "intake_index": 0.4113,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.8,
+        "intake_index": 0.4113,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.6848,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.6848,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.6848,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.6848,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.6848,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.6848,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "frontier_size": 1,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.5,
+        "intake_index": 0.3988,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.5,
+        "intake_index": 0.3988,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.5,
+        "intake_index": 0.3988,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.5,
+        "intake_index": 0.3988,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.5,
+        "intake_index": 0.3988,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.5,
+        "intake_index": 0.3988,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "frontier_size": 1,
+      "n_feasible": 2,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.1,
+        "intake_index": 0.3874,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.1,
+        "intake_index": 0.3874,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.1,
+        "intake_index": 0.3874,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.1,
+        "intake_index": 0.3874,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.1,
+        "intake_index": 0.3874,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 11.1,
+        "intake_index": 0.3874,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "frontier_size": 2,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 39.7,
+        "intake_index": 0.4664,
+        "hv": 0.2515,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 48.3,
+        "intake_index": 0.406,
+        "hv": 0.0,
+        "regret_time": 8.6,
+        "regret_eu": -0.0604,
+        "pref_v1": false
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 39.7,
+        "intake_index": 0.4664,
+        "hv": 0.2515,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 39.7,
+        "intake_index": 0.4664,
+        "hv": 0.2515,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 39.7,
+        "intake_index": 0.4664,
+        "hv": 0.2515,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 39.7,
+        "intake_index": 0.4664,
+        "hv": 0.2515,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "frontier_size": 2,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 41.8,
+        "intake_index": 0.4905,
+        "hv": 0.3226,
+        "regret_time": 0.0,
+        "regret_eu": 0.0441,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 50.7,
+        "intake_index": 0.4464,
+        "hv": 0.0,
+        "regret_time": 8.9,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 41.8,
+        "intake_index": 0.4905,
+        "hv": 0.3226,
+        "regret_time": 0.0,
+        "regret_eu": 0.0441,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 41.8,
+        "intake_index": 0.4905,
+        "hv": 0.3226,
+        "regret_time": 0.0,
+        "regret_eu": 0.0441,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 41.8,
+        "intake_index": 0.4905,
+        "hv": 0.3226,
+        "regret_time": 0.0,
+        "regret_eu": 0.0441,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 41.8,
+        "intake_index": 0.4905,
+        "hv": 0.3226,
+        "regret_time": 0.0,
+        "regret_eu": 0.0441,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 53.9,
+        "intake_index": 0.5023,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 53.9,
+        "intake_index": 0.5023,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 53.9,
+        "intake_index": 0.5023,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 53.9,
+        "intake_index": 0.5023,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 53.9,
+        "intake_index": 0.5023,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 53.9,
+        "intake_index": 0.5023,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 43.1,
+        "intake_index": 0.3146,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 43.1,
+        "intake_index": 0.3146,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 43.1,
+        "intake_index": 0.3146,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 43.1,
+        "intake_index": 0.3146,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 43.1,
+        "intake_index": 0.3146,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 43.1,
+        "intake_index": 0.3146,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "frontier_size": 2,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 39.0,
+        "intake_index": 0.4583,
+        "hv": 0.3078,
+        "regret_time": 0.0,
+        "regret_eu": 0.0452,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 48.7,
+        "intake_index": 0.4131,
+        "hv": 0.0,
+        "regret_time": 9.7,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 39.0,
+        "intake_index": 0.4583,
+        "hv": 0.3078,
+        "regret_time": 0.0,
+        "regret_eu": 0.0452,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 39.0,
+        "intake_index": 0.4583,
+        "hv": 0.3078,
+        "regret_time": 0.0,
+        "regret_eu": 0.0452,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 39.0,
+        "intake_index": 0.4583,
+        "hv": 0.3078,
+        "regret_time": 0.0,
+        "regret_eu": 0.0452,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 48.7,
+        "intake_index": 0.4131,
+        "hv": 0.0,
+        "regret_time": 9.7,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": true
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "frontier_size": 5,
+      "n_feasible": 6,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.1,
+        "intake_index": 0.5603,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0194,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.9,
+        "intake_index": 0.4606,
+        "hv": 0.0,
+        "regret_time": 2.8,
+        "regret_eu": -0.0803,
+        "pref_v1": false
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.9,
+        "intake_index": 0.4606,
+        "hv": 0.0,
+        "regret_time": 2.8,
+        "regret_eu": -0.0803,
+        "pref_v1": false
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 13.5,
+        "intake_index": 0.5268,
+        "hv": 0.048,
+        "regret_time": 2.4,
+        "regret_eu": -0.0141,
+        "pref_v1": false
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 11.6,
+        "intake_index": 0.5409,
+        "hv": 0.1598,
+        "regret_time": 0.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.1,
+        "intake_index": 0.5603,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0194,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "frontier_size": 5,
+      "n_feasible": 6,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.3,
+        "intake_index": 0.5723,
+        "hv": 0.0,
+        "regret_time": -2.5,
+        "regret_eu": 0.1018,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4705,
+        "hv": 0.0,
+        "regret_time": 0.4,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4705,
+        "hv": 0.0,
+        "regret_time": 0.4,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 13.8,
+        "intake_index": 0.5377,
+        "hv": 0.0469,
+        "regret_time": 0.0,
+        "regret_eu": 0.0672,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 11.9,
+        "intake_index": 0.5529,
+        "hv": 0.1511,
+        "regret_time": -1.9,
+        "regret_eu": 0.0824,
+        "pref_v1": false
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.3,
+        "intake_index": 0.5723,
+        "hv": 0.0,
+        "regret_time": -2.5,
+        "regret_eu": 0.1018,
+        "pref_v1": false
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6627,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6627,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6627,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6627,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6627,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6627,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "frontier_size": 5,
+      "n_feasible": 7,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.3,
+        "intake_index": 0.5743,
+        "hv": 0.0,
+        "regret_time": -2.9,
+        "regret_eu": 0.1021,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4722,
+        "hv": 0.71,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4722,
+        "hv": 0.71,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 13.8,
+        "intake_index": 0.5393,
+        "hv": 0.2571,
+        "regret_time": -0.4,
+        "regret_eu": 0.0671,
+        "pref_v1": false
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4722,
+        "hv": 0.71,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.3,
+        "intake_index": 0.5743,
+        "hv": 0.0,
+        "regret_time": -2.9,
+        "regret_eu": 0.1021,
+        "pref_v1": false
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "frontier_size": 5,
+      "n_feasible": 6,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.0,
+        "intake_index": 0.5556,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0984,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.8,
+        "intake_index": 0.4572,
+        "hv": 0.0,
+        "regret_time": 2.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.8,
+        "intake_index": 0.4572,
+        "hv": 0.0,
+        "regret_time": 2.8,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 13.4,
+        "intake_index": 0.5224,
+        "hv": 0.0482,
+        "regret_time": 2.4,
+        "regret_eu": 0.0652,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 11.6,
+        "intake_index": 0.5366,
+        "hv": 0.1517,
+        "regret_time": 0.6,
+        "regret_eu": 0.0794,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.0,
+        "intake_index": 0.5556,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0984,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "frontier_size": 2,
+      "n_feasible": 6,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 10.7,
+        "intake_index": 0.5316,
+        "hv": 0.2624,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.9,
+        "intake_index": 0.4495,
+        "hv": 0.2195,
+        "regret_time": 3.2,
+        "regret_eu": -0.0821,
+        "pref_v1": false
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.9,
+        "intake_index": 0.4495,
+        "hv": 0.2195,
+        "regret_time": 3.2,
+        "regret_eu": -0.0821,
+        "pref_v1": false
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.9,
+        "intake_index": 0.4495,
+        "hv": 0.2195,
+        "regret_time": 3.2,
+        "regret_eu": -0.0821,
+        "pref_v1": false
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 10.7,
+        "intake_index": 0.5316,
+        "hv": 0.2624,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 10.7,
+        "intake_index": 0.5316,
+        "hv": 0.2624,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "frontier_size": 2,
+      "n_feasible": 6,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.0,
+        "intake_index": 0.5439,
+        "hv": 0.2489,
+        "regret_time": -3.2,
+        "regret_eu": 0.0845,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4594,
+        "hv": 0.2,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4594,
+        "hv": 0.2,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4594,
+        "hv": 0.2,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.0,
+        "intake_index": 0.5439,
+        "hv": 0.2489,
+        "regret_time": -3.2,
+        "regret_eu": 0.0845,
+        "pref_v1": false
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.0,
+        "intake_index": 0.5439,
+        "hv": 0.2489,
+        "regret_time": -3.2,
+        "regret_eu": 0.0845,
+        "pref_v1": false
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.9118,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.9118,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.9118,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.9118,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.9118,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.9118,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "frontier_size": 2,
+      "n_feasible": 6,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.0,
+        "intake_index": 0.546,
+        "hv": 0.2445,
+        "regret_time": -3.2,
+        "regret_eu": 0.0853,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4607,
+        "hv": 0.2195,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4607,
+        "hv": 0.2195,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 14.2,
+        "intake_index": 0.4607,
+        "hv": 0.2195,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.0,
+        "intake_index": 0.546,
+        "hv": 0.2445,
+        "regret_time": -3.2,
+        "regret_eu": 0.0853,
+        "pref_v1": false
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 11.0,
+        "intake_index": 0.546,
+        "hv": 0.2445,
+        "regret_time": -3.2,
+        "regret_eu": 0.0853,
+        "pref_v1": false
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "frontier_size": 2,
+      "n_feasible": 6,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 10.6,
+        "intake_index": 0.5274,
+        "hv": 0.2615,
+        "regret_time": 0.0,
+        "regret_eu": 0.0816,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.8,
+        "intake_index": 0.4458,
+        "hv": 0.2,
+        "regret_time": 3.2,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.8,
+        "intake_index": 0.4458,
+        "hv": 0.2,
+        "regret_time": 3.2,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 13.8,
+        "intake_index": 0.4458,
+        "hv": 0.2,
+        "regret_time": 3.2,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 10.6,
+        "intake_index": 0.5274,
+        "hv": 0.2615,
+        "regret_time": 0.0,
+        "regret_eu": 0.0816,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 10.6,
+        "intake_index": 0.5274,
+        "hv": 0.2615,
+        "regret_time": 0.0,
+        "regret_eu": 0.0816,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "frontier_size": 1,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.4,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.4,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.4,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.4,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.4,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.4,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "frontier_size": 1,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4091,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4091,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4091,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4091,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4091,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4091,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 1.2363,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 1.2363,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 1.2363,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 1.2363,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 1.2363,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 1.2363,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "frontier_size": 1,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4102,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4102,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4102,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4102,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4102,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.5,
+        "intake_index": 0.4102,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "frontier_size": 1,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.397,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.397,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.397,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.397,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.397,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 8.3,
+        "intake_index": 0.397,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "frontier_size": 2,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 27.8,
+        "intake_index": 0.3869,
+        "hv": 0.7433,
+        "regret_time": 0.0,
+        "regret_eu": 0.0144,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 28.3,
+        "intake_index": 0.3725,
+        "hv": 0.9744,
+        "regret_time": 0.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 28.3,
+        "intake_index": 0.3725,
+        "hv": 0.9744,
+        "regret_time": 0.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 27.8,
+        "intake_index": 0.3869,
+        "hv": 0.7433,
+        "regret_time": 0.0,
+        "regret_eu": 0.0144,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 28.3,
+        "intake_index": 0.3725,
+        "hv": 0.9744,
+        "regret_time": 0.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 27.8,
+        "intake_index": 0.3869,
+        "hv": 0.7433,
+        "regret_time": 0.0,
+        "regret_eu": 0.0144,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "frontier_size": 2,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 28.5,
+        "intake_index": 0.3967,
+        "hv": 0.8134,
+        "regret_time": 0.0,
+        "regret_eu": 0.0148,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 29.1,
+        "intake_index": 0.3819,
+        "hv": 0.9707,
+        "regret_time": 0.6,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 28.5,
+        "intake_index": 0.3967,
+        "hv": 0.8134,
+        "regret_time": 0.0,
+        "regret_eu": 0.0148,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 28.5,
+        "intake_index": 0.3967,
+        "hv": 0.8134,
+        "regret_time": 0.0,
+        "regret_eu": 0.0148,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 29.1,
+        "intake_index": 0.3819,
+        "hv": 0.9707,
+        "regret_time": 0.6,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 28.5,
+        "intake_index": 0.3967,
+        "hv": 0.8134,
+        "regret_time": 0.0,
+        "regret_eu": 0.0148,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 52.0,
+        "intake_index": 0.5149,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 52.0,
+        "intake_index": 0.5149,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 52.0,
+        "intake_index": 0.5149,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 52.0,
+        "intake_index": 0.5149,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 52.0,
+        "intake_index": 0.5149,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 52.0,
+        "intake_index": 0.5149,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "frontier_size": 3,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 28.6,
+        "intake_index": 0.3982,
+        "hv": 0.0,
+        "regret_time": -14.0,
+        "regret_eu": 0.0552,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.343,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 29.1,
+        "intake_index": 0.3832,
+        "hv": 0.262,
+        "regret_time": -13.5,
+        "regret_eu": 0.0402,
+        "pref_v1": false
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 29.1,
+        "intake_index": 0.3832,
+        "hv": 0.262,
+        "regret_time": -13.5,
+        "regret_eu": 0.0402,
+        "pref_v1": false
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 29.1,
+        "intake_index": 0.3832,
+        "hv": 0.262,
+        "regret_time": -13.5,
+        "regret_eu": 0.0402,
+        "pref_v1": false
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.343,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": true
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "frontier_size": 2,
+      "n_feasible": 3,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 27.5,
+        "intake_index": 0.383,
+        "hv": 0.7939,
+        "regret_time": 0.0,
+        "regret_eu": 0.0141,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 28.1,
+        "intake_index": 0.3689,
+        "hv": 0.9703,
+        "regret_time": 0.6,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 27.5,
+        "intake_index": 0.383,
+        "hv": 0.7939,
+        "regret_time": 0.0,
+        "regret_eu": 0.0141,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 27.5,
+        "intake_index": 0.383,
+        "hv": 0.7939,
+        "regret_time": 0.0,
+        "regret_eu": 0.0141,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 28.1,
+        "intake_index": 0.3689,
+        "hv": 0.9703,
+        "regret_time": 0.6,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 27.5,
+        "intake_index": 0.383,
+        "hv": 0.7939,
+        "regret_time": 0.0,
+        "regret_eu": 0.0141,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "frontier_size": 7,
+      "n_feasible": 7,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.1,
+        "intake_index": 0.6442,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.027,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.5398,
+        "hv": 0.0,
+        "regret_time": 7.7,
+        "regret_eu": -0.0774,
+        "pref_v1": false
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 17.6,
+        "intake_index": 0.5447,
+        "hv": 0.5199,
+        "regret_time": 3.5,
+        "regret_eu": -0.0725,
+        "pref_v1": false
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 16.7,
+        "intake_index": 0.6172,
+        "hv": 0.1713,
+        "regret_time": 2.6,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 17.6,
+        "intake_index": 0.5447,
+        "hv": 0.5199,
+        "regret_time": 3.5,
+        "regret_eu": -0.0725,
+        "pref_v1": false
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.5398,
+        "hv": 0.0,
+        "regret_time": 7.7,
+        "regret_eu": -0.0774,
+        "pref_v1": false
+      },
+      "D_differs_from_A": true
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "frontier_size": 6,
+      "n_feasible": 7,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.5,
+        "intake_index": 0.6595,
+        "hv": 0.0,
+        "regret_time": -2.6,
+        "regret_eu": 0.1022,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "drive_3",
+        "duration_minutes": 18.0,
+        "intake_index": 0.5573,
+        "hv": 0.527,
+        "regret_time": 0.9,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 18.0,
+        "intake_index": 0.5573,
+        "hv": 0.527,
+        "regret_time": 0.9,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 17.1,
+        "intake_index": 0.6308,
+        "hv": 0.1822,
+        "regret_time": 0.0,
+        "regret_eu": 0.0735,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 18.0,
+        "intake_index": 0.5573,
+        "hv": 0.527,
+        "regret_time": 0.9,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.5,
+        "intake_index": 0.6595,
+        "hv": 0.0,
+        "regret_time": -2.6,
+        "regret_eu": 0.1022,
+        "pref_v1": false
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6006,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6006,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6006,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6006,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6006,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.6006,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "frontier_size": 2,
+      "n_feasible": 2,
+      "A_shortest": {
+        "route_id": "drive_3",
+        "duration_minutes": 18.1,
+        "intake_index": 0.5617,
+        "hv": 0.0,
+        "regret_time": -3.2,
+        "regret_eu": 0.083,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.4787,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.4787,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.4787,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.4787,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.4787,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": true
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "frontier_size": 6,
+      "n_feasible": 7,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.0,
+        "intake_index": 0.6391,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0988,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_3",
+        "duration_minutes": 17.5,
+        "intake_index": 0.5403,
+        "hv": 0.5513,
+        "regret_time": 3.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 17.5,
+        "intake_index": 0.5403,
+        "hv": 0.5513,
+        "regret_time": 3.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 16.6,
+        "intake_index": 0.6127,
+        "hv": 0.1781,
+        "regret_time": 2.6,
+        "regret_eu": 0.0724,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_3",
+        "duration_minutes": 17.5,
+        "intake_index": 0.5403,
+        "hv": 0.5513,
+        "regret_time": 3.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.0,
+        "intake_index": 0.6391,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0988,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "frontier_size": 4,
+      "n_feasible": 7,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 13.8,
+        "intake_index": 0.6261,
+        "hv": 0.4251,
+        "regret_time": 0.0,
+        "regret_eu": 0.0262,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_3",
+        "duration_minutes": 17.4,
+        "intake_index": 0.562,
+        "hv": 0.55,
+        "regret_time": 3.6,
+        "regret_eu": -0.0379,
+        "pref_v1": false
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 13.8,
+        "intake_index": 0.6261,
+        "hv": 0.4251,
+        "regret_time": 0.0,
+        "regret_eu": 0.0262,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 13.8,
+        "intake_index": 0.6261,
+        "hv": 0.4251,
+        "regret_time": 0.0,
+        "regret_eu": 0.0262,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 15.1,
+        "intake_index": 0.5999,
+        "hv": 0.5528,
+        "regret_time": 1.3,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 13.8,
+        "intake_index": 0.6261,
+        "hv": 0.4251,
+        "regret_time": 0.0,
+        "regret_eu": 0.0262,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "frontier_size": 4,
+      "n_feasible": 7,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.1,
+        "intake_index": 0.6414,
+        "hv": 0.4527,
+        "regret_time": 0.0,
+        "regret_eu": 0.0665,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_3",
+        "duration_minutes": 17.8,
+        "intake_index": 0.5749,
+        "hv": 0.5256,
+        "regret_time": 3.7,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.1,
+        "intake_index": 0.6414,
+        "hv": 0.4527,
+        "regret_time": 0.0,
+        "regret_eu": 0.0665,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.1,
+        "intake_index": 0.6414,
+        "hv": 0.4527,
+        "regret_time": 0.0,
+        "regret_eu": 0.0665,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 15.4,
+        "intake_index": 0.6142,
+        "hv": 0.5638,
+        "regret_time": 1.3,
+        "regret_eu": 0.0393,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.1,
+        "intake_index": 0.6414,
+        "hv": 0.4527,
+        "regret_time": 0.0,
+        "regret_eu": 0.0665,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7343,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7343,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7343,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7343,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7343,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7343,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "frontier_size": 4,
+      "n_feasible": 7,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.2,
+        "intake_index": 0.6465,
+        "hv": 0.0,
+        "regret_time": -3.3,
+        "regret_eu": 0.0673,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "drive_3",
+        "duration_minutes": 17.9,
+        "intake_index": 0.5792,
+        "hv": 0.4789,
+        "regret_time": 0.4,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.2,
+        "intake_index": 0.6465,
+        "hv": 0.0,
+        "regret_time": -3.3,
+        "regret_eu": 0.0673,
+        "pref_v1": false
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.2,
+        "intake_index": 0.6465,
+        "hv": 0.0,
+        "regret_time": -3.3,
+        "regret_eu": 0.0673,
+        "pref_v1": false
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 17.5,
+        "intake_index": 0.5941,
+        "hv": 0.4167,
+        "regret_time": 0.0,
+        "regret_eu": 0.0149,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 14.2,
+        "intake_index": 0.6465,
+        "hv": 0.0,
+        "regret_time": -3.3,
+        "regret_eu": 0.0673,
+        "pref_v1": false
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "frontier_size": 4,
+      "n_feasible": 7,
+      "A_shortest": {
+        "route_id": "drive_0",
+        "duration_minutes": 13.7,
+        "intake_index": 0.621,
+        "hv": 0.4796,
+        "regret_time": 0.0,
+        "regret_eu": 0.0637,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_3",
+        "duration_minutes": 17.2,
+        "intake_index": 0.5573,
+        "hv": 0.5679,
+        "regret_time": 3.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 13.7,
+        "intake_index": 0.621,
+        "hv": 0.4796,
+        "regret_time": 0.0,
+        "regret_eu": 0.0637,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_0",
+        "duration_minutes": 13.7,
+        "intake_index": 0.621,
+        "hv": 0.4796,
+        "regret_time": 0.0,
+        "regret_eu": 0.0637,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_1",
+        "duration_minutes": 14.9,
+        "intake_index": 0.5951,
+        "hv": 0.5888,
+        "regret_time": 1.2,
+        "regret_eu": 0.0378,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_0",
+        "duration_minutes": 13.7,
+        "intake_index": 0.621,
+        "hv": 0.4796,
+        "regret_time": 0.0,
+        "regret_eu": 0.0637,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "frontier_size": 1,
+      "n_feasible": 4,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4641,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4641,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4641,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4641,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4641,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4641,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "frontier_size": 1,
+      "n_feasible": 4,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.4749,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.4749,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.4749,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.4749,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.4749,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.4749,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.9472,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.9472,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.9472,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.9472,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.9472,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.9472,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "frontier_size": 2,
+      "n_feasible": 4,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.9,
+        "intake_index": 0.4785,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.9,
+        "intake_index": 0.4785,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.9,
+        "intake_index": 0.4785,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.9,
+        "intake_index": 0.4785,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.9,
+        "intake_index": 0.4785,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.9,
+        "intake_index": 0.4785,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "frontier_size": 1,
+      "n_feasible": 4,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4605,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4605,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4605,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4605,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4605,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4605,
+        "hv": 1.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.2,
+        "intake_index": 0.3672,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.2,
+        "intake_index": 0.3672,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.2,
+        "intake_index": 0.3672,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.2,
+        "intake_index": 0.3672,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.2,
+        "intake_index": 0.3672,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.2,
+        "intake_index": 0.3672,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "frontier_size": 2,
+      "n_feasible": 2,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 38.5,
+        "intake_index": 0.4782,
+        "hv": 0.0,
+        "regret_time": -10.5,
+        "regret_eu": 0.0828,
+        "pref_v1": false
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 49.0,
+        "intake_index": 0.3954,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 38.5,
+        "intake_index": 0.4782,
+        "hv": 0.0,
+        "regret_time": -10.5,
+        "regret_eu": 0.0828,
+        "pref_v1": false
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 49.0,
+        "intake_index": 0.3954,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 38.5,
+        "intake_index": 0.4782,
+        "hv": 0.0,
+        "regret_time": -10.5,
+        "regret_eu": 0.0828,
+        "pref_v1": false
+      },
+      "D_zhikan": {
+        "route_id": "drive_2",
+        "duration_minutes": 38.5,
+        "intake_index": 0.4782,
+        "hv": 0.0,
+        "regret_time": -10.5,
+        "regret_eu": 0.0828,
+        "pref_v1": false
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 51.9,
+        "intake_index": 0.4412,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 51.9,
+        "intake_index": 0.4412,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 51.9,
+        "intake_index": 0.4412,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 51.9,
+        "intake_index": 0.4412,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 51.9,
+        "intake_index": 0.4412,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 51.9,
+        "intake_index": 0.4412,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "frontier_size": 1,
+      "n_feasible": 1,
+      "A_shortest": {
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.2931,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.2931,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.2931,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.2931,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.2931,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.2931,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": false
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "frontier_size": 2,
+      "n_feasible": 2,
+      "A_shortest": {
+        "route_id": "drive_2",
+        "duration_minutes": 37.2,
+        "intake_index": 0.4619,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0871,
+        "pref_v1": true
+      },
+      "B_lowest": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.7,
+        "intake_index": 0.3748,
+        "hv": 0.0,
+        "regret_time": 10.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "C_weighted_tuned": {
+        "route_id": "drive_2",
+        "duration_minutes": 37.2,
+        "intake_index": 0.4619,
+        "hv": 0.0,
+        "regret_time": 0.0,
+        "regret_eu": 0.0871,
+        "pref_v1": true
+      },
+      "E_epsilon_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.7,
+        "intake_index": 0.3748,
+        "hv": 0.0,
+        "regret_time": 10.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "F_tchebycheff_tuned": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.7,
+        "intake_index": 0.3748,
+        "hv": 0.0,
+        "regret_time": 10.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_zhikan": {
+        "route_id": "transit_0",
+        "duration_minutes": 47.7,
+        "intake_index": 0.3748,
+        "hv": 0.0,
+        "regret_time": 10.5,
+        "regret_eu": 0.0,
+        "pref_v1": true
+      },
+      "D_differs_from_A": true
+    }
+  ]
+}

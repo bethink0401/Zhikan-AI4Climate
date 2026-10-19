@@ -1,0 +1,149 @@
+{
+  "agent": "TrafficAgent",
+  "runs": [
+    {
+      "day": "2023-08-07",
+      "slot": "morning_peak",
+      "status": "success",
+      "score": 0.7363,
+      "heavy_pct": 59.6
+    },
+    {
+      "day": "2023-08-07",
+      "slot": "midday_off",
+      "status": "success",
+      "score": 0.6275,
+      "heavy_pct": 40.1
+    },
+    {
+      "day": "2023-08-07",
+      "slot": "evening",
+      "status": "success",
+      "score": 0.5814,
+      "heavy_pct": 31.2
+    },
+    {
+      "day": "2023-08-08",
+      "slot": "morning_peak",
+      "status": "success",
+      "score": 0.7363,
+      "heavy_pct": 59.6
+    },
+    {
+      "day": "2023-08-08",
+      "slot": "midday_off",
+      "status": "success",
+      "score": 0.6275,
+      "heavy_pct": 40.1
+    },
+    {
+      "day": "2023-08-08",
+      "slot": "evening",
+      "status": "success",
+      "score": 0.5814,
+      "heavy_pct": 31.2
+    },
+    {
+      "day": "2023-08-09",
+      "slot": "morning_peak",
+      "status": "success",
+      "score": 0.7363,
+      "heavy_pct": 59.6
+    },
+    {
+      "day": "2023-08-09",
+      "slot": "midday_off",
+      "status": "success",
+      "score": 0.6275,
+      "heavy_pct": 40.1
+    },
+    {
+      "day": "2023-08-09",
+      "slot": "evening",
+      "status": "success",
+      "score": 0.5814,
+      "heavy_pct": 31.2
+    },
+    {
+      "day": "2023-08-10",
+      "slot": "morning_peak",
+      "status": "success",
+      "score": 0.7363,
+      "heavy_pct": 59.6
+    },
+    {
+      "day": "2023-08-10",
+      "slot": "midday_off",
+      "status": "success",
+      "score": 0.6275,
+      "heavy_pct": 40.1
+    },
+    {
+      "day": "2023-08-10",
+      "slot": "evening",
+      "status": "success",
+      "score": 0.5814,
+      "heavy_pct": 31.2
+    },
+    {
+      "day": "2023-08-11",
+      "slot": "morning_peak",
+      "status": "success",
+      "score": 0.7363,
+      "heavy_pct": 59.6
+    },
+    {
+      "day": "2023-08-11",
+      "slot": "midday_off",
+      "status": "success",
+      "score": 0.6275,
+      "heavy_pct": 40.1
+    },
+    {
+      "day": "2023-08-11",
+      "slot": "evening",
+      "status": "success",
+      "score": 0.5814,
+      "heavy_pct": 31.2
+    }
+  ],
+  "slot_means": {
+    "morning_peak": {
+      "n": 5,
+      "mean": 0.7363,
+      "median": 0.7363,
+      "min": 0.7363,
+      "max": 0.7363
+    },
+    "midday_off": {
+      "n": 5,
+      "mean": 0.6275,
+      "median": 0.6275,
+      "min": 0.6275,
+      "max": 0.6275
+    },
+    "evening": {
+      "n": 5,
+      "mean": 0.5814,
+      "median": 0.5814,
+      "min": 0.5814,
+      "max": 0.5814
+    }
+  },
+  "peak_vs_midday_gap_pct": 17.3,
+  "peak_vs_evening_gap_pct": 26.6,
+  "heavy_vehicle_share_pct": {
+    "n": 15,
+    "mean": 43.6333,
+    "median": 40.1,
+    "min": 31.2,
+    "max": 59.6
+  },
+  "latency_ms": {
+    "n": 15,
+    "mean": 28.4689,
+    "median": 16.153,
+    "min": 15.5241,
+    "max": 197.4859
+  }
+}

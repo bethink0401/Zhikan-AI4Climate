@@ -1,0 +1,304 @@
+/**
+ * 出行建议与路线推荐页的视觉规范。
+ *
+ * 所有规则都挂在 `.tf-scope` 下、类名统一 `tf-` 前缀，因此只作用于这一页，
+ * 也不会被全局的深色媒体查询带偏——色值在这里显式写死。
+ */
+
+.tf-scope {
+  /* 面 */
+  --tf-bg: #f7f8fa;
+  --tf-card: #ffffff;
+  --tf-soft: #f8f9fb;
+  --tf-border: #eceef2;
+  --tf-border-strong: #dfe3ea;
+
+  /* 字 */
+  --tf-text: #1f2733;
+  --tf-text-2: #5c6675;
+  --tf-text-3: #98a1ae;
+
+  /* 语义色 */
+  --tf-green: #12a06b;
+  --tf-green-soft: #e7f6f0;
+  --tf-red: #e04a5f;
+  --tf-red-soft: #fdeef1;
+  --tf-amber: #d98613;
+  --tf-amber-soft: #fdf3e1;
+  --tf-blue: #2f6fed;
+  --tf-blue-soft: #eaf1fe;
+
+  --tf-radius: 12px;
+  --tf-radius-sm: 8px;
+  --tf-shadow: 0 1px 3px rgba(23, 32, 48, 0.05);
+
+  /**
+   * 地图 + 方案评级这一行的固定高度。
+   * 高度写死是刻意的：候选路线条数会变，如果让内容撑高，
+   * 地图会跟着一起变长，比例就乱了。
+   */
+  --tf-main-h: 560px;
+
+  /* 数字统一等宽，纵向才能对齐 */
+  --tf-num: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  color: var(--tf-text);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* ── 卡片 ───────────────────────────────────────────────────────────── */
+
+.tf-scope .tf-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--tf-card);
+  border: 1px solid var(--tf-border);
+  border-radius: var(--tf-radius);
+  box-shadow: var(--tf-shadow);
+  overflow: hidden;
+}
+
+.tf-scope .tf-hd {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--tf-border);
+}
+
+.tf-scope .tf-hd-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--tf-blue);
+}
+
+.tf-scope .tf-hd-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tf-text);
+  white-space: nowrap;
+}
+
+.tf-scope .tf-hd-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.tf-scope .tf-body {
+  flex: 1;
+  min-height: 0;
+  padding: 14px 16px;
+}
+
+.tf-scope .tf-foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding: 10px 16px;
+  border-top: 1px solid var(--tf-border);
+  font-size: 12px;
+  color: var(--tf-text-2);
+}
+
+.tf-scope .tf-foot-text {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tf-scope .tf-foot-right {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* ── 胶囊 ───────────────────────────────────────────────────────────── */
+
+.tf-scope .tf-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--tf-soft);
+  color: var(--tf-text-2);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tf-scope .tf-pill.is-green { background: var(--tf-green-soft); color: var(--tf-green); }
+.tf-scope .tf-pill.is-red { background: var(--tf-red-soft); color: var(--tf-red); }
+.tf-scope .tf-pill.is-amber { background: var(--tf-amber-soft); color: var(--tf-amber); }
+.tf-scope .tf-pill.is-blue { background: var(--tf-blue-soft); color: var(--tf-blue); }
+
+/* ── 软底盒 ─────────────────────────────────────────────────────────── */
+
+.tf-scope .tf-softbox {
+  background: var(--tf-soft);
+  border-radius: var(--tf-radius-sm);
+  padding: 10px 12px;
+  min-width: 0;
+}
+
+.tf-scope .tf-softbox-label {
+  display: block;
+  font-size: 12px;
+  color: var(--tf-text-3);
+}
+
+.tf-scope .tf-softbox-value {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tf-text);
+}
+
+/* ── 文字层级 ───────────────────────────────────────────────────────── */
+
+.tf-scope .tf-label {
+  font-size: 12px;
+  color: var(--tf-text-3);
+}
+
+.tf-scope .tf-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--tf-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.tf-scope .tf-mono {
+  font-family: var(--tf-num);
+  letter-spacing: -0.2px;
+}
+
+.tf-scope .tf-tone-green { color: var(--tf-green); }
+.tf-scope .tf-tone-red { color: var(--tf-red); }
+.tf-scope .tf-tone-amber { color: var(--tf-amber); }
+.tf-scope .tf-tone-blue { color: var(--tf-blue); }
+.tf-scope .tf-tone-muted { color: var(--tf-text-3); }
+
+.tf-scope .tf-tag-text {
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: 3px;
+}
+
+/* ── 胶囊按钮 ───────────────────────────────────────────────────────── */
+
+/* 圆角矩形，与卡片用同一套圆角语言（不用胶囊形） */
+.tf-scope .tf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 12px;
+  border: 1px solid var(--tf-border-strong);
+  border-radius: var(--tf-radius-sm);
+  background: var(--tf-card);
+  color: var(--tf-text-2);
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.tf-scope .tf-btn:hover:not(:disabled) {
+  border-color: var(--tf-blue);
+  color: var(--tf-blue);
+}
+
+.tf-scope .tf-btn.is-primary {
+  border-color: var(--tf-blue);
+  background: var(--tf-blue);
+  color: #fff;
+}
+
+/* 起终点被改过、需要重算时的提示态 */
+.tf-scope .tf-btn.is-attention {
+  border-color: var(--tf-amber);
+  color: var(--tf-amber);
+  background: var(--tf-amber-soft);
+}
+
+.tf-scope .tf-btn.is-attention:hover:not(:disabled) {
+  border-color: var(--tf-amber);
+  color: var(--tf-amber);
+}
+
+.tf-scope .tf-btn.is-primary:hover:not(:disabled) {
+  background: #2560d8;
+  border-color: #2560d8;
+  color: #fff;
+}
+
+.tf-scope .tf-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── 分段控件 ───────────────────────────────────────────────────────── */
+
+.tf-scope .tf-seg {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  border-radius: 7px;
+  background: var(--tf-soft);
+}
+
+.tf-scope .tf-seg-item {
+  padding: 4px 11px;
+  border-radius: 5px;
+  color: var(--tf-text-2);
+  font-size: 12px;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.tf-scope .tf-seg-item:hover {
+  color: var(--tf-text);
+}
+
+.tf-scope .tf-seg-item.is-active {
+  background: var(--tf-blue);
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ── 进度条 ─────────────────────────────────────────────────────────── */
+
+.tf-scope .tf-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: #eceef2;
+  overflow: hidden;
+}
+
+.tf-scope .tf-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+/* ── 链接 ───────────────────────────────────────────────────────────── */
+
+.tf-scope .tf-link {
+  color: var(--tf-blue);
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tf-scope .tf-link:hover {
+  text-decoration: underline;
+}

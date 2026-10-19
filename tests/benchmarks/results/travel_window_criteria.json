@@ -1,0 +1,120 @@
+{
+  "design": {
+    "window": [
+      "2023-08-15 08:00:00",
+      "2023-08-15 16:00:00"
+    ],
+    "cases": [
+      "mongkok_to_prince_edward",
+      "cwb_to_wanchai"
+    ],
+    "profiles": [
+      "commuter",
+      "runner",
+      "elderly",
+      "parent_with_child"
+    ],
+    "note": "每个时段均以统一效用对候选路线×方式重新评分（含随小时拥堵变化的驾车耗时）；本实验对比『吸入当量最小』与『统一效用最小』两种口径选出的出发时段"
+  },
+  "combinations": 8,
+  "criteria_agree_rate": "8/8",
+  "recommendation_changes_with_time_rate": "0/8",
+  "rows": [
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "points": 8,
+      "dose_optimal_window": "2023-08-15 15:00:00+08:00",
+      "dose_optimal_eu": 0.1807,
+      "utility_optimal_window": "2023-08-15 15:00:00+08:00",
+      "utility_optimal_minutes": 1.19,
+      "utility_optimal_mode": "驾车",
+      "criteria_agree": true,
+      "recommendation_changes_with_time": false
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "points": 8,
+      "dose_optimal_window": "2023-08-15 15:00:00+08:00",
+      "dose_optimal_eu": 0.1863,
+      "utility_optimal_window": "2023-08-15 15:00:00+08:00",
+      "utility_optimal_minutes": 6.94,
+      "utility_optimal_mode": "驾车",
+      "criteria_agree": true,
+      "recommendation_changes_with_time": false
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "points": 8,
+      "dose_optimal_window": "2023-08-15 15:00:00+08:00",
+      "dose_optimal_eu": 0.1862,
+      "utility_optimal_window": "2023-08-15 15:00:00+08:00",
+      "utility_optimal_minutes": 3.99,
+      "utility_optimal_mode": "驾车",
+      "criteria_agree": true,
+      "recommendation_changes_with_time": false
+    },
+    {
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "points": 8,
+      "dose_optimal_window": "2023-08-15 15:00:00+08:00",
+      "dose_optimal_eu": 0.1858,
+      "utility_optimal_window": "2023-08-15 15:00:00+08:00",
+      "utility_optimal_minutes": 1.13,
+      "utility_optimal_mode": "驾车",
+      "criteria_agree": true,
+      "recommendation_changes_with_time": false
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "points": 8,
+      "dose_optimal_window": "2023-08-15 08:00:00+08:00",
+      "dose_optimal_eu": 0.0,
+      "utility_optimal_window": "2023-08-15 08:00:00+08:00",
+      "utility_optimal_minutes": 3.94,
+      "utility_optimal_mode": "驾车",
+      "criteria_agree": true,
+      "recommendation_changes_with_time": false
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "points": 8,
+      "dose_optimal_window": "2023-08-15 08:00:00+08:00",
+      "dose_optimal_eu": 0.0,
+      "utility_optimal_window": "2023-08-15 08:00:00+08:00",
+      "utility_optimal_minutes": 8.98,
+      "utility_optimal_mode": "驾车",
+      "criteria_agree": true,
+      "recommendation_changes_with_time": false
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "points": 8,
+      "dose_optimal_window": "2023-08-15 08:00:00+08:00",
+      "dose_optimal_eu": 0.0,
+      "utility_optimal_window": "2023-08-15 08:00:00+08:00",
+      "utility_optimal_minutes": 6.87,
+      "utility_optimal_mode": "驾车",
+      "criteria_agree": true,
+      "recommendation_changes_with_time": false
+    },
+    {
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "points": 8,
+      "dose_optimal_window": "2023-08-15 08:00:00+08:00",
+      "dose_optimal_eu": 0.0,
+      "utility_optimal_window": "2023-08-15 08:00:00+08:00",
+      "utility_optimal_minutes": 3.76,
+      "utility_optimal_mode": "驾车",
+      "criteria_agree": true,
+      "recommendation_changes_with_time": false
+    }
+  ]
+}

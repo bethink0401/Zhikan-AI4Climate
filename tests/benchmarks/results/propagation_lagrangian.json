@@ -1,0 +1,1806 @@
+{
+  "design": {
+    "note": "外部有效性验证：拉格朗日随机游走粒子参考（6000 粒/时、dt=15s、K=50 m²/s、衰减常数同欧拉参考）替代欧拉差分参考生成风险标签；系统参数 = V7 冻结值，C 阈值仅对粒子参考按验证集同面积预算重匹配。",
+    "frozen_params": {
+      "A_radius_km": 1.0,
+      "B_l0_km": 1.5,
+      "B_k_km_per_ms": 0.6,
+      "C_threshold": 0.06,
+      "C_threshold_iou_optimal": 0.06,
+      "B_validation_area_km2": 4.601,
+      "validation_mean_iou": {
+        "A": 0.1483,
+        "B": 0.35,
+        "C_budget_matched": 0.3983,
+        "C_iou_optimal": 0.3983
+      }
+    },
+    "c_threshold_rematched": 0.06
+  },
+  "validation_summary": {
+    "n": 20,
+    "methods": {
+      "A": {
+        "mean_iou": 0.185,
+        "mean_area_km2": 3.15,
+        "mean_poi_precision": 0.2484,
+        "mean_poi_recall": 0.5302,
+        "by_category": {
+          "stable": 0.1198,
+          "veering": 0.2169,
+          "cross_zero": 0.1773,
+          "calm": 0.2464,
+          "gust": 0.1645
+        }
+      },
+      "B": {
+        "mean_iou": 0.414,
+        "mean_area_km2": 4.601,
+        "mean_poi_precision": 0.58,
+        "mean_poi_recall": 0.9098,
+        "by_category": {
+          "stable": 0.3693,
+          "veering": 0.288,
+          "cross_zero": 0.3431,
+          "calm": 0.6061,
+          "gust": 0.4633
+        }
+      },
+      "C": {
+        "mean_iou": 0.4309,
+        "mean_area_km2": 5.028,
+        "mean_poi_precision": 0.4649,
+        "mean_poi_recall": 0.9698,
+        "by_category": {
+          "stable": 0.5815,
+          "veering": 0.2866,
+          "cross_zero": 0.3292,
+          "calm": 0.4463,
+          "gust": 0.5108
+        }
+      }
+    }
+  },
+  "test_summary": {
+    "n": 40,
+    "methods": {
+      "A": {
+        "mean_iou": 0.1887,
+        "mean_area_km2": 3.15,
+        "mean_poi_precision": 0.2516,
+        "mean_poi_recall": 0.5256,
+        "by_category": {
+          "stable": 0.1311,
+          "veering": 0.207,
+          "cross_zero": 0.1787,
+          "calm": 0.2678,
+          "gust": 0.1586
+        }
+      },
+      "B": {
+        "mean_iou": 0.4003,
+        "mean_area_km2": 4.569,
+        "mean_poi_precision": 0.5775,
+        "mean_poi_recall": 0.8909,
+        "by_category": {
+          "stable": 0.3785,
+          "veering": 0.2954,
+          "cross_zero": 0.3284,
+          "calm": 0.5554,
+          "gust": 0.4438
+        }
+      },
+      "C": {
+        "mean_iou": 0.4497,
+        "mean_area_km2": 5.003,
+        "mean_poi_precision": 0.4775,
+        "mean_poi_recall": 0.981,
+        "by_category": {
+          "stable": 0.6622,
+          "veering": 0.3183,
+          "cross_zero": 0.3158,
+          "calm": 0.4543,
+          "gust": 0.498
+        }
+      }
+    }
+  },
+  "iou_diff_test": {
+    "C_minus_B": {
+      "mean_diff": 0.0494,
+      "ci95": [
+        0.0069,
+        0.0945
+      ]
+    },
+    "C_minus_A": {
+      "mean_diff": 0.2611,
+      "ci95": [
+        0.2097,
+        0.3143
+      ]
+    }
+  },
+  "per_scenario": [
+    {
+      "scenario_id": "stable_00",
+      "category": "stable",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1204,
+          "area_km2": 3.15,
+          "ref_area_km2": 3.18,
+          "poi_precision": 0.2516,
+          "poi_recall": 0.2549
+        },
+        "B": {
+          "iou": 0.3487,
+          "area_km2": 6.49,
+          "ref_area_km2": 3.18,
+          "poi_precision": 0.5581,
+          "poi_recall": 0.9739
+        },
+        "C": {
+          "iou": 0.5516,
+          "area_km2": 3.29,
+          "ref_area_km2": 3.18,
+          "poi_precision": 0.7056,
+          "poi_recall": 0.9869
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_01",
+      "category": "stable",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1184,
+          "area_km2": 3.15,
+          "ref_area_km2": 3.37,
+          "poi_precision": 0.1613,
+          "poi_recall": 0.3676
+        },
+        "B": {
+          "iou": 0.3466,
+          "area_km2": 5.76,
+          "ref_area_km2": 3.37,
+          "poi_precision": 0.3829,
+          "poi_recall": 0.9853
+        },
+        "C": {
+          "iou": 0.5911,
+          "area_km2": 3.79,
+          "ref_area_km2": 3.37,
+          "poi_precision": 0.5038,
+          "poi_recall": 0.9706
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_02",
+      "category": "stable",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1202,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.72,
+          "poi_precision": 0.1355,
+          "poi_recall": 0.913
+        },
+        "B": {
+          "iou": 0.3908,
+          "area_km2": 6.32,
+          "ref_area_km2": 2.72,
+          "poi_precision": 0.4182,
+          "poi_recall": 1.0
+        },
+        "C": {
+          "iou": 0.5874,
+          "area_km2": 3.82,
+          "ref_area_km2": 2.72,
+          "poi_precision": 0.3239,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_03",
+      "category": "stable",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1202,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.72,
+          "poi_precision": 0.1355,
+          "poi_recall": 0.913
+        },
+        "B": {
+          "iou": 0.3912,
+          "area_km2": 6.1,
+          "ref_area_km2": 2.72,
+          "poi_precision": 0.4182,
+          "poi_recall": 1.0
+        },
+        "C": {
+          "iou": 0.5957,
+          "area_km2": 3.95,
+          "ref_area_km2": 2.72,
+          "poi_precision": 0.3239,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_04",
+      "category": "stable",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.118,
+          "area_km2": 3.15,
+          "ref_area_km2": 3.2,
+          "poi_precision": 0.1484,
+          "poi_recall": 0.4792
+        },
+        "B": {
+          "iou": 0.3486,
+          "area_km2": 6.51,
+          "ref_area_km2": 3.2,
+          "poi_precision": 0.2588,
+          "poi_recall": 0.9167
+        },
+        "C": {
+          "iou": 0.5701,
+          "area_km2": 3.52,
+          "ref_area_km2": 3.2,
+          "poi_precision": 0.4312,
+          "poi_recall": 0.9792
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_05",
+      "category": "stable",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1257,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.49,
+          "poi_precision": 0.1806,
+          "poi_recall": 0.4667
+        },
+        "B": {
+          "iou": 0.3871,
+          "area_km2": 5.25,
+          "ref_area_km2": 2.49,
+          "poi_precision": 0.5179,
+          "poi_recall": 0.9667
+        },
+        "C": {
+          "iou": 0.6866,
+          "area_km2": 3.16,
+          "ref_area_km2": 2.49,
+          "poi_precision": 0.5505,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_06",
+      "category": "stable",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1192,
+          "area_km2": 3.15,
+          "ref_area_km2": 3.14,
+          "poi_precision": 0.2645,
+          "poi_recall": 0.3333
+        },
+        "B": {
+          "iou": 0.3426,
+          "area_km2": 5.99,
+          "ref_area_km2": 3.14,
+          "poi_precision": 0.4403,
+          "poi_recall": 0.8699
+        },
+        "C": {
+          "iou": 0.6078,
+          "area_km2": 3.42,
+          "ref_area_km2": 3.14,
+          "poi_precision": 0.7483,
+          "poi_recall": 0.8943
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_07",
+      "category": "stable",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.128,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.49,
+          "poi_precision": 0.1548,
+          "poi_recall": 0.6154
+        },
+        "B": {
+          "iou": 0.3955,
+          "area_km2": 5.66,
+          "ref_area_km2": 2.49,
+          "poi_precision": 0.5938,
+          "poi_recall": 0.9744
+        },
+        "C": {
+          "iou": 0.653,
+          "area_km2": 3.56,
+          "ref_area_km2": 2.49,
+          "poi_precision": 0.4021,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_08",
+      "category": "stable",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1327,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.4,
+          "poi_precision": 0.1935,
+          "poi_recall": 0.4762
+        },
+        "B": {
+          "iou": 0.3748,
+          "area_km2": 6.22,
+          "ref_area_km2": 2.4,
+          "poi_precision": 0.5214,
+          "poi_recall": 0.9683
+        },
+        "C": {
+          "iou": 0.6585,
+          "area_km2": 3.04,
+          "ref_area_km2": 2.4,
+          "poi_precision": 0.5478,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_09",
+      "category": "stable",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1469,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.55,
+          "poi_precision": 0.2581,
+          "poi_recall": 0.4
+        },
+        "B": {
+          "iou": 0.4065,
+          "area_km2": 5.27,
+          "ref_area_km2": 2.55,
+          "poi_precision": 0.3918,
+          "poi_recall": 0.96
+        },
+        "C": {
+          "iou": 0.7418,
+          "area_km2": 3.32,
+          "ref_area_km2": 2.55,
+          "poi_precision": 0.7353,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_10",
+      "category": "stable",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1346,
+          "area_km2": 3.15,
+          "ref_area_km2": 3.34,
+          "poi_precision": 0.1935,
+          "poi_recall": 0.2913
+        },
+        "B": {
+          "iou": 0.362,
+          "area_km2": 4.75,
+          "ref_area_km2": 3.34,
+          "poi_precision": 0.5153,
+          "poi_recall": 0.8155
+        },
+        "C": {
+          "iou": 0.6818,
+          "area_km2": 4.43,
+          "ref_area_km2": 3.34,
+          "poi_precision": 0.6108,
+          "poi_recall": 0.9903
+        }
+      }
+    },
+    {
+      "scenario_id": "stable_11",
+      "category": "stable",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1434,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.59,
+          "poi_precision": 0.2129,
+          "poi_recall": 0.2845
+        },
+        "B": {
+          "iou": 0.4107,
+          "area_km2": 5.55,
+          "ref_area_km2": 2.59,
+          "poi_precision": 0.4784,
+          "poi_recall": 0.9569
+        },
+        "C": {
+          "iou": 0.6981,
+          "area_km2": 3.71,
+          "ref_area_km2": 2.59,
+          "poi_precision": 0.7073,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_00",
+      "category": "veering",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.267,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.88,
+          "poi_precision": 0.3935,
+          "poi_recall": 0.5922
+        },
+        "B": {
+          "iou": 0.2285,
+          "area_km2": 5.54,
+          "ref_area_km2": 1.88,
+          "poi_precision": 0.3333,
+          "poi_recall": 0.835
+        },
+        "C": {
+          "iou": 0.291,
+          "area_km2": 6.15,
+          "ref_area_km2": 1.88,
+          "poi_precision": 0.3527,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_01",
+      "category": "veering",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1944,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.01,
+          "poi_precision": 0.2387,
+          "poi_recall": 0.5968
+        },
+        "B": {
+          "iou": 0.2993,
+          "area_km2": 5.24,
+          "ref_area_km2": 2.01,
+          "poi_precision": 0.7179,
+          "poi_recall": 0.9032
+        },
+        "C": {
+          "iou": 0.2849,
+          "area_km2": 6.56,
+          "ref_area_km2": 2.01,
+          "poi_precision": 0.3949,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_02",
+      "category": "veering",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.2086,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.89,
+          "poi_precision": 0.2194,
+          "poi_recall": 0.9189
+        },
+        "B": {
+          "iou": 0.278,
+          "area_km2": 5.19,
+          "ref_area_km2": 1.89,
+          "poi_precision": 0.6809,
+          "poi_recall": 0.8649
+        },
+        "C": {
+          "iou": 0.2755,
+          "area_km2": 6.49,
+          "ref_area_km2": 1.89,
+          "poi_precision": 0.2761,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_03",
+      "category": "veering",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1977,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.0,
+          "poi_precision": 0.2194,
+          "poi_recall": 0.5152
+        },
+        "B": {
+          "iou": 0.3462,
+          "area_km2": 4.96,
+          "ref_area_km2": 2.0,
+          "poi_precision": 0.3576,
+          "poi_recall": 0.8939
+        },
+        "C": {
+          "iou": 0.2951,
+          "area_km2": 6.69,
+          "ref_area_km2": 2.0,
+          "poi_precision": 0.292,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_04",
+      "category": "veering",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.2494,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.86,
+          "poi_precision": 0.3806,
+          "poi_recall": 0.6082
+        },
+        "B": {
+          "iou": 0.2673,
+          "area_km2": 4.92,
+          "ref_area_km2": 1.86,
+          "poi_precision": 0.368,
+          "poi_recall": 0.8763
+        },
+        "C": {
+          "iou": 0.2576,
+          "area_km2": 6.78,
+          "ref_area_km2": 1.86,
+          "poi_precision": 0.3745,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_05",
+      "category": "veering",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1848,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.3,
+          "poi_precision": 0.2903,
+          "poi_recall": 0.3879
+        },
+        "B": {
+          "iou": 0.3674,
+          "area_km2": 5.85,
+          "ref_area_km2": 2.3,
+          "poi_precision": 0.4564,
+          "poi_recall": 0.9483
+        },
+        "C": {
+          "iou": 0.4259,
+          "area_km2": 5.4,
+          "ref_area_km2": 2.3,
+          "poi_precision": 0.4979,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_06",
+      "category": "veering",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.244,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.05,
+          "poi_precision": 0.2645,
+          "poi_recall": 0.5256
+        },
+        "B": {
+          "iou": 0.2279,
+          "area_km2": 5.17,
+          "ref_area_km2": 2.05,
+          "poi_precision": 0.5242,
+          "poi_recall": 0.8333
+        },
+        "C": {
+          "iou": 0.2809,
+          "area_km2": 6.66,
+          "ref_area_km2": 2.05,
+          "poi_precision": 0.3615,
+          "poi_recall": 0.9872
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_07",
+      "category": "veering",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.217,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.01,
+          "poi_precision": 0.2516,
+          "poi_recall": 0.661
+        },
+        "B": {
+          "iou": 0.2602,
+          "area_km2": 5.4,
+          "ref_area_km2": 2.01,
+          "poi_precision": 0.6538,
+          "poi_recall": 0.8644
+        },
+        "C": {
+          "iou": 0.2886,
+          "area_km2": 6.34,
+          "ref_area_km2": 2.01,
+          "poi_precision": 0.3711,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_08",
+      "category": "veering",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1946,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.13,
+          "poi_precision": 0.2129,
+          "poi_recall": 0.8684
+        },
+        "B": {
+          "iou": 0.3164,
+          "area_km2": 5.4,
+          "ref_area_km2": 2.13,
+          "poi_precision": 0.75,
+          "poi_recall": 0.8684
+        },
+        "C": {
+          "iou": 0.3092,
+          "area_km2": 6.38,
+          "ref_area_km2": 2.13,
+          "poi_precision": 0.3089,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_09",
+      "category": "veering",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1914,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.14,
+          "poi_precision": 0.2129,
+          "poi_recall": 0.4521
+        },
+        "B": {
+          "iou": 0.3357,
+          "area_km2": 5.26,
+          "ref_area_km2": 2.14,
+          "poi_precision": 0.4076,
+          "poi_recall": 0.8767
+        },
+        "C": {
+          "iou": 0.308,
+          "area_km2": 6.48,
+          "ref_area_km2": 2.14,
+          "poi_precision": 0.338,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_10",
+      "category": "veering",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.2028,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.07,
+          "poi_precision": 0.2194,
+          "poi_recall": 0.8095
+        },
+        "B": {
+          "iou": 0.2679,
+          "area_km2": 5.36,
+          "ref_area_km2": 2.07,
+          "poi_precision": 0.7442,
+          "poi_recall": 0.7619
+        },
+        "C": {
+          "iou": 0.2977,
+          "area_km2": 6.3,
+          "ref_area_km2": 2.07,
+          "poi_precision": 0.3043,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "veering_11",
+      "category": "veering",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.172,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.3,
+          "poi_precision": 0.2065,
+          "poi_recall": 0.4923
+        },
+        "B": {
+          "iou": 0.3205,
+          "area_km2": 5.94,
+          "ref_area_km2": 2.3,
+          "poi_precision": 0.3488,
+          "poi_recall": 0.9231
+        },
+        "C": {
+          "iou": 0.3783,
+          "area_km2": 5.57,
+          "ref_area_km2": 2.3,
+          "poi_precision": 0.3218,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_00",
+      "category": "cross_zero",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1743,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.24,
+          "poi_precision": 0.271,
+          "poi_recall": 0.4516
+        },
+        "B": {
+          "iou": 0.3528,
+          "area_km2": 4.93,
+          "ref_area_km2": 2.24,
+          "poi_precision": 0.7478,
+          "poi_recall": 0.9247
+        },
+        "C": {
+          "iou": 0.3288,
+          "area_km2": 6.49,
+          "ref_area_km2": 2.24,
+          "poi_precision": 0.5536,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_01",
+      "category": "cross_zero",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1846,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.24,
+          "poi_precision": 0.2452,
+          "poi_recall": 0.4318
+        },
+        "B": {
+          "iou": 0.331,
+          "area_km2": 5.28,
+          "ref_area_km2": 2.24,
+          "poi_precision": 0.7018,
+          "poi_recall": 0.9091
+        },
+        "C": {
+          "iou": 0.3318,
+          "area_km2": 6.31,
+          "ref_area_km2": 2.24,
+          "poi_precision": 0.5029,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_02",
+      "category": "cross_zero",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.182,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.11,
+          "poi_precision": 0.2774,
+          "poi_recall": 0.5
+        },
+        "B": {
+          "iou": 0.3212,
+          "area_km2": 5.13,
+          "ref_area_km2": 2.11,
+          "poi_precision": 0.7075,
+          "poi_recall": 0.8721
+        },
+        "C": {
+          "iou": 0.3106,
+          "area_km2": 6.33,
+          "ref_area_km2": 2.11,
+          "poi_precision": 0.5244,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_03",
+      "category": "cross_zero",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1684,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.4,
+          "poi_precision": 0.2258,
+          "poi_recall": 0.4023
+        },
+        "B": {
+          "iou": 0.3672,
+          "area_km2": 5.01,
+          "ref_area_km2": 2.4,
+          "poi_precision": 0.6412,
+          "poi_recall": 0.9655
+        },
+        "C": {
+          "iou": 0.3457,
+          "area_km2": 6.32,
+          "ref_area_km2": 2.4,
+          "poi_precision": 0.4833,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_04",
+      "category": "cross_zero",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1968,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.02,
+          "poi_precision": 0.2968,
+          "poi_recall": 0.5349
+        },
+        "B": {
+          "iou": 0.3185,
+          "area_km2": 4.81,
+          "ref_area_km2": 2.02,
+          "poi_precision": 0.6847,
+          "poi_recall": 0.8837
+        },
+        "C": {
+          "iou": 0.2699,
+          "area_km2": 6.92,
+          "ref_area_km2": 2.02,
+          "poi_precision": 0.5212,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_05",
+      "category": "cross_zero",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1968,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.14,
+          "poi_precision": 0.2387,
+          "poi_recall": 0.4253
+        },
+        "B": {
+          "iou": 0.3526,
+          "area_km2": 4.65,
+          "ref_area_km2": 2.14,
+          "poi_precision": 0.7018,
+          "poi_recall": 0.9195
+        },
+        "C": {
+          "iou": 0.2944,
+          "area_km2": 7.05,
+          "ref_area_km2": 2.14,
+          "poi_precision": 0.4652,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_06",
+      "category": "cross_zero",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1794,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.24,
+          "poi_precision": 0.2258,
+          "poi_recall": 0.4167
+        },
+        "B": {
+          "iou": 0.3316,
+          "area_km2": 5.27,
+          "ref_area_km2": 2.24,
+          "poi_precision": 0.6279,
+          "poi_recall": 0.9643
+        },
+        "C": {
+          "iou": 0.3251,
+          "area_km2": 6.36,
+          "ref_area_km2": 2.24,
+          "poi_precision": 0.4492,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_07",
+      "category": "cross_zero",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1784,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.2,
+          "poi_precision": 0.2323,
+          "poi_recall": 0.4286
+        },
+        "B": {
+          "iou": 0.3162,
+          "area_km2": 5.46,
+          "ref_area_km2": 2.2,
+          "poi_precision": 0.6724,
+          "poi_recall": 0.9286
+        },
+        "C": {
+          "iou": 0.3249,
+          "area_km2": 6.2,
+          "ref_area_km2": 2.2,
+          "poi_precision": 0.4855,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_08",
+      "category": "cross_zero",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1667,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.17,
+          "poi_precision": 0.2452,
+          "poi_recall": 0.4176
+        },
+        "B": {
+          "iou": 0.3103,
+          "area_km2": 5.81,
+          "ref_area_km2": 2.17,
+          "poi_precision": 0.7521,
+          "poi_recall": 0.967
+        },
+        "C": {
+          "iou": 0.335,
+          "area_km2": 5.76,
+          "ref_area_km2": 2.17,
+          "poi_precision": 0.5353,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_09",
+      "category": "cross_zero",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1804,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.15,
+          "poi_precision": 0.2258,
+          "poi_recall": 0.407
+        },
+        "B": {
+          "iou": 0.3214,
+          "area_km2": 5.21,
+          "ref_area_km2": 2.15,
+          "poi_precision": 0.7043,
+          "poi_recall": 0.9419
+        },
+        "C": {
+          "iou": 0.3102,
+          "area_km2": 6.34,
+          "ref_area_km2": 2.15,
+          "poi_precision": 0.4886,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_10",
+      "category": "cross_zero",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1715,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.11,
+          "poi_precision": 0.2516,
+          "poi_recall": 0.4432
+        },
+        "B": {
+          "iou": 0.3048,
+          "area_km2": 5.51,
+          "ref_area_km2": 2.11,
+          "poi_precision": 0.7265,
+          "poi_recall": 0.9659
+        },
+        "C": {
+          "iou": 0.3178,
+          "area_km2": 6.1,
+          "ref_area_km2": 2.11,
+          "poi_precision": 0.5269,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "cross_zero_11",
+      "category": "cross_zero",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.16,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.36,
+          "poi_precision": 0.2194,
+          "poi_recall": 0.3617
+        },
+        "B": {
+          "iou": 0.3717,
+          "area_km2": 5.02,
+          "ref_area_km2": 2.36,
+          "poi_precision": 0.7541,
+          "poi_recall": 0.9787
+        },
+        "C": {
+          "iou": 0.349,
+          "area_km2": 6.26,
+          "ref_area_km2": 2.36,
+          "poi_precision": 0.5949,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_00",
+      "category": "calm",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.2542,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.08,
+          "poi_precision": 0.3226,
+          "poi_recall": 0.4673
+        },
+        "B": {
+          "iou": 0.6268,
+          "area_km2": 2.41,
+          "ref_area_km2": 2.08,
+          "poi_precision": 0.6309,
+          "poi_recall": 0.8785
+        },
+        "C": {
+          "iou": 0.4353,
+          "area_km2": 2.8,
+          "ref_area_km2": 2.08,
+          "poi_precision": 0.5374,
+          "poi_recall": 0.7383
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_01",
+      "category": "calm",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.245,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.88,
+          "poi_precision": 0.3161,
+          "poi_recall": 0.5052
+        },
+        "B": {
+          "iou": 0.6061,
+          "area_km2": 2.36,
+          "ref_area_km2": 1.88,
+          "poi_precision": 0.8316,
+          "poi_recall": 0.8144
+        },
+        "C": {
+          "iou": 0.4185,
+          "area_km2": 3.34,
+          "ref_area_km2": 1.88,
+          "poi_precision": 0.4938,
+          "poi_recall": 0.8144
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_02",
+      "category": "calm",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.2332,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.98,
+          "poi_precision": 0.2645,
+          "poi_recall": 0.8367
+        },
+        "B": {
+          "iou": 0.6367,
+          "area_km2": 2.39,
+          "ref_area_km2": 1.98,
+          "poi_precision": 0.625,
+          "poi_recall": 0.8163
+        },
+        "C": {
+          "iou": 0.4667,
+          "area_km2": 3.52,
+          "ref_area_km2": 1.98,
+          "poi_precision": 0.36,
+          "poi_recall": 0.9184
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_03",
+      "category": "calm",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.2533,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.65,
+          "poi_precision": 0.3226,
+          "poi_recall": 0.5435
+        },
+        "B": {
+          "iou": 0.5547,
+          "area_km2": 2.33,
+          "ref_area_km2": 1.65,
+          "poi_precision": 0.8021,
+          "poi_recall": 0.837
+        },
+        "C": {
+          "iou": 0.4645,
+          "area_km2": 3.3,
+          "ref_area_km2": 1.65,
+          "poi_precision": 0.5361,
+          "poi_recall": 0.9674
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_04",
+      "category": "calm",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.2401,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.86,
+          "poi_precision": 0.2645,
+          "poi_recall": 0.9111
+        },
+        "B": {
+          "iou": 0.6107,
+          "area_km2": 2.36,
+          "ref_area_km2": 1.86,
+          "poi_precision": 0.5538,
+          "poi_recall": 0.8
+        },
+        "C": {
+          "iou": 0.4538,
+          "area_km2": 3.33,
+          "ref_area_km2": 1.86,
+          "poi_precision": 0.3387,
+          "poi_recall": 0.9333
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_05",
+      "category": "calm",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.245,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.88,
+          "poi_precision": 0.2581,
+          "poi_recall": 1.0
+        },
+        "B": {
+          "iou": 0.651,
+          "area_km2": 2.33,
+          "ref_area_km2": 1.88,
+          "poi_precision": 0.7907,
+          "poi_recall": 0.85
+        },
+        "C": {
+          "iou": 0.4136,
+          "area_km2": 3.11,
+          "ref_area_km2": 1.88,
+          "poi_precision": 0.3277,
+          "poi_recall": 0.975
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_06",
+      "category": "calm",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.2605,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.64,
+          "poi_precision": 0.271,
+          "poi_recall": 0.9545
+        },
+        "B": {
+          "iou": 0.5569,
+          "area_km2": 2.33,
+          "ref_area_km2": 1.64,
+          "poi_precision": 0.6667,
+          "poi_recall": 0.8182
+        },
+        "C": {
+          "iou": 0.4352,
+          "area_km2": 3.34,
+          "ref_area_km2": 1.64,
+          "poi_precision": 0.3277,
+          "poi_recall": 0.8864
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_07",
+      "category": "calm",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.3155,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.52,
+          "poi_precision": 0.3742,
+          "poi_recall": 0.725
+        },
+        "B": {
+          "iou": 0.4861,
+          "area_km2": 2.21,
+          "ref_area_km2": 1.52,
+          "poi_precision": 0.461,
+          "poi_recall": 0.8125
+        },
+        "C": {
+          "iou": 0.4686,
+          "area_km2": 2.93,
+          "ref_area_km2": 1.52,
+          "poi_precision": 0.4671,
+          "poi_recall": 0.8875
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_08",
+      "category": "calm",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.2804,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.69,
+          "poi_precision": 0.3226,
+          "poi_recall": 0.6024
+        },
+        "B": {
+          "iou": 0.5396,
+          "area_km2": 2.39,
+          "ref_area_km2": 1.69,
+          "poi_precision": 0.5034,
+          "poi_recall": 0.8795
+        },
+        "C": {
+          "iou": 0.4472,
+          "area_km2": 3.65,
+          "ref_area_km2": 1.69,
+          "poi_precision": 0.4663,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_09",
+      "category": "calm",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.2919,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.63,
+          "poi_precision": 0.3032,
+          "poi_recall": 1.0
+        },
+        "B": {
+          "iou": 0.5219,
+          "area_km2": 2.19,
+          "ref_area_km2": 1.63,
+          "poi_precision": 0.7391,
+          "poi_recall": 0.7234
+        },
+        "C": {
+          "iou": 0.3839,
+          "area_km2": 2.84,
+          "ref_area_km2": 1.63,
+          "poi_precision": 0.3719,
+          "poi_recall": 0.9574
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_10",
+      "category": "calm",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1987,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.46,
+          "poi_precision": 0.329,
+          "poi_recall": 0.3893
+        },
+        "B": {
+          "iou": 0.5559,
+          "area_km2": 2.69,
+          "ref_area_km2": 2.46,
+          "poi_precision": 0.6768,
+          "poi_recall": 0.8473
+        },
+        "C": {
+          "iou": 0.5788,
+          "area_km2": 4.25,
+          "ref_area_km2": 2.46,
+          "poi_precision": 0.5822,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "calm_11",
+      "category": "calm",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.3106,
+          "area_km2": 3.15,
+          "ref_area_km2": 1.66,
+          "poi_precision": 0.329,
+          "poi_recall": 0.6375
+        },
+        "B": {
+          "iou": 0.5212,
+          "area_km2": 2.28,
+          "ref_area_km2": 1.66,
+          "poi_precision": 0.4564,
+          "poi_recall": 0.85
+        },
+        "C": {
+          "iou": 0.4537,
+          "area_km2": 2.89,
+          "ref_area_km2": 1.66,
+          "poi_precision": 0.4636,
+          "poi_recall": 0.875
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_00",
+      "category": "gust",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1613,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.61,
+          "poi_precision": 0.2258,
+          "poi_recall": 0.407
+        },
+        "B": {
+          "iou": 0.4364,
+          "area_km2": 3.94,
+          "ref_area_km2": 2.61,
+          "poi_precision": 0.5588,
+          "poi_recall": 0.8837
+        },
+        "C": {
+          "iou": 0.4298,
+          "area_km2": 5.94,
+          "ref_area_km2": 2.61,
+          "poi_precision": 0.4886,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_01",
+      "category": "gust",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1597,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.66,
+          "poi_precision": 0.2581,
+          "poi_recall": 0.3419
+        },
+        "B": {
+          "iou": 0.4247,
+          "area_km2": 5.29,
+          "ref_area_km2": 2.66,
+          "poi_precision": 0.452,
+          "poi_recall": 0.9658
+        },
+        "C": {
+          "iou": 0.5391,
+          "area_km2": 4.82,
+          "ref_area_km2": 2.66,
+          "poi_precision": 0.5821,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_02",
+      "category": "gust",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.156,
+          "area_km2": 3.15,
+          "ref_area_km2": 3.0,
+          "poi_precision": 0.2581,
+          "poi_recall": 0.3509
+        },
+        "B": {
+          "iou": 0.4845,
+          "area_km2": 4.17,
+          "ref_area_km2": 3.0,
+          "poi_precision": 0.4803,
+          "poi_recall": 0.9649
+        },
+        "C": {
+          "iou": 0.611,
+          "area_km2": 4.91,
+          "ref_area_km2": 3.0,
+          "poi_precision": 0.5729,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_03",
+      "category": "gust",
+      "split": "validation",
+      "methods": {
+        "A": {
+          "iou": 0.1809,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.66,
+          "poi_precision": 0.2258,
+          "poi_recall": 0.2941
+        },
+        "B": {
+          "iou": 0.5077,
+          "area_km2": 3.19,
+          "ref_area_km2": 2.66,
+          "poi_precision": 0.5538,
+          "poi_recall": 0.9076
+        },
+        "C": {
+          "iou": 0.4634,
+          "area_km2": 5.74,
+          "ref_area_km2": 2.66,
+          "poi_precision": 0.4897,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_04",
+      "category": "gust",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1732,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.54,
+          "poi_precision": 0.2323,
+          "poi_recall": 0.3
+        },
+        "B": {
+          "iou": 0.3718,
+          "area_km2": 5.54,
+          "ref_area_km2": 2.54,
+          "poi_precision": 0.5209,
+          "poi_recall": 0.9333
+        },
+        "C": {
+          "iou": 0.427,
+          "area_km2": 5.28,
+          "ref_area_km2": 2.54,
+          "poi_precision": 0.4871,
+          "poi_recall": 0.9417
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_05",
+      "category": "gust",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1499,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.91,
+          "poi_precision": 0.2645,
+          "poi_recall": 0.6308
+        },
+        "B": {
+          "iou": 0.4677,
+          "area_km2": 3.68,
+          "ref_area_km2": 2.91,
+          "poi_precision": 0.5263,
+          "poi_recall": 0.9231
+        },
+        "C": {
+          "iou": 0.5162,
+          "area_km2": 5.49,
+          "ref_area_km2": 2.91,
+          "poi_precision": 0.3988,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_06",
+      "category": "gust",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1463,
+          "area_km2": 3.15,
+          "ref_area_km2": 3.12,
+          "poi_precision": 0.2,
+          "poi_recall": 0.3924
+        },
+        "B": {
+          "iou": 0.4165,
+          "area_km2": 4.26,
+          "ref_area_km2": 3.12,
+          "poi_precision": 0.4545,
+          "poi_recall": 0.8861
+        },
+        "C": {
+          "iou": 0.5017,
+          "area_km2": 5.98,
+          "ref_area_km2": 3.12,
+          "poi_precision": 0.4731,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_07",
+      "category": "gust",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.2052,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.43,
+          "poi_precision": 0.2645,
+          "poi_recall": 0.3981
+        },
+        "B": {
+          "iou": 0.5221,
+          "area_km2": 3.43,
+          "ref_area_km2": 2.43,
+          "poi_precision": 0.4919,
+          "poi_recall": 0.8835
+        },
+        "C": {
+          "iou": 0.3584,
+          "area_km2": 6.78,
+          "ref_area_km2": 2.43,
+          "poi_precision": 0.4221,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_08",
+      "category": "gust",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1557,
+          "area_km2": 3.15,
+          "ref_area_km2": 3.01,
+          "poi_precision": 0.2645,
+          "poi_recall": 0.5616
+        },
+        "B": {
+          "iou": 0.445,
+          "area_km2": 3.03,
+          "ref_area_km2": 3.01,
+          "poi_precision": 0.6364,
+          "poi_recall": 0.863
+        },
+        "C": {
+          "iou": 0.6613,
+          "area_km2": 4.15,
+          "ref_area_km2": 3.01,
+          "poi_precision": 0.5177,
+          "poi_recall": 1.0
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_09",
+      "category": "gust",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1488,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.95,
+          "poi_precision": 0.2839,
+          "poi_recall": 0.3385
+        },
+        "B": {
+          "iou": 0.451,
+          "area_km2": 4.45,
+          "ref_area_km2": 2.95,
+          "poi_precision": 0.5024,
+          "poi_recall": 0.7923
+        },
+        "C": {
+          "iou": 0.4325,
+          "area_km2": 6.49,
+          "ref_area_km2": 2.95,
+          "poi_precision": 0.49,
+          "poi_recall": 0.9385
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_10",
+      "category": "gust",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1547,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.97,
+          "poi_precision": 0.3161,
+          "poi_recall": 0.2565
+        },
+        "B": {
+          "iou": 0.4264,
+          "area_km2": 4.59,
+          "ref_area_km2": 2.97,
+          "poi_precision": 0.75,
+          "poi_recall": 0.8953
+        },
+        "C": {
+          "iou": 0.5069,
+          "area_km2": 5.77,
+          "ref_area_km2": 2.97,
+          "poi_precision": 0.6574,
+          "poi_recall": 0.9948
+        }
+      }
+    },
+    {
+      "scenario_id": "gust_11",
+      "category": "gust",
+      "split": "test",
+      "methods": {
+        "A": {
+          "iou": 0.1352,
+          "area_km2": 3.15,
+          "ref_area_km2": 2.81,
+          "poi_precision": 0.2065,
+          "poi_recall": 0.3404
+        },
+        "B": {
+          "iou": 0.4502,
+          "area_km2": 4.76,
+          "ref_area_km2": 2.81,
+          "poi_precision": 0.7739,
+          "poi_recall": 0.9468
+        },
+        "C": {
+          "iou": 0.5804,
+          "area_km2": 4.76,
+          "ref_area_km2": 2.81,
+          "poi_precision": 0.6309,
+          "poi_recall": 1.0
+        }
+      }
+    }
+  ]
+}

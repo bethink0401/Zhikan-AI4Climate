@@ -1,0 +1,960 @@
+{
+  "design": {
+    "blind_date": "2024-03-13",
+    "cap_ratio": 1.25,
+    "study_status": "PENDING — 无参与者，零伪造数据",
+    "study_design": "先锁定硬约束/偏好 → 匿名随机顺序呈现 A/B/C → 可执行信息+时间+相对暴露评分 → 允许'都不选'；聚类单位 = 参与者×OD",
+    "meaningful_lift_criterion": "C 相对 B 盲评胜率 ≥ +10 个百分点（预注册）"
+  },
+  "n_recommendation_rows": 30,
+  "offline_cost_summary": {
+    "A_vs_C_time": {
+      "mean": 1.9967,
+      "n": 30
+    },
+    "B_vs_C_time": {
+      "mean": 0.0,
+      "n": 30
+    },
+    "A_vs_C_eu": {
+      "mean": -0.0172,
+      "n": 30
+    },
+    "B_vs_C_eu": {
+      "mean": 0.0,
+      "n": 30
+    }
+  },
+  "rows": [
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 0.5595,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.4,
+        "intake_index": 0.5415,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.4476,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.4476,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 39.3,
+      "eu_spread": 9.9192
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 0.5761,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.4,
+        "intake_index": 0.5436,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.4609,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.4609,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 44.5,
+      "eu_spread": 10.8922
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 0.6081,
+      "n_candidates": 5,
+      "A_fastest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.0,
+        "intake_index": 0.4865,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.0,
+        "intake_index": 0.4865,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.0,
+        "intake_index": 0.4865,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 45.5,
+      "eu_spread": 12.7099
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 0.4992,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3994,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3994,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3994,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 21.3,
+      "eu_spread": 6.518
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 0.5635,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.2,
+        "intake_index": 0.5333,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.4508,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.4508,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 40.9,
+      "eu_spread": 10.1774
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 0.3826,
+      "n_candidates": 8,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.3061,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.3061,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.3061,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 18.8,
+      "eu_spread": 5.5835
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 0.3841,
+      "n_candidates": 8,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.3073,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.3073,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.3073,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 21.5,
+      "eu_spread": 6.1416
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 1.1209,
+      "n_candidates": 4,
+      "A_fastest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.8967,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.8967,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.8967,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 15.3,
+      "eu_spread": 6.5958
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 0.3841,
+      "n_candidates": 8,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.3073,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.3073,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.3073,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 9.6,
+      "eu_spread": 3.6269
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "depart_time": "2024-03-13 07:00:00",
+      "cap": 0.377,
+      "n_candidates": 8,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 9.9,
+        "intake_index": 0.3016,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 9.9,
+        "intake_index": 0.3016,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 9.9,
+        "intake_index": 0.3016,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 19.7,
+      "eu_spread": 5.7362
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 0.491,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.6,
+        "intake_index": 0.3928,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.6,
+        "intake_index": 0.3928,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.6,
+        "intake_index": 0.3928,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 33.6,
+      "eu_spread": 8.8904
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 0.4954,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.7,
+        "intake_index": 0.3963,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.7,
+        "intake_index": 0.3963,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.7,
+        "intake_index": 0.3963,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 37.9,
+      "eu_spread": 9.8318
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 0.5775,
+      "n_candidates": 5,
+      "A_fastest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.462,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.462,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.462,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 34.3,
+      "eu_spread": 11.4769
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 0.4701,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.6,
+        "intake_index": 0.3936,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3761,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3761,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 19.4,
+      "eu_spread": 5.7958
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 0.4844,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.5,
+        "intake_index": 0.3875,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.5,
+        "intake_index": 0.3875,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.5,
+        "intake_index": 0.3875,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 34.9,
+      "eu_spread": 9.1344
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 0.2883,
+      "n_candidates": 7,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.7,
+        "intake_index": 0.2306,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.7,
+        "intake_index": 0.2306,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.7,
+        "intake_index": 0.2306,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 21.2,
+      "eu_spread": 5.0299
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 0.2906,
+      "n_candidates": 7,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.8,
+        "intake_index": 0.2325,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.8,
+        "intake_index": 0.2325,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.8,
+        "intake_index": 0.2325,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 23.9,
+      "eu_spread": 5.5339
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 1.1,
+      "n_candidates": 3,
+      "A_fastest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.5,
+        "intake_index": 0.88,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.5,
+        "intake_index": 0.88,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.5,
+        "intake_index": 0.88,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 15.2,
+      "eu_spread": 5.8012
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 0.2886,
+      "n_candidates": 7,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.7,
+        "intake_index": 0.2309,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.7,
+        "intake_index": 0.2309,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.7,
+        "intake_index": 0.2309,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 12.1,
+      "eu_spread": 3.3643
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "depart_time": "2024-03-13 12:00:00",
+      "cap": 0.2839,
+      "n_candidates": 7,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.6,
+        "intake_index": 0.2271,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.6,
+        "intake_index": 0.2271,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.6,
+        "intake_index": 0.2271,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 22.0,
+      "eu_spread": 5.1604
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 0.5373,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.8,
+        "intake_index": 0.5147,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.4298,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.4298,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 35.1,
+      "eu_spread": 9.3529
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 0.5566,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 14.0,
+        "intake_index": 0.5231,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.4453,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.4453,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 40.2,
+      "eu_spread": 10.4231
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 0.5911,
+      "n_candidates": 5,
+      "A_fastest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.4729,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.4729,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.4729,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 41.3,
+      "eu_spread": 12.2721
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 0.4779,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3823,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3823,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3823,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 19.1,
+      "eu_spread": 6.1803
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 0.5415,
+      "n_candidates": 9,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.6,
+        "intake_index": 0.5086,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.4332,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.4332,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 36.7,
+      "eu_spread": 9.632
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 0.3812,
+      "n_candidates": 7,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.305,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.305,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.1,
+        "intake_index": 0.305,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 19.4,
+      "eu_spread": 5.2214
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 0.388,
+      "n_candidates": 7,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.2,
+        "intake_index": 0.3104,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.2,
+        "intake_index": 0.3104,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.2,
+        "intake_index": 0.3104,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 22.4,
+      "eu_spread": 5.7954
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 1.1614,
+      "n_candidates": 3,
+      "A_fastest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.6,
+        "intake_index": 0.9291,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.6,
+        "intake_index": 0.9291,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.6,
+        "intake_index": 0.9291,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 16.4,
+      "eu_spread": 6.1801
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 0.3871,
+      "n_candidates": 7,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.2,
+        "intake_index": 0.3097,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.2,
+        "intake_index": 0.3097,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.2,
+        "intake_index": 0.3097,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 10.1,
+      "eu_spread": 3.4959
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "depart_time": "2024-03-13 18:00:00",
+      "cap": 0.3766,
+      "n_candidates": 7,
+      "A_fastest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 9.9,
+        "intake_index": 0.3013,
+        "nondominated_hint": null
+      },
+      "B_lowest_feasible": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 9.9,
+        "intake_index": 0.3013,
+        "nondominated_hint": null
+      },
+      "C_system_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 9.9,
+        "intake_index": 0.3013,
+        "nondominated_hint": null
+      },
+      "time_spread_min": 20.5,
+      "eu_spread": 5.3767
+    }
+  ]
+}

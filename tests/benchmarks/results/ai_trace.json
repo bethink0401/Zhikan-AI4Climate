@@ -1,0 +1,101 @@
+{
+  "design": {
+    "note": "三种任务形态的端到端轨迹：参数解析、路由分支（确定性硬路由 / LLM 编排）、执行的智能体、回答摘要；B 组使用空上下文，C 组为同会话跨维度追问",
+    "model": "Qwen/Qwen3-32B",
+    "route_criterion": "route=hard_route 表示意图命中且参数齐全（走确定性硬路由）；参数不齐时一律记为 llm_orchestration，即使日志已出现 [ROUTER]"
+  },
+  "rows": [
+    {
+      "elapsed_s": 20.44,
+      "route": "hard_route",
+      "executed_agents": [
+        "AirQualityAgent",
+        "MeteorologyAgent",
+        "TrafficAgent",
+        "SpatialAgent",
+        "SourceAgent"
+      ],
+      "parsed": {
+        "station": "MONG KOK",
+        "start_time": "2023-08-15 08:00:00",
+        "end_time": "2023-08-15 11:00:00"
+      },
+      "answer_chars": 124,
+      "answer_head": "\n\n2023年8月15日8点至11点，旺角的污染来源以交通源为主导，贡献度为0.5933，风险等级较高。同时，区域传输（贡献度0.4187）和局地积聚（贡献度0.6896）也对污染有显著影响，表明本地污染物累积与周边区域输送共同加剧了空气质量问题。",
+      "tag": "explicit_window",
+      "kind": "参数齐全的结构化任务",
+      "task": "分析2023年8月15日8点到11点旺角的污染来源",
+      "warmup_turn": null,
+      "rule_agent": "SourceAgent",
+      "params_ready": true
+    },
+    {
+      "elapsed_s": 31.76,
+      "route": "llm_orchestration",
+      "executed_agents": [],
+      "parsed": {
+        "station": "MONG KOK",
+        "start_time": null,
+        "end_time": null
+      },
+      "answer_chars": 102,
+      "answer_head": "\n\n请问您需要分析MONG KOK站点哪个时间段的空气质量数据？请提供具体日期或时间段（如\"2023-10-01 08:00:00到2023-10-01 18:00:00\"或\"2023-10-01全天\"）",
+      "tag": "vague_no_history",
+      "kind": "模糊提问（无历史上下文）",
+      "task": "旺角早高峰污染会影响哪里，是否要调整出行",
+      "warmup_turn": null,
+      "rule_agent": null,
+      "params_ready": false
+    },
+    {
+      "elapsed_s": 248.2,
+      "route": "llm_orchestration",
+      "executed_agents": [],
+      "parsed": {
+        "station": "CAUSEWAY BAY",
+        "start_time": null,
+        "end_time": null
+      },
+      "answer_chars": 0,
+      "answer_head": "",
+      "tag": "vague_station_only",
+      "kind": "仅有站点、无时间窗（需 AI 介入）",
+      "task": "铜锣湾早高峰空气质量怎么样",
+      "warmup_turn": null,
+      "rule_agent": "AirQualityAgent",
+      "params_ready": false
+    },
+    {
+      "elapsed_s": 6.34,
+      "route": "hard_route",
+      "executed_agents": [
+        "TrafficAgent"
+      ],
+      "parsed": {
+        "station": "MONG KOK",
+        "start_time": "2023-08-15 08:00:00",
+        "end_time": "2023-08-15 11:00:00"
+      },
+      "answer_chars": 166,
+      "answer_head": "\n\n蒙特利尔站（MONG KOK）交通污染压力为中等（评分0.5254），主要受以下因素影响：  \n1. **重型车辆信号高**，对污染贡献显著；  \n2. **主要车型**包括轻型货车、私家车和出租车，其中出租车占比26.3%；  \n3. **公交工具占比为0**，缺乏公共交通分担作用。  \n建议关注重型车辆及出租车的排放管控。",
+      "tag": "cross_dimension_followup",
+      "kind": "多轮跨维度追问",
+      "task": "接着看交通",
+      "warmup_turn": {
+        "elapsed_s": 195.11,
+        "route": "llm_orchestration",
+        "executed_agents": [],
+        "parsed": {
+          "station": "MONG KOK",
+          "start_time": "2023-08-15 08:00:00",
+          "end_time": "2023-08-15 11:00:00"
+        },
+        "answer_chars": 0,
+        "answer_head": ""
+      },
+      "rule_agent": "TrafficAgent",
+      "params_ready": true,
+      "note": "该轮参数继承自上一轮，故按继承后的上下文判定"
+    }
+  ]
+}

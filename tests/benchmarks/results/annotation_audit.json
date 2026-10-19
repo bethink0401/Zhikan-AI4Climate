@@ -1,0 +1,26 @@
+{
+  "self_consistency": "61/61",
+  "mismatches": [],
+  "auxiliary_checks": {
+    "traffic_dominant": {
+      "n": 20,
+      "nox_percentile_min": 0.773,
+      "nox_percentile_mean": 0.841,
+      "all_peak": true
+    },
+    "local_accumulation": {
+      "n": 1,
+      "wind_max": 1.7
+    },
+    "regional_transport": {
+      "n": 16,
+      "independent_sync_min": 8,
+      "independent_sync_mean": 12.5,
+      "all_wind_ge_3": true
+    },
+    "uncertain": {
+      "n": 24,
+      "no2_mean": 74.1
+    }
+  }
+}

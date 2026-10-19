@@ -1,0 +1,15 @@
+{
+  "n_windows": 66,
+  "feature_columns_checked": [
+    "nox_pct",
+    "traffic_pressure",
+    "upwind_score",
+    "static_wind",
+    "mean_wind",
+    "sync_above"
+  ],
+  "all_null_features": "none",
+  "meteo_degraded_dates": [],
+  "verdict": "PASS",
+  "violations": []
+}

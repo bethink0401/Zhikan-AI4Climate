@@ -1,0 +1,488 @@
+{
+  "design": {
+    "note": "程序生成已知来源世界：线性排放叠加 + 乘性事件因子（与模型打分机制完全独立）；全合成空气/交通/气象，真实空间路网；系统 PIT 模式（基线严格早于事件月）；结论限定『合成世界中的溯源一致性』",
+    "seeds": [
+      20260412,
+      20260413,
+      20260414
+    ],
+    "events_per_seed": 46,
+    "n_events_pooled": 138,
+    "classes_pooled": {
+      "local_accumulation": 33,
+      "regional_transport": 36,
+      "traffic_dominant": 36,
+      "uncertain": 33
+    },
+    "independence": "生成器为线性叠加+乘性因子，不使用任何模型打分公式；标签由生成过程直接给出，无规则标注器参与",
+    "caliber_note": "per_seed 为单种子 46 事件口径；pooled 为 3 种子 138 事件聚合口径；C−B 配对 CI 只在 pooled 上有意义（按世界×日期聚类）"
+  },
+  "per_seed": {
+    "20260412": {
+      "label": "seed=20260412",
+      "n": 46,
+      "point_f1": {
+        "A": 0.1034,
+        "B": 0.472,
+        "C": 0.6375
+      },
+      "per_class_recall": {
+        "A": {
+          "local_accumulation": 0.0,
+          "regional_transport": 0.0,
+          "traffic_dominant": 1.0,
+          "uncertain": 0.0
+        },
+        "B": {
+          "local_accumulation": 0.6364,
+          "regional_transport": 0.75,
+          "traffic_dominant": 0.75,
+          "uncertain": 0.0
+        },
+        "C": {
+          "local_accumulation": 0.1818,
+          "regional_transport": 0.6667,
+          "traffic_dominant": 1.0,
+          "uncertain": 0.7273
+        }
+      },
+      "abstention_rate": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.4565
+      },
+      "confusion": {
+        "A": {
+          "local_accumulation": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 11,
+            "uncertain": 0
+          },
+          "regional_transport": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 12,
+            "uncertain": 0
+          },
+          "traffic_dominant": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 12,
+            "uncertain": 0
+          },
+          "uncertain": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 11,
+            "uncertain": 0
+          }
+        },
+        "B": {
+          "local_accumulation": {
+            "local_accumulation": 7,
+            "regional_transport": 0,
+            "traffic_dominant": 4,
+            "uncertain": 0
+          },
+          "regional_transport": {
+            "local_accumulation": 0,
+            "regional_transport": 9,
+            "traffic_dominant": 3,
+            "uncertain": 0
+          },
+          "traffic_dominant": {
+            "local_accumulation": 0,
+            "regional_transport": 3,
+            "traffic_dominant": 9,
+            "uncertain": 0
+          },
+          "uncertain": {
+            "local_accumulation": 5,
+            "regional_transport": 0,
+            "traffic_dominant": 6,
+            "uncertain": 0
+          }
+        },
+        "C": {
+          "local_accumulation": {
+            "local_accumulation": 2,
+            "regional_transport": 0,
+            "traffic_dominant": 0,
+            "uncertain": 9
+          },
+          "regional_transport": {
+            "local_accumulation": 0,
+            "regional_transport": 8,
+            "traffic_dominant": 0,
+            "uncertain": 4
+          },
+          "traffic_dominant": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 12,
+            "uncertain": 0
+          },
+          "uncertain": {
+            "local_accumulation": 3,
+            "regional_transport": 0,
+            "traffic_dominant": 0,
+            "uncertain": 8
+          }
+        }
+      }
+    },
+    "20260413": {
+      "label": "seed=20260413",
+      "n": 46,
+      "point_f1": {
+        "A": 0.1034,
+        "B": 0.5105,
+        "C": 0.7634
+      },
+      "per_class_recall": {
+        "A": {
+          "local_accumulation": 0.0,
+          "regional_transport": 0.0,
+          "traffic_dominant": 1.0,
+          "uncertain": 0.0
+        },
+        "B": {
+          "local_accumulation": 0.6364,
+          "regional_transport": 1.0,
+          "traffic_dominant": 0.6667,
+          "uncertain": 0.0
+        },
+        "C": {
+          "local_accumulation": 0.3636,
+          "regional_transport": 0.9167,
+          "traffic_dominant": 1.0,
+          "uncertain": 0.8182
+        }
+      },
+      "abstention_rate": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.3478
+      },
+      "confusion": {
+        "A": {
+          "local_accumulation": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 11,
+            "uncertain": 0
+          },
+          "regional_transport": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 12,
+            "uncertain": 0
+          },
+          "traffic_dominant": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 12,
+            "uncertain": 0
+          },
+          "uncertain": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 11,
+            "uncertain": 0
+          }
+        },
+        "B": {
+          "local_accumulation": {
+            "local_accumulation": 7,
+            "regional_transport": 0,
+            "traffic_dominant": 4,
+            "uncertain": 0
+          },
+          "regional_transport": {
+            "local_accumulation": 0,
+            "regional_transport": 12,
+            "traffic_dominant": 0,
+            "uncertain": 0
+          },
+          "traffic_dominant": {
+            "local_accumulation": 0,
+            "regional_transport": 4,
+            "traffic_dominant": 8,
+            "uncertain": 0
+          },
+          "uncertain": {
+            "local_accumulation": 2,
+            "regional_transport": 0,
+            "traffic_dominant": 9,
+            "uncertain": 0
+          }
+        },
+        "C": {
+          "local_accumulation": {
+            "local_accumulation": 4,
+            "regional_transport": 0,
+            "traffic_dominant": 1,
+            "uncertain": 6
+          },
+          "regional_transport": {
+            "local_accumulation": 0,
+            "regional_transport": 11,
+            "traffic_dominant": 0,
+            "uncertain": 1
+          },
+          "traffic_dominant": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 12,
+            "uncertain": 0
+          },
+          "uncertain": {
+            "local_accumulation": 2,
+            "regional_transport": 0,
+            "traffic_dominant": 0,
+            "uncertain": 9
+          }
+        }
+      }
+    },
+    "20260414": {
+      "label": "seed=20260414",
+      "n": 46,
+      "point_f1": {
+        "A": 0.1034,
+        "B": 0.5491,
+        "C": 0.6504
+      },
+      "per_class_recall": {
+        "A": {
+          "local_accumulation": 0.0,
+          "regional_transport": 0.0,
+          "traffic_dominant": 1.0,
+          "uncertain": 0.0
+        },
+        "B": {
+          "local_accumulation": 0.7273,
+          "regional_transport": 1.0,
+          "traffic_dominant": 0.75,
+          "uncertain": 0.0
+        },
+        "C": {
+          "local_accumulation": 0.3636,
+          "regional_transport": 0.75,
+          "traffic_dominant": 1.0,
+          "uncertain": 0.4545
+        }
+      },
+      "abstention_rate": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.3261
+      },
+      "confusion": {
+        "A": {
+          "local_accumulation": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 11,
+            "uncertain": 0
+          },
+          "regional_transport": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 12,
+            "uncertain": 0
+          },
+          "traffic_dominant": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 12,
+            "uncertain": 0
+          },
+          "uncertain": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 11,
+            "uncertain": 0
+          }
+        },
+        "B": {
+          "local_accumulation": {
+            "local_accumulation": 8,
+            "regional_transport": 0,
+            "traffic_dominant": 3,
+            "uncertain": 0
+          },
+          "regional_transport": {
+            "local_accumulation": 0,
+            "regional_transport": 12,
+            "traffic_dominant": 0,
+            "uncertain": 0
+          },
+          "traffic_dominant": {
+            "local_accumulation": 0,
+            "regional_transport": 3,
+            "traffic_dominant": 9,
+            "uncertain": 0
+          },
+          "uncertain": {
+            "local_accumulation": 2,
+            "regional_transport": 0,
+            "traffic_dominant": 9,
+            "uncertain": 0
+          }
+        },
+        "C": {
+          "local_accumulation": {
+            "local_accumulation": 4,
+            "regional_transport": 0,
+            "traffic_dominant": 0,
+            "uncertain": 7
+          },
+          "regional_transport": {
+            "local_accumulation": 0,
+            "regional_transport": 9,
+            "traffic_dominant": 0,
+            "uncertain": 3
+          },
+          "traffic_dominant": {
+            "local_accumulation": 0,
+            "regional_transport": 0,
+            "traffic_dominant": 12,
+            "uncertain": 0
+          },
+          "uncertain": {
+            "local_accumulation": 5,
+            "regional_transport": 0,
+            "traffic_dominant": 1,
+            "uncertain": 5
+          }
+        }
+      }
+    }
+  },
+  "pooled": {
+    "label": "pooled(3 seeds)",
+    "n": 138,
+    "point_f1": {
+      "A": 0.1034,
+      "B": 0.5107,
+      "C": 0.6857
+    },
+    "per_class_recall": {
+      "A": {
+        "local_accumulation": 0.0,
+        "regional_transport": 0.0,
+        "traffic_dominant": 1.0,
+        "uncertain": 0.0
+      },
+      "B": {
+        "local_accumulation": 0.6667,
+        "regional_transport": 0.9167,
+        "traffic_dominant": 0.7222,
+        "uncertain": 0.0
+      },
+      "C": {
+        "local_accumulation": 0.303,
+        "regional_transport": 0.7778,
+        "traffic_dominant": 1.0,
+        "uncertain": 0.6667
+      }
+    },
+    "abstention_rate": {
+      "A": 0.0,
+      "B": 0.0,
+      "C": 0.3768
+    },
+    "confusion": {
+      "A": {
+        "local_accumulation": {
+          "local_accumulation": 0,
+          "regional_transport": 0,
+          "traffic_dominant": 33,
+          "uncertain": 0
+        },
+        "regional_transport": {
+          "local_accumulation": 0,
+          "regional_transport": 0,
+          "traffic_dominant": 36,
+          "uncertain": 0
+        },
+        "traffic_dominant": {
+          "local_accumulation": 0,
+          "regional_transport": 0,
+          "traffic_dominant": 36,
+          "uncertain": 0
+        },
+        "uncertain": {
+          "local_accumulation": 0,
+          "regional_transport": 0,
+          "traffic_dominant": 33,
+          "uncertain": 0
+        }
+      },
+      "B": {
+        "local_accumulation": {
+          "local_accumulation": 22,
+          "regional_transport": 0,
+          "traffic_dominant": 11,
+          "uncertain": 0
+        },
+        "regional_transport": {
+          "local_accumulation": 0,
+          "regional_transport": 33,
+          "traffic_dominant": 3,
+          "uncertain": 0
+        },
+        "traffic_dominant": {
+          "local_accumulation": 0,
+          "regional_transport": 10,
+          "traffic_dominant": 26,
+          "uncertain": 0
+        },
+        "uncertain": {
+          "local_accumulation": 9,
+          "regional_transport": 0,
+          "traffic_dominant": 24,
+          "uncertain": 0
+        }
+      },
+      "C": {
+        "local_accumulation": {
+          "local_accumulation": 10,
+          "regional_transport": 0,
+          "traffic_dominant": 1,
+          "uncertain": 22
+        },
+        "regional_transport": {
+          "local_accumulation": 0,
+          "regional_transport": 28,
+          "traffic_dominant": 0,
+          "uncertain": 8
+        },
+        "traffic_dominant": {
+          "local_accumulation": 0,
+          "regional_transport": 0,
+          "traffic_dominant": 36,
+          "uncertain": 0
+        },
+        "uncertain": {
+          "local_accumulation": 10,
+          "regional_transport": 0,
+          "traffic_dominant": 1,
+          "uncertain": 22
+        }
+      }
+    }
+  },
+  "C_minus_B_paired_ci_pooled": {
+    "metric": "macro_f1_diff",
+    "mean_diff": 0.175,
+    "ci95": [
+      0.0976,
+      0.249
+    ],
+    "n": 138,
+    "n_clusters": 138
+  }
+}

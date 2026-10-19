@@ -1,0 +1,200 @@
+{
+  "agent": "SourceAgent+DecisionAgent",
+  "attribution": {
+    "windows": [
+      {
+        "window": "2023-01-30 10:00:00",
+        "air_anomaly": 0.94,
+        "ranking": [
+          [
+            "dust_source",
+            0.864
+          ],
+          [
+            "photochemical_source",
+            0.764
+          ],
+          [
+            "traffic_source",
+            0.759
+          ],
+          [
+            "local_accumulation",
+            0.688
+          ],
+          [
+            "regional_transport",
+            0.388
+          ]
+        ],
+        "traffic_rank": [
+          2
+        ],
+        "main_judgement": "Traffic source with local accumulation",
+        "decision_level": "high"
+      },
+      {
+        "window": "2023-03-09 09:00:00",
+        "air_anomaly": 1.0,
+        "ranking": [
+          [
+            "dust_source",
+            0.896
+          ],
+          [
+            "traffic_source",
+            0.818
+          ],
+          [
+            "photochemical_source",
+            0.79
+          ],
+          [
+            "local_accumulation",
+            0.737
+          ],
+          [
+            "regional_transport",
+            0.37
+          ]
+        ],
+        "traffic_rank": [
+          1
+        ],
+        "main_judgement": "Traffic source with local accumulation",
+        "decision_level": "very_high"
+      },
+      {
+        "window": "2023-12-30 19:00:00",
+        "air_anomaly": 1.0,
+        "ranking": [
+          [
+            "dust_source",
+            0.889
+          ],
+          [
+            "traffic_source",
+            0.845
+          ],
+          [
+            "local_accumulation",
+            0.77
+          ],
+          [
+            "photochemical_source",
+            0.76
+          ],
+          [
+            "regional_transport",
+            0.393
+          ]
+        ],
+        "traffic_rank": [
+          1
+        ],
+        "main_judgement": "Traffic source with local accumulation",
+        "decision_level": "very_high"
+      },
+      {
+        "window": "2023-04-25 12:00:00",
+        "air_anomaly": 1.0,
+        "ranking": [
+          [
+            "photochemical_source",
+            0.8
+          ],
+          [
+            "traffic_source",
+            0.754
+          ],
+          [
+            "dust_source",
+            0.748
+          ],
+          [
+            "local_accumulation",
+            0.688
+          ],
+          [
+            "regional_transport",
+            0.393
+          ]
+        ],
+        "traffic_rank": [
+          1
+        ],
+        "main_judgement": "Traffic source with local accumulation",
+        "decision_level": "high"
+      },
+      {
+        "window": "2023-01-13 11:00:00",
+        "air_anomaly": 1.0,
+        "ranking": [
+          [
+            "photochemical_source",
+            0.8
+          ],
+          [
+            "traffic_source",
+            0.753
+          ],
+          [
+            "dust_source",
+            0.704
+          ],
+          [
+            "local_accumulation",
+            0.687
+          ],
+          [
+            "regional_transport",
+            0.394
+          ]
+        ],
+        "traffic_rank": [
+          1
+        ],
+        "main_judgement": "Traffic source with local accumulation",
+        "decision_level": "high"
+      }
+    ],
+    "traffic_named_first": "5/5",
+    "note": "top-5 NOx hours (deduped per day) of Mong Kok roadside 2023"
+  },
+  "decision_mapping": {
+    "cases": [
+      {
+        "score": 0.2,
+        "expected": "low",
+        "actual": "low",
+        "ok": true
+      },
+      {
+        "score": 0.4,
+        "expected": "medium",
+        "actual": "medium",
+        "ok": true
+      },
+      {
+        "score": 0.7,
+        "expected": "high",
+        "actual": "high",
+        "ok": true
+      },
+      {
+        "score": 0.85,
+        "expected": "very_high",
+        "actual": "very_high",
+        "ok": true
+      }
+    ],
+    "all_ok": true
+  },
+  "latency_ms": {
+    "n": 30,
+    "mean": 360.2487,
+    "median": 18.8181,
+    "min": 0.0117,
+    "max": 2932.8327
+  }
+}

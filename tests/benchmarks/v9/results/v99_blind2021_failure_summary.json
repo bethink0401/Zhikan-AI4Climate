@@ -1,0 +1,19 @@
+{
+  "year": 2021,
+  "n_cases": 237,
+  "n_failure_rows": 204,
+  "per_method_wrong": {
+    "A": 119,
+    "B": 70,
+    "Bplus": 66,
+    "C": 112
+  },
+  "per_method_wrong_rate": {
+    "A": 0.5021,
+    "B": 0.2954,
+    "Bplus": 0.2785,
+    "C": 0.4726
+  },
+  "failure_csv": "v99_blind2021_failures.csv",
+  "matrix_csv": "v99_blind2021_case_matrix.csv"
+}

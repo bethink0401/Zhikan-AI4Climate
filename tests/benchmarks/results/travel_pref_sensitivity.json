@@ -1,0 +1,1092 @@
+{
+  "design": {
+    "note": "mode_constant_minutes 置零（用户显式方式偏好先验）后重跑同一批场景",
+    "sets": {
+      "A": "出发时刻集（真实气象+真实空气质量，24 次/配置）",
+      "B": "边界集（受控天气，16 次/配置）"
+    }
+  },
+  "per_config": {
+    "default": {
+      "departure_time_flips": "1/8",
+      "boundary_weather_flips": "2/8"
+    },
+    "zero_pref": {
+      "departure_time_flips": "0/8",
+      "boundary_weather_flips": "0/8"
+    }
+  },
+  "detail": {
+    "default": {
+      "departure_time": {
+        "groups": {
+          "mongkok_to_prince_edward|commuter": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "mongkok_to_prince_edward|runner": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "mongkok_to_prince_edward|elderly": {
+            "morning_07_09": "transit",
+            "midday_12_14": "drive",
+            "evening_18_20": "transit"
+          },
+          "mongkok_to_prince_edward|parent_with_child": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "cwb_to_wanchai|commuter": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "cwb_to_wanchai|runner": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "cwb_to_wanchai|elderly": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "cwb_to_wanchai|parent_with_child": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          }
+        },
+        "flips": {
+          "mongkok_to_prince_edward|elderly": {
+            "morning_07_09": "transit",
+            "midday_12_14": "drive",
+            "evening_18_20": "transit"
+          }
+        },
+        "rate": "1/8"
+      },
+      "boundary": {
+        "groups": {
+          "mongkok_to_prince_edward|commuter": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "mongkok_to_prince_edward|runner": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "mongkok_to_prince_edward|elderly": {
+            "mild": "transit",
+            "heavy_rain": "drive"
+          },
+          "mongkok_to_prince_edward|parent_with_child": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "cwb_to_wanchai|commuter": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "cwb_to_wanchai|runner": {
+            "mild": "walk",
+            "heavy_rain": "drive"
+          },
+          "cwb_to_wanchai|elderly": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "cwb_to_wanchai|parent_with_child": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          }
+        },
+        "flips": {
+          "mongkok_to_prince_edward|elderly": {
+            "mild": "transit",
+            "heavy_rain": "drive"
+          },
+          "cwb_to_wanchai|runner": {
+            "mild": "walk",
+            "heavy_rain": "drive"
+          }
+        },
+        "rate": "2/8"
+      }
+    },
+    "zero_pref": {
+      "departure_time": {
+        "groups": {
+          "mongkok_to_prince_edward|commuter": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "mongkok_to_prince_edward|runner": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "mongkok_to_prince_edward|elderly": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "mongkok_to_prince_edward|parent_with_child": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "cwb_to_wanchai|commuter": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "cwb_to_wanchai|runner": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "cwb_to_wanchai|elderly": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          },
+          "cwb_to_wanchai|parent_with_child": {
+            "morning_07_09": "drive",
+            "midday_12_14": "drive",
+            "evening_18_20": "drive"
+          }
+        },
+        "flips": {},
+        "rate": "0/8"
+      },
+      "boundary": {
+        "groups": {
+          "mongkok_to_prince_edward|commuter": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "mongkok_to_prince_edward|runner": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "mongkok_to_prince_edward|elderly": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "mongkok_to_prince_edward|parent_with_child": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "cwb_to_wanchai|commuter": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "cwb_to_wanchai|runner": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "cwb_to_wanchai|elderly": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          },
+          "cwb_to_wanchai|parent_with_child": {
+            "mild": "drive",
+            "heavy_rain": "drive"
+          }
+        },
+        "flips": {},
+        "rate": "0/8"
+      }
+    }
+  },
+  "rows_departure_time": [
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 1.15,
+      "intake": 0.1868,
+      "duration": 4.1
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 0.69,
+      "intake": 0.1867,
+      "duration": 3.4
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 1.07,
+      "intake": 0.178,
+      "duration": 4.1
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.91,
+      "intake": 0.1917,
+      "duration": 4.2
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.5,
+      "intake": 0.1935,
+      "duration": 3.5
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.83,
+      "intake": 0.1826,
+      "duration": 4.2
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "mode": "transit",
+      "route": "transit_0",
+      "utility": 3.67,
+      "intake": 0.7634,
+      "duration": 16.7
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.46,
+      "intake": 0.1928,
+      "duration": 3.5
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "mode": "transit",
+      "route": "transit_0",
+      "utility": 3.07,
+      "intake": 0.6755,
+      "duration": 16.7
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 1.07,
+      "intake": 0.1907,
+      "duration": 4.2
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 0.62,
+      "intake": 0.1928,
+      "duration": 3.5
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 0.93,
+      "intake": 0.1817,
+      "duration": 4.2
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.8,
+      "intake": 0.0004,
+      "duration": 8.5
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 2.65,
+      "intake": 0.0002,
+      "duration": 6.8
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.71,
+      "intake": 0.0003,
+      "duration": 8.6
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 8.83,
+      "intake": 0.0005,
+      "duration": 8.8
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 7.72,
+      "intake": 0.0003,
+      "duration": 7.1
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 8.77,
+      "intake": 0.0003,
+      "duration": 8.8
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.74,
+      "intake": 0.0005,
+      "duration": 8.8
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.43,
+      "intake": 0.0003,
+      "duration": 7.0
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.48,
+      "intake": 0.0003,
+      "duration": 8.8
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.55,
+      "intake": 0.0005,
+      "duration": 8.7
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 2.37,
+      "intake": 0.0003,
+      "duration": 7.0
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.34,
+      "intake": 0.0003,
+      "duration": 8.8
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.15,
+      "intake": 0.1868,
+      "duration": 4.1
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 2.69,
+      "intake": 0.1867,
+      "duration": 3.4
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.07,
+      "intake": 0.178,
+      "duration": 4.1
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.91,
+      "intake": 0.1917,
+      "duration": 4.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.5,
+      "intake": 0.1935,
+      "duration": 3.5
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.83,
+      "intake": 0.1826,
+      "duration": 4.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.96,
+      "intake": 0.1918,
+      "duration": 4.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.46,
+      "intake": 0.1928,
+      "duration": 3.5
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.8,
+      "intake": 0.1822,
+      "duration": 4.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 4.07,
+      "intake": 0.1907,
+      "duration": 4.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.62,
+      "intake": 0.1928,
+      "duration": 3.5
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.93,
+      "intake": 0.1817,
+      "duration": 4.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.8,
+      "intake": 0.0004,
+      "duration": 8.5
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 4.65,
+      "intake": 0.0002,
+      "duration": 6.8
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.71,
+      "intake": 0.0003,
+      "duration": 8.6
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.83,
+      "intake": 0.0005,
+      "duration": 8.8
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 4.72,
+      "intake": 0.0003,
+      "duration": 7.1
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.77,
+      "intake": 0.0003,
+      "duration": 8.8
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.74,
+      "intake": 0.0005,
+      "duration": 8.8
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.43,
+      "intake": 0.0003,
+      "duration": 7.0
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.48,
+      "intake": 0.0003,
+      "duration": 8.8
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.55,
+      "intake": 0.0005,
+      "duration": 8.7
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.37,
+      "intake": 0.0003,
+      "duration": 7.0
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.34,
+      "intake": 0.0003,
+      "duration": 8.8
+    }
+  ],
+  "rows_boundary": [
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 0.7,
+      "intake": 0.1513,
+      "duration": 3.9
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.15,
+      "intake": 0.4736,
+      "duration": 5.2
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.31,
+      "intake": 0.1517,
+      "duration": 3.9
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 9.5,
+      "intake": 0.4659,
+      "duration": 5.2
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "weather": "mild",
+      "mode": "transit",
+      "route": "transit_0",
+      "utility": 1.92,
+      "intake": 0.6795,
+      "duration": 16.7
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 7.93,
+      "intake": 0.5264,
+      "duration": 5.8
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 0.16,
+      "intake": 0.1517,
+      "duration": 3.9
+    },
+    {
+      "config": "default",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.35,
+      "intake": 0.5264,
+      "duration": 5.8
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 2.98,
+      "intake": 0.0006,
+      "duration": 8.2
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 7.18,
+      "intake": 0.0002,
+      "duration": 11.5
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "weather": "mild",
+      "mode": "walk",
+      "route": "walk_0",
+      "utility": 7.09,
+      "intake": 0.006,
+      "duration": 15.1
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 11.07,
+      "intake": 0.0002,
+      "duration": 11.3
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 4.98,
+      "intake": 0.0006,
+      "duration": 8.2
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 12.9,
+      "intake": 0.0003,
+      "duration": 12.9
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 2.0,
+      "intake": 0.0006,
+      "duration": 8.2
+    },
+    {
+      "config": "default",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 9.66,
+      "intake": 0.0003,
+      "duration": 12.9
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 2.7,
+      "intake": 0.1513,
+      "duration": 3.9
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "commuter",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.15,
+      "intake": 0.4736,
+      "duration": 5.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.31,
+      "intake": 0.1517,
+      "duration": 3.9
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "runner",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 6.5,
+      "intake": 0.4659,
+      "duration": 5.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.01,
+      "intake": 0.1513,
+      "duration": 3.9
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "elderly",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 7.93,
+      "intake": 0.5264,
+      "duration": 5.8
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 3.16,
+      "intake": 0.1517,
+      "duration": 3.9
+    },
+    {
+      "config": "zero_pref",
+      "case": "mongkok_to_prince_edward",
+      "profile": "parent_with_child",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 8.35,
+      "intake": 0.5264,
+      "duration": 5.8
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 4.98,
+      "intake": 0.0006,
+      "duration": 8.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "commuter",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 9.18,
+      "intake": 0.0002,
+      "duration": 11.5
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.0,
+      "intake": 0.0006,
+      "duration": 8.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "runner",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 8.07,
+      "intake": 0.0002,
+      "duration": 11.3
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 4.98,
+      "intake": 0.0006,
+      "duration": 8.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "elderly",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 12.9,
+      "intake": 0.0003,
+      "duration": 12.9
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "weather": "mild",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 5.0,
+      "intake": 0.0006,
+      "duration": 8.2
+    },
+    {
+      "config": "zero_pref",
+      "case": "cwb_to_wanchai",
+      "profile": "parent_with_child",
+      "weather": "heavy_rain",
+      "mode": "drive",
+      "route": "drive_0",
+      "utility": 12.66,
+      "intake": 0.0003,
+      "duration": 12.9
+    }
+  ]
+}

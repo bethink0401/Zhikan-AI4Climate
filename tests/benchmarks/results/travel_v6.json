@@ -1,0 +1,2332 @@
+{
+  "design": {
+    "note": "V6：显式约束优先。暴露上限 = 候选集最优 EU × 1.25（先验固定，三方法相同）；系统按真实代码路径接收约束；基线从可行子集单目标选择；无约束基线的违约率单独报告。",
+    "blind_date": "2023-10-25",
+    "cap_ratio": 1.25,
+    "cases": [
+      "jordan_to_prince_edward_midsource",
+      "prince_edward_to_jordan_midsource",
+      "mongkok_to_shamshuipo_midsource",
+      "shamshuipo_to_causewaybay_crossdistrict"
+    ],
+    "profiles": [
+      "commuter",
+      "parent_with_child",
+      "elderly",
+      "runner",
+      "tourist"
+    ]
+  },
+  "summary": {
+    "A_constrained": {
+      "n": 60,
+      "strict_feasible": 60,
+      "degraded": 0,
+      "median_time_min": 20.2,
+      "mean_eu": 0.5045,
+      "pref_satisfaction": 0.7833
+    },
+    "B_constrained": {
+      "n": 60,
+      "strict_feasible": 60,
+      "degraded": 0,
+      "median_time_min": 21.45,
+      "mean_eu": 0.4828,
+      "pref_satisfaction": 0.7833
+    },
+    "C_system": {
+      "n": 60,
+      "strict_feasible": 60,
+      "degraded": 0,
+      "median_time_min": 21.45,
+      "mean_eu": 0.4965,
+      "pref_satisfaction": 0.8333
+    },
+    "unconstrained_violation_rate": {
+      "A": "14/60",
+      "B": "0/60"
+    }
+  },
+  "rows": [
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "cap": 0.6738,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 20.2,
+        "intake_index": 0.5547,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.539,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.539,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2228.5
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "cap": 0.7007,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 20.6,
+        "intake_index": 0.5667,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.5606,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.5606,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2721.1
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "cap": 0.7439,
+      "n_candidates": 4,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.5951,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.5951,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.5951,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2156.9
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "cap": 0.6012,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 20.8,
+        "intake_index": 0.5717,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.481,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.481,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2258.7
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "cap": 0.6815,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 20.0,
+        "intake_index": 0.5499,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.5452,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.5452,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2127.2
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "cap": 0.6429,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.7,
+        "intake_index": 0.5332,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_3",
+        "duration_minutes": 17.0,
+        "intake_index": 0.5143,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.7,
+        "intake_index": 0.5332,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2047.1
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "cap": 0.6573,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 14.0,
+        "intake_index": 0.5448,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_3",
+        "duration_minutes": 17.3,
+        "intake_index": 0.5258,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 14.0,
+        "intake_index": 0.5448,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2010.2
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "cap": 0.9792,
+      "n_candidates": 5,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.7834,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.7834,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.7834,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2039.9
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "cap": 0.6634,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 14.1,
+        "intake_index": 0.55,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_3",
+        "duration_minutes": 17.5,
+        "intake_index": 0.5307,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 14.1,
+        "intake_index": 0.55,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2201.4
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "cap": 0.6374,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.6,
+        "intake_index": 0.5285,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_3",
+        "duration_minutes": 16.8,
+        "intake_index": 0.5099,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.6,
+        "intake_index": 0.5285,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2223.1
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "cap": 0.4394,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.3515,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.3515,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.3515,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 1901.8
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "cap": 0.4489,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.3591,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.3591,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.3591,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 1968.4
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "cap": 1.3005,
+      "n_candidates": 3,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 1.0404,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 1.0404,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 1.0404,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 1903.1
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "cap": 0.4528,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.3622,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.3622,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.8,
+        "intake_index": 0.3622,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2150.5
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "cap": 0.4355,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.4,
+        "intake_index": 0.3484,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.4,
+        "intake_index": 0.3484,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.4,
+        "intake_index": 0.3484,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2041.4
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "commuter",
+      "slot": "morning_07_09",
+      "cap": 0.3736,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 47.1,
+        "intake_index": 0.2989,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 47.1,
+        "intake_index": 0.2989,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 47.1,
+        "intake_index": 0.2989,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3292.0
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "parent_with_child",
+      "slot": "morning_07_09",
+      "cap": 0.4042,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 48.9,
+        "intake_index": 0.3234,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 48.9,
+        "intake_index": 0.3234,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 48.9,
+        "intake_index": 0.3234,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3798.0
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "elderly",
+      "slot": "morning_07_09",
+      "cap": 0.4544,
+      "n_candidates": 4,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 51.6,
+        "intake_index": 0.3635,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 51.6,
+        "intake_index": 0.3635,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 51.6,
+        "intake_index": 0.3635,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2957.8
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "runner",
+      "slot": "morning_07_09",
+      "cap": 0.2916,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 42.5,
+        "intake_index": 0.2333,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 42.5,
+        "intake_index": 0.2333,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 42.5,
+        "intake_index": 0.2333,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3233.6
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "tourist",
+      "slot": "morning_07_09",
+      "cap": 0.3823,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 47.6,
+        "intake_index": 0.3058,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 47.6,
+        "intake_index": 0.3058,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 47.6,
+        "intake_index": 0.3058,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3981.8
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "cap": 0.5202,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4846,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 15.5,
+        "intake_index": 0.4162,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4846,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2738.4
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "cap": 0.5244,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.7,
+        "intake_index": 0.4883,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 15.6,
+        "intake_index": 0.4195,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.7,
+        "intake_index": 0.4883,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3014.4
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "cap": 0.5914,
+      "n_candidates": 5,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.4731,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.4731,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.4731,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2707.4
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "cap": 0.4794,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 15.7,
+        "intake_index": 0.4206,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3835,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.3,
+        "intake_index": 0.3835,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3082.1
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "cap": 0.5144,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4789,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 15.3,
+        "intake_index": 0.4115,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4789,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2769.2
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "cap": 0.4835,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.3,
+        "intake_index": 0.44,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_3",
+        "duration_minutes": 12.9,
+        "intake_index": 0.3868,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.3,
+        "intake_index": 0.44,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2822.7
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "cap": 0.4874,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.4,
+        "intake_index": 0.4435,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_3",
+        "duration_minutes": 13.0,
+        "intake_index": 0.3899,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.4,
+        "intake_index": 0.4435,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2716.6
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "cap": 0.684,
+      "n_candidates": 5,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.5472,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.5472,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.1,
+        "intake_index": 0.5472,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2720.2
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "cap": 0.4885,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.4,
+        "intake_index": 0.4448,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_3",
+        "duration_minutes": 13.0,
+        "intake_index": 0.3908,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.4,
+        "intake_index": 0.4448,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2927.0
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "cap": 0.4776,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.2,
+        "intake_index": 0.4347,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_3",
+        "duration_minutes": 12.7,
+        "intake_index": 0.3821,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 10.2,
+        "intake_index": 0.4347,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2912.9
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "cap": 0.3039,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 8.0,
+        "intake_index": 0.2431,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 8.0,
+        "intake_index": 0.2431,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 8.0,
+        "intake_index": 0.2431,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2591.6
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "cap": 0.3063,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 8.1,
+        "intake_index": 0.245,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 8.1,
+        "intake_index": 0.245,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 8.1,
+        "intake_index": 0.245,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2537.7
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "cap": 0.8356,
+      "n_candidates": 3,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.5,
+        "intake_index": 0.6685,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.5,
+        "intake_index": 0.6685,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.5,
+        "intake_index": 0.6685,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2526.6
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "cap": 0.307,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 8.1,
+        "intake_index": 0.2456,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 8.1,
+        "intake_index": 0.2456,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 8.1,
+        "intake_index": 0.2456,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2685.7
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "cap": 0.3004,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.9,
+        "intake_index": 0.2403,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.9,
+        "intake_index": 0.2403,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 7.9,
+        "intake_index": 0.2403,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2708.2
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "commuter",
+      "slot": "midday_12_14",
+      "cap": 0.361,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.5,
+        "intake_index": 0.2888,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.5,
+        "intake_index": 0.2888,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.5,
+        "intake_index": 0.2888,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 4092.1
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "parent_with_child",
+      "slot": "midday_12_14",
+      "cap": 0.3644,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.8,
+        "intake_index": 0.2915,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.8,
+        "intake_index": 0.2915,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.8,
+        "intake_index": 0.2915,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 4308.3
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "elderly",
+      "slot": "midday_12_14",
+      "cap": 0.46,
+      "n_candidates": 4,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 50.5,
+        "intake_index": 0.368,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 50.5,
+        "intake_index": 0.368,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 50.5,
+        "intake_index": 0.368,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3664.5
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "runner",
+      "slot": "midday_12_14",
+      "cap": 0.2975,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.9,
+        "intake_index": 0.2922,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 42.0,
+        "intake_index": 0.238,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 42.0,
+        "intake_index": 0.238,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 4004.8
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "tourist",
+      "slot": "midday_12_14",
+      "cap": 0.356,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.2,
+        "intake_index": 0.2848,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.2,
+        "intake_index": 0.2848,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 26.2,
+        "intake_index": 0.2848,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3773.6
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "cap": 0.8513,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 20.4,
+        "intake_index": 0.6961,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.681,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.681,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2531.4
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "cap": 0.8861,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 20.9,
+        "intake_index": 0.7135,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.7089,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.9,
+        "intake_index": 0.7089,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2649.0
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "cap": 0.944,
+      "n_candidates": 5,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7552,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7552,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7552,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2708.2
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "cap": 0.7608,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 21.1,
+        "intake_index": 0.7208,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.6086,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.6086,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2953.3
+    },
+    {
+      "case": "jordan_to_prince_edward_midsource",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "cap": 0.8612,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 20.2,
+        "intake_index": 0.6913,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.689,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.8,
+        "intake_index": 0.689,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2889.0
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "cap": 0.8351,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.8,
+        "intake_index": 0.772,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 17.4,
+        "intake_index": 0.6681,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.8,
+        "intake_index": 0.772,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2842.9
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "cap": 0.8561,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 14.2,
+        "intake_index": 0.7914,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 17.9,
+        "intake_index": 0.6849,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 14.2,
+        "intake_index": 0.7914,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2515.8
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "cap": 0.9919,
+      "n_candidates": 5,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7935,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7935,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 22.2,
+        "intake_index": 0.7935,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2691.3
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "cap": 0.8267,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 14.3,
+        "intake_index": 0.7994,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.6614,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.4,
+        "intake_index": 0.6614,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2684.6
+    },
+    {
+      "case": "prince_edward_to_jordan_midsource",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "cap": 0.8288,
+      "n_candidates": 9,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.7,
+        "intake_index": 0.7663,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 17.3,
+        "intake_index": 0.663,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 13.7,
+        "intake_index": 0.7663,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2508.0
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "cap": 0.5111,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4089,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4089,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.6,
+        "intake_index": 0.4089,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2128.0
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "cap": 0.5236,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.9,
+        "intake_index": 0.4189,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.9,
+        "intake_index": 0.4189,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.9,
+        "intake_index": 0.4189,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 1976.4
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "cap": 1.2289,
+      "n_candidates": 3,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.9831,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.9831,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 21.7,
+        "intake_index": 0.9831,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2001.4
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "cap": 0.529,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 11.0,
+        "intake_index": 0.4232,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 11.0,
+        "intake_index": 0.4232,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 11.0,
+        "intake_index": 0.4232,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2554.1
+    },
+    {
+      "case": "mongkok_to_shamshuipo_midsource",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "cap": 0.5078,
+      "n_candidates": 6,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4062,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4062,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_2",
+        "duration_minutes": 10.5,
+        "intake_index": 0.4062,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 2065.5
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "commuter",
+      "slot": "evening_18_20",
+      "cap": 0.621,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 37.0,
+        "intake_index": 0.5138,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 47.2,
+        "intake_index": 0.4968,
+        "pref_satisfied": false,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 37.0,
+        "intake_index": 0.5138,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3290.8
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "parent_with_child",
+      "slot": "evening_18_20",
+      "cap": 0.66,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 38.0,
+        "intake_index": 0.528,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 38.0,
+        "intake_index": 0.528,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 38.0,
+        "intake_index": 0.528,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 3710.4
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "elderly",
+      "slot": "evening_18_20",
+      "cap": 0.761,
+      "n_candidates": 4,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 51.9,
+        "intake_index": 0.6088,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 51.9,
+        "intake_index": 0.6088,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 51.9,
+        "intake_index": 0.6088,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 4605.9
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "runner",
+      "slot": "evening_18_20",
+      "cap": 0.481,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.3848,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.3848,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 42.6,
+        "intake_index": 0.3848,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": true,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 4170.7
+    },
+    {
+      "case": "shamshuipo_to_causewaybay_crossdistrict",
+      "profile": "tourist",
+      "slot": "evening_18_20",
+      "cap": 0.6356,
+      "n_candidates": 7,
+      "A_constrained": {
+        "mode": "drive",
+        "route_id": "drive_0",
+        "duration_minutes": 36.7,
+        "intake_index": 0.5096,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "B_constrained": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 47.7,
+        "intake_index": 0.5085,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_system": {
+        "mode": "transit",
+        "route_id": "transit_0",
+        "duration_minutes": 47.7,
+        "intake_index": 0.5085,
+        "pref_satisfied": true,
+        "within_cap": true,
+        "constrained": true
+      },
+      "C_degraded": false,
+      "A_unconstrained_violates_cap": false,
+      "B_unconstrained_violates_cap": false,
+      "run_ms": 4618.3
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "_comment": "污染暴露场参数。产出的是 0-1 相对暴露指数，用于出行路线比选，不是污染物浓度预测。所有阈值集中在此，代码内不硬编码。",
+  "source_strength": {
+    "_comment": "源强度取值口径。站点源用异常分，交通走廊源用交通压力分。走廊按沿线等间隔采样点近似线源：单点强度 = corridor_emission_per_km × 该点代表的走廊长度 × 交通压力归一强度。强度必须与采样间隔成正比，否则场值会随采样密度变化。corridor_scope_km 把走廊源限制在污染源周边：本字段来源数据的 near_stations 覆盖全港所有道路，不加半径约束会把整座城区的街道都当成排放源。",
+    "default_station_strength": 0.7,
+    "default_corridor_strength": 0.7,
+    "corridor_scope_km": 1.5,
+    "corridor_emission_per_km": 0.02,
+    "corridor_sample_km": 0.35,
+    "corridor_max_points": 320
+  },
+  "plume": {
+    "_comment": "高斯烟羽参数。sigma 随下风向距离按幂律增长；风越弱稀释越差，用 stability_boost 表达静风积聚。plume_scale 是全局标定系数：把各项相乘后的量级压到 0-1 的有区分度区间。",
+    "plume_scale": 1.3,
+    "reference_wind_speed_ms": 3.0,
+    "crosswind_spread": {
+      "initial_km": 0.15,
+      "coefficient": 0.09,
+      "exponent": 0.894
+    },
+    "vertical_spread": {
+      "initial_km": 0.03,
+      "coefficient": 0.06,
+      "exponent": 0.9
+    },
+    "decay_half_life_hours": 8.0,
+    "stability_boost": {
+      "min": 0.6,
+      "max": 1.8
+    },
+    "upwind_back_diffusion_fraction": 0.15,
+    "upwind_scale_km": 0.8,
+    "_calibrated": "2026-10-13 验证集网格重标定（validation_iou=0.3983）"
+  },
+  "calm": {
+    "_comment": "低风速时的各向同性积聚分支。这里**不是一个开关**：field = calm_weight × 积聚项 + (1-calm_weight) × 烟羽项，calm_weight 在 threshold_ms 到 transition_ms 之间线性过渡。早先用 wind < 阈值 做硬判断，风速从 0.49 到 0.51 m/s 会让行程区暴露中位数跳 7 倍——那是不连续，不是物理。accumulation_scale 是这一支独立的全局标定系数：烟羽分支的横向高斯会丢弃绝大部分偏离风向的源，而各向同性分支把半径内的源全部计入，两者求和结构不同，共用 plume_scale 会让静风分支顶到 0-1 上限而失去区分度（实测正是如此）。accumulation_radius_km 取与 corridor_sample_km 同量级：既是有物理含义的平滑尺度，也避免相邻采样点之间出现颗粒状起伏。 【V7 结构性改进】积聚半径不再用固定常数：有效半径 = √(R0² + 2·K·t)，K=50 m²/s、t=3 小时（窗口代表时长），由扩散物理量纲导出——静止空气中污染团随时间按 √t 展宽。 【V7 双尺度结构】局部项保持 R0=0.35 km 陡梯度；背景项半径 √(R0²+2·K·t)≈1.1 km（K=50 m²/s、t=3 h），幅度按质量守恒缩放 (R0/R_eff)²——补齐远场扩散展宽而不破坏近源判别。",
+    "threshold_ms": 0.5,
+    "transition_ms": 1.2,
+    "accumulation_radius_km": 0.35,
+    "accumulation_scale": 0.6,
+    "diffusion_coefficient_m2s": 50.0,
+    "reference_hours": 3.0,
+    "diffusion_background": {
+      "k_m2s": 50.0,
+      "hours": 3.0
+    }
+  },
+  "grid": {
+    "_comment": "烟羽场先算到规则网格上，路段与地图按网格双线性插值取值，避免逐路段重复计算。",
+    "cell_km": 0.1,
+    "margin_km": 1.5,
+    "min_index": 0.05,
+    "render_stride": 1
+  },
+  "avoidance": {
+    "_comment": "避污路线的成本系数。路段成本乘数 = 1 + cost_weight × 指数^exponent。exponent > 1 表示超线性：强烈回避高暴露的核心区，但可以容忍轻度暴露，这比线性加权更接近\"避开污染\"的语义。high_exposure_threshold 用于统计路线在高暴露区的里程。",
+    "cost_weight": 8.0,
+    "exponent": 2.0,
+    "high_exposure_threshold": 0.5
+  },
+  "source_judgement": {
+    "_comment": "SourceAgent 来源判定阈值（2026-10-13 重构）。缺测的证据类别不允许判定；NO2/异常分只做污染门控，不直接充当交通源证据。阈值在治理基准的开发窗口上标定后冻结。traffic_weights：交通源 = pressure×交通压力 + upwind×上风向匹配 + roadside×路边站(1.0/0.4)；local_weights：局地积聚 = static_wind×静风分 + anomaly×异常分；regional_weights：区域传输 = high_wind×(风速/5) + wind_stability×(1-风向突变分) + weak_local×(1-交通源分)。 2026-10-13 第三轮：区域传输权重加入多站同步证据（sync=同步站数/8，主项）；门控未过时输出 Insufficient evidence（证据不足）。",
+    "gate_anomaly_min": 0.45,
+    "traffic_threshold": 0.45,
+    "local_threshold": 0.45,
+    "regional_threshold": 0.65,
+    "traffic_weights": {
+      "pressure": 0.45,
+      "upwind": 0.3,
+      "roadside": 0.25
+    },
+    "local_weights": {
+      "static_wind": 0.6,
+      "anomaly": 0.4
+    },
+    "regional_weights": {
+      "sync": 0.4,
+      "high_wind": 0.25,
+      "wind_stability": 0.15,
+      "weak_local": 0.2
+    },
+    "risk_high": 0.65,
+    "risk_medium": 0.45,
+    "_calibrated": "2026-10-13 开发窗口网格搜索冻结（dev_macro_f1=0.4827）",
+    "traffic_signal_min": 0.8,
+    "traffic_clim_ratio_min": 1.3,
+    "traffic_nox_pct_min": 0.65,
+    "_comment_v95": "V9.5 创新一重构：判定从'优先级链'（区域→交通→积聚）改为'证据签名 argmax + 支配边际'。三类的证据签名按同一构造（只含正向证据、各自归一化到 [0,1]），直接可比：sig_traffic = 交通压力/上风向匹配（去掉路边站常数项——那是站点属性不是事件签名，原实现让每个路边站窗口都像交通）；sig_local = 静风 + 异常分；sig_regional = 多站同步 + 高风速 + 风向稳定（去掉 weak_local 排除项，纯正向证据）。判定=argmax(sig)，但要求 max≥min_strength 且 (max−second)≥dominance_margin，否则输出'证据不足'——支配边际取代失效的 anomaly 充当不确定性信号。judgement_rule 可切回 legacy_priority_chain 做消融对照。",
+    "judgement_rule": "score_argmax",
+    "min_strength": 0.35,
+    "dominance_margin": 0.05,
+    "signature_weights": {
+      "traffic": {
+        "pressure": 0.6,
+        "upwind": 0.4
+      },
+      "local": {
+        "static_wind": 0.6,
+        "anomaly": 0.4,
+        "station_elevation": 0.0
+      },
+      "regional": {
+        "sync": 0.6,
+        "high_wind": 0.25,
+        "wind_stability": 0.15,
+        "elevation": 0.0,
+        "uniformity": 0.0
+      }
+    },
+    "traffic_requires_roadside": false,
+    "_v95_calibrated": "2026-10-14 开发集(种子 [20260412, 20260413, 20260414])网格搜索冻结；最终种子 [20260601, 20260602, 20260603] 未参与",
+    "_v95_contrast_note": "空间对比度（query_spatial_contrast）计算已于 V9.6 修正（根因：AirQualityAgent 默认库在导入时绑定 → 实际读真实库；数据契约已加硬断言，管线内与独立计算逐例一致）。但**绝对阈值映射 (mean_ratio-1)/0.5 不可跨域迁移**：合成世界 mean_ratio≈1.6 → elev 接近 1；真实世界 ≈1.0 → elev 接近 0，反而挤掉原本有效的同步项，导致真实数据 regional 预测数 0/254、留出 C 0.4602→0.2952、PIT C 0.4416→0.3581。故权重置 0，仅作诊断证据输出；可迁移的尺度无关形式（本站比值/网络均值）在 governance_sweep.py 中离线评估，见 V9.6 报告。"
+  }
+}

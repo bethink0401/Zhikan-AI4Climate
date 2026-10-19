@@ -1,0 +1,315 @@
+{
+  "_comment": "用户出行习惯画像配置。TravelAgent 从中读取画像阈值与敏感度权重，用于把气象条件转成个性化出行建议。所有阈值集中在此，不得在代码内硬编码。 【2026-10-13 校准】pollution_exchange_minutes 按画像在开发集(2023-08-15)上以独立口径(画像约束满足率/被支配率/时间成本约束)网格搜索 8-20 min/EU 后冻结；独立测试集未参与。 【V4 校准 2026-10-13】交换率按画像在开发日 2023-10-18 上以独立口径（偏好满足率→平衡度→EU 比）网格搜索并冻结；盲测日未参与。",
+  "weather_thresholds": {
+    "_comment": "全局气象分级阈值。画像是通过 sensitivities 在分级结果上做个性化缩放，而不是各自重新定义一套门槛。",
+    "rain_mm_per_hour": {
+      "none": 0.0,
+      "light": 0.5,
+      "moderate": 2.5,
+      "heavy": 7.6
+    },
+    "temperature_c": {
+      "cold": 12.0,
+      "comfort_low": 18.0,
+      "comfort_high": 28.0,
+      "hot": 31.0,
+      "very_hot": 33.0
+    },
+    "humidity_pct": {
+      "comfort": 70.0,
+      "muggy": 85.0,
+      "very_muggy": 92.0
+    },
+    "wind_speed_ms": {
+      "calm": 0.5,
+      "breezy": 5.4,
+      "strong": 8.0,
+      "gale": 10.8
+    },
+    "wind_gust_ms": {
+      "noticeable": 8.0,
+      "strong": 12.0
+    },
+    "air_quality_risk": {
+      "good": 0.3,
+      "moderate": 0.5,
+      "poor": 0.7,
+      "very_poor": 0.85
+    }
+  },
+  "mode_speeds": {
+    "_comment": "各出行方式的规划速度（km/h）。实际耗时会在此基础上叠加天气折减、路口等待与拥堵，见 time_model 与 travel_advice_tools.py。",
+    "walk": 4.5,
+    "drive": 22.0
+  },
+  "segments": {
+    "_comment": "分段类型：步行、驾车、候车与进出站、轨道区间。公共交通的方案由这四段合成，因此它的吸入当量只统计接驳与候车段，不像步行那样整段暴露。",
+    "kinds": [
+      "walk",
+      "drive",
+      "transit_wait",
+      "transit_rail"
+    ],
+    "labels": {
+      "walk": "步行",
+      "drive": "驾车",
+      "transit_wait": "候车与进出站",
+      "transit_rail": "轨道区间"
+    }
+  },
+  "intake": {
+    "_comment": "吸入当量口径：intake = Σ 分段[ 平均暴露指数 × 停留分钟 × 呼吸速率比 × 穿透系数 ]。单位 EU = '以步行呼吸量计的污染分钟数'，因此跨出行方式可比。同样是主干道上的 3 公里，步行的吸入量远高于车内坐 3 公里——旧的 Σ指数×公里 口径无法表达这一点，会让三种方式的剂量被直接同台比较。",
+    "reference_ventilation_lpm": 22.0,
+    "ventilation_lpm": {
+      "walk": 22.0,
+      "drive": 10.0,
+      "transit_wait": 12.0,
+      "transit_rail": 10.0
+    },
+    "penetration": {
+      "walk": 1.0,
+      "drive": 0.35,
+      "transit_wait": 0.6,
+      "transit_rail": 0.1
+    },
+    "enclosure": {
+      "_comment": "该分段对天气（雨淋、暴晒、风）的隔绝程度，用于计算'户外等效时间'。",
+      "walk": 1.0,
+      "drive": 0.6,
+      "transit_wait": 0.5,
+      "transit_rail": 0.1
+    }
+  },
+  "time_model": {
+    "_comment": "耗时模型。步行/驾车不再是恒定速度乘里程：路口等待按路口数计（相邻 30 m 内的节点视为同一路口），驾车还按道路等级与时段拥堵差异化。不这样做的后果是'驾车永远比步行快 4.4 倍'在主干道拥堵时段也成立，足以翻转方式选择。",
+    "junction_wait_seconds": {
+      "walk": 18.0,
+      "drive": 10.0
+    },
+    "drive_class_speed_factor": {
+      "trunk": 1.3,
+      "local": 0.9
+    },
+    "congestion": {
+      "peak_hours": [
+        7,
+        8,
+        9,
+        17,
+        18,
+        19
+      ],
+      "peak_factor": 0.7,
+      "offpeak_factor": 1.0
+    },
+    "rail": {
+      "speed_kmh": 32.0,
+      "dwell_seconds": 45.0,
+      "platform_access_minutes": 4.0,
+      "wait_minutes": 3.0
+    },
+    "transit_wait_equivalent_km": 0.5,
+    "max_transit_access_km": 1.2
+  },
+  "scoring": {
+    "_comment": "评分权重。得分不再由多个高度相关的扣分项相加得到——实测那些项两两相关系数 0.94~0.99，等于把'走多远'重复计了四遍。现在只有一个效用式：U = 户外等效时间 ×(1+天气乘数×天气负担) + 交换率×吸入当量 + 方式常数 + 超限罚分，全部以分钟为单位，可直接比较、可分解。展示用得分由 U 单调映射：score = 100 × anchor/(anchor+U)，用软饱和而非硬截断，否则效用跨度从 3 到 180 分钟时步行方案会整片压到 0 分而失去区分度。",
+    "score_anchor_minutes": 40.0,
+    "condition_weights": {
+      "_comment": "出行条件总分的因子权重（与路线评分无关，只用于给出当日出行适宜度）。",
+      "rain": 0.28,
+      "heat": 0.22,
+      "humidity": 0.16,
+      "wind": 0.12,
+      "air_quality": 0.22
+    },
+    "speed_loss_cap": {
+      "_comment": "各天气因子对有效速度的最大折减比例。",
+      "rain": 0.3,
+      "heat": 0.2,
+      "humidity": 0.12,
+      "wind": 0.1,
+      "air_quality": 0.05
+    },
+    "max_total_speed_loss": 0.45,
+    "walk_overrun_minutes_per_km": 25.0
+  },
+  "profiles": [
+    {
+      "profile_id": "commuter",
+      "profile_name": "通勤族",
+      "description": "工作日固定时段往返，时间敏感，愿意多走一点换取准点与舒适。",
+      "preferred_modes": [
+        "transit",
+        "drive"
+      ],
+      "mode_constant_minutes": {
+        "transit": -5.0,
+        "drive": -2.0,
+        "walk": 0.0
+      },
+      "pollution_exchange_minutes": 8.0,
+      "weather_time_multiplier": 0.8,
+      "walk_speed_factor": 1.0,
+      "max_walk_km": 1.2,
+      "max_trip_minutes": 25,
+      "time_flexibility_minutes": 10,
+      "prefer_shaded": true,
+      "prefer_main_roads": true,
+      "avoid_polluted_corridor": true,
+      "sensitivities": {
+        "rain": 0.8,
+        "heat": 0.7,
+        "humidity": 0.6,
+        "wind": 0.4,
+        "air_quality": 0.9
+      }
+    },
+    {
+      "profile_id": "parent_with_child",
+      "profile_name": "带娃家长",
+      "description": "推车或带小孩出行，步行耐受低，对降雨、暴晒与空气质量最敏感。",
+      "preferred_modes": [
+        "transit",
+        "drive"
+      ],
+      "mode_constant_minutes": {
+        "transit": -5.0,
+        "drive": -3.0,
+        "walk": 0.0
+      },
+      "pollution_exchange_minutes": 8.0,
+      "weather_time_multiplier": 1.2,
+      "walk_speed_factor": 0.9,
+      "max_walk_km": 0.8,
+      "max_trip_minutes": 30,
+      "time_flexibility_minutes": 20,
+      "prefer_shaded": true,
+      "prefer_main_roads": true,
+      "avoid_polluted_corridor": true,
+      "sensitivities": {
+        "rain": 1.0,
+        "heat": 1.0,
+        "humidity": 0.8,
+        "wind": 0.6,
+        "air_quality": 1.0
+      }
+    },
+    {
+      "profile_id": "elderly",
+      "profile_name": "长者",
+      "description": "步行速度较慢、偏好短距离，怕高温高湿与大风雨天，重视路面安全。",
+      "preferred_modes": [
+        "transit",
+        "walk"
+      ],
+      "mode_constant_minutes": {
+        "transit": -6.0,
+        "drive": 0.0,
+        "walk": 0.0
+      },
+      "pollution_exchange_minutes": 8.0,
+      "weather_time_multiplier": 1.2,
+      "walk_speed_factor": 0.75,
+      "max_walk_km": 0.6,
+      "max_trip_minutes": 35,
+      "time_flexibility_minutes": 40,
+      "prefer_shaded": true,
+      "prefer_main_roads": true,
+      "avoid_polluted_corridor": true,
+      "sensitivities": {
+        "rain": 1.0,
+        "heat": 1.0,
+        "humidity": 0.9,
+        "wind": 0.8,
+        "air_quality": 0.9
+      },
+      "allowed_modes": [
+        "transit",
+        "walk"
+      ],
+      "_comment_modes": "allowed_modes 是硬约束：这些画像不进入的方式（如长者自驾）直接从候选中排除，效用评分不能推翻；preferred_modes 仍是软偏好。"
+    },
+    {
+      "profile_id": "runner",
+      "profile_name": "跑步爱好者",
+      "description": "以运动为目的出行，距离耐受高，但高温高湿下体能消耗显著上升；通气量约为常速步行的 1.7 倍，同等路面污染下吸入量大幅高于其他方式。",
+      "preferred_modes": [
+        "walk",
+        "transit"
+      ],
+      "mode_constant_minutes": {
+        "walk": -8.0,
+        "transit": 0.0,
+        "drive": 3.0
+      },
+      "pollution_exchange_minutes": 8.0,
+      "weather_time_multiplier": 0.4,
+      "walk_speed_factor": 1.7,
+      "max_walk_km": 6.0,
+      "max_trip_minutes": 60,
+      "time_flexibility_minutes": 120,
+      "prefer_shaded": false,
+      "prefer_main_roads": false,
+      "avoid_polluted_corridor": true,
+      "sensitivities": {
+        "rain": 0.5,
+        "heat": 1.0,
+        "humidity": 0.9,
+        "wind": 0.3,
+        "air_quality": 1.0
+      }
+    },
+    {
+      "profile_id": "tourist",
+      "profile_name": "游客",
+      "description": "以观光为目的，步行距离长、时间弹性大，更在意沿线体感与遮荫。",
+      "preferred_modes": [
+        "walk",
+        "transit"
+      ],
+      "mode_constant_minutes": {
+        "walk": -6.0,
+        "transit": -2.0,
+        "drive": 2.0
+      },
+      "pollution_exchange_minutes": 8.0,
+      "weather_time_multiplier": 0.9,
+      "walk_speed_factor": 0.95,
+      "max_walk_km": 3.0,
+      "max_trip_minutes": 50,
+      "time_flexibility_minutes": 60,
+      "prefer_shaded": true,
+      "prefer_main_roads": false,
+      "avoid_polluted_corridor": false,
+      "sensitivities": {
+        "rain": 0.7,
+        "heat": 0.8,
+        "humidity": 0.7,
+        "wind": 0.4,
+        "air_quality": 0.5
+      }
+    }
+  ],
+  "departure_curve": {
+    "_comment": "出发时段 × 吸入当量曲线：用逐小时风速风向重建暴露场，给出每个候选出发时刻的吸入当量。逐小时风场是气象 Agent 已经返回的字段，不需要额外请求。",
+    "horizon_hours": 6,
+    "max_points": 8
+  },
+  "uncertainty": {
+    "_comment": "结论稳健性：对风速、风向与画像交换率做蒙特卡洛抽样，重建暴露场并重算候选集效用，统计推荐路线的被选中比例。场构建约 0.13 s/次，因此样本数直接决定耗时。",
+    "samples": 16,
+    "wind_speed_rel_sigma": 0.15,
+    "wind_direction_sigma_deg": 20.0,
+    "exchange_rel_sigma": 0.2
+  },
+  "decision": {
+    "_comment": "路线推荐的选择规则。weighted_sum = 线性效用最优（保留 Pareto 合理性护栏）；tchebycheff = 归一化 + 画像驱动的加权 Tchebycheff（按'最差目标偏差'选方案，规避'某一目标极差、另一目标极优'的候选靠互相补偿胜出）。两种规则下 Pareto 非支配筛选与硬约束都生效，只有'前沿上如何取舍'不同。权重取自画像时间压力=max_trip_minutes/(max_trip_minutes+time_flexibility_minutes)：时间预算越紧的画像时间权重越高。",
+    "rule": "tchebycheff",
+    "epsilon": 1e-09,
+    "weight_basis": "time_pressure",
+    "reference_minutes": 75.0,
+    "fixed_time_weight": 0.5,
+    "_comment_weight_basis": "w_time 由画像时间压力导出：time_pressure（默认）= T_ref/(T_ref+T_max+T_flex)，对 T_max 与 T_flex 均单调不增（V9.6 修正旧公式单调性反向的问题）；time_pressure_legacy = 旧公式（仅对照）；fixed = 0.5/0.5（仅对照）。",
+    "_comment_reference": "reference_minutes 是 w_time=0.5 的'半权重点'（总预算 = max_trip+flex）。取当前画像集的中位总预算 75 分钟，使中位画像中性、更紧迫的画像时间权重更高。画像集变化时需要重新推导这个标尺。"
+  }
+}

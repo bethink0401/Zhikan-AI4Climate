@@ -1,0 +1,238 @@
+{
+  "spatial_spread_ablation": {
+    "runs": [
+      {
+        "station": "Mong Kok Roadside",
+        "variant": "with_wind",
+        "status": "success",
+        "upwind_roads": 15,
+        "sensitive_pois": 352,
+        "affected_area_geometry": null,
+        "warnings": 0
+      },
+      {
+        "station": "Mong Kok Roadside",
+        "variant": "rotated_90",
+        "status": "success",
+        "upwind_roads": 15,
+        "sensitive_pois": 300,
+        "affected_area_geometry": null,
+        "warnings": 0
+      },
+      {
+        "station": "Mong Kok Roadside",
+        "variant": "no_wind",
+        "status": "warning",
+        "upwind_roads": 0,
+        "sensitive_pois": 1162,
+        "affected_area_geometry": null,
+        "warnings": 2
+      },
+      {
+        "station": "Causeway Bay Roadside",
+        "variant": "with_wind",
+        "status": "success",
+        "upwind_roads": 15,
+        "sensitive_pois": 171,
+        "affected_area_geometry": null,
+        "warnings": 0
+      },
+      {
+        "station": "Causeway Bay Roadside",
+        "variant": "rotated_90",
+        "status": "success",
+        "upwind_roads": 15,
+        "sensitive_pois": 64,
+        "affected_area_geometry": null,
+        "warnings": 0
+      },
+      {
+        "station": "Causeway Bay Roadside",
+        "variant": "no_wind",
+        "status": "warning",
+        "upwind_roads": 0,
+        "sensitive_pois": 497,
+        "affected_area_geometry": null,
+        "warnings": 2
+      },
+      {
+        "station": "Central Roadside",
+        "variant": "with_wind",
+        "status": "success",
+        "upwind_roads": 15,
+        "sensitive_pois": 128,
+        "affected_area_geometry": null,
+        "warnings": 0
+      },
+      {
+        "station": "Central Roadside",
+        "variant": "rotated_90",
+        "status": "success",
+        "upwind_roads": 15,
+        "sensitive_pois": 128,
+        "affected_area_geometry": null,
+        "warnings": 0
+      },
+      {
+        "station": "Central Roadside",
+        "variant": "no_wind",
+        "status": "warning",
+        "upwind_roads": 0,
+        "sensitive_pois": 510,
+        "affected_area_geometry": null,
+        "warnings": 2
+      }
+    ]
+  },
+  "travel_decision_ablation": {
+    "runs": 20,
+    "pollution_term_removed_flips": 0,
+    "weather_term_removed_flips": 0,
+    "detail": [
+      {
+        "scenario": "severe_morning_peak",
+        "case": "olympic_to_harbour_centre",
+        "profile": "commuter",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "severe_morning_peak",
+        "case": "olympic_to_harbour_centre",
+        "profile": "parent_with_child",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "severe_morning_peak",
+        "case": "olympic_to_harbour_centre",
+        "profile": "elderly",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "severe_morning_peak",
+        "case": "olympic_to_harbour_centre",
+        "profile": "runner",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "severe_morning_peak",
+        "case": "olympic_to_harbour_centre",
+        "profile": "tourist",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "severe_morning_peak",
+        "case": "harbour_centre_to_olympic",
+        "profile": "commuter",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "severe_morning_peak",
+        "case": "harbour_centre_to_olympic",
+        "profile": "parent_with_child",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "severe_morning_peak",
+        "case": "harbour_centre_to_olympic",
+        "profile": "elderly",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "severe_morning_peak",
+        "case": "harbour_centre_to_olympic",
+        "profile": "runner",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "severe_morning_peak",
+        "case": "harbour_centre_to_olympic",
+        "profile": "tourist",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "olympic_to_harbour_centre",
+        "profile": "commuter",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "olympic_to_harbour_centre",
+        "profile": "parent_with_child",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "olympic_to_harbour_centre",
+        "profile": "elderly",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "olympic_to_harbour_centre",
+        "profile": "runner",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "olympic_to_harbour_centre",
+        "profile": "tourist",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "harbour_centre_to_olympic",
+        "profile": "commuter",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "harbour_centre_to_olympic",
+        "profile": "parent_with_child",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "harbour_centre_to_olympic",
+        "profile": "elderly",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "harbour_centre_to_olympic",
+        "profile": "runner",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      },
+      {
+        "scenario": "clear_autumn_morning",
+        "case": "harbour_centre_to_olympic",
+        "profile": "tourist",
+        "removing_pollution_flips": false,
+        "removing_weather_flips": false
+      }
+    ]
+  },
+  "notes": [
+    "spatial: 无风向时系统不生成定向传播扇区（退化为环形影响区并给出 warning）",
+    "travel: 移去污染项或天气项后重排，统计推荐是否翻转；翻转即说明该项参与了决策"
+  ]
+}
