@@ -1,0 +1,33 @@
+{
+  "air_quality_to_atc": {
+    "Mong Kok Roadside": {
+      "primary_atc_station_ids": ["3006"],
+      "nearby_atc_station_ids": ["4204", "3015", "4404", "4209"],
+      "lat": 22.3193,
+      "lon": 114.1694,
+      "note": "Nathan Rd 3006 有 OCC；Argyle/Shanghai/Portland 为周边补充"
+    },
+    "Causeway Bay Roadside": {
+      "primary_atc_station_ids": ["2214"],
+      "nearby_atc_station_ids": ["1002", "1032", "1029"],
+      "lat": 22.2800,
+      "lon": 114.1850,
+      "note": "1029 Hennessy 无 OCC sheet；改用 2214 Causeway Rd（有 OCC）作主站"
+    },
+    "Central Roadside": {
+      "primary_atc_station_ids": ["2207"],
+      "nearby_atc_station_ids": ["2208", "2209", "1001", "1030"],
+      "lat": 22.2819,
+      "lon": 114.1580,
+      "note": "1030 Connaught underpass 无 OCC sheet；改用 2207 Connaught Rd C（有 OCC）作主站"
+    }
+  },
+  "aliases": {
+    "Mong Kok": "Mong Kok Roadside",
+    "旺角": "Mong Kok Roadside",
+    "Causeway Bay": "Causeway Bay Roadside",
+    "铜锣湾": "Causeway Bay Roadside",
+    "Central": "Central Roadside",
+    "中环": "Central Roadside"
+  }
+}

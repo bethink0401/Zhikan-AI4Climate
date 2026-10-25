@@ -1,0 +1,4 @@
+station_id,station_name,station_name_zh,station_type,lat,lon,address
+MK,Mong Kok Roadside,旺角路边站,roadside,22.3227,114.1683,"Junction of Nathan Road and Lai Chi Kok Road, Mong Kok, Kowloon"
+CB,Causeway Bay Roadside,铜锣湾路边站,roadside,22.2802,114.1851,"1 Yee Wo Street pedestrian area, Causeway Bay, Hong Kong"
+CL,Central Roadside,中环路边站,roadside,22.2818,114.1581,"Chater Road roadside area, Central, Hong Kong"

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-07-19T08:04:25.317045+00:00",
+  "source_file": "task/data/RdNet_IRNP.gdb",
+  "source_layer": "CENTERLINE",
+  "source_crs": "EPSG:2326",
+  "output_crs": "EPSG:4326",
+  "station_filter_radius_km": 4.0,
+  "simplification_tolerance_m": 4.0,
+  "source_feature_count": 36395,
+  "bbox_candidate_count": 14840,
+  "invalid_feature_count": 0,
+  "kept_feature_count": 12833
+}

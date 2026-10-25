@@ -1,0 +1,27 @@
+{
+  "agent_name": "AirQualityAgent",
+  "status": "warning",
+  "result": {
+    "pollution_status": "unknown",
+    "main_pollutants": [],
+    "aqhi_level": "unknown",
+    "traffic_pollutant_signal": "unknown",
+    "anomaly_score": 0.0
+  },
+  "evidence": [
+    "No air quality data for station=Mong Kok Roadside, period=2023-08-15 08:00:00 ~ 2023-08-15 11:00:00."
+  ],
+  "confidence": 0.2,
+  "data_quality": {
+    "missing_rate": 1.0,
+    "note": "数据缺失，请检查 ETL 是否导入对应站点/时段；勿直接报错中断上游。"
+  },
+  "created_at": "2026-07-26 01:16:33",
+  "meta": {
+    "task_id": "HK_MK_2023_0800",
+    "station_name": "Mong Kok Roadside",
+    "start_time": "2023-08-15 08:00:00",
+    "end_time": "2023-08-15 11:00:00",
+    "row_count": 0
+  }
+}

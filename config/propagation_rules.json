@@ -1,0 +1,24 @@
+{
+  "version": "paper_parcel_v2",
+  "_comment": "按论文式(3-5)更新气团寿命。系数通过现有 pollution_rules.plume.decay_half_life_hours 的参考状态匹配推导，未经过本模型的实测标定。",
+  "reference_weather": {
+    "temperature_k": 298.15,
+    "humidity_pct": 70.0,
+    "pressure_hpa": 1013.25,
+    "wind_speed_ms": 3.0
+  },
+  "reference_lookback_days": 7,
+  "termination_fraction": 0.01,
+  "max_horizon_hours": 168,
+  "wind_lookback_hours": 12,
+  "station_validation": {
+    "centerline_radius_km": 1.0,
+    "baseline_hours": 6,
+    "arrival_window_hours": 1,
+    "relative_increase_threshold": 0.10,
+    "minimum_baseline_samples": 2
+  },
+  "pollutants": ["pm25", "pm10", "no2", "o3", "so2", "co"],
+  "units": {"co": "mg/m³", "default": "μg/m³"},
+  "calibration_status": "reference_matched_not_observation_fitted"
+}

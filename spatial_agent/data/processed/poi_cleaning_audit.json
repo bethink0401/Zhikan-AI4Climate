@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-07-19T08:07:19.109091+00:00",
+  "source_file": "task/data/POI/iGeoCOM_POI.csv",
+  "source_crs": "EPSG:2326",
+  "output_crs": "EPSG:4326",
+  "classification_rules": {
+    "SCH": "all types",
+    "HNC": "all types",
+    "TRS": [
+      "HSA",
+      "HSN",
+      "LRA",
+      "MTA",
+      "PTA",
+      "RSN"
+    ],
+    "COM": [
+      "CMC"
+    ],
+    "CUF": [
+      "SSR"
+    ]
+  },
+  "statistics": {
+    "duplicate_facility": 469,
+    "kept_community_centre": 422,
+    "kept_community_service": 211,
+    "kept_healthcare": 1103,
+    "kept_rail_transit": 797,
+    "kept_rows": 5830,
+    "kept_school": 3297,
+    "non_sensitive_rows": 31057,
+    "source_rows": 37356
+  }
+}

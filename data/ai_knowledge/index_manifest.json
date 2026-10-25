@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "index_version": "aerion-compatible-v1",
+  "embedding_provider": "sentence_transformers",
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "dimensions": 384,
+  "created_at": "2026-10-17T18:23:50.298584+00:00"
+}

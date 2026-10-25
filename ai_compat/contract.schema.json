@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://weather-multi-agent.local/contracts/aerion-ai-compat-1.0.json",
+  "title": "AERION AI compatibility contracts",
+  "type": "object",
+  "$defs": {
+    "dataStatus": {"enum": ["available", "partial", "unavailable", "error"]},
+    "businessAction": {"enum": ["run", "need_params", "fallback", "recommend", "knowledge"]},
+    "visualizationAction": {"enum": ["none", "show", "modify", "update", "reset", "switch_view"]},
+    "dataUnavailable": {
+      "type": "object",
+      "required": ["status", "domain", "reason"],
+      "properties": {
+        "status": {"const": "unavailable"},
+        "domain": {"type": "string"},
+        "reason": {"type": "string"},
+        "required_adapter": {"type": ["string", "null"]},
+        "available_source": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["evidence_id", "domain", "statement", "source_path", "evidence_type"],
+      "properties": {
+        "evidence_id": {"type": "string"},
+        "domain": {"type": "string"},
+        "statement": {"type": "string"},
+        "source_path": {"type": "string"},
+        "evidence_type": {"enum": ["agent_evidence", "result_field", "data_quality", "limitation"]},
+        "value": {},
+        "unit": {"type": ["string", "null"]},
+        "station_id": {"type": ["string", "null"]},
+        "station_name": {"type": ["string", "null"]},
+        "start_time": {"type": ["string", "null"]},
+        "end_time": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "agentResult": {
+      "type": "object",
+      "required": ["domain", "source_agent", "status", "source_status", "result", "evidence", "confidence", "data_quality", "units", "provenance", "limitations", "unavailable"],
+      "properties": {
+        "domain": {"type": "string"},
+        "source_agent": {"type": "string"},
+        "status": {"$ref": "#/$defs/dataStatus"},
+        "source_status": {"type": ["string", "null"]},
+        "result": {"type": "object"},
+        "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+        "confidence": {"type": ["number", "null"]},
+        "data_quality": {"type": "object"},
+        "units": {"type": "object", "additionalProperties": {"type": "string"}},
+        "provenance": {"type": "object"},
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "unavailable": {"oneOf": [{"$ref": "#/$defs/dataUnavailable"}, {"type": "null"}]}
+      },
+      "additionalProperties": false
+    },
+    "canonicalAgentResults": {
+      "type": "object",
+      "required": ["contract_version", "task", "agent_results", "pipeline_status", "warnings"],
+      "properties": {
+        "contract_version": {"const": "1.0"},
+        "task": {"type": "object"},
+        "agent_results": {
+          "type": "object",
+          "required": ["AirQualityAgent", "MeteorologyAgent", "TrafficAgent", "SpatialAgent", "SourceAgent", "DecisionAgent", "ReportAgent"],
+          "additionalProperties": {"$ref": "#/$defs/agentResult"}
+        },
+        "pipeline_status": {"type": "object", "additionalProperties": {"type": "boolean"}},
+        "warnings": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "task_id": {"type": ["string", "null"]},
+        "station_id": {"type": ["string", "null"]},
+        "station_name": {"type": ["string", "null"]},
+        "start_time": {"type": ["string", "null"]},
+        "end_time": {"type": ["string", "null"]},
+        "lat": {"type": ["number", "null"]},
+        "lon": {"type": ["number", "null"]},
+        "prefer_text_station": {"type": ["boolean", "null"]},
+        "agent_results": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "chatRequest": {
+      "type": "object",
+      "required": ["session_id", "user_input"],
+      "properties": {
+        "session_id": {"type": "string", "minLength": 1},
+        "user_input": {"type": "string", "minLength": 1},
+        "request_context": {"type": ["object", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "visualizationSpec": {
+      "type": "object",
+      "required": ["version", "view_type", "title", "data_source", "metrics", "dimension"],
+      "properties": {
+        "version": {"const": "1.0"},
+        "view_type": {"enum": ["chart", "map"]},
+        "title": {"type": "string"},
+        "data_source": {"enum": ["air_quality", "meteorology", "traffic", "source", "spatial"]},
+        "metrics": {"type": "array", "items": {"type": "string"}},
+        "dimension": {"enum": ["time", "time_slot", "source_type", "vehicle_type", "pollutant", "space"]},
+        "filters": {"type": "object"},
+        "grouping": {"type": ["object", "null"]},
+        "unit": {"type": ["string", "null"]},
+        "warnings": {"type": "array", "items": {"type": "string"}},
+        "chart_type": {"type": ["string", "null"]},
+        "map_type": {"type": ["string", "null"]},
+        "layers": {"type": "array", "items": {"type": "object"}}
+      },
+      "additionalProperties": false
+    },
+    "viewCommand": {
+      "type": "object",
+      "required": ["action"],
+      "properties": {
+        "action": {"$ref": "#/$defs/visualizationAction"},
+        "view_id": {"type": ["string", "null"]},
+        "spec": {"oneOf": [{"$ref": "#/$defs/visualizationSpec"}, {"type": "null"}]},
+        "reason": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "recommendationDisplay": {
+      "type": "object",
+      "required": ["version", "recommendation_type", "title", "direct_advice", "explanation", "evidence", "scope", "markdown_fallback"],
+      "properties": {
+        "version": {"type": "string"},
+        "recommendation_type": {"enum": ["public_travel_advice", "health_protection", "governance_advice"]},
+        "title": {"type": "string"},
+        "direct_advice": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["title", "detail"],
+            "properties": {
+              "title": {"type": "string"},
+              "detail": {"type": "string"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "explanation": {"type": "string"},
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["category", "label", "value", "source", "time_basis"],
+            "properties": {
+              "category": {"enum": ["observed", "estimated", "screening", "limitation"]},
+              "label": {"type": "string"},
+              "value": {},
+              "unit": {"type": ["string", "null"]},
+              "source": {"type": "string"},
+              "time_basis": {"type": "string"},
+              "note": {"type": ["string", "null"]}
+            },
+            "additionalProperties": false
+          }
+        },
+        "scope": {"type": "object"},
+        "professional_knowledge": {"type": ["object", "null"]},
+        "markdown_fallback": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "sessionState": {
+      "type": "object",
+      "required": ["context", "history", "metadata", "visualization_context", "user_goal", "audience"],
+      "properties": {
+        "context": {"type": "object"},
+        "history": {"type": "array", "items": {"type": "object"}},
+        "metadata": {"type": "object"},
+        "visualization_context": {"type": "object"},
+        "user_goal": {"enum": ["analysis", "explanation", "visualization", "governance_advice", "public_travel_advice", "health_protection", "report", "capability_intro", "unknown"]},
+        "audience": {"enum": ["citizen", "manager", "unknown"]},
+        "recommendation_result": {"type": ["object", "null"]},
+        "recommendation_display": {"oneOf": [{"$ref": "#/$defs/recommendationDisplay"}, {"type": "null"}]},
+        "recommendation_execution": {"type": ["object", "null"]},
+        "execution_steps": {"type": "array", "items": {"type": "object"}},
+        "knowledge_context": {"type": ["object", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "apiError": {
+      "type": "object",
+      "required": ["code", "message", "retryable", "details"],
+      "properties": {
+        "code": {"type": "string"},
+        "message": {"type": "string"},
+        "retryable": {"type": "boolean"},
+        "details": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "errorResponse": {
+      "type": "object",
+      "required": ["contract_version", "status", "error"],
+      "properties": {
+        "contract_version": {"const": "1.0"},
+        "status": {"const": "error"},
+        "request_id": {"type": ["string", "null"]},
+        "error": {"$ref": "#/$defs/apiError"}
+      },
+      "additionalProperties": false
+    },
+    "chatResponse": {
+      "type": "object",
+      "required": ["contract_version", "answer", "business_action", "visualization_action", "route", "context", "agent_results"],
+      "properties": {
+        "contract_version": {"const": "1.0"},
+        "answer": {"type": "string"},
+        "business_action": {"$ref": "#/$defs/businessAction"},
+        "visualization_action": {"$ref": "#/$defs/visualizationAction"},
+        "route": {"type": ["string", "null"]},
+        "context": {"type": "object"},
+        "agent_results": {"type": "object"},
+        "missing_fields": {"type": "array", "items": {"type": "string"}},
+        "reason": {"type": "string"},
+        "visualization": {"type": ["object", "null"]},
+        "user_goal": {"enum": ["analysis", "explanation", "visualization", "governance_advice", "public_travel_advice", "health_protection", "report", "capability_intro", "unknown"]},
+        "audience": {"enum": ["citizen", "manager", "unknown"]},
+        "goal_reason": {"type": "string"},
+        "recommendation_result": {"type": ["object", "null"]},
+        "recommendation_display": {"oneOf": [{"$ref": "#/$defs/recommendationDisplay"}, {"type": "null"}]},
+        "recommendation_execution": {"type": ["object", "null"]},
+        "execution_steps": {"type": "array", "items": {"type": "object"}},
+        "knowledge": {"type": ["object", "null"]},
+        "fused_evidence": {"type": ["object", "null"]},
+        "error": {"oneOf": [{"$ref": "#/$defs/apiError"}, {"type": "null"}]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "canonical_agent_results": {"$ref": "#/$defs/canonicalAgentResults"},
+    "chat_request": {"$ref": "#/$defs/chatRequest"},
+    "chat_response": {"$ref": "#/$defs/chatResponse"},
+    "context": {"$ref": "#/$defs/context"},
+    "visualization_spec": {"$ref": "#/$defs/visualizationSpec"},
+    "view_command": {"$ref": "#/$defs/viewCommand"},
+    "session_state": {"$ref": "#/$defs/sessionState"},
+    "error_response": {"$ref": "#/$defs/errorResponse"}
+  },
+  "additionalProperties": false
+}

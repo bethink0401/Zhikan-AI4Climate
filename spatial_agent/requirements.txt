@@ -1,0 +1,4 @@
+Flask>=2.0,<4
+pyproj>=3.6,<4
+pyogrio>=0.10,<1
+shapely>=2.0,<3

@@ -1,0 +1,105 @@
+WeatherSysAgent 可运行版 · 快速启动
+====================================
+
+本说明与《04_运行或使用说明》完全一致，仅作压缩包内的速查卡。
+只含运行所需代码、配置、数据库与示例数据；测试脚本、评审文档、构建产物已剔除。
+真实数据库 data/air_quality.db、data/traffic.db 随包附带，无需 git-lfs 拉取。
+
+环境要求
+--------
+Python 3.11 — 3.13（开发环境 3.13）
+Node.js 18 及以上（建议 20 / 22）
+macOS 12+ 或 Linux（Ubuntu 20.04+）；浏览器需支持 WebGL
+
+一、安装（在项目根目录执行一次）
+--------------------------------
+  cd 项目根目录
+  python3 -m venv .venv
+  source .venv/bin/activate
+  python -m pip install --upgrade pip
+  python -m pip install -r requirements.txt
+  cd frontend && npm ci && cd ..
+
+requirements.txt 已包含服务端、空间计算（pyproj / pyogrio / shapely）与
+知识库（chromadb / sentence-transformers）全部依赖，无需再装
+spatial_agent/requirements.txt。首次安装体积较大，建议预留 3 GB 以上磁盘。
+
+核对数据（应显示实际文件大小，合计约 200 MB，不是 0 字节或指针文本）：
+  ls -lh data/air_quality.db data/traffic.db
+
+二、启动（三个终端，均在同一项目根目录）
+----------------------------------------
+终端一：业务后端（8000）
+  source .venv/bin/activate
+  set -a; source .env; set +a
+  python -m api.app
+
+终端二：AI 服务（8010）
+  source .venv/bin/activate
+  set -a; source .env; set +a
+  python -m ai_service.app
+
+★ 两行 `set -a; source .env; set +a` 不能省略：AI 服务不会自行读取 .env，
+  少了它模型地址与密钥为空，AI 对话会不可用（页面其余功能仍正常）。
+
+终端三：前端（5173）
+  cd frontend
+  npm run dev -- --host 127.0.0.1 --port 5173 --strictPort
+
+三、启动自检
+------------
+  curl --fail --silent http://127.0.0.1:8000/health   # {"status":"ok"}
+  curl --fail --silent http://127.0.0.1:8010/health   # 含 "status":"ok"
+  浏览器打开 http://127.0.0.1:5173/overview
+
+首次分析需预热气象字段，约 25—35 秒，属正常现象。
+
+四、配置（均已填好，直接启动即可）
+----------------------------------
+根目录 .env（实际写入的变量）
+  COORDINATOR_API_KEY / COORDINATOR_BASE_URL / COORDINATOR_MODEL
+  AI 服务会回退读取这三个变量；如需改用自己的模型服务，写
+  AI_LLM_API_URL / AI_LLM_MODEL / AI_LLM_API_KEY 优先于上面三个。
+  其余可选项：AI_SERVICE_HOST / AI_SERVICE_PORT（默认 127.0.0.1 / 8010）、
+  AI_KB_ENABLED、AI_KB_LOCAL_DEV_ONLY。
+
+frontend/.env.local（地图密钥与开关）
+  VITE_TMAP_KEY / VITE_AI_VIZ_ENABLED / VITE_AI_SERVICE_BASE_URL
+frontend/.env.development（开发环境后端地址）
+  VITE_API_BASE_URL=http://127.0.0.1:8000、VITE_KB_ENABLED=true
+frontend/.env.production（生产构建）
+  VITE_API_BASE_URL=/api、VITE_AI_VIZ_ENABLED=false、VITE_KB_ENABLED=false
+
+AI 密钥只写在服务端 .env，不进入任何 VITE_* 变量；前端环境变量在启动时读取，
+修改后必须重启 dev server。
+
+五、页面路由
+------------
+  /overview      综合态势总览
+  /restriction   污染溯源与区域交通治理
+  /weather       恶劣天气与公里级传播预警
+  /travel        出行建议与路线推荐
+
+六、目录速查
+------------
+  api/            业务后端（api/app.py，8000）
+  ai_service/     AI 服务（ai_service/app.py，8010）
+  agents/         垂直智能体与协调器
+  tools/          ETL、风场、传播、路线等工具层
+  spatial_agent/  路网、敏感目标与坐标转换（data/processed/ 内含空间数据）
+  data_process/   清洗与入库脚本
+  data/           真库、处理后数据与知识库索引（ai_knowledge/）
+  config/         阈值与权重 JSON 配置
+  examples/       示例请求与示例输出（前端默认示例行程取 travel_case_output.json）
+  frontend/       Vue 3 + Vite 前端
+
+七、常见问题
+------------
+AI 助手无返回         确认 8010 已启动且该终端加载了 .env，检查模型地址/模型名/额度
+图表或知识库入口不显示 检查 VITE_AI_VIZ_ENABLED 与 VITE_KB_ENABLED，改后重启前端
+地图空白              检查 VITE_TMAP_KEY 有效性与域名白名单，改后重启前端
+端口被占用            lsof -nP -iTCP:8000 -sTCP:LISTEN 查进程后释放或改端口
+数据库读取报错        确认 data/*.db 为实际文件且大小正常，必要时重新解压
+
+未包含：测试（tests/、test_*.py）、评审与设计文档（docs/、*.md）、Git 历史、
+前端依赖与构建产物（node_modules/、dist/）、赛事与汇报材料（projects/、exports/）。

@@ -1,0 +1,25 @@
+xlrd>=2.0.1
+openpyxl>=3.1.0
+pandas>=2.0.0
+requests>=2.28.0
+flask>=2.3.0
+pytest>=7.0.0
+pyproj>=3.6,<4
+pyogrio>=0.10,<1
+shapely>=2.0,<3
+pymysql>=1.0,<3
+
+# Independent AI Service expert knowledge base (Phase 4A; no LangGraph)
+chromadb>=0.5,<2
+sentence-transformers>=3,<6
+pypdf>=5,<7
+python-docx>=1.1,<2
+
+# —— 可选：LLM 调度链路（不配置时确定性主链路与全部基准测试仍可运行）——
+# 安装：pip install -r requirements-llm.txt 或按需安装以下包
+# langchain>=0.3
+# langchain-core>=0.3
+# langchain-openai>=0.2
+# fastapi>=0.110
+# uvicorn>=0.29
+# python-dotenv>=1.0

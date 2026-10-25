@@ -1,0 +1,36 @@
+{
+  "timezone": "Asia/Hong_Kong",
+  "static_wind": {
+    "speed_threshold_ms": 1.5,
+    "consecutive_hours_min": 2,
+    "max_score_at_zero_wind": 1.0
+  },
+  "wind_shift": {
+    "shift_threshold_deg": 45,
+    "max_score_at_180_deg": 1.0
+  },
+  "humidity": {
+    "high_threshold_pct": 85,
+    "consecutive_hours_min": 2,
+    "max_score_at_100_pct": 1.0
+  },
+  "rain_removal": {
+    "insufficient_rain_mm": 1.0,
+    "lookback_hours": 6,
+    "max_score_when_dry": 1.0
+  },
+  "dispersion": {
+    "favorable_wind_min_ms": 2.0,
+    "unfavorable_wind_max_ms": 1.0
+  },
+  "weather_risk_weights": {
+    "static_wind_score": 0.25,
+    "wind_shift_score": 0.25,
+    "humidity_risk_score": 0.25,
+    "rain_removal_score": 0.25
+  },
+  "risk_type_thresholds": {
+    "low_max": 0.35,
+    "medium_max": 0.65
+  }
+}

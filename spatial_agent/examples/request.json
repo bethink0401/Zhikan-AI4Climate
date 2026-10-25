@@ -1,0 +1,15 @@
+{
+  "task": {
+    "task_id": "demo-spatial-001",
+    "station_id": "MK",
+    "radius_km": 3
+  },
+  "meteorology_result": {
+    "agent_name": "MeteorologyAgent",
+    "status": "success",
+    "result": {
+      "wind_direction": 45,
+      "wind_speed": 3.2
+    }
+  }
+}

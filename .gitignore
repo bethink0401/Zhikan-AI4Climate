@@ -1,0 +1,31 @@
+# ---- 密钥与本地配置（不得入库）----
+.env
+frontend/.env.local
+!frontend/.env.local.example
+!.env.example
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ---- 前端 ----
+node_modules/
+frontend/dist/
+frontend/dist-ssr/
+*.local
+
+# ---- 系统与日志 ----
+.DS_Store
+Thumbs.db
+*.log
+
+# ---- 构建/临时产物 ----
+*.egg-info/
+build/
+dist/

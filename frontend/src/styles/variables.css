@@ -1,0 +1,49 @@
+/* 设计变量 Design Tokens */
+:root {
+  /* 背景色 */
+  --bg-page: #f5f7fa;
+  --panel-bg: #ffffff;
+  
+  /* 文字颜色 */
+  --text-primary: #303133;
+  --text-secondary: #606266;
+  --text-tertiary: #909399;
+  
+  /* 边框 */
+  --border-color: #dcdfe6;
+  --border-radius: 4px;
+  
+  /* 主题色 */
+  --theme-color: #409eff;
+  --theme-color-light: #79bbff;
+  --theme-color-lighter: #c6e2ff;
+  
+  /* 风险等级颜色 */
+  --risk-low: #67c23a;
+  --risk-medium: #e6a23c;
+  --risk-high: #f56c6c;
+  --risk-very-high: #d03050;
+  
+  /* 污染状态颜色 */
+  --status-good: #67c23a;
+  --status-moderate: #e6a23c;
+  --status-unhealthy: #f56c6c;
+  --status-hazardous: #d03050;
+  
+  /* 阴影 */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 深色模式预留 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-page: #1a1a1a;
+    --panel-bg: #2c2c2c;
+    --text-primary: #e5e5e5;
+    --text-secondary: #b3b3b3;
+    --text-tertiary: #808080;
+    --border-color: #404040;
+  }
+}

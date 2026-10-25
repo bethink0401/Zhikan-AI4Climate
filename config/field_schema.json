@@ -1,0 +1,146 @@
+{
+  "_comment": "Open-Meteo 原始字段 → 标准字段 → 风险字段 数据契约层。所有字段映射在此集中管理，ETL 和 API 客户端均从本文件读取，不得在函数内硬编码。",
+  "api_request_params": {
+    "_comment": "Open-Meteo Archive API 固定请求参数。所有参数在此集中声明，open_meteo_client.py 从本节读取，不得在函数内硬编码。",
+    "timezone": "Asia/Hong_Kong",
+    "wind_speed_unit": "ms",
+    "temperature_unit": "celsius",
+    "precipitation_unit": "mm",
+    "_timezone_note": "所有时间统一为 Asia/Hong_Kong（UTC+8），不使用 auto。",
+    "_wind_speed_unit_note": "风速单位固定为 m/s，对应 Open-Meteo 参数 wind_speed_unit=ms。",
+    "_temperature_unit_note": "气温单位固定为摄氏度（°C）。",
+    "_precipitation_unit_note": "降水单位固定为毫米（mm）。"
+  },
+  "time_format": {
+    "_comment": "系统内所有时间字符串的统一格式约定。",
+    "format": "YYYY-MM-DD HH:mm:ss",
+    "timezone": "Asia/Hong_Kong",
+    "example": "2023-08-15 08:00:00",
+    "_note": "输入 task 的 start_time/end_time 及输出 result 的 start_time/end_time 均遵循此格式。不含时区信息时，按 Asia/Hong_Kong 解释。"
+  },
+  "coordinate_system": {
+    "_comment": "经纬度坐标系约定。",
+    "system": "WGS84",
+    "lat_range": [-90, 90],
+    "lon_range": [-180, 180]
+  },
+  "wind_direction_convention": {
+    "_comment": "风向语义约定。",
+    "unit": "degrees",
+    "range": "0–360",
+    "meaning": "来风方向（风从该方向吹来，即气象学惯例）",
+    "example": "wind_direction=90 表示风从东方吹来（东风）",
+    "upwind_direction": "dominant_wind_direction，即来风方向，与 wind_direction 含义一致",
+    "downwind_direction": "(dominant_wind_direction + 180) % 360，即去风方向"
+  },
+  "weather_code_daily_semantics": {
+    "_comment": "weather_code_daily 字段的完整语义说明。",
+    "source": "Open-Meteo Archive API daily.weather_code",
+    "broadcast_rule": "按日期广播：_merge_daily_into_hourly() 将当天的 weather_code 复制到同日所有小时行",
+    "standard_column_name": "weather_code_daily",
+    "meaning": "当天主导天气代码（WMO Weather Interpretation Code）",
+    "not_meaning": "不代表每个小时独立观测到的天气代码",
+    "scoring_participation": "当前不参与四维污染物扩散风险评分（静风、风向突变、高湿度、降雨清除不足）",
+    "usage": "保留在标准输出中，供下游消费或未来扩展评分维度使用"
+  },
+  "raw_to_standard": {
+    "_comment": "Open-Meteo 原始列名 → 标准列名。ETL rename_map 的唯一来源。",
+    "wind_speed_10m": "wind_speed",
+    "wind_direction_10m": "wind_direction",
+    "relative_humidity_2m": "humidity",
+    "temperature_2m": "temperature",
+    "wind_gusts_10m": "wind_gusts",
+    "surface_pressure": "pressure_hpa"
+  },
+  "api_request_fields": {
+    "_comment": "向 Open-Meteo API 请求的 hourly 变量列表（HOURLY_VARIABLES 的唯一来源）。与新 URL 保持一致：temperature_2m,relative_humidity_2m,precipitation,rain,snowfall,wind_speed_100m,wind_speed_10m,wind_direction_10m,wind_direction_100m,wind_gusts_10m,cloud_cover",
+    "fields": [
+      "temperature_2m",
+      "relative_humidity_2m",
+      "surface_pressure",
+      "precipitation",
+      "rain",
+      "snowfall",
+      "wind_speed_10m",
+      "wind_direction_10m",
+      "wind_gusts_10m",
+      "wind_speed_100m",
+      "wind_direction_100m",
+      "cloud_cover"
+    ]
+  },
+  "api_daily_fields": {
+    "_comment": "向 Open-Meteo API 请求的 daily 变量列表（DAILY_VARIABLES 的唯一来源）。",
+    "fields": [
+      "weather_code"
+    ]
+  },
+  "standard_columns": {
+    "_comment": "ETL 输出的标准 DataFrame 列顺序（STANDARD_COLUMNS 的唯一来源）。",
+    "columns": [
+      "time",
+      "station_id",
+      "location_id",
+      "lat",
+      "lon",
+      "wind_speed",
+      "wind_direction",
+      "humidity",
+      "precipitation",
+      "temperature",
+      "pressure_hpa",
+      "rain",
+      "wind_gusts",
+      "cloud_cover",
+      "wind_speed_100m",
+      "wind_direction_100m",
+      "snowfall",
+      "weather_code_daily",
+      "is_missing"
+    ]
+  },
+  "core_fields": {
+    "_comment": "参与 is_missing 缺失标记的核心字段（compute_missing_rate 和 ETL missing_flags 的依据）。",
+    "fields": [
+      "wind_speed",
+      "wind_direction",
+      "humidity",
+      "precipitation",
+      "temperature"
+    ]
+  },
+  "scoring_fields": {
+    "_comment": "当前评分函数实际使用的标准字段，与 meteorology_rules.json 规则一一对应。",
+    "static_wind": [
+      "wind_speed"
+    ],
+    "wind_shift": [
+      "wind_direction"
+    ],
+    "humidity": [
+      "humidity"
+    ],
+    "rain_removal": [
+      "precipitation",
+      "rain"
+    ]
+  },
+  "retained_fields": {
+    "_comment": "已抓取、已写入标准列、当前评分未直接使用，但保留在输出中供下游消费。",
+    "fields": [
+      "weather_code_daily",
+      "cloud_cover",
+      "rain",
+      "wind_gusts",
+      "pressure_hpa"
+    ]
+  },
+  "future_fields": {
+    "_comment": "已从 API 抓取、尚未纳入任何评分或标准输出，留作未来扩展。新增评分维度时从此处移入 scoring_fields。",
+    "fields": [
+      "wind_speed_100m",
+      "wind_direction_100m",
+      "snowfall"
+    ]
+  }
+}
